@@ -1,0 +1,56 @@
+---
+title: "Beta integrations"
+description: "Understand the narrower, evolving support for Microsoft Ads (Beta), OpenAI Ads (Beta), and Triple Whale (Beta)."
+---
+
+Beta integrations are available in the Integrations directory, but their setup and reporting surfaces can change faster than core integrations.
+
+<Warning>
+  Validate Beta data against the source before using it for a material decision. Do not build a critical workflow that depends on an undocumented Beta behavior.
+</Warning>
+
+## Microsoft Ads (Beta)
+
+Microsoft Ads **(Beta)** contributes read-only campaign spend and performance to blended reporting.
+
+**Prerequisites:** A Marketer Owner, Admin, or Member role and a provider identity that can access the required Microsoft Advertising accounts.
+
+**Connect:** Open **Integrations** → **Microsoft Ads**, choose the offered Microsoft or Google connection path, authorize access, and select the accounts Marketer should sync. Microsoft Ads is a Beta integration.
+
+**Success signal:** The page shows **Connected**, the expected account roster, and a completed metric sync.
+
+**Boundaries and freshness:** This Beta connection is for read-only reporting. Use its sync state and coverage before comparing it with another channel.
+
+**Recovery:** Reconnect for provider-side authorization failures. Resync for a healthy authorization that needs refreshed metrics. Disconnect when Microsoft Ads **(Beta)** should leave blended reporting.
+
+## OpenAI Ads (Beta)
+
+OpenAI Ads **(Beta)** contributes ChatGPT Ads account metadata, campaigns, and performance through an API key.
+
+**Prerequisites:** A Marketer Owner, Admin, or Member role and an OpenAI Ads **(Beta)** API key that can reach the intended advertiser account.
+
+**Connect:** Open **Integrations** → **OpenAI Ads** and paste the key in the connection form. OpenAI Ads is a Beta integration. Use only this secret field; do not place the key in chat, Slack, or documentation.
+
+**Success signal:** The page shows **Connected**, the expected account ID, currency or timezone when available, a masked key suffix, and completed sync coverage.
+
+**Boundaries and freshness:** Marketer encrypts the key before storage. The data available depends on the account the key resolves to. Recent performance can remain incomplete until the provider and sync both finish processing.
+
+**Recovery:** Replace the key when the status says the credential is invalid. Marketer keeps the last-known account roster until a replacement succeeds. Disconnect when the workspace should no longer retain or use the connection.
+
+## Triple Whale (Beta)
+
+Triple Whale **(Beta)** adds pixel-based attribution for Meta and Google while keeping platform-reported performance as a separate view.
+
+**Prerequisites:** A Marketer Owner, Admin, or Member role, the store context, and a Triple Whale **(Beta)** API key with the Pixel Attribution access requested by the connection form.
+
+**Connect:** Open **Integrations** → **Triple Whale**, enter the key and store context, and record the attribution window, accounting mode, and subscription filter that explain the imported numbers. Triple Whale is a Beta integration.
+
+**Success signal:** The page shows **Connected**, the expected shop or account, masked key suffix, attribution model, and completed sync coverage.
+
+**Boundaries and freshness:** Triple Whale **(Beta)** numbers retain their own attribution context. Do not present them as interchangeable with platform-reported Meta or Google totals. Use the recorded filter context when interpreting a result.
+
+**Recovery:** Reconnect with an updated key when the provider rejects the saved key or required access is missing. Resync after the authorization is healthy. Disconnect when the workspace should stop importing Triple Whale **(Beta)** attribution.
+
+## Next step
+
+Run one source-specific, read-only comparison. Name the Beta source, account, attribution context, currency, and completed date range. Save the interpretation with the result so another reviewer can reproduce it.

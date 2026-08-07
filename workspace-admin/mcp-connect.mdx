@@ -1,0 +1,68 @@
+---
+title: "MCP connect"
+description: "Authorize compatible agents to use Marketer with explicit scopes and workspace grants."
+---
+
+MCP connect lets you use Marketer's marketing tools from a compatible agent client. The connection belongs to your account and reaches only the workspaces you grant.
+
+## Before you connect
+
+- Confirm which client you are authorizing.
+- Decide which workspaces it should reach.
+- Review whether each workspace has an available MCP seat.
+- Review the permissions requested by the client. Marketer caps them to the most restrictive effective role among the granted workspaces.
+
+Marketer represents MCP access with three scope tiers:
+
+| Scope | Purpose |
+| --- | --- |
+| `read` | Retrieve workspace context and inspect data |
+| `propose` | Prepare an action or change for review |
+| `mutate` | Perform an allowed change, still subject to workspace policy and tool checks |
+
+<Warning>
+  A `mutate` grant does not replace judgment. Workspace roles, guardrails, approvals, and provider permissions still apply, but the grant should still be limited to clients you trust.
+</Warning>
+
+## Connect an agent
+
+<Steps>
+  <Step title="Open MCP connect">
+    Go to **Settings** → **MCP connect**.
+  </Step>
+  <Step title="Choose the client instructions">
+    Use the tab for Claude Code, Claude Desktop or Cowork, or claude.ai. Copy the command or MCP server URL shown in Marketer.
+  </Step>
+  <Step title="Authorize in the browser">
+    Complete the OAuth flow with your own Marketer account. Do not share an authorization link or session with a teammate.
+  </Step>
+  <Step title="Grant workspaces">
+    Select only the workspaces the connected agent should reach. A workspace without the required seat cannot be used through that connection.
+  </Step>
+  <Step title="Verify the session">
+    Confirm the client name, granted scopes, connected or last-used time, and workspace list under **Connected agents**.
+  </Step>
+</Steps>
+
+## Manage access
+
+You can edit a connection's workspace grants without reconnecting the client. Removing a workspace stops that OAuth session from using Marketer tools in that workspace.
+
+Select **Disconnect** to revoke the session entirely. Revoke any session you do not recognize or no longer use.
+
+MCP seats are managed with team access. Account owners control seat changes that can affect billing. See [Members and roles](/workspace-admin/members-and-roles).
+
+## Verify safely
+
+Start with a read-only request that names one workspace and asks for a small, verifiable result. Confirm that the agent cannot access an ungranted workspace. Add proposal or mutation use cases only after the read boundary is correct.
+
+## Troubleshooting
+
+- If authorization does not open, copy the current command or URL from Marketer again.
+- If a workspace is missing, confirm your membership and the connection's workspace grant.
+- If a workspace shows no available seat, ask the account owner to review MCP seat capacity and billing.
+- If a client behaves unexpectedly, disconnect the OAuth session, review its requested permissions and workspace grants, and authorize it again only if those boundaries are appropriate.
+
+## Next step
+
+Review [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before allowing an external agent to propose or perform spend-affecting work.

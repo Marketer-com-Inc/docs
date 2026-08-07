@@ -1,0 +1,62 @@
+---
+title: "Google Analytics 4"
+sidebarTitle: "Google Analytics 4"
+description: "Connect selected GA4 properties for read-only site analytics beside advertising performance."
+---
+
+Connect Google Analytics 4 (GA4) to add site sessions, acquisition channels, campaigns, and landing-page context to Marketer.
+
+## Prerequisites
+
+- A Marketer Owner, Admin, or Member role
+- A Google identity with access to the GA4 properties you need
+- The property names or IDs that belong to this workspace
+- A completed date range you can compare with Google Analytics
+
+## Connect Google Analytics
+
+<Steps>
+  <Step title="Open Google Analytics">
+    Go to **Integrations**, then open **Google Analytics**.
+  </Step>
+  <Step title="Grant read-only access">
+    Select **Connect Google Analytics** and complete Google's consent flow.
+  </Step>
+  <Step title="Choose properties">
+    Select the GA4 properties that should join this workspace's advertising performance.
+  </Step>
+  <Step title="Confirm the connection">
+    Check for **Connected**, the Google identity, the number of selected properties, and the connected date.
+  </Step>
+</Steps>
+
+## Confirm the first sync
+
+Wait for the sync to complete. Then review **Synced GA4 properties** and the data-coverage view. The expected property names and IDs should appear.
+
+Ask a narrow question such as which landing pages had the most sessions over a completed date range. Compare the selected property and total with GA4 before expanding the analysis.
+
+## Data and permission boundaries
+
+The GA4 connection is read-only. Marketer imports sessions, channels, campaigns, and landing-page reporting from the properties you select. It does not edit the GA4 property through this integration.
+
+Property selection is workspace-specific. A Viewer can inspect the connected properties but cannot manage the selection or connection.
+
+## Freshness and reporting
+
+GA4 reporting can lag or change as attribution and processing settle. Use the sync state and coverage view, and avoid treating an incomplete current day as final.
+
+Advertising platforms and GA4 use different attribution concepts. A difference between their totals is not automatically a sync error. State which source you want Marketer to use when the distinction matters.
+
+## Reconnect, resync, or disconnect
+
+- Choose **Manage properties** to change the selection while authorization remains healthy.
+- Choose **Refresh property access** when the authorization exists but no selectable properties were saved.
+- Choose **Reconnect Google Analytics** when Google invalidates authorization.
+- Use the sync control when access is healthy and imported reporting needs a refresh.
+- If status cannot be verified, refresh before changing anything. Marketer preserves the last-known connection.
+- Disconnect only when the workspace should stop using the selected GA4 properties.
+
+## Next step
+
+Compare one acquisition or landing-page question across GA4 and a connected ad platform. Name both sources and the date range so the result keeps their reporting models separate.

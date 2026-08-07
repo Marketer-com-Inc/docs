@@ -1,59 +1,66 @@
 ---
-title: "Integrations Overview: Connect Your Channels to Marketer"
-sidebarTitle: "Overview"
-description: "Marketer connects Meta, Google, Snapchat, Shopify, and Klaviyo in one operating layer — giving your AI agent a single source of truth to work from."
+title: "Integrations"
+description: "Connect the advertising, commerce, analytics, and messaging systems that give Marketer its working context."
 ---
 
-Real attribution starts when your ad spend, store data, and lifecycle data stop living in separate tools. Marketer pulls Meta, Google, Shopify, and Klaviyo into one operating layer so your AI agent always works from a single, consistent picture of performance — not a patchwork of dashboards that each tell a different story. When a campaign brief is written, a budget is shifted, or a flow is triggered, every decision is grounded in the same numbers you'd defend to your board.
-
-<CardGroup cols={2}>
-  <Card title="Meta" icon="meta" href="/integrations/meta">
-    Connect your Meta Business account to give Marketer access to campaigns, ad sets, creatives, audiences, and pixel events. The agent reads, recommends, and acts — with your approval.
-  </Card>
-  <Card title="Google Ads" icon="google" href="/integrations/google">
-    Link Google Ads so Marketer can manage campaigns, clean negative keywords, shift budgets, and surface performance insights — all without manual Ads Manager work.
-  </Card>
-  <Card title="Klaviyo" icon="envelope" href="/integrations/klaviyo">
-    Put your email and SMS flows on the same source of truth as your ad data. Smarter segmentation, real attribution, and lifecycle triggers that actually reflect what's happening in your store.
-  </Card>
-  <Card title="Shopify" icon="bag-shopping" href="/integrations/shopify">
-    Connect your Shopify store so Marketer uses real product, order, and revenue data to run campaigns and report accurate ROAS — not modelled estimates.
-  </Card>
-</CardGroup>
-
-## Additional Partners
-
-Marketer's partner network extends beyond the core integrations above. The following platforms are supported as part of your connected stack:
-
-<CardGroup cols={3}>
-  <Card title="Snapchat Ads" icon="snapchat">
-    Connect Snapchat Ads as part of your paid social stack. Marketer brings Snapchat campaign data into the same operating layer as Meta and Google.
-  </Card>
-  <Card title="ChatGPT Ads" icon="comment-dots">
-    An official partner integration. ChatGPT Ads connects to Marketer so your agent can manage and optimise activity across this emerging channel alongside your existing spend.
-  </Card>
-  <Card title="Wayflyer" icon="arrow-trend-up">
-    Wayflyer is a Marketer partner. Connect your revenue-based financing data to give your AI agent full context on cash position when making budget recommendations.
-  </Card>
-</CardGroup>
-
-## What Each Integration Provides
-
-<Accordion title="Data each integration sends to Marketer">
-
-| Integration | Data Marketer Reads |
-|---|---|
-| **Meta** | Campaigns, ad sets, creatives, audiences, pixel events, performance metrics |
-| **Google Ads** | Campaigns, ad groups, keywords, search terms, performance metrics |
-| **Klaviyo** | Lists, segments, flow performance, email/SMS attributed revenue |
-| **Shopify** | Product catalog, pricing, inventory, orders, revenue, customer purchase history |
-| **Snapchat Ads** | Campaign structure, spend, performance data |
-| **ChatGPT Ads** | Campaign data, performance metrics |
-
-</Accordion>
-
-Marketer also supports store connections beyond Shopify — including WooCommerce, Magento, BigCommerce, and custom-built storefronts. See the [Shopify integration page](/integrations/shopify) for details on connecting non-Shopify stores.
+Integrations bring source data into your Marketer workspace. Connect only the accounts and resources that belong to the workspace you are configuring.
 
 <Note>
-  Your data stays yours. Marketer reads your connected accounts to surface insights and power your AI agent — it does not transfer, sell, or store your data outside of the permissions you grant. You can disconnect any integration at any time from Settings → Integrations.
+  Owners, Admins, and Members can manage connections. Viewers can inspect available connection state but cannot connect, reconnect, change selections, sync, or disconnect.
 </Note>
+
+## Available integrations
+
+| Integration | What it contributes | Status |
+| --- | --- | --- |
+| [Meta Ads](/integrations/meta-ads) | Facebook and Instagram campaigns, creatives, audiences, pixels, and catalogs | Available |
+| [Google Ads](/integrations/google-ads) | Selected accounts, campaigns, ad groups, ads, and performance | Available |
+| [Shopify](/integrations/shopify) | Products, collections, orders, and revenue from connected stores | Available |
+| [Google Analytics 4](/integrations/google-analytics-4) | Read-only sessions, channels, campaigns, and landing pages | Available |
+| [Slack](/integrations/slack) | Agent conversations, approval requests, progress, and workspace alerts | Available |
+| [Beta integrations](/integrations/beta) | Microsoft Ads, OpenAI Ads, and Triple Whale | Beta |
+
+## Before you connect
+
+- Confirm that you are in the correct Marketer workspace.
+- Use a provider identity that can access the accounts, stores, properties, or Slack workspace you need.
+- Decide which individual resources should contribute data. You do not have to select everything the provider exposes.
+- Ask an Owner or Admin about workspace policy before granting access to a production account.
+
+Marketer shows the permissions and resources available through each provider flow. The provider remains the source of truth for the access your identity can grant.
+
+## Connect a source
+
+<Steps>
+  <Step title="Open Integrations">
+    In Marketer, select **Integrations** in the main navigation.
+  </Step>
+  <Step title="Choose a provider">
+    Open its row to see the current connection state, available actions, and setup requirements.
+  </Step>
+  <Step title="Authorize and select resources">
+    Complete the provider flow or enter the requested credential. Then choose the accounts, stores, properties, or channel settings that belong in this workspace.
+  </Step>
+  <Step title="Confirm the first successful state">
+    Look for **Connected**, the selected resources, a completed sync or configured Slack channel, and any available data-coverage details.
+  </Step>
+</Steps>
+
+## Understand freshness
+
+A connected badge confirms authorization. It does not guarantee that every source has finished importing or that every metric has the same reporting delay.
+
+Use the provider detail page to check sync progress, last sync, selected resources, and data coverage. Compare important decisions with the source platform when the latest period is still changing.
+
+## Recover or remove a connection
+
+- Use **Resync** when authorization is healthy but imported data needs to be refreshed.
+- Use **Reconnect** when a provider revoked access, required new permissions, or no longer exposes a selected resource.
+- Refresh the page when Marketer says the status could not be verified. Marketer preserves the last-known connection instead of treating a read error as a disconnect.
+- Use **Disconnect** only when the workspace should stop using that source. Review the confirmation because downstream reporting and workflows can lose context.
+
+For a diagnostic sequence, see [Troubleshoot integrations](/integrations/troubleshooting).
+
+## Next step
+
+After the first sync completes, ask Marketer a narrow, read-only question about the connected source. Include the account and date range so you can verify the answer against the provider.

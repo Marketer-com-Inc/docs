@@ -1,0 +1,132 @@
+---
+title: "Campaigns"
+sidebarTitle: "Campaigns"
+description: "Inspect connected campaign records, compare delivery, prepare new work, and review provider-specific actions safely."
+---
+
+**Campaigns** is the operating surface for advertising records from supported connected providers. Use it to inspect delivery, move between the levels available for a provider, find drafts and launches, and start campaign work from the current account state.
+
+Use Analytics when the main question is “what changed and why?” Use Campaigns when you need to identify the exact object behind the result or review an available action.
+
+## When to use Campaigns
+
+- Inspect the current status and structure of connected advertising objects.
+- Compare campaigns over a defined date window.
+- Search or filter to find the exact object you need.
+- Review a draft or launch in progress.
+- Start a new campaign flow for a supported provider.
+- Prepare or review an available row or bulk action.
+
+<Note>
+  Campaign structure and controls vary by provider. A Meta campaign, ad set, and ad hierarchy does not map one-to-one to every Google Ads campaign type. Use the level names and actions displayed for the selected provider.
+</Note>
+
+## Read the surface
+
+Campaigns combines several kinds of context:
+
+| Area | What it tells you | What to check |
+| --- | --- | --- |
+| Date range | The reporting window for displayed metrics | Complete days, comparison intent, and timezone |
+| Channel or provider | Which connected account data is in scope | Correct provider and account |
+| Level | Which type of advertising object the rows represent | Campaign, ad set, ad, or provider-specific equivalent |
+| Status and filters | Which records are currently visible | Active filters, search, and hidden rows |
+| Drafts and launches | Work that is not the same as an established live record | Current lifecycle and next required step |
+| Attribution control | The measurement view used where an eligible connection exists | Platform view versus the selected attribution source |
+
+The values in a row describe the selected window and measurement context. They do not by themselves establish causality or prove that a recommended action is safe.
+
+## Investigate a campaign
+
+<Steps>
+  <Step title="Set the scope">
+    Choose the intended provider, date range, and level. Clear unrelated filters and confirm the active account before comparing rows.
+  </Step>
+  <Step title="Find the object">
+    Search by name or use the available filters. Open the record detail when you need to distinguish similar names or inspect lower-level structure.
+  </Step>
+  <Step title="Compare the right metrics">
+    Start with the business outcome and spend, then use supporting delivery and efficiency metrics. Compare the same object, attribution view, currency, and duration across periods.
+  </Step>
+  <Step title="Form a diagnosis">
+    Separate what changed from why it may have changed. Use Analytics or the Marketing Agent when you need a broader channel, creative, or product explanation.
+  </Step>
+  <Step title="Prepare the next step">
+    Choose analysis, a draft, or an available provider-specific action. If the action can change a connected account, review its proposal and approval state before it proceeds.
+  </Step>
+</Steps>
+
+## Common outcomes
+
+### Triage delivery
+
+Filter to the affected provider and level, then identify where spend, results, or status changed. Open the object before acting so you can verify its identity and relationship to other levels.
+
+### Compare periods
+
+Use equal-duration periods where possible. Account for partial days, promotions, budget changes, and attribution differences. A campaign can appear to improve when the reporting window or attribution source changed instead.
+
+### Prepare a campaign
+
+Start the campaign creation flow and provide the goal, provider, product or offer, audience, creative, budget, and schedule the flow requests. Treat a draft as work in progress. Review the assembled structure before launch.
+
+### Work in bulk
+
+When bulk controls are available, select only the records that should share the same action. Recheck the count, provider, level, and proposed effect. Similar names and active filters can make a selection broader than expected.
+
+## Review an account change
+
+Campaign actions are provider- and approval-specific. The interface may let you prepare changes such as status or budget updates for some objects, while another provider or campaign type exposes different controls.
+
+Before any change:
+
+1. Confirm the connected provider and account.
+2. Confirm the exact level and selected objects.
+3. Record the current state and the intended new state.
+4. Review the evidence window and attribution source.
+5. Compare the change with workspace guardrails.
+6. Review the available approval step.
+7. After processing, verify the result in Campaigns and, when needed, in the connected provider.
+
+<Warning>
+  Do not infer that an action is supported because a similar control exists for another provider. Use only the controls presented for the selected objects and review their confirmation state.
+</Warning>
+
+## Ask the Marketing Agent from campaign context
+
+Attach a campaign in chat when you want an explanation or a cross-surface outcome. A strong request might be:
+
+> Using the attached campaign, compare the last 7 complete days with the prior 7. Show the main changes in spend, results, and efficiency. Identify whether the evidence points to delivery, audience, or creative, and prepare one low-risk proposal. Do not apply it.
+
+The attachment identifies the campaign. Your prompt still needs to define the date, measurement, and authority boundaries.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No campaigns appear">
+    Confirm that a supported ad provider is connected, the initial sync has completed, and the selected date or filters should include data. A connected account can temporarily show a setup or syncing state before records are available.
+  </Accordion>
+  <Accordion title="A campaign is missing">
+    Check the provider, account, level, status filter, search term, and date range. If the connection is healthy but the object remains missing, compare its current provider status with the latest sync state.
+  </Accordion>
+  <Accordion title="Metrics differ from Analytics">
+    Align the date window, attribution source, currency, account selection, and object level. Analytics may combine or contextualize sources differently from a provider-level row.
+  </Accordion>
+  <Accordion title="An action is disabled or absent">
+    Check provider support, selected object type, workspace role, connection health, and approval settings. Some actions are intentionally unavailable for particular providers or campaign types.
+  </Accordion>
+  <Accordion title="A submitted action is not reflected yet">
+    Check **Awaiting action**, task activity, and the current provider state. Do not submit a duplicate while the original request is awaiting approval or provider processing.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Analyze performance" icon="chart-line" href="/product-guides/analytics">
+    Build a source-aware explanation before choosing an account action.
+  </Card>
+  <Card title="Review approvals" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Verify the exact scope and effect of a proposed campaign change.
+  </Card>
+</CardGroup>

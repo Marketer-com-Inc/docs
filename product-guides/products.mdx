@@ -1,0 +1,131 @@
+---
+title: "Products"
+sidebarTitle: "Products"
+description: "Use the Shopify-backed product catalog to inspect merchandise and ground campaign, creative, and chat work."
+---
+
+**Products** is Marketer’s Shopify-backed catalog surface. It brings synced product identity, collections, pricing context, and available sales metrics into the workspace so campaign and creative work can start from the correct merchandise.
+
+Shopify remains the source of truth for the catalog. Use Marketer to inspect and select synced products, then return to Shopify when core catalog information needs to be corrected.
+
+## When to use Products
+
+- Find the exact product or variant context for a marketing request.
+- Browse Products or Collections.
+- Search and sort the synced catalog.
+- Inspect available price and sales context.
+- Attach a product to a chat request.
+- Seed a campaign flow from selected merchandise.
+- Open Studio with selected products attached.
+- Open the Shopify catalog when source data needs editing.
+
+## Understand the data
+
+The product surface loads catalog identity and sales context as separate data layers. Product rows can appear before all sales metrics finish loading.
+
+| Data | Primary use | Review note |
+| --- | --- | --- |
+| Product and variant identity | Choose the correct merchandise | Verify title, handle, image, price, and variant context against Shopify |
+| Collections | Browse related products | Membership can arrive after the initial catalog view |
+| Sales metrics | Sort or compare available Shopify performance context | Check the selected window, currency, and freshness before drawing conclusions |
+| Storefront link | Connect marketing work with the customer destination | Confirm that the live product page and offer match the campaign or creative |
+
+<Note>
+  A missing sales metric is not automatically zero. It may still be loading, unavailable for the selected context, or affected by connection freshness.
+</Note>
+
+## Find and inspect a product
+
+<Steps>
+  <Step title="Confirm Shopify is connected">
+    Check the connection and sync state when the catalog is empty or incomplete. Wait for the initial catalog sync before treating missing records as a merchandising issue.
+  </Step>
+  <Step title="Choose Products or Collections">
+    Browse the full product list or narrow from a collection. Use search when titles or catalogs are large.
+  </Step>
+  <Step title="Choose a useful sort">
+    Use Featured, Best sellers, Revenue, price, or name sorting when those options fit the question. Metric-based sorts become meaningful only after the sales layer is available.
+  </Step>
+  <Step title="Open the product detail">
+    Confirm identity, variant and price context, image, and destination before using the product in another workflow.
+  </Step>
+</Steps>
+
+## Start marketing work from Products
+
+Select one or more products to reveal the available actions.
+
+### Build campaign
+
+**Build campaign** opens the campaign flow with product context from the selection. This is a starting point, not a launch. Review the provider, objective, audience, creative, budget, schedule, destination, and approval state in the campaign flow.
+
+### Create ads
+
+**Create ads** opens Studio with selected product records attached, up to the selection limit shown by the interface. Use an approved brief or add a clear audience, angle, proof, and format request before generating.
+
+### Open in Shopify
+
+Use **Open in Shopify** to manage the source catalog. Changes must sync back to Marketer before you rely on them in a brief, creative, or campaign.
+
+<Warning>
+  Selecting a product does not verify every marketing claim about it. Confirm product facts, current price, availability, destination, and required proof before customer-facing work proceeds.
+</Warning>
+
+## Use product context in chat
+
+Attach a product through the chat context picker when you want the Marketing Agent to reason about the exact synced record.
+
+Example:
+
+> Using the attached product and current brand Knowledge, create a brief for a paid social test. Give me three distinct audience angles, the product fact supporting each, the proof we still need, and the creative acceptance criteria. Do not generate assets or build a campaign yet.
+
+The product attachment establishes identity. Your request should still define the audience, objective, channel, and authority boundary.
+
+## Common outcomes
+
+### Product-led creative
+
+Select the product, open Studio, and work from an approved brief. Check that the resulting image, copy, offer, and destination all refer to the same product and variant.
+
+### Catalog campaign setup
+
+Start from selected products and review the provider’s campaign requirements. Confirm the source catalog, product grouping, destination, and availability before launch.
+
+### Merchandising analysis
+
+Use the available Shopify sales context to identify products worth investigating. Verify the time window and currency, then combine the finding with campaign and creative evidence before changing spend.
+
+### Catalog correction
+
+Open Shopify, fix the source product data, wait for a successful sync, and then recheck Products. Do not patch a stale product fact only in a prompt and expect future work to remain correct.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The catalog is empty">
+    Confirm the Shopify connection and sync state. If setup is still running, wait for it to complete. If the connection needs attention, reconnect before trying to create manual replacement records in Marketer.
+  </Accordion>
+  <Accordion title="A product or variant is missing">
+    Check its current state in Shopify, the active workspace, search and collection filters, and the latest sync. Correct the source catalog first when the Shopify record is wrong.
+  </Accordion>
+  <Accordion title="Price or availability is outdated">
+    Verify the live Shopify record and storefront, then confirm that the latest sync completed. Delay campaign or creative approval until the source and Marketer agree.
+  </Accordion>
+  <Accordion title="Revenue or best-seller sorting looks incomplete">
+    Wait for the sales-metrics layer, check connection freshness, and confirm the reporting currency and window. Use a catalog-based sort while metrics are unavailable.
+  </Accordion>
+  <Accordion title="Product context did not carry into Studio or Campaigns">
+    Return to Products, select the intended records, and use the relevant action again. Confirm the destination surface shows the seeded product before continuing; do not assume the handoff succeeded.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Create from product context" icon="images" href="/product-guides/creatives">
+    Move from a synced product to an approved brief, Studio work, and Assets.
+  </Card>
+  <Card title="Prepare a campaign" icon="megaphone" href="/product-guides/campaigns">
+    Review the provider-specific campaign flow before launch.
+  </Card>
+</CardGroup>

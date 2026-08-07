@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="title">
+  <title id="title">Marketer</title>
+  <style>
+    .glyph path { fill: #264439; }
+    @media (prefers-color-scheme: dark) { .glyph path { fill: #ffffff; } }
+  </style>
+  <svg class="glyph" x="0" y="0" width="32" height="32" viewBox="-0.5 -0.5 46.5 33.5" preserveAspectRatio="xMidYMid meet">
+    <path d="M6.319 31.995a6.322 6.322 0 1 0 0-12.651 6.322 6.322 0 0 0 0 12.65Z"/>
+    <path d="m27.083 14.753 6.067 13.663a5.997 5.997 0 0 0 7.872 3.072 6.008 6.008 0 0 0 3.069-7.879L33.619.042l-6.572 14.747.036-.036Z"/>
+    <path d="M25.963 17.247 19.896 3.584A5.997 5.997 0 0 0 12.024.512a6.008 6.008 0 0 0-3.069 7.88l10.472 23.566L26 17.211l-.036.036Z"/>
+  </svg>
+</svg>

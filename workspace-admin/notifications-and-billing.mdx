@@ -1,0 +1,62 @@
+---
+title: "Notifications and billing"
+description: "Choose where alerts go, what reaches external channels, and how workspace usage and billing are managed."
+---
+
+Notifications control delivery. Plans & Billing shows the active workspace's usage and billing context. Access to each surface depends on your role and how the account pays for the workspace.
+
+## Configure notifications
+
+Open **Settings** → **Notifications**.
+
+### Delivery channels
+
+- The in-app feed keeps workspace notifications regardless of external delivery.
+- Slack can post workspace alerts to one selected channel when [Slack](/integrations/slack) is connected.
+- Email delivery is independent of Slack and requires at least one recipient.
+
+Slack approval requests can be delivered to the person they belong to rather than the shared alerts channel.
+
+### What notifies
+
+Set a severity floor:
+
+- **Everything**
+- **Warnings and critical**
+- **Critical only**
+
+Then enable the notification groups relevant to your team, such as performance, account health, approvals, agent activity, budget, or billing. Events below the chosen floor remain in the app instead of going to Slack or email.
+
+<Tip>
+  Start with warnings and critical events. Add lower-severity delivery only when someone owns the response and the channel remains useful.
+</Tip>
+
+## Review plans and usage
+
+Open **Settings** → **Plans & Billing**. Depending on the workspace and role, the page can show:
+
+- agent activity and token usage;
+- current plan and available plan controls;
+- payment method;
+- recent invoices; and
+- a payment-recovery action when an eligible self-billing workspace has an open invoice.
+
+Viewers do not see this workspace setting. Some actions require Owner or Admin access.
+
+## Account-covered workspaces
+
+When an account plan covers the workspace, payment method and invoices belong to the account rather than the individual workspace. Eligible multi-workspace Owners and Admins can use the account-level **Billing** area to review the combined view.
+
+If the workspace is managed by an account team or uses a custom plan, the self-service controls can differ from standard plans. Follow the state shown in Marketer instead of assuming every workspace can change plans directly.
+
+## Billing safety
+
+- Confirm the active workspace before opening a billing action.
+- Check whether billing is workspace-level or account-level.
+- Review seat changes separately; MCP seats can affect billing.
+- Do not share payment screenshots containing personal or card details.
+- Record who owns a failed-payment response and confirm recovery in the product.
+
+## Next step
+
+Review [Members and roles](/workspace-admin/members-and-roles) so billing and MCP seat permissions match the people responsible for them.

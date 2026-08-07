@@ -1,7 +1,13 @@
-# Mintlify automatically ignores these files and directories:
-# .git, .github, .claude, .agents, .idea, node_modules,
-# README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
+# Mintlify automatically ignores common repository metadata such as .git,
+# .github, .agents, README.md, and CONTRIBUTING.md.
 
-# Draft content
-drafts/
+# Scraped marketing-site inputs are retained for provenance but are not product docs.
+sources/**
+
+# Internal planning and analysis.
+CONTENT-MAP.md
+.atlas-analysis.json
+
+# Draft content.
+drafts/**
 *.draft.mdx

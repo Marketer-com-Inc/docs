@@ -1,0 +1,68 @@
+---
+title: "Run your first task"
+sidebarTitle: "First task"
+description: "Ask Marketer a focused performance question without changing live campaigns."
+---
+
+Start with a question that has a verifiable answer. A narrow, read-only request helps you learn how Marketer selects data and explains its work.
+
+## Use this first task
+
+Your goal is to identify the largest performance change in a connected ads account across two completed periods.
+
+<Steps>
+  <Step title="Open Home">
+    Go to [Home](https://app.marketer.com/dashboard) in the workspace that owns the connected account.
+  </Step>
+  <Step title="Add context only if it narrows the task">
+    To focus on one campaign, enter `@` in the composer and select that campaign. Leave context unattached when you want an account-level answer.
+  </Step>
+  <Step title="Send a bounded request">
+    Paste this request and replace the bracketed source if needed:
+
+    ```text
+    Using only [Meta Ads or Google Ads], compare the last 7 complete days
+    with the previous 7 complete days. Show spend, purchases, CPA, and ROAS,
+    then identify the largest material change. Name the account, source,
+    timezone, and exact dates. Separate measured facts from your interpretation.
+    Do not create, edit, pause, or launch anything.
+    ```
+  </Step>
+  <Step title="Let the result finish">
+    Marketer may read more than one set of metrics to answer the question. Keep the task open until the result, source context, and any limitation are visible.
+  </Step>
+  <Step title="Ask one verification follow-up">
+    Use this follow-up when the answer is complete:
+
+    ```text
+    Recheck the largest change. Show the numerator and denominator behind
+    the percentage change, and tell me whether either period is incomplete.
+    ```
+  </Step>
+</Steps>
+
+## What Marketer should return
+
+A usable result includes:
+
+- The source and account scope
+- Exact, non-overlapping date ranges
+- Values for each requested metric, or a clear reason a metric is unavailable
+- The calculation behind the reported change
+- A distinction between observed data and interpretation
+- No campaign mutation
+
+If the answer mixes sources, omits dates, or uses a partial period, narrow the request and run it again.
+
+<Tip>
+  Ask one analytical question per task until the evidence is clear. You can turn the result into a brief, report, or campaign plan in a separate follow-up.
+</Tip>
+
+## If the task cannot run
+
+- A missing connection: open **Integrations** and connect or reconnect the named source.
+- The wrong account: return to the integration and update the account selection.
+- No recent rows: use a date range covered by the source, then investigate the sync gap.
+- An unclear result: restate the source, scope, dates, metrics, and read-only constraint.
+
+Continue to [review your result](/get-started/review-result).

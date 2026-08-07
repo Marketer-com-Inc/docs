@@ -101,7 +101,7 @@ Status vocabulary:
 
 | Page | Audience | Status | Source | Live verification | Screenshot |
 | --- | --- | --- | --- | --- | --- |
-| `/release-notes/overview` | All users | GA | Merged customer-facing releases and documentation PRs | Pending publication | Not required |
+| `/release-notes/overview` | All users | GA | Merged customer-facing releases and documentation PRs | Published and verified 2026-08-07 | Not required |
 
 ## Authenticated verification evidence
 
@@ -111,6 +111,7 @@ Status vocabulary:
 - Reconciliation evidence: the same workspace's visible provider UI showed **Reconnect needed** for Meta Ads and Google Ads, including last-sync and coverage details. Public guidance now preserves both observations and blocks connection changes until the intended account is confirmed.
 - Conversion metrics: the live settings route showed “Conversion metrics aren't available yet” and identified the unapplied `workspace_conversion_metrics` migration. Public guidance treats the surface as conditional without claiming a workspace-specific rollout mechanism.
 - Mintlify preview: `https://marketer-com-ashmit-mar-2142-marketer-docs.mintlify.site/`; representative pages and legacy redirects verified on 2026-08-07.
+- Production: merge commit `2202a37230a7cc36a0ffe1166cd745e91620d9ab` deployed successfully to `https://marketer-com.mintlify.site/`; home, representative guides, feedback, and legacy redirects verified on 2026-08-07.
 - Access decision: full Mintlify authentication remains enabled pending explicit approval to make the documentation public.
 
 ## Release gates
@@ -120,6 +121,6 @@ Status vocabulary:
 - [x] All navigable pages pass Mintlify validation, links, and accessibility checks.
 - [x] Representative customer flows match the authenticated app.
 - [x] Pull request preview is reviewed.
-- [ ] Production deployment and redirects are verified.
+- [x] Production deployment and redirects are verified.
 - [x] Mintlify add-ons reviewed: thumbs feedback and automatic related topics enabled; broken-link CI set to Blocking; authenticated PR previews already enabled.
 - [x] Custom domain decision is recorded: retain `marketer-com.mintlify.site`; defer DNS until explicit approval.

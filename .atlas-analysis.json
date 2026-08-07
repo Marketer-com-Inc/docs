@@ -1,0 +1,115 @@
+{
+  "projectType": "saas",
+  "projectName": "Marketer",
+  "projectDescription": "Marketer is an AI-powered marketing operating system that runs paid ad campaigns, produces ad creative, and manages performance across Meta, Google, Snapchat, and Klaviyo — replacing agencies, freelancers, and disconnected tools.",
+  "theme": "willow",
+  "primaryColor": "#8c9c9c",
+  "lightColor": "#314f45",
+  "darkColor": "#d2d8d6",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "connecting-channels"
+            ]
+          },
+          {
+            "group": "The AI Agent",
+            "pages": [
+              "agent/overview",
+              "agent/campaign-management",
+              "agent/performance-monitoring",
+              "agent/slack-integration"
+            ]
+          },
+          {
+            "group": "Ember Creative",
+            "pages": [
+              "ember/overview",
+              "ember/creative-formats",
+              "ember/briefing-workflow",
+              "ember/performance-loop"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/meta",
+              "integrations/google",
+              "integrations/klaviyo",
+              "integrations/shopify"
+            ]
+          },
+          {
+            "group": "For Your Team",
+            "pages": [
+              "team/founders",
+              "team/media-buyers",
+              "team/creative-strategists"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "By Industry",
+            "pages": [
+              "industry/beauty",
+              "industry/fashion",
+              "industry/food-beverage",
+              "industry/home-lifestyle",
+              "industry/wellness"
+            ]
+          },
+          {
+            "group": "Case Studies",
+            "pages": [
+              "case-studies/overview",
+              "case-studies/softmoc",
+              "case-studies/trip",
+              "case-studies/hucklebee-farms"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI agent that monitors and optimizes ad accounts 24/7 across Meta, Google, and Snapchat",
+    "Ember creative engine: AI-powered static, video, motion, and UGC ad production curated by real designers",
+    "Slack-native workflow: receive alerts and approve actions directly from Slack",
+    "Unified platform connecting ad spend, store data, and Klaviyo lifecycle flows on one source of truth",
+    "Bulk creative uploads with format/spec compliance enforcement and direct push to ad platforms",
+    "Performance loop: winning creatives automatically inform the next creative brief",
+    "Attribution dashboard tied to revenue, suitable for board-level reporting",
+    "Multi-platform support: Shopify, WooCommerce, Magento, BigCommerce, and custom stores"
+  ],
+  "publicApiSurface": [
+    "Connect ad accounts (Meta, Google, Snapchat)",
+    "Connect Shopify / ecommerce store",
+    "Connect Klaviyo",
+    "Connect Slack workspace",
+    "Brief ad creatives via Ember",
+    "Bulk upload creatives to Meta/Google",
+    "AI agent campaign actions (pause ad sets, shift budget, launch campaigns, clean keywords)",
+    "Slack alerts and approvals",
+    "Performance reporting and attribution dashboard",
+    "Audience builder (new, engaged, existing customers)",
+    "Campaign activity log"
+  ]
+}

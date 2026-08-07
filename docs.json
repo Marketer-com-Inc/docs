@@ -1,0 +1,110 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Marketer",
+  "theme": "willow",
+  "logo": {
+    "light": "https://media.brand.dev/74f1fb85-6510-4389-a211-c0a2c45db9d6.svg",
+    "dark": "https://media.brand.dev/74f1fb85-6510-4389-a211-c0a2c45db9d6.svg"
+  },
+  "favicon": "https://media.brand.dev/51f03c65-f82d-47a0-b5a3-7e77286b52b4.png",
+  "colors": {
+    "primary": "#8c9c9c",
+    "light": "#314f45",
+    "dark": "#d2d8d6"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Book a Demo",
+      "href": "https://www.marketer.com/demo"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "connecting-channels"
+            ]
+          },
+          {
+            "group": "The AI Agent",
+            "pages": [
+              "agent/overview",
+              "agent/campaign-management",
+              "agent/performance-monitoring",
+              "agent/slack-integration"
+            ]
+          },
+          {
+            "group": "Ember Creative",
+            "pages": [
+              "ember/overview",
+              "ember/creative-formats",
+              "ember/briefing-workflow",
+              "ember/performance-loop"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/meta",
+              "integrations/google",
+              "integrations/klaviyo",
+              "integrations/shopify"
+            ]
+          },
+          {
+            "group": "For Your Team",
+            "pages": [
+              "team/founders",
+              "team/media-buyers",
+              "team/creative-strategists"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "By Industry",
+            "pages": [
+              "industry/beauty",
+              "industry/fashion",
+              "industry/food-beverage",
+              "industry/home-lifestyle",
+              "industry/wellness"
+            ]
+          },
+          {
+            "group": "Case Studies",
+            "pages": [
+              "case-studies/overview",
+              "case-studies/softmoc",
+              "case-studies/trip",
+              "case-studies/hucklebee-farms"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "website": "https://www.marketer.com"
+    }
+  }
+}

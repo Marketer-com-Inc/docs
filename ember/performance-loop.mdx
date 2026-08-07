@@ -1,0 +1,106 @@
+---
+title: "How Ember's Performance Loop Closes the Creative Cycle"
+sidebarTitle: "Performance Loop"
+description: "Ember automatically feeds winning ad performance back into the next creative brief — so your best angles compound instead of getting lost in a spreadsheet."
+---
+
+Most creative programs have the same invisible problem: the data exists, but it doesn't travel. A video outperforms every static asset in the batch by a significant margin — and that signal gets noted, maybe documented in a post-mortem, and then forgotten when the next brief is written two weeks later. The next round starts from first principles again. Teams repeat angles that underperformed, miss the ones that worked, and spend budget rediscovering things they already knew. Ember's performance loop exists to break that pattern. Winning signals from your live creatives feed directly back into the next brief — automatically, without manual analysis or handoff — so every creative round starts smarter than the last.
+
+## How the Loop Works
+
+<Steps>
+  <Step title="Performance Is Read Across All Creatives">
+    Marketer continuously reads performance data from every creative you have running across Meta, Google, and Snapchat. This isn't a periodic export or a manual pull — the data flows in real time and is tagged against the specific creative assets, angles, formats, and audience segments that generated it.
+
+    Every metric that matters to creative performance is captured: ROAS, CTR, hook rate, scroll-stop rate, frequency, and spend efficiency over time.
+  </Step>
+
+  <Step title="Winning Angles Are Identified">
+    Ember's intelligence engine analyzes the incoming performance data and identifies which **creative angles** are generating the strongest results — not just which individual assets, but which underlying strategic direction.
+
+    For example, in a beauty campaign running four angles in parallel:
+    - **Ingredient-forward** creative (close-up of active ingredients, clinical framing)
+    - **Lifestyle** creative (product in use, aspirational context)
+    - **AI UGC** (creator-realistic testimonial format)
+    - **Founder story** (brand origin, personal narrative)
+
+    If ingredient-forward and AI UGC are significantly outperforming lifestyle and founder story on CTR and incremental ROAS, the loop surfaces that signal clearly — and weights the next brief accordingly. The winning angles get more volume. The underperformers are retired or retested with a different execution.
+  </Step>
+
+  <Step title="Creative Fatigue Is Flagged Early">
+    <Tip>
+      Creative fatigue is one of the most common — and most expensive — silent drains in paid media. ROAS doesn't drop suddenly; it erodes gradually as frequency climbs and your audience stops responding. By the time the degradation is obvious in your dashboard, significant budget has already been wasted.
+    </Tip>
+
+    Ember's agent monitors frequency and performance trends for every active creative. When it detects the early signature of fatigue — rising frequency, declining CTR, flattening ROAS — it flags the asset **before** spend bleeds significantly. You get the signal in time to act, not after the damage is done.
+
+    Flagged creatives are surfaced directly in your Marketer dashboard with the recommendation to rotate in fresh variants. If Ember has new creative ready to go, the transition is seamless.
+  </Step>
+
+  <Step title="The Next Brief Is Automatically Updated">
+    The winning angles, format signals, and fatigue flags don't sit in a report for someone to read and act on. They flow directly into the parameters of your next Ember brief.
+
+    When you open a new brief, the intelligence engine has already pre-populated direction based on what's working in your account right now:
+    - Which formats are over-indexed (and may need rotation)
+    - Which creative angles should be doubled down on
+    - Which audience segments are responding to which asset types
+    - Which placements are underserved with fresh creative
+
+    You hand off the direction. Ember ships. Performance feeds back into the next round. **The cycle finally closes.**
+  </Step>
+
+  <Step title="New Creatives Go Live and the Loop Continues">
+    New creatives from the updated brief go through the same production pipeline, designer review, and approval workflow — and the moment they're pushed live, they enter the performance loop themselves. Every asset Ember produces is also a data point that improves the next brief.
+
+    Over time, the system builds a compounding understanding of your brand's creative performance: which angles resonate with which audiences, which formats win on which platforms, and how your creative strategy should evolve as your campaigns scale.
+  </Step>
+</Steps>
+
+## The Loop Visualized
+
+```
+Live Performance Data
+        ↓
+Signal Extraction (winning angles, fatigue flags, format data)
+        ↓
+Brief Auto-Update (pre-populated direction for next batch)
+        ↓
+New Ember Creatives (produced, curated, approved)
+        ↓
+Push Live → Live Performance Data → ...
+```
+
+Each revolution of this loop produces better-briefed creative, more efficiently spent budget, and a narrowing gap between what you're running and what your audience is responding to.
+
+## A Real Example
+
+A beauty brand running four creative angles — ingredient-forward, lifestyle, AI UGC, and founder story — finds after the first batch that ingredient and UGC are materially outperforming the other two. The performance loop surfaces this within days of launch.
+
+The second batch brief is automatically weighted toward ingredient-forward and AI UGC variants. New executions explore different product formulations (ingredient angle) and different creator profiles (UGC angle). Lifestyle and founder story are pulled back to minimal rotation while the signal develops further.
+
+By batch three, ingredient-forward has a clear winner within the sub-category — and the brief auto-updates again to double down on the specific execution that's driving results.
+
+No analyst had to produce a slide deck. No strategist had to write a creative recommendation. The system read the signal and briefed the next round.
+
+## What This Means for Your Team
+
+<CardGroup cols={2}>
+  <Card title="No More Starting From Scratch" icon="rotate">
+    Every brief opens with context from the last round — winning angles, retiring assets, fresh opportunities. You're never beginning from a blank page.
+  </Card>
+  <Card title="No More Missed Winners" icon="trophy">
+    Signals from your best-performing assets don't get buried in a spreadsheet. They surface automatically and brief the next batch before the window closes.
+  </Card>
+  <Card title="Budget Protected from Fatigue" icon="shield">
+    The agent catches creative degradation early. You rotate in fresh creative before significant spend has been wasted on an exhausted asset.
+  </Card>
+  <Card title="Compounding Creative Intelligence" icon="brain">
+    Each batch improves Ember's understanding of your brand's creative performance. The system gets more precise over time — not more generic.
+  </Card>
+</CardGroup>
+
+The cycle becomes a system, not a six-week sprint.
+
+<Note>
+  The performance loop is powered by Marketer's AI agent, which monitors campaign performance, surfaces creative signals, and flags recommended actions across your connected ad accounts. For more detail on how the agent works across your full campaign stack, see [Performance Monitoring](/agent/performance-monitoring).
+</Note>

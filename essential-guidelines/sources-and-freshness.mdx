@@ -1,0 +1,77 @@
+---
+title: "Sources and data freshness"
+sidebarTitle: "Sources and freshness"
+description: "Interpret source labels, sync coverage, date boundaries, and attribution differences in Marketer."
+---
+
+Every decision-driving number needs a source and a time boundary. A connected integration tells you where Marketer may read data. It does not guarantee that every account, metric, or date is present.
+
+## Know what each source represents
+
+| Source | What it represents |
+| --- | --- |
+| Meta Ads | Meta's campaign structure and platform-reported delivery and conversion metrics |
+| Google Ads | Google's campaign structure and platform-reported performance |
+| Shopify | Store products, orders, and commerce performance |
+| Google Analytics 4 | Site sessions, engagement, properties, and visitor reporting |
+| Triple Whale **(Beta)** | A separate attributed-purchase and revenue view for Meta and Google campaigns |
+
+Slack is a collaboration integration. It can deliver supported notifications and workflow output, but it is not the source of campaign performance.
+
+## Check freshness before interpreting a value
+
+Use the connection and sync information shown in **Integrations** or alongside the result. Look for:
+
+- The selected account, store, or property
+- Connection or reconnection state
+- Latest successful sync, when shown
+- The earliest and latest dates covered
+- Any partial-day or failed-sync warning
+
+If a source last synced before the requested period ended, later data is missing. Do not interpret the missing portion as zero activity.
+
+If a task summary and the provider detail page report different states, do not act on either label alone. Record both, use the provider page's exact status and sync timestamps as the current visible operational state, and resolve the mismatch before making a source-dependent decision.
+
+## Compare equivalent windows
+
+A fair comparison uses:
+
+- The same number of days
+- The same timezone
+- Complete periods when possible
+- The same account and level
+- The same source and attribution definition
+
+For a current-day operational view, state that the day is partial and avoid comparing it directly with a complete day.
+
+## Keep attribution views labeled
+
+Ad platforms, Shopify, and attribution providers can assign credit differently. A difference is not automatically an error.
+
+When you use Triple Whale **(Beta)** data, name the attribution model with every attributed figure. Triple Whale **(Beta)** attribution is available at campaign level. Spend and delivery metrics still come from the ad platform, so keep each source labeled when you combine them.
+
+## Ask Marketer to expose the data boundary
+
+```text
+Before answering, list the source, selected account or property, exact date
+coverage, timezone, and latest successful sync available for this request.
+If any requested date or metric is missing, mark it unknown rather than zero.
+Keep each attribution source labeled.
+```
+
+<Tip>
+  A source-aware refusal is better than a confident estimate. Fix the connection or narrow the date range, then rerun the request.
+</Tip>
+
+## When dashboards disagree
+
+Check these differences in order:
+
+1. Account, store, or property selection
+2. Date boundaries and timezone
+3. Metric definition
+4. Attribution source, model, and window
+5. Currency
+6. Sync coverage
+
+Record both source labels and date ranges before you escalate a mismatch. This makes the issue reproducible.

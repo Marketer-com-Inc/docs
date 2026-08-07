@@ -1,0 +1,76 @@
+---
+title: "Approvals, guardrails, and autonomy"
+sidebarTitle: "Approvals and autonomy"
+description: "Understand how Marketer controls drafts, pending actions, launches, and spend-related work."
+---
+
+Marketer separates what the agent can propose from what the workspace allows it to execute. Configure the workspace before you rely on a task to publish or spend.
+
+## The control layers
+
+### Your task instruction
+
+State whether you want analysis, a draft, an approval-ready proposal, or execution under existing policy. A clear instruction reduces ambiguity, but it does not override workspace controls.
+
+### Guardrails
+
+Use **Settings → Guardrails** to define the operating limits Marketer should read before spend-related changes. Available controls include:
+
+- Target ROAS, break-even ROAS, and optional target CPA
+- Monthly, daily, and minimum-spend boundaries
+- The currency used for spend caps
+- Whether budget increases are allowed
+- Maximum budget increase and approval thresholds
+- Campaigns that should remain untouched
+
+Guardrails apply at every autonomy level. Keep cap currency aligned with the billing currency of the ad account because the workspace does not assume a currency conversion for enforcement.
+
+### Autonomy
+
+Use **Settings → Autonomy** to choose the default creative-brief mode and launch behavior.
+
+- **Review everything** keeps new launches paused for your review.
+- **Hands-off** allows accepted orders to launch active and begin spending. Availability can depend on the workspace plan.
+
+Enabling active launch behavior requires a confirmation in the product. The **Advanced** setting exposes the underlying active-launch switch.
+
+### Approvals and pending work
+
+When Marketer needs a decision, review the request in the task or in **Workspace → Awaiting action**. Read the proposed destination, budget, scope, and effect before you approve.
+
+Slack can support configured collaboration and notification flows. Do not assume every approval can be completed from Slack; use the approval surface the task provides.
+
+## A safe initial configuration
+
+<Steps>
+  <Step title="Start with review">
+    Set **Autonomy** to **Review everything** so new launches remain paused.
+  </Step>
+  <Step title="Define guardrails">
+    Add the performance targets and spend boundaries your team already uses. Confirm the cap currency and protect any campaign Marketer should not change.
+  </Step>
+  <Step title="Test with a draft">
+    Ask Marketer to prepare a brief or campaign plan without publishing it. Review the evidence and proposed settings.
+  </Step>
+  <Step title="Inspect the approval state">
+    Check the task and **Awaiting action**. Confirm what will change, where it will change, and whether it will be paused or active.
+  </Step>
+  <Step title="Increase autonomy deliberately">
+    Change autonomy only after the workspace has reliable data, tested guardrails, clear ownership, and a review process for completed actions.
+  </Step>
+</Steps>
+
+<Note>
+  Member permissions still apply. Seeing a setting or proposal does not guarantee that your role can edit, approve, publish, or view billing information.
+</Note>
+
+## Before you approve
+
+- Confirm the correct workspace and provider account.
+- Read the exact change, not only the summary.
+- Check budget, currency, schedule, targeting, creative, and destination.
+- Compare the change with **Guardrails**.
+- Confirm whether approval creates a draft, a paused item, or an active item.
+- Record the result you expect to monitor after approval.
+
+For the evidence review that comes first, see [Review results](/essential-guidelines/review-results).

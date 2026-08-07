@@ -1,0 +1,47 @@
+---
+title: "Analyze recent performance"
+sidebarTitle: "Analyze performance"
+description: "Use a grounded request to summarize recent marketing performance and identify the next questions to investigate."
+---
+
+Use this pattern for a weekly review, a stakeholder check-in, or the first task after connecting an account. The goal is a scoped analysis, not an automatic account change.
+
+## Before you start
+
+- Connect the source that contains the metrics you want to analyze.
+- Choose a date range and comparison period.
+- Decide which outcome matters: revenue, conversions, efficiency, spend, or another named metric.
+- Confirm the workspace currency and reporting timezone if they affect the comparison.
+
+## Starting request
+
+```text
+Analyze [channel or connected source] performance from [start date] through [end date].
+Compare it with [comparison period]. Focus on [primary metric] and [secondary metric].
+Break down the largest changes by [campaign, creative, product, or audience].
+Separate observations from hypotheses, cite the data used, and recommend the next three questions to investigate.
+Do not change any campaigns or settings.
+```
+
+## What useful output looks like
+
+A reviewable result should make the scope visible and distinguish four things:
+
+1. The metrics that changed.
+2. The entities that contributed most to the change.
+3. Explanations supported by the available data.
+4. Questions that need more context or another source.
+
+## Verify the result
+
+- Match the date window and comparison to your request.
+- Check that each metric comes from the expected connected account.
+- Look for attribution, currency, and freshness notes.
+- Open the cited campaigns, creatives, or products before accepting a recommendation.
+- Treat a correlation as a hypothesis unless the evidence supports a causal explanation.
+
+<Check>
+  You are done when you can state what changed, where it changed, and what you will investigate next without relying on an unsupported conclusion.
+</Check>
+
+For a deeper investigation, continue with [Diagnose a performance change](/templates-use-cases/diagnose-change). To understand analytics context, see [Analytics](/product-guides/analytics).

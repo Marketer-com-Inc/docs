@@ -1,33 +1,54 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
-
-# Documentation project instructions
+# Marketer documentation instructions
 
 ## About this project
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+- This is the public Marketer product documentation built with Mintlify.
+- Configuration lives in `docs.json`; pages are MDX with YAML frontmatter.
+- The canonical product source is `Marketer-com-Inc/marketer-new` on `origin/main`.
+- The public site explains customer-facing behavior. It is not a marketing-site mirror or an internal engineering manual.
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- Use **workspace** for a customer's working environment.
+- Use **connected account** or the provider name for data sources.
+- Use **Marketing Agent** for the unified agent and **specialist** for a focused agent selected in chat.
+- Use **Creatives**, **Briefs**, **Studio**, and **Assets**. Do not use the retired Ember product name.
+- Use the exact UI label **Awaiting action** for requests that need review or input.
+- Use **Owner**, **Admin**, **Member**, and **Viewer** for workspace roles.
+- Label Microsoft Ads, OpenAI Ads, and Triple Whale as **Beta** wherever they appear.
 
-## Style preferences
+## Style
 
-{/* Add any project-specific style rules below */}
+- Use active voice and second person.
+- Lead with the outcome, then explain the concept or steps.
+- Keep sentences concise and headings in sentence case.
+- Bold UI labels. Use code formatting for commands, paths, and code references.
+- Prefer plain Markdown. Use Mintlify components only when they improve scanning or clarify sequence, status, or risk.
+- Avoid marketing language, guarantees, unsourced statistics, and vague claims such as “real time.” State the data source and freshness context instead.
 
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+## Product truth
+
+- Verify behavioral claims against both production code/config and an authenticated workspace walkthrough.
+- Treat navigation, permissions, plans, Beta status, and data freshness as changeable product facts.
+- If a claim is not verified, omit it or leave a clear MDX TODO comment.
+- Keep screenshots sanitized, current, locally stored, and paired with descriptive alt text.
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Document customer-facing app surfaces only.
+- Do not document internal admin, BI, designer, developer, private API, feature-flag, runtime, or job-system details.
+- Do not publish unsupported integrations or generic connector/API promises.
+- Do not promise universal autonomy, universal Slack approval, guaranteed outcomes, or fixed setup times.
+- Keep marketing case studies, industry pages, and scraped website copy outside the product documentation.
+
+## Verification
+
+Before publishing, run:
+
+```bash
+mint validate
+mint broken-links --check-anchors --check-redirects --check-snippets
+mint a11y
+```
+
+Also verify the changed flows in the authenticated Marketer workspace and update `CONTENT-MAP.md` with the result.

@@ -1,60 +1,65 @@
 ---
-title: "Connect Shopify to Marketer for Store-Level Attribution"
-sidebarTitle: "Shopify"
-description: "Link your Shopify store to Marketer so your AI agent uses real product, order, and revenue data to run smarter campaigns and report accurate ROAS."
+title: "Shopify"
+description: "Connect one or more Shopify stores for product, collection, order, and revenue context."
 ---
 
-Your ad campaigns are only as smart as the store data behind them. When Marketer connects to your Shopify store, your AI agent gains a live read of your full product catalog, order history, revenue, and customer purchase data — the same numbers your finance team looks at. That means campaign briefs are informed by what's actually in stock and what's selling, ROAS is calculated against real order revenue rather than modelled estimates, and audience segments are built from verified purchase behaviour. Shopify is one of Marketer's earliest and most deeply integrated ecommerce connections, and connecting it is the fastest way to move from ad-platform attribution to true business attribution.
+Connect Shopify when product and store outcomes should inform Marketer's reporting, briefs, and analysis.
 
-## How to Connect Shopify
+## Prerequisites
+
+- A Marketer Owner, Admin, or Member role
+- Permission to install or authorize an app for the Shopify store
+- The store's custom domain or `.myshopify.com` URL
+- A decision about which stores belong in the workspace and which should contribute to the revenue rollup
+
+## Connect a store
 
 <Steps>
-  <Step title="Open Settings → Integrations">
-    In Marketer, navigate to **Settings** in the left sidebar and select **Integrations** from the menu.
+  <Step title="Open Shopify">
+    Go to **Integrations**, then open **Shopify**.
   </Step>
-  <Step title="Click 'Connect Shopify'">
-    Find the Shopify card in your integrations list and click **Connect Shopify**.
+  <Step title="Enter the store URL">
+    Paste either the custom storefront domain or the `.myshopify.com` URL. Marketer resolves it to the canonical Shopify store before authorization.
   </Step>
-  <Step title="Enter your Shopify store URL">
-    Enter your store URL in the format `yourstore.myshopify.com`. This identifies your store in the Shopify ecosystem.
+  <Step title="Review Shopify's consent screen">
+    Approve only the permissions your use case requires. A reconnect can ask again for capabilities that the store previously granted.
   </Step>
-  <Step title="Install the Marketer app from the Shopify App Store">
-    You'll be redirected to the Shopify App Store to install the Marketer app. Review the permissions and click **Install**. This grants Marketer secure read access to your store data.
-  </Step>
-  <Step title="Marketer syncs your store data">
-    Once installed, Marketer syncs your product catalog, orders, revenue, and customer data. Depending on your store's order history, the initial sync may take a few minutes. After that, data stays current in real time.
+  <Step title="Confirm the store">
+    Return to Marketer and verify the store name, domain, currency, connection state, and whether it is included in the workspace revenue rollup.
   </Step>
 </Steps>
 
-## What Marketer Reads from Shopify
+## Confirm the first sync
 
-<CardGroup cols={2}>
-  <Card title="Product Catalog" icon="box">
-    All products, variants, titles, descriptions, images, and categories — the foundation for creative briefs and campaign targeting.
-  </Card>
-  <Card title="Pricing & Inventory" icon="tag">
-    Current prices, sale prices, and inventory levels so campaigns reflect what's actually available to buy.
-  </Card>
-  <Card title="Orders & Revenue" icon="receipt">
-    Order history, order value, and total revenue — the ground truth for ROAS calculations and budget decisions.
-  </Card>
-  <Card title="Customer Purchase History" icon="users">
-    Who bought what, when, and how often — the basis for audience segmentation, lookalike building, and lifecycle triggers.
-  </Card>
-</CardGroup>
+The **Data sync** section shows the current state, imported product and collection counts, and available coverage. For multiple stores, Marketer also shows how many are connected and how many contribute to the revenue rollup.
 
-## How Marketer Uses Your Shopify Data
+A successful first check includes:
 
-**Campaign briefs grounded in product data.** When you ask Marketer to build a campaign, it references your live catalog — current pricing, available inventory, and product details — so briefs are accurate and creatives reflect what customers will actually see when they land on your site.
+- the correct store under **Stores**;
+- a completed sync;
+- products and collections appearing in Marketer; and
+- a read-only best-seller or revenue question that matches a completed Shopify period.
 
-**ROAS calculated against real revenue.** Instead of relying on ad-platform attribution models, Marketer calculates return on ad spend against verified Shopify order data. The number you see is the number that matches your bank account.
+## Data and permission boundaries
 
-**Audience segments built from purchase behaviour.** High-LTV customers, lapsed buyers, first-time purchasers, and product-specific buyers are all segmented from your actual order data and synced to your connected ad platforms — giving Meta and Google audiences that reflect real purchase signals.
+Marketer can use products, collections, orders, and revenue made available by each connected store. Some data capabilities require additional Shopify permission. Granting one of those permissions can trigger a fresh historical import so the newly available data is complete.
 
-<Note>
-  Marketer also supports stores built on **WooCommerce, Magento, BigCommerce**, and **custom-built platforms**. If you're not on Shopify, you can still connect your store and give your agent access to the same product, order, and revenue data. See the [Integrations Overview](/integrations/overview) page for the full list of supported platforms and how to get started.
-</Note>
+Each store has its own authorization, sync state, and rollup setting. Reconnecting one store does not change its siblings.
 
-<Tip>
-  Once your catalog is connected, Marketer's creative engine **Ember** can produce ad creative for every product in your store — not just hero SKUs. SoftMoc, a footwear retailer with a catalog of over 3,000 SKUs, used Ember to generate 536 distinct creatives mapped to specific products. That kind of coverage isn't possible with a traditional creative team and a manual production process — but it's exactly what a connected catalog makes possible.
-</Tip>
+## Freshness and reporting
+
+Use the sync state and last-synced information before relying on recent orders or revenue. Operational events and reporting systems can settle at different times.
+
+For a multi-store workspace, confirm both the store filter and revenue-rollup inclusion before comparing Marketer totals with a single Shopify admin.
+
+## Reconnect, resync, or disconnect
+
+- Use **Resync** when a healthy store needs refreshed data.
+- Reconnect the specific store when its token is no longer valid or when you intentionally add a data capability.
+- Review failed or in-progress status before starting another sync. Cancel an in-flight sync only when you intend to stop that import.
+- If status is unavailable, refresh first. Marketer does not erase the last-known connection on a read error.
+- Disconnecting a store removes it as an active source for this workspace. Check product views, revenue reporting, and workflows first.
+
+## Next step
+
+Open **Products** and verify a few product names and variants. Then ask Marketer for a read-only summary of best-selling products over a completed period.

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="24" viewBox="0 0 132 24" role="img" aria-labelledby="title">
+  <title id="title">Marketer</title>
+  <g transform="translate(0 3)" fill="#11271F">
+    <path d="M3.548 10.879A3.55 3.55 0 1 0 3.548 17.98a3.55 3.55 0 0 0 0-7.102Z"/>
+    <path d="m18.889.025-3.698 8.287h.017l3.415 7.669a3.367 3.367 0 0 0 4.431 1.734 3.373 3.373 0 0 0 1.732-4.435L18.89.025Z"/>
+    <path d="M11.175 2.021A3.367 3.367 0 0 0 6.744.287a3.373 3.373 0 0 0-1.733 4.435l5.897 13.255 3.698-8.286h-.017l-3.414-7.67Z"/>
+  </g>
+  <text x="34" y="18" fill="#11271F" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="600" letter-spacing="-0.5">Marketer</text>
+  <circle cx="125" cy="17" r="2" fill="#60C686"/>
+</svg>

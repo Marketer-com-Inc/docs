@@ -1,0 +1,66 @@
+---
+title: "Meta Ads"
+description: "Connect selected Meta assets so Marketer can use campaign, creative, audience, pixel, and catalog context."
+---
+
+Connect Meta Ads when you want Marketer to analyze or work with Facebook and Instagram advertising in the current workspace.
+
+## Prerequisites
+
+- A Marketer Owner, Admin, or Member role
+- A Meta identity with access to the business assets you intend to grant
+- A clear list of the ad accounts, Instagram accounts, Pages, business portfolio, pixels, and catalogs that belong to this workspace
+- A granted Facebook Page if you expect Marketer to publish ads
+
+<Warning>
+  Complete the flow while the correct Marketer workspace and Meta identity are active. Grant only the assets this workspace should use.
+</Warning>
+
+## Connect Meta Ads
+
+<Steps>
+  <Step title="Open Meta Ads">
+    Go to **Integrations**, then open **Meta Ads**.
+  </Step>
+  <Step title="Start the secure Meta flow">
+    Select **Connect**. Review the permissions Meta presents before continuing.
+  </Step>
+  <Step title="Choose assets">
+    Select the resources Marketer should use. You can reopen the same secure asset dialog later to finish setup or add a missing Page.
+  </Step>
+  <Step title="Confirm the connection">
+    Return to Marketer and confirm that the page shows **Connected**, a connected date, and the expected assets under **Connected assets**.
+  </Step>
+</Steps>
+
+## Confirm the first sync
+
+The detail page reports sync progress and, when available, the time range covered by imported data. A useful first check is:
+
+1. The selected ad account appears under connected assets.
+2. The sync reaches a completed state.
+3. Campaign, ad set, ad, creative, and insight counts begin to appear.
+4. A read-only performance request names the same account and date range you expect in Meta.
+
+## Data and permission boundaries
+
+Marketer uses only the assets returned by your Meta authorization and selection. The detail page can list ad accounts, Instagram accounts, Pages, business portfolios, pixels, and catalogs.
+
+The actions available later depend on your Marketer role, Meta's granted access, workspace guardrails, and the state of the selected assets. Connecting Meta does not bypass approvals, spend caps, or autonomy settings.
+
+## Freshness and reporting
+
+Use the sync state and coverage view before treating a recent period as complete. Meta can continue revising recent reporting. Marketer also converts blended reporting to the workspace reporting currency when a selected ad account uses a different currency; the source account remains denominated in its own currency.
+
+## Reconnect, resync, or disconnect
+
+- Choose **Finish setup** when authorization exists but asset selections did not resolve.
+- Choose **Add a Facebook Page** if the connection is healthy but publishing has no granted Page.
+- Choose **Reconnect** when the status says **Reconnect needed** or Meta access changed.
+- Use the resync control when access is healthy and you need a fresh import.
+- If status is unavailable, refresh before changing the connection. Marketer leaves the last-known connection untouched while the read is uncertain.
+- Disconnect only after confirming that reporting, audiences, and campaign work no longer need this connection.
+
+## Next step
+
+Ask Marketer to analyze one selected ad account over a fixed date range. Review the account name, period, spend, and conversion source before acting on the result. See [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before enabling changes that can affect spend.

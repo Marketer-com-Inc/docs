@@ -1,0 +1,106 @@
+---
+title: "Awaiting action"
+sidebarTitle: "Awaiting action"
+description: "Review pending approvals and proposals that require a human decision before work can continue."
+---
+
+**Awaiting action** is the workspace inbox for decisions that still need a person. It brings pending approvals and proposals together so you can review them without finding the original conversation first.
+
+Items appear here because Marketer needs an explicit decision, not because a change has already happened.
+
+## What belongs here
+
+Depending on your workspace configuration, the inbox can include:
+
+- A proposed change to a connected account.
+- An approval required by a workflow step.
+- A proposal that needs acceptance or rejection.
+- A decision that blocks a longer-running task.
+
+The available controls depend on the proposal, connected provider, workspace role, and approval settings. Use the options shown on the item rather than assuming every proposal supports the same decisions.
+
+## Review a proposal
+
+<Steps>
+  <Step title="Confirm the workspace and source">
+    Make sure the item belongs to the intended workspace and connected provider. Similar campaign or asset names are not enough to establish scope.
+  </Step>
+  <Step title="Read the exact proposed change">
+    Identify the object, current state, proposed state, and size of the change. For campaign work, review the level involved and any effect on spend or delivery.
+  </Step>
+  <Step title="Check the evidence">
+    Open the supporting result or conversation. Confirm the date range, metrics, attribution source, currency, and freshness that justify the proposal.
+  </Step>
+  <Step title="Check the guardrail">
+    Compare the proposal with your workspace guardrails, autonomy settings, and the authority of the person making the decision.
+  </Step>
+  <Step title="Decide and verify">
+    Use the available decision control. If the item proceeds, return to the owning product surface and confirm the resulting state after the provider has processed it.
+  </Step>
+</Steps>
+
+## Approval checklist
+
+For a change that can affect spend, targeting, delivery, or a public asset, verify all of the following:
+
+- **Provider:** The intended connected account is selected.
+- **Object:** The campaign, ad set, ad, workflow, or asset is unambiguous.
+- **Effect:** You understand what will change and what will remain unchanged.
+- **Magnitude:** The budget, status, audience, or delivery impact is acceptable.
+- **Evidence:** The recommendation is supported by the intended measurement context.
+- **Guardrail:** The change fits current workspace rules and business constraints.
+- **Recovery plan:** You know what you will monitor and what would cause you to revisit the decision.
+
+<Warning>
+  Do not approve an item only because its title sounds familiar. Open the supporting detail and verify the exact object and effect, especially when multiple connected accounts use similar names.
+</Warning>
+
+## After a decision
+
+The inbox is a decision surface, not the final source of truth for every product state.
+
+| Decision relates to… | Verify in… |
+| --- | --- |
+| Campaign structure, status, or delivery | **Campaigns** and the connected provider state |
+| Creative brief or generated asset | **Creatives** |
+| Recurring report, alert, or action | **Workflows** and its run history |
+| A longer analysis or research task | The task result and **Activity** |
+| A reusable procedure | **Skills** |
+
+If a proposal is rejected, return to its conversation or task when you want to revise the scope. A rejection should not be treated as an instruction to create a second, slightly different action automatically.
+
+## Keep the inbox manageable
+
+- Review pending decisions in a regular operating cadence.
+- Resolve the highest-risk or time-sensitive items first.
+- Reject stale proposals when their evidence window no longer supports the action.
+- Avoid approving multiple overlapping changes before you can observe their combined effect.
+- Use Notifications for receipts and alerts; keep **Awaiting action** focused on unresolved decisions.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A proposal has too little context">
+    Open its linked conversation or task and request the source, measurement frame, current state, and expected effect. Do not approve until the decision is independently understandable.
+  </Accordion>
+  <Accordion title="The approval control is unavailable">
+    Confirm your workspace role, the proposal state, and the health of the relevant connection. The item may also have been resolved by another authorized workspace member.
+  </Accordion>
+  <Accordion title="An approved change is not visible yet">
+    Check the item state, task activity, and the owning surface. Provider processing and data refresh can take time. Avoid submitting a duplicate while the original action is still being resolved.
+  </Accordion>
+  <Accordion title="The proposal is based on stale data">
+    Decline or leave it unresolved, refresh the underlying analysis after the source is current, and request a new proposal. Do not apply an old recommendation to a materially different account state.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Inspect task evidence" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Trace the work that produced a proposal and review its final result.
+  </Card>
+  <Card title="Use Campaigns safely" icon="megaphone" href="/product-guides/campaigns">
+    Learn how to inspect campaign state and review provider-specific actions.
+  </Card>
+</CardGroup>

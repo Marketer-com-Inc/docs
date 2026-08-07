@@ -1,0 +1,40 @@
+---
+title: "Build a recurring report"
+sidebarTitle: "Recurring report"
+description: "Define a repeatable performance report with a clear scope, cadence, audience, and delivery path."
+---
+
+Use a recurring report when the same audience needs the same decision-ready view on a predictable schedule. Start with the decision the report should support, then choose the smallest set of metrics that answers it.
+
+## Define the report
+
+- **Audience:** who reads it and what they decide.
+- **Scope:** accounts, channels, campaigns, products, or markets.
+- **Period:** reporting window and comparison.
+- **Metrics:** primary outcome and supporting diagnostics.
+- **Cadence:** when the report should run.
+- **Delivery:** where the configured workflow should send or store the result.
+
+## Starting request
+
+```text
+Create a [daily or weekly] report for [audience] covering [scope].
+Report [primary metrics] for [reporting window] and compare with [baseline].
+Highlight only changes above [threshold or decision rule], cite the connected data, and separate observations from recommendations.
+Deliver it through [configured destination] at [cadence and timezone].
+Show me the configuration before enabling the schedule.
+```
+
+## Verify the first run
+
+- Confirm the connected accounts and filters.
+- Check the reporting window, timezone, currency, and comparison.
+- Verify that every metric has a clear source.
+- Confirm the destination and who can access it.
+- Read one completed run before depending on the schedule.
+
+<Note>
+  A scheduled report is only as current as its connected sources. A delayed sync can change what is available when a run starts.
+</Note>
+
+Manage cadence, delivery, and run history in [Workflows](/product-guides/workflows). If you deliver through Slack, review [Slack](/integrations/slack).

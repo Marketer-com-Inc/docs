@@ -1,0 +1,64 @@
+---
+title: "Review results"
+sidebarTitle: "Review results"
+description: "Use a repeatable review method for analyses, briefs, plans, and proposed actions."
+---
+
+Review depth should match the consequence of the result. A directional summary needs a source check. A budget or launch decision needs source, calculation, policy, and approval checks.
+
+## Trace the result
+
+Start with four questions:
+
+1. **What did Marketer read?** Identify the integration, account, entity level, filters, and date range.
+2. **What did Marketer calculate?** Recreate the key total, ratio, or percentage change.
+3. **What did Marketer infer?** Separate an explanation from the measured facts that support it.
+4. **What does Marketer propose to do?** Identify the exact write, its state, and the control that applies.
+
+## Review by output type
+
+### Analysis
+
+- Confirm the requested source, metrics, and comparable windows.
+- Check that missing rows are not represented as zero.
+- Recalculate the number that drives the conclusion.
+- Look for plausible alternative explanations.
+
+### Creative or campaign brief
+
+- Confirm the product, audience, objective, and required channel format.
+- Check that claims are supported by approved brand context.
+- Distinguish required inputs from generated suggestions.
+- Keep the artifact in draft until the owner accepts it.
+
+### Campaign or workflow plan
+
+- Confirm the destination account, budget, schedule, targeting, and assets.
+- Compare every spend-related choice with **Guardrails**.
+- Verify the output or notification destination.
+- Identify whether the plan creates a draft, a paused item, or an active item.
+
+## Use an independent verification prompt
+
+```text
+Review the previous result as a verifier. Do not add a new recommendation.
+Trace each decision-driving claim to its source and date range, recalculate the
+main metric, list unsupported assumptions, and state whether any write action
+has run. Mark uncertainty clearly.
+```
+
+## Decide what happens next
+
+After review, choose one explicit state:
+
+- **Accept as analysis** — save or share the result without a write action.
+- **Revise** — correct the source, scope, calculation, or creative direction.
+- **Prepare for approval** — keep the proposed change pending and name the approver.
+- **Approve or execute** — proceed only when the workspace policy and your role allow it.
+- **Stop** — reject the work when the evidence or controls are insufficient.
+
+<Note>
+  Do not use fluent wording as a confidence signal. Confidence comes from traceable evidence, reproducible calculations, and an explicit action state.
+</Note>
+
+See [Approvals and autonomy](/essential-guidelines/approvals-and-autonomy) for the controls that govern write actions.

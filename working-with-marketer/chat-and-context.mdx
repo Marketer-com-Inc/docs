@@ -1,0 +1,107 @@
+---
+title: "Chat and context"
+sidebarTitle: "Chat and context"
+description: "Give the Marketing Agent a clear request, attach relevant workspace records, and review its answer in context."
+---
+
+Chat is the fastest way to move from a marketing question to a grounded result. The Marketing Agent can answer directly, use connected workspace context, or coordinate a longer task when the request needs more work.
+
+Use chat when the outcome crosses product areas, when you want an explanation before taking action, or when you are not yet sure which surface owns the next step.
+
+## Build a strong request
+
+A useful request answers five questions:
+
+| Part | What to include | Example |
+| --- | --- | --- |
+| Outcome | The decision or deliverable you need | “Explain the performance change and recommend the next test.” |
+| Scope | Channel, account, campaign, product, or creative | “Use the attached prospecting campaign.” |
+| Time | Current and comparison periods | “Compare the last 7 complete days with the prior 7.” |
+| Evidence | Metrics or sources that should support the answer | “Show spend, revenue, CPA, and creative-level evidence.” |
+| Boundary | What Marketer may and may not do | “Analyze only. Do not change the account.” |
+
+<Tip>
+  Ask for an explanation before an action when the cost of a wrong assumption is high. You can turn an approved recommendation into a separate action after you review the evidence.
+</Tip>
+
+## Attach workspace context
+
+Use the context picker in the composer to attach a record. The picker can surface current workspace **Campaigns**, **Briefs**, **Creatives**, and **Products**. You can also pick supported context from the page you are viewing.
+
+An attachment is better than a name alone because it identifies the intended workspace record. It is especially useful when campaigns or products have similar names.
+
+<Steps>
+  <Step title="Choose the record">
+    Open the context picker and select the smallest set of records needed for the question. Too much unrelated context can make the decision less clear.
+  </Step>
+  <Step title="State the measurement frame">
+    Name the provider, date range, comparison period, attribution view, and success metric when they matter. An attached campaign does not define all of those choices by itself.
+  </Step>
+  <Step title="Set the authority boundary">
+    Say whether you want analysis, a draft, or a proposed action. If you only want a read, say so explicitly.
+  </Step>
+  <Step title="Define the output">
+    Ask for a concise diagnosis, a ranked set of options, a brief, or another concrete deliverable. Include the review criteria you will use.
+  </Step>
+</Steps>
+
+## Example requests
+
+### Diagnose performance
+
+> Using the attached campaign, compare the last 7 complete days with the prior 7. Explain the three largest changes in spend, revenue, and CPA. Separate observed facts from hypotheses, name the data source, and recommend one test. Analyze only.
+
+### Create a brief
+
+> Create a brief for the attached product. Use the current Brand Profile and relevant Knowledge. Give me three distinct angles, the audience insight behind each, required proof, and a review checklist. Do not generate assets yet.
+
+### Prepare an account change
+
+> Review the attached campaign for inefficient delivery. Show the evidence, identify the exact object you would change, and prepare a proposal within our guardrails. Do not apply anything until I approve the final scope.
+
+## Continue a thread or start a new one
+
+Continue the current thread when the new request depends on decisions, attachments, or definitions already established there. Start a new thread when you change the objective, workspace area, or review boundary enough that the old context could mislead the result.
+
+Use **Chat history** to reopen prior workspace threads. A clear thread title and a short summary of the agreed decision make later handoff easier for your team.
+
+## Review the response
+
+Before you rely on an answer, check:
+
+- Which connected source and account the result uses.
+- Whether the date range includes complete or partial days.
+- Which attribution view, currency, and timezone apply.
+- Which statements are observed facts and which are inferences.
+- Whether attached records still represent the intended scope.
+- Whether the response proposes a change or reports that a change occurred.
+
+If any item is unclear, ask the agent to restate the answer with that field made explicit. Do not infer a missing source or approval state.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The wrong record was used">
+    Remove ambiguous references, attach the intended record, and ask the agent to confirm its name and provider before continuing. Start a new thread if the prior context keeps pulling the work toward an old scope.
+  </Accordion>
+  <Accordion title="The result lacks evidence">
+    Ask for the source, date range, comparison, and supporting metrics. If the underlying connection is still syncing or unavailable, wait for a healthy data state instead of treating an ungrounded estimate as fact.
+  </Accordion>
+  <Accordion title="The request became a long-running task">
+    Open its task or activity view to follow progress. The conversation may show an initial acknowledgement before the full result is ready.
+  </Accordion>
+  <Accordion title="The agent asks for approval">
+    Read the proposal in context and review the exact provider, object, and effect. If you leave the conversation, you can return to the pending decision from **Awaiting action**.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Follow longer work" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Learn how to distinguish task progress from a finished result.
+  </Card>
+  <Card title="Review proposed changes" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Use a consistent approval checklist before an action proceeds.
+  </Card>
+</CardGroup>

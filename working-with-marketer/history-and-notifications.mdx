@@ -1,0 +1,111 @@
+---
+title: "History and notifications"
+sidebarTitle: "History and notifications"
+description: "Find prior workspace conversations, review agent receipts and alerts, and return to unresolved decisions."
+---
+
+Marketer keeps different kinds of operational records separate. **Chat history** preserves workspace conversations. **Notifications** collects agent receipts, alerts, and approval-related updates. **Awaiting action** holds decisions that are still unresolved.
+
+Choosing the right record helps you distinguish past context, current status, and work that still needs a person.
+
+## Chat history
+
+**Chat history** lists conversations in the current workspace. A thread shows its title, most recent activity, and, when available, who started it. Archived threads are marked in the list.
+
+Use it to:
+
+- Reopen a conversation and continue from its established context.
+- Review the request, attachments, and decisions behind a result.
+- Hand work between workspace members without rebuilding the full prompt.
+- Start a new thread when an old context no longer fits the objective.
+
+<Note>
+  Threads belong to the workspace context. Before adding sensitive information, make sure it is appropriate for the people who can access that workspace.
+</Note>
+
+### Continue or start over
+
+Continue an existing thread when the new work depends on its attachments, definitions, or prior decision. Start a new thread when:
+
+- The objective changes materially.
+- You need a different authority boundary.
+- The prior thread contains conflicting date ranges or account scopes.
+- You want a clean handoff or reusable record for a separate project.
+
+When continuing a long thread, restate the current decision, measurement window, and constraints. Do not assume an older campaign state or product fact is still current.
+
+## Notifications
+
+**Notifications** is the workspace center for agent receipts, alerts, and approval-related updates. Use it to understand what Marketer reported and to follow a link back to the relevant work.
+
+The feed can help you find:
+
+- A receipt that a task or workflow produced an update.
+- A performance or operational alert.
+- A notice related to a proposal or approval.
+- A link back to the record, conversation, or task that provides context.
+
+You can mark notifications as read after you have reviewed them. Reading a notification does not approve an action, resolve a task, or confirm a provider-side change.
+
+## Pick the right record
+
+| Question | Open |
+| --- | --- |
+| “What did we ask and decide?” | **Chat history** |
+| “What work is running or finished?” | **Activity** or the task detail |
+| “What update or alert did Marketer send?” | **Notifications** |
+| “What still needs a human decision?” | **Awaiting action** |
+| “What is the current campaign, creative, or workflow state?” | The owning product surface |
+
+## Review an operational update
+
+<Steps>
+  <Step title="Open the source record">
+    Follow the notification or history item to its conversation, task, or product record. A notification summary is not a replacement for the underlying detail.
+  </Step>
+  <Step title="Confirm recency">
+    Compare the update time with the data freshness and current provider state. Older notifications can remain useful history without describing the current situation.
+  </Step>
+  <Step title="Separate receipt from decision">
+    Determine whether the item reports completed work, recommends a next step, or requests approval. Only the last case belongs in **Awaiting action**.
+  </Step>
+  <Step title="Close the loop">
+    Review the result, make any required decision, and verify the resulting state in the product surface that owns it.
+  </Step>
+</Steps>
+
+## Notification habits
+
+- Keep high-signal alerts and approval updates visible.
+- Review notification preferences when the feed is too noisy or misses important categories.
+- Do not use unread state as a project-management status.
+- Use the workflow run history for delivery and execution questions.
+- Use chat titles and clear final summaries to make future search easier.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A recent thread is missing">
+    Confirm the active workspace and check whether the thread is archived. If another workspace member created it, make sure you are looking in the same workspace context.
+  </Accordion>
+  <Accordion title="A notification does not explain what happened">
+    Open the linked task, conversation, or product record. Look for the detailed result, source, and current state before drawing a conclusion from the summary text.
+  </Accordion>
+  <Accordion title="A notification is read but the decision is still pending">
+    Read state and approval state are separate. Open **Awaiting action** and resolve the proposal through its available controls.
+  </Accordion>
+  <Accordion title="The feed is too noisy">
+    Review workspace notification settings and recurring workflows. Keep the channels and categories that correspond to decisions your team will actually make.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Review unresolved decisions" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Understand what requires approval and how to verify the result.
+  </Card>
+  <Card title="Monitor recurring work" icon="repeat" href="/product-guides/workflows">
+    Use workflow configuration and run history as the operational source of truth.
+  </Card>
+</CardGroup>

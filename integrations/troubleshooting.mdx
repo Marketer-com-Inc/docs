@@ -1,0 +1,77 @@
+---
+title: "Troubleshoot integrations"
+description: "Diagnose connection, selection, sync, coverage, and permissions problems without losing the last-known state."
+---
+
+Most integration issues fall into one of four layers: workspace access, provider authorization, selected resources, or sync state. Check them in that order.
+
+## Fast diagnostic sequence
+
+<Steps>
+  <Step title="Confirm the workspace and role">
+    Verify the workspace in the Marketer switcher. Owners, Admins, and Members can manage integrations; Viewers are read-only.
+  </Step>
+  <Step title="Read the connection status">
+    Open **Integrations**, then the provider. Distinguish **Disconnected**, **Finish setup**, **Reconnect needed**, **Status unavailable**, and **Connected**.
+  </Step>
+  <Step title="Check selected resources">
+    Confirm the expected Meta assets, Google Ads accounts, Shopify stores, GA4 properties, or Slack workspace and channel.
+  </Step>
+  <Step title="Check sync and coverage">
+    Review progress, last sync, failures, and the imported time range. Do not diagnose missing data from the connected badge alone.
+  </Step>
+  <Step title="Validate a completed period">
+    Compare one account, metric, currency, and date range with the source platform.
+  </Step>
+</Steps>
+
+## Choose the right recovery action
+
+| Situation | Best first action |
+| --- | --- |
+| Provider access is valid, but data is behind | Resync |
+| Authorization expired or the provider revoked it | Reconnect |
+| Authorization exists, but no account or property is selected | Finish setup or manage selections |
+| Google Ads shows **Access lost** for one account | Restore provider-side access or remove that account |
+| Meta has no Page for publishing | Reopen the asset dialog and grant a Page |
+| Slack has no alert channel | Finish Slack setup and choose a channel |
+| Status cannot be verified | Refresh before changing anything |
+
+<Note>
+  **Status unavailable** is not the same as **Disconnected**. Marketer preserves the last-known connection when a safe status read fails.
+</Note>
+
+<Warning>
+  If an agent result says **Disconnected** while the provider detail page says **Reconnect needed**, preserve both observations and treat the provider page plus its last-sync details as the current user-visible state. Do not disconnect or reconnect until you have confirmed the intended provider account.
+</Warning>
+
+## Data looks incomplete
+
+1. Confirm that the correct resource was selected.
+2. Check whether a sync is still running or failed.
+3. Inspect data coverage for the requested date range.
+4. Avoid an incomplete current day.
+5. Check the source platform's own processing delay.
+6. For blended reporting, confirm source currency and workspace reporting currency.
+7. For attribution data, name the source and attribution context instead of expecting different systems to match by default.
+
+## A control is read-only
+
+Viewers cannot manage connections. Some workspace or billing controls also require Owner or Admin access. If the UI is intentionally read-only, ask a workspace Owner or Admin to review the change rather than sharing credentials.
+
+## Before disconnecting
+
+Disconnect only after checking dependent reports, product views, audiences, notifications, and workflows. Record the affected source and date before removal so your team can explain a later coverage gap.
+
+## Escalation details
+
+When you report a problem, include:
+
+- Marketer workspace name
+- provider and selected account, store, or property ID
+- exact status text
+- last successful sync and requested date range
+- whether **Reconnect** or **Resync** was attempted
+- a screenshot with credentials and customer data removed
+
+Continue with [Workspace and admin troubleshooting](/workspace-admin/security-and-troubleshooting) when the issue involves roles, authentication, or account access rather than a provider connection.

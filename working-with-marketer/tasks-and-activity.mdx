@@ -1,0 +1,96 @@
+---
+title: "Tasks and activity"
+sidebarTitle: "Tasks and activity"
+description: "Follow longer-running work, inspect progress and results, and distinguish a completed task from a proposed action."
+---
+
+Some requests finish in one chat response. Others need research, analysis, creative production, or multiple coordinated steps. Marketer represents that longer work as a task or run that you can follow outside the immediate response.
+
+Use task and activity views to answer three questions: Is the work still running? Does it need input? What result did it actually produce?
+
+## Understand task progress
+
+The interface shows the current lifecycle of the work. Depending on the task, you may see that it is waiting, active, paused for input, finished, or unable to finish. The exact labels can vary by work type.
+
+<Note>
+  A finished task and an applied account change are not the same thing. A task can finish by producing an analysis, artifact, or proposal that still needs your review or approval.
+</Note>
+
+## Follow a task
+
+<Steps>
+  <Step title="Open the task detail">
+    Use the task link from the conversation, the activity area, or the relevant workflow. Confirm that the task belongs to the intended workspace and request.
+  </Step>
+  <Step title="Read the current step">
+    Look for the latest meaningful step and any request for input. A quiet conversation does not necessarily mean the task has stopped.
+  </Step>
+  <Step title="Review the result">
+    When the task finishes, open the result or artifact itself. Check that it covers the original scope and that its sources and assumptions are visible.
+  </Step>
+  <Step title="Resolve the next decision">
+    If the result contains a proposed change, review it in chat or **Awaiting action**. If it produced a brief, creative, report, or knowledge artifact, continue in the surface that owns that output.
+  </Step>
+</Steps>
+
+## Progress, result, and approval
+
+| Layer | What it tells you | What to verify |
+| --- | --- | --- |
+| Progress | What the task is doing now | Current step, dependency, and whether input is required |
+| Result | What the task produced | Completeness, evidence, scope, and quality |
+| Approval | Whether a proposed action may proceed | Provider, object, exact change, guardrail, and approver |
+| Resulting state | What exists after an approved action | The updated record in Campaigns, Creatives, Workflows, or another owning surface |
+
+Do not treat a progress message as a final deliverable. Likewise, do not treat an approved proposal as proof that the connected provider reflects the expected state until you verify it in the owning surface.
+
+## Use Activity as an audit trail
+
+Activity brings together recent and historical work in the workspace. It can help you:
+
+- Find active work without returning to the original thread.
+- Review recent steps and finished results.
+- Filter or search historical workspace activity.
+- Open the detail for a specific run.
+- Compare what the agent reported with the record that owns the result.
+
+Activity is most useful for operational traceability. **Chat history** is better when you need the conversation and its decisions. **Notifications** is better when you need a receipt or alert. **Awaiting action** is better when a decision is still pending.
+
+## Review a completed task
+
+Use the following checklist before you accept the outcome:
+
+- The task answered the original request rather than a nearby question.
+- The result identifies the relevant source, date, and workspace context.
+- Any partial data, missing connection, or failed step is visible.
+- Any generated asset is reviewed for brand, product, and policy accuracy.
+- Any recommended account change is still a proposal unless the interface confirms otherwise.
+- The owning product surface reflects the expected artifact or state.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The task is waiting for input">
+    Open the detail and answer the requested question or make the pending decision. Check **Awaiting action** if the task is paused on an approval rather than a conversational question.
+  </Accordion>
+  <Accordion title="The task failed">
+    Read the last completed step and error message. Check the required integration, permission, destination, and input. Retry only after the underlying cause is resolved so you do not create duplicate work.
+  </Accordion>
+  <Accordion title="The task finished but no artifact is visible">
+    Return to the result link or the owning surface and confirm the workspace and filters. If the task only produced a recommendation, ask for the intended artifact explicitly rather than assuming one was created.
+  </Accordion>
+  <Accordion title="The displayed result seems stale">
+    Compare its completion time with the data freshness shown in the relevant product surface. Re-run the analysis when the source has completed a newer sync or when the decision window has changed.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Understand specialists" icon="users" href="/working-with-marketer/specialists">
+    Learn when the Marketing Agent coordinates focused work and how to review it.
+  </Card>
+  <Card title="Review history and notifications" icon="bell" href="/working-with-marketer/history-and-notifications">
+    Choose the right record for past conversations, receipts, alerts, and decisions.
+  </Card>
+</CardGroup>

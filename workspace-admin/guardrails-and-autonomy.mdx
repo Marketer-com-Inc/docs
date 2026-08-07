@@ -1,0 +1,83 @@
+---
+title: "Guardrails and autonomy"
+description: "Set the limits Marketer reads before changes and choose whether accepted launches stop for review."
+---
+
+Guardrails define what is in policy. Autonomy defines how far accepted work proceeds without another review stop. Configure both before allowing spend-affecting actions.
+
+## Guardrails
+
+Open **Settings** → **Guardrails** to configure workspace constraints.
+
+### Performance targets
+
+- **Target ROAS** — the workspace's desired return reference.
+- **Break-even ROAS** — the point below which a pullback can be appropriate.
+- **Target CPA** — an optional acquisition-cost reference.
+
+These values guide analysis and risk detection. They do not make every recommendation correct; review the source, date range, and attribution model.
+
+### Spend caps
+
+You can set monthly and daily caps plus a minimum spend floor. Choose the cap currency first. Caps apply only to ad accounts billed in that currency; Marketer does not convert a cap across currencies for enforcement.
+
+### Scaling limits
+
+- **Allow budget increases** is the master switch for scale-ups.
+- **Max budget increase (%)** is a hard ceiling for one increase.
+- **Approval threshold (%)** determines when an otherwise allowed increase must be reviewed.
+
+You can also protect **Untouchable campaigns** so Marketer will not modify the selected Meta campaigns.
+
+The page includes New Customer Acquisition settings for Meta. Those settings work with the audience definitions and exclusions configured for connected ad accounts.
+
+## Autonomy
+
+Open **Settings** → **Autonomy**.
+
+### Default creation mode
+
+Choose how a new brief opens:
+
+- **Ask every time** shows the Auto-or-Manual choice.
+- **Auto order** opens the product-URL flow.
+- **Manual brief** opens the write-it-yourself flow.
+
+This is a default, not a lock. A teammate can switch mode on an individual brief.
+
+### Autonomy level
+
+| Level | Launch behavior |
+| --- | --- |
+| **Review everything** | New launches land paused for review |
+| **Hands-off** | Accepted orders launch active and can start spending immediately |
+
+Hands-off is available only on managed plans. Turning it on requires a confirmation, and guardrails and spend caps still apply.
+
+<Warning>
+  **Hands-off** removes the paused review stop. Use it only after your team has verified real outputs, permissions, destinations, budgets, and recovery ownership. Keep **Review everything** when any of those are uncertain.
+</Warning>
+
+## Recommended rollout
+
+<Steps>
+  <Step title="Start read-only">
+    Validate analysis against connected sources and a completed date range.
+  </Step>
+  <Step title="Set hard limits">
+    Define currency, spend caps, protected campaigns, and the budget-increase master switch.
+  </Step>
+  <Step title="Require review">
+    Keep **Review everything** while the team tests proposals and paused launches.
+  </Step>
+  <Step title="Inspect real outcomes">
+    Confirm destinations, tracking, creative, audience, account, and budget before each launch.
+  </Step>
+  <Step title="Expand narrowly">
+    Increase autonomy only for a proven workflow with an owner, monitoring, and a rollback path.
+  </Step>
+</Steps>
+
+## Next step
+
+Review [Audience segments and custom audiences](/workspace-admin/audiences), then run a paused launch and inspect it before considering a broader autonomy level.

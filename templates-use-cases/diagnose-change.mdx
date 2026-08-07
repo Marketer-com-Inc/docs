@@ -1,0 +1,40 @@
+---
+title: "Diagnose a performance change"
+sidebarTitle: "Diagnose a change"
+description: "Investigate a performance increase or decline by testing competing explanations against connected data."
+---
+
+Use this pattern when a metric moved enough to require an explanation. Ask Marketer to test several plausible causes instead of confirming the first story that fits.
+
+## Gather the inputs
+
+- The metric and size of the change.
+- The exact date window and baseline.
+- The channel, campaign, product, creative, or audience in scope.
+- Known business events such as a promotion, inventory change, price change, or site incident.
+- Any limits on the sources Marketer should use.
+
+## Starting request
+
+```text
+Investigate why [metric] changed by [amount] for [scope] between [current period] and [baseline].
+Test at least three explanations across the connected data, including changes in delivery, conversion behavior, creative mix, and product or site context where available.
+For each explanation, show supporting and conflicting evidence, note missing data, and rank confidence.
+Finish with the smallest safe follow-up check. Do not make external changes.
+```
+
+## Review the diagnosis
+
+Look for an evidence trail rather than a confident narrative. A strong diagnosis:
+
+- Uses the same scope for each comparison.
+- Separates platform-reported data from commerce or site data.
+- Shows which explanation best fits and what would disprove it.
+- Calls out missing or stale data.
+- Recommends a reversible next check before a material action.
+
+<Warning>
+  Do not turn a diagnosis into a campaign change until you have reviewed the affected entity, the proposed setting, and the approval path for that action.
+</Warning>
+
+If the result needs another data source, visit [Integrations](/integrations/overview). If it needs business context, add it through [Knowledge and Skills](/product-guides/knowledge-and-skills).

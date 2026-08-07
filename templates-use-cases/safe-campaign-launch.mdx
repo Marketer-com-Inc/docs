@@ -1,0 +1,40 @@
+---
+title: "Prepare a campaign launch safely"
+sidebarTitle: "Safe campaign launch"
+description: "Use Marketer to prepare a campaign draft while keeping budget, targeting, creative, and publishing decisions reviewable."
+---
+
+Use this pattern after your strategy, offer, and creative are ready. The goal is a complete draft with explicit review points before anything is published to an advertising account.
+
+## Prerequisites
+
+- A supported advertising account is connected.
+- You have permission to create or publish campaigns in the workspace and provider account.
+- The campaign objective, budget, schedule, audience, destination, tracking, and creative are approved.
+- Workspace guardrails and approval expectations are current.
+
+## Starting request
+
+```text
+Prepare a draft [Meta Ads or Google Ads] campaign for [objective] using [approved brief or assets].
+Target [audience] in [location] for [date range] with a total or daily budget of [amount and currency].
+Use [destination and tracking requirements].
+Do not publish. Show every material setting, identify anything inferred or missing, and give me a preflight checklist for review.
+```
+
+## Review before publishing
+
+Confirm the draft against the source brief and provider account:
+
+1. Objective and optimization event.
+2. Budget, currency, schedule, and pacing.
+3. Audience, geography, placements, and exclusions.
+4. Creative, copy, destination, and tracking.
+5. Account, campaign naming, and any inherited settings.
+6. Guardrails, approval status, and the final publish action.
+
+<Warning>
+  Publishing changes an external advertising account and can create spend. Resolve every missing value and review the final provider-specific summary before approval.
+</Warning>
+
+After publication, monitor launch state and delivery in [Campaigns](/product-guides/campaigns). Use [Awaiting action](/working-with-marketer/awaiting-action) when Marketer needs a decision or confirmation.

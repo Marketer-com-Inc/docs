@@ -1,0 +1,141 @@
+---
+title: "Analytics"
+sidebarTitle: "Analytics"
+description: "Use Performance, Creative performance, Reports, and Live view with clear source, date, attribution, currency, and freshness context."
+---
+
+**Analytics** helps you understand marketing results across the data sources connected to your workspace. It keeps four related surfaces together: **Performance**, **Creative performance**, **Reports**, and **Live view**.
+
+The number on a card or chart is only meaningful with its measurement context. Before you compare, explain, or act, confirm the source, date range, attribution view, currency, reporting timezone, and freshness state.
+
+## Choose an Analytics surface
+
+<CardGroup cols={2}>
+  <Card title="Performance" icon="chart-line">
+    Review outcomes, spend, efficiency, and trends for the selected channels and window.
+  </Card>
+  <Card title="Creative performance" icon="images">
+    Compare creative results while preserving the same date and measurement context.
+  </Card>
+  <Card title="Reports" icon="file-chart-column">
+    Open the reporting area in Workflows to configure and monitor supported recurring reports.
+  </Card>
+  <Card title="Live view" icon="activity">
+    Use the current interactive view for the selected channel and measurement settings, with connection and freshness context visible.
+  </Card>
+</CardGroup>
+
+## Establish the measurement contract
+
+Use this checklist before reading the result:
+
+| Context | Question to answer |
+| --- | --- |
+| Workspace and account | Which brand and connected account does this view represent? |
+| Channel | Is the view blended or scoped to one provider? |
+| Date range | Are the dates complete, and what comparison period is active? |
+| Reporting timezone | Where do day boundaries fall? |
+| Currency | Which display currency applies, and are source amounts converted? |
+| Attribution source | Is the view using platform attribution or an eligible connected attribution source? |
+| Attribution model | Which model is applied when model controls are available? |
+| Freshness | Have all contributing sources completed the relevant sync? |
+
+<Warning>
+  Do not copy a metric into a decision without its measurement contract. A change in attribution source, timezone, or data freshness can move the number even when customer behavior did not change.
+</Warning>
+
+## Choose workspace conversion metrics
+
+When the feature is available, open **Settings → Conversion metrics** to choose the non-purchase conversions reported beside spend and purchases in Analytics. The picker offers standard conversion actions and uses selected Meta Ads, Google Ads, and OpenAI Ads **(Beta)** account data to add workspace-specific options and recent-volume context. Examples include leads, sign-ups, bookings, or a named custom conversion.
+
+You can add a metric, give it a workspace display name, reorder the list, and mark one as the headline metric. The picker shows recent volume when it is available so you can distinguish similar provider action names. Do not add two labels for the same underlying conversion or add together cards that represent different definitions.
+
+<Note>
+  Conversion metrics may not be available yet. If Settings shows that state, the Analytics cards are not available in that workspace. When enabled, the cards use platform attribution and are not shown while Triple Whale **(Beta)** attribution is selected. A missing conversion value is not automatically zero.
+</Note>
+
+## Analyze a performance change
+
+<Steps>
+  <Step title="Select the business window">
+    Choose a period long enough to support the decision and prefer complete days for period comparisons. Use the same duration for the comparison unless you have a reason not to.
+  </Step>
+  <Step title="Set source and channel">
+    Choose the channel view and attribution source that match the question. If you switch attribution views, treat the result as a new measurement frame rather than a continuation of the old chart.
+  </Step>
+  <Step title="Start with outcomes">
+    Read spend and the primary business result first. Then use efficiency, volume, and trend metrics to locate where the change occurred.
+  </Step>
+  <Step title="Move to the responsible dimension">
+    Use Creative performance for asset-level evidence. Use Campaigns for the exact advertising object. Use Products when the question depends on Shopify catalog or sales context.
+  </Step>
+  <Step title="Record the explanation">
+    State observed changes separately from hypotheses. Name the context fields above and identify any source that is still syncing or incomplete.
+  </Step>
+</Steps>
+
+## Common outcomes
+
+### Weekly performance review
+
+Use a stable date and attribution convention every week. Compare the current period with the previous equivalent period, identify the largest contributors, and carry only supported next steps into Campaigns or Creatives.
+
+### Creative diagnosis
+
+Open **Creative performance** and compare assets under the same window and channel context. Consider delivery volume before declaring a winner or loser. Then open the asset in Creatives when you need to inspect or reuse it.
+
+### Recurring report
+
+Open **Reports** to move into Workflows. Configure an available report, destination, schedule, and preview where the workflow supports them. Review run history after activation rather than assuming delivery from the configuration alone.
+
+### Current monitoring
+
+Use **Live view** when you want the current interactive analytics state. Keep the connection and freshness indicators in view, especially during a sync or immediately after changing the selected source or window.
+
+## Ask for an explanation
+
+Attach the relevant campaign, creative, or product and give the Marketing Agent the full measurement contract:
+
+> Explain the change in performance for the attached campaign. Use the last 14 complete days versus the prior 14, platform attribution, and the workspace reporting currency. Cite the largest metric contributors, separate facts from hypotheses, and recommend one follow-up analysis. Do not change the account.
+
+This makes the answer reproducible. A prompt such as “Why is ROAS down?” leaves the account, dates, source, and comparison undefined.
+
+## Review data quality
+
+- Check connection status before treating an empty chart as zero activity.
+- Treat a syncing source as incomplete for the affected window.
+- Compare like currencies and document any conversion context.
+- Account for different provider attribution rules when comparing platform reports.
+- Avoid summing metrics that use incompatible attribution or entity grain.
+- Re-run a decision-grade analysis when freshness changes materially.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Analytics is empty">
+    Confirm that at least one relevant data source is connected, the selected channel matches it, the date range contains activity, and the initial sync has completed. An unavailable read should not be interpreted as a true zero.
+  </Accordion>
+  <Accordion title="A metric does not match the ad platform">
+    Align the exact account, dates, timezone, currency, attribution source, attribution model, and provider reporting rules. If the contexts match and the difference remains, record both values and the last sync time before escalating.
+  </Accordion>
+  <Accordion title="The comparison looks unusually strong or weak">
+    Check for unequal period length, partial days, promotions, one-time spend changes, and a changed attribution view. Use complete equivalent periods for the first diagnostic pass.
+  </Accordion>
+  <Accordion title="Creative and campaign totals differ">
+    Confirm that both views use the same filters and grain. A creative can appear across multiple objects, while a campaign total aggregates at a different level.
+  </Accordion>
+  <Accordion title="A report did not arrive">
+    Open **Reports**, then inspect the workflow configuration and run history. Verify the destination connection, schedule, status, and any pending approval or error.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Inspect campaign state" icon="megaphone" href="/product-guides/campaigns">
+    Move from a performance finding to the exact provider object.
+  </Card>
+  <Card title="Compare creative work" icon="images" href="/product-guides/creatives">
+    Turn asset-level evidence into a brief, generation, or library workflow.
+  </Card>
+</CardGroup>

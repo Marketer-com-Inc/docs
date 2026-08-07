@@ -1,0 +1,55 @@
+---
+title: "Audience segments and custom audiences"
+description: "Manage Meta reporting segments, Custom Audiences, lookalikes, and launch-time audience context."
+---
+
+Marketer has two related Meta audience settings. **Audience segments** define reporting roles. **Custom audiences** manage reusable audience objects for targeting or exclusion.
+
+## Prerequisites
+
+- A connected [Meta Ads](/integrations/meta-ads) account
+- A Marketer Owner, Admin, or Member role for changes
+- Meta Custom Audience terms accepted for each ad account where you want to list or create audiences
+
+## Audience segments
+
+Open **Settings** → **Audience segments**.
+
+Meta groups delivery into New, Engaged, and Existing categories using saved audience-segment definitions. Marketer shows those definitions by connected ad account and lets you maintain the reporting role assigned to each segment.
+
+Use audience segments when you want performance reporting to distinguish customer lifecycle groups. Launch-time customer exclusions remain part of New Customer Acquisition settings under **Guardrails**.
+
+## Custom audiences
+
+Open **Settings** → **Custom audiences**.
+
+For each connected Meta ad account, you can review the mirrored audience list and, when provider requirements are satisfied, create:
+
+- a rule-based Custom Audience; or
+- a lookalike from an existing source audience, country, and ratio.
+
+Audience size can be approximate or unavailable. Treat the status shown by Meta and Marketer as an estimate, not a guaranteed reachable count.
+
+<Warning>
+  Audience creation affects a provider account. Confirm the ad account, source, country, rules, and intended use before you approve creation.
+</Warning>
+
+## Freshness and provider boundaries
+
+Audience lists and sizes are mirrored from connected Meta accounts. After creating or changing an audience, allow the provider and Marketer to refresh before assuming it is selectable everywhere.
+
+If Meta reports that Custom Audience terms are not accepted, use the provider link shown in Marketer. If the ad account is closed or access is missing, restore provider access before retrying.
+
+## Review checklist
+
+- Correct workspace and Meta ad account
+- Clear audience name and owner
+- Documented inclusion or exclusion intent
+- Correct source audience for a lookalike
+- Appropriate country and ratio
+- Provider terms accepted
+- No unsupported assumption based on approximate size
+
+## Next step
+
+Return to [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) to confirm New Customer Acquisition exclusions and approval policy before using an audience in a launch.

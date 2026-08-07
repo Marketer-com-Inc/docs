@@ -1,0 +1,57 @@
+---
+title: "Context and grounding"
+sidebarTitle: "Context and grounding"
+description: "Help Marketer use the right workspace, source data, business context, and task-specific inputs."
+---
+
+Grounding is the evidence and context Marketer can use for a task. Strong grounding starts with the correct workspace and connected source, then adds only the business context needed for the decision.
+
+## Understand the context layers
+
+Marketer can draw from several layers:
+
+1. **Workspace identity** — the selected company, reporting settings, members, and controls.
+2. **Connected data** — authorized Meta Ads, Google Ads, Shopify, GA4, or Beta Triple Whale data.
+3. **Workspace knowledge** — durable brand, customer, product, and operating context.
+4. **Attached context** — a campaign, brief, creative, or product selected for the current task.
+5. **Your request** — the outcome, source, scope, dates, constraints, and output you specify now.
+
+The narrower layers should clarify the task, not silently override source facts. For example, a product note can explain positioning, but it cannot supply campaign spend.
+
+## Ground a task in five moves
+
+- **Select the workspace.** Confirm the workspace switcher before asking or approving.
+- **Name the source.** Say whether the answer should use Meta Ads, Google Ads, Shopify, GA4, or Triple Whale **(Beta)**.
+- **Define the scope.** Name the account, campaign, product, or other entity.
+- **Set the time boundary.** Prefer exact dates or completed periods and name the timezone when it matters.
+- **State the action boundary.** Say whether the task is read-only, draft-only, approval-gated, or allowed to execute under workspace policy.
+
+```text
+Using our connected Google Ads data for the North America account, compare
+July 1–7 with June 24–30 in the workspace timezone. Focus on campaign-level
+spend, conversions, CPA, and ROAS. Use the attached product only for business
+context. Show data gaps and do not change campaigns.
+```
+
+## Use durable and temporary context correctly
+
+Put stable information in **Knowledge** when it should affect many future tasks. Examples include positioning, customer definitions, approved claims, and reporting conventions.
+
+Attach an entity or state a constraint in the request when it applies only now. Examples include a campaign under review, a launch date, a temporary budget, or a one-time audience exclusion.
+
+<Tip>
+  If changing a fact should change many future answers, it probably belongs in **Knowledge** or a workspace setting. If it should affect only this task, keep it in the task.
+</Tip>
+
+## Detect weak grounding
+
+Pause when a result:
+
+- Does not name its source or dates
+- Uses an account other than the one you intended
+- Mixes platform, store, and attribution figures without labeling them
+- Treats a missing period as zero
+- Turns an assumption into a measured fact
+- Proposes a write without restating the approval boundary
+
+Ask Marketer to identify the missing layer instead of filling the gap with an estimate. Then use [Sources and freshness](/essential-guidelines/sources-and-freshness) to validate the evidence.

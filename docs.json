@@ -1,110 +1,272 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Marketer",
+  "description": "Learn how to set up Marketer, work with the Marketing Agent, and operate campaigns, analytics, creatives, workflows, and connected data safely.",
   "theme": "willow",
   "logo": {
-    "light": "https://media.brand.dev/74f1fb85-6510-4389-a211-c0a2c45db9d6.svg",
-    "dark": "https://media.brand.dev/74f1fb85-6510-4389-a211-c0a2c45db9d6.svg"
+    "light": "/assets/marketer-logo-light.svg",
+    "dark": "/assets/marketer-logo-dark.svg",
+    "href": "/"
   },
-  "favicon": "https://media.brand.dev/51f03c65-f82d-47a0-b5a3-7e77286b52b4.png",
+  "favicon": "/assets/marketer-favicon.svg",
   "colors": {
-    "primary": "#8c9c9c",
-    "light": "#314f45",
-    "dark": "#d2d8d6"
+    "primary": "#2F7A54",
+    "light": "#60C686",
+    "dark": "#2F7A54"
+  },
+  "fonts": {
+    "family": "Inter"
   },
   "navbar": {
+    "links": [
+      {
+        "label": "Product",
+        "href": "https://www.marketer.com"
+      },
+      {
+        "label": "Support",
+        "href": "https://support.marketer.com"
+      }
+    ],
     "primary": {
       "type": "button",
-      "label": "Book a Demo",
-      "href": "https://www.marketer.com/demo"
+      "label": "Open Marketer",
+      "href": "https://app.marketer.com/dashboard"
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "introduction",
-              "quickstart",
-              "connecting-channels"
-            ]
-          },
-          {
-            "group": "The AI Agent",
-            "pages": [
-              "agent/overview",
-              "agent/campaign-management",
-              "agent/performance-monitoring",
-              "agent/slack-integration"
-            ]
-          },
-          {
-            "group": "Ember Creative",
-            "pages": [
-              "ember/overview",
-              "ember/creative-formats",
-              "ember/briefing-workflow",
-              "ember/performance-loop"
-            ]
-          },
-          {
-            "group": "Integrations",
-            "pages": [
-              "integrations/overview",
-              "integrations/meta",
-              "integrations/google",
-              "integrations/klaviyo",
-              "integrations/shopify"
-            ]
-          },
-          {
-            "group": "For Your Team",
-            "pages": [
-              "team/founders",
-              "team/media-buyers",
-              "team/creative-strategists"
-            ]
-          }
+        "group": "Get Started",
+        "pages": [
+          "get-started/introduction",
+          "get-started/quickstart",
+          "get-started/workspace-and-data",
+          "get-started/first-task",
+          "get-started/review-result",
+          "get-started/next-steps"
         ]
       },
       {
-        "tab": "Resources",
-        "groups": [
-          {
-            "group": "By Industry",
-            "pages": [
-              "industry/beauty",
-              "industry/fashion",
-              "industry/food-beverage",
-              "industry/home-lifestyle",
-              "industry/wellness"
-            ]
-          },
-          {
-            "group": "Case Studies",
-            "pages": [
-              "case-studies/overview",
-              "case-studies/softmoc",
-              "case-studies/trip",
-              "case-studies/hucklebee-farms"
-            ]
-          },
-          {
-            "group": "FAQ",
-            "pages": [
-              "faq"
-            ]
-          }
+        "group": "Essential Guidelines",
+        "pages": [
+          "essential-guidelines/context-and-grounding",
+          "essential-guidelines/effective-requests",
+          "essential-guidelines/sources-and-freshness",
+          "essential-guidelines/review-results",
+          "essential-guidelines/approvals-and-autonomy"
+        ]
+      },
+      {
+        "group": "Working with Marketer",
+        "pages": [
+          "working-with-marketer/overview",
+          "working-with-marketer/chat-and-context",
+          "working-with-marketer/tasks-and-activity",
+          "working-with-marketer/specialists",
+          "working-with-marketer/awaiting-action",
+          "working-with-marketer/history-and-notifications"
+        ]
+      },
+      {
+        "group": "Product Guides",
+        "pages": [
+          "product-guides/campaigns",
+          "product-guides/analytics",
+          "product-guides/creatives",
+          "product-guides/workflows",
+          "product-guides/knowledge-and-skills",
+          "product-guides/products"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/overview",
+          "integrations/meta-ads",
+          "integrations/google-ads",
+          "integrations/shopify",
+          "integrations/google-analytics-4",
+          "integrations/slack",
+          "integrations/beta",
+          "integrations/troubleshooting"
+        ]
+      },
+      {
+        "group": "Workspace and Admin",
+        "pages": [
+          "workspace-admin/overview",
+          "workspace-admin/profile-and-authentication",
+          "workspace-admin/mcp-connect",
+          "workspace-admin/brand-and-autofills",
+          "workspace-admin/members-and-roles",
+          "workspace-admin/guardrails-and-autonomy",
+          "workspace-admin/audiences",
+          "workspace-admin/notifications-and-billing",
+          "workspace-admin/security-and-troubleshooting"
+        ]
+      },
+      {
+        "group": "Templates and Use Cases",
+        "pages": [
+          "templates-use-cases/overview",
+          "templates-use-cases/analyze-performance",
+          "templates-use-cases/diagnose-change",
+          "templates-use-cases/creative-brief",
+          "templates-use-cases/safe-campaign-launch",
+          "templates-use-cases/recurring-report",
+          "templates-use-cases/reusable-skill"
+        ]
+      },
+      {
+        "group": "Release Notes",
+        "pages": [
+          "release-notes/overview"
         ]
       }
     ]
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ],
+    "display": "header"
+  },
+  "search": {
+    "prompt": "Search Marketer docs…"
+  },
+  "seo": {
+    "indexing": "navigable",
+    "organization": {
+      "id": "https://www.marketer.com/#organization",
+      "name": "Marketer",
+      "url": "https://www.marketer.com"
+    }
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "redirects": [
+    {
+      "source": "/introduction",
+      "destination": "/get-started/introduction"
+    },
+    {
+      "source": "/quickstart",
+      "destination": "/get-started/quickstart"
+    },
+    {
+      "source": "/connecting-channels",
+      "destination": "/integrations/overview"
+    },
+    {
+      "source": "/agent/overview",
+      "destination": "/working-with-marketer/overview"
+    },
+    {
+      "source": "/agent/campaign-management",
+      "destination": "/product-guides/campaigns"
+    },
+    {
+      "source": "/agent/performance-monitoring",
+      "destination": "/product-guides/analytics"
+    },
+    {
+      "source": "/agent/slack-integration",
+      "destination": "/integrations/slack"
+    },
+    {
+      "source": "/ember/:slug*",
+      "destination": "/product-guides/creatives"
+    },
+    {
+      "source": "/integrations/meta",
+      "destination": "/integrations/meta-ads"
+    },
+    {
+      "source": "/integrations/google",
+      "destination": "/integrations/google-ads"
+    },
+    {
+      "source": "/integrations/klaviyo",
+      "destination": "/integrations/overview"
+    },
+    {
+      "source": "/team/:slug*",
+      "destination": "/workspace-admin/members-and-roles"
+    },
+    {
+      "source": "/industry/:slug*",
+      "destination": "/templates-use-cases/overview"
+    },
+    {
+      "source": "/case-studies/:slug*",
+      "destination": "/templates-use-cases/overview"
+    },
+    {
+      "source": "/faq",
+      "destination": "/workspace-admin/security-and-troubleshooting"
+    }
+  ],
   "footer": {
     "socials": {
       "website": "https://www.marketer.com"
-    }
+    },
+    "links": [
+      {
+        "header": "Documentation",
+        "items": [
+          {
+            "label": "Quickstart",
+            "href": "/get-started/quickstart"
+          },
+          {
+            "label": "Product guides",
+            "href": "/product-guides/campaigns"
+          },
+          {
+            "label": "Integrations",
+            "href": "/integrations/overview"
+          },
+          {
+            "label": "Release notes",
+            "href": "/release-notes/overview"
+          }
+        ]
+      },
+      {
+        "header": "Marketer",
+        "items": [
+          {
+            "label": "Website",
+            "href": "https://www.marketer.com"
+          },
+          {
+            "label": "Open app",
+            "href": "https://app.marketer.com/dashboard"
+          },
+          {
+            "label": "Support",
+            "href": "https://support.marketer.com"
+          }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Privacy",
+            "href": "https://www.marketer.com/privacy"
+          },
+          {
+            "label": "Terms",
+            "href": "https://www.marketer.com/terms"
+          }
+        ]
+      }
+    ]
   }
 }

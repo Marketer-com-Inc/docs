@@ -1,0 +1,120 @@
+---
+title: "Workflows"
+sidebarTitle: "Workflows"
+description: "Configure supported recurring work, review prerequisites and approvals, and use run history to confirm execution."
+---
+
+**Workflows** is where you configure and monitor supported recurring work. It brings available workflow options, natural-language setup, active configurations, and run history into one surface.
+
+Use Workflows when the outcome should happen on a schedule, in response to a supported event, or through a repeatable process. Use chat for a one-time request that does not need a durable configuration.
+
+## What a workflow contains
+
+A usable workflow has more than a title. Confirm each part before activation:
+
+| Part | What to define |
+| --- | --- |
+| Outcome | The report, alert, research, or action the workflow should produce |
+| Trigger | The supported schedule or event that starts it |
+| Scope | Workspace, provider, account, and data the workflow may use |
+| Destination | Where the output should appear when delivery is supported |
+| Authority | Whether the workflow reads, drafts, proposes, or can perform an approved action |
+| Guardrails | Limits, exclusions, and conditions that stop the workflow |
+| Review | Who verifies setup and who handles any approval |
+| History | Where you confirm runs, outputs, and errors |
+
+The available library and setup fields are the source of truth for what your workspace can configure. Requirements can differ by workflow type and connected provider.
+
+## Configure a workflow
+
+<Steps>
+  <Step title="Choose an available outcome">
+    Start from a workflow shown in the library or describe a supported recurring outcome to the Marketing Agent. Avoid assuming a workflow exists because you can perform a similar one-time task in chat.
+  </Step>
+  <Step title="Check prerequisites">
+    Confirm the data source, provider connection, destination, role, and plan required by the setup. Resolve connection or permission issues before activation.
+  </Step>
+  <Step title="Define scope and cadence">
+    Set the intended account, metrics or event, reporting window, schedule, and destination. Use the workspace reporting timezone when the schedule or day boundary matters.
+  </Step>
+  <Step title="Set authority and guardrails">
+    Make clear whether the workflow only reports, creates a proposal, or can perform an available action after approval. Apply the narrowest authority that still achieves the outcome.
+  </Step>
+  <Step title="Review before activation">
+    Inspect the available preview or configuration summary. Confirm the destinations and any recurring cost or usage information shown in the product.
+  </Step>
+  <Step title="Verify the first run">
+    Open the workflow register and run history. Confirm that the first run used the intended trigger, data, destination, and approval behavior.
+  </Step>
+</Steps>
+
+## Reports, alerts, and actions
+
+### Reports
+
+Reports turn a defined measurement view into recurring delivery. Keep the provider, metrics, attribution source, date logic, timezone, and destination explicit. When a preview is available, compare it with Analytics before activation.
+
+### Alerts
+
+Alerts notify you when a supported event or condition is detected. Define who should receive the alert and what they are expected to do. An alert is evidence to investigate, not automatic proof of a root cause.
+
+### Actions
+
+Some workflow types can prepare or perform a supported account action. These are narrower than general chat instructions and can be provider-specific. Review the exact condition, object level, action, limit, and approval behavior before activation.
+
+<Warning>
+  Do not activate a recurring action until you understand both its trigger and its maximum effect. “Only when performance drops” is not a complete guardrail without a defined metric, window, threshold, scope, and approval rule.
+</Warning>
+
+## Monitor configured work
+
+The workflow register and run history tell you whether a configuration is active and what happened on each run. Use them to answer:
+
+- Is the workflow configured and enabled?
+- When did it most recently run?
+- Did it produce the expected output?
+- Did delivery to the destination succeed?
+- Did it pause for a decision or encounter an error?
+- Does the configuration still match the current business need?
+
+Configuration is not proof of execution. Verify the first run and review history after changing a trigger, destination, provider, or guardrail.
+
+## Safe operating practices
+
+- Start with a read-only report or alert when you are still learning the signal.
+- Use a narrow provider and object scope for recurring actions.
+- Avoid overlapping workflows that can react to the same condition.
+- Define who owns alerts and approvals before enabling delivery.
+- Review workflows after material campaign, connection, timezone, or business-goal changes.
+- Disable or revise workflows whose evidence source is stale or disconnected.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A library option cannot be configured">
+    Open its prerequisite guidance and verify the required provider or destination connection. Also check your role and workspace plan. Availability can differ by workflow type.
+  </Accordion>
+  <Accordion title="A workflow did not run">
+    Confirm that it is active, its trigger occurred in the intended timezone, and its required connections are healthy. Review run history for a blocked prerequisite, pending approval, or error.
+  </Accordion>
+  <Accordion title="A report or alert did not arrive">
+    Check the configured destination, recipient or channel, and the run result. Separate a successful run from successful delivery; the history should show where the failure occurred.
+  </Accordion>
+  <Accordion title="A workflow is waiting for approval">
+    Open **Awaiting action**, review the proposal and its evidence, and make the decision through the available controls. Confirm the resulting run state afterward.
+  </Accordion>
+  <Accordion title="A workflow produced duplicate or conflicting work">
+    Inspect active configurations for overlapping scope and triggers. Pause the extra workflow, then keep one clear owner for the recurring outcome before the next trigger.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Review run activity" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Distinguish configuration, execution, result, and approval state.
+  </Card>
+  <Card title="Handle a pending decision" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Review any workflow step that needs human authorization.
+  </Card>
+</CardGroup>

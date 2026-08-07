@@ -1,0 +1,71 @@
+---
+title: "Security and troubleshooting"
+description: "Use least privilege, protect provider access, and diagnose workspace or account access problems."
+---
+
+Secure operation in Marketer starts with individual identities, limited workspace reach, explicit provider grants, and review before material actions.
+
+## Security baseline
+
+- Give each teammate an individual account.
+- Use Viewer for read-only review.
+- Prefer selected-workspace access when a person does not need every workspace.
+- Connect providers with the minimum resources required for the workspace.
+- Keep API keys and OAuth credentials out of chat, Slack, tickets, and screenshots.
+- Review guardrails before enabling proposal or mutation workflows.
+- Keep **Review everything** until the team has verified real outcomes.
+- Remove former teammates, stale invites, unused MCP seats, and unrecognized OAuth sessions.
+
+## If an account may be compromised
+
+<Steps>
+  <Step title="Sign out every session">
+    Go to **Settings** → **Authentication** and select **Sign out everywhere**.
+  </Step>
+  <Step title="Reset access">
+    Send a password-reset link and secure the email account or identity provider used to sign in.
+  </Step>
+  <Step title="Review membership">
+    Ask an Owner or Admin to inspect account membership, workspace grants, pending invites, and role changes.
+  </Step>
+  <Step title="Revoke external sessions">
+    Disconnect unknown MCP agents and review provider-side OAuth installations or API keys.
+  </Step>
+  <Step title="Inspect material activity">
+    Review tasks, approvals, notifications, and provider activity for actions that need containment or reversal.
+  </Step>
+</Steps>
+
+## Workspace access problems
+
+| Symptom | Check |
+| --- | --- |
+| You can sign in but cannot see a workspace | Account membership and selected-workspace grant |
+| A page is visible but controls are disabled | Effective workspace role; Viewers are read-only |
+| **Plans & Billing** is missing | Viewer role or account-level billing ownership |
+| Account overview is missing | Multi-workspace eligibility and Owner or Admin account role |
+| MCP cannot reach a workspace | OAuth session grant, workspace membership, and MCP seat |
+| Integration controls are read-only | Owner, Admin, or Member workspace access |
+
+## Safe error handling
+
+When a page says a status could not be verified, refresh before making a replacement connection. Marketer keeps last-known connection data or settings when a safe read fails; a temporary read error should not be interpreted as proof that access was removed.
+
+For provider-specific recovery, use [Troubleshoot integrations](/integrations/troubleshooting).
+
+## Prepare an escalation
+
+Include only what another operator needs to reproduce the issue:
+
+- workspace and account name;
+- your role and whether access is account-wide or selected;
+- page and exact error text;
+- expected and actual behavior;
+- last known successful action and time; and
+- a sanitized screenshot.
+
+Never include passwords, reset links, OAuth codes, API keys, full card data, or customer-level personal data.
+
+## Next step
+
+Schedule a recurring access review for members, provider connections, MCP agents, guardrails, autonomy, and notification recipients.

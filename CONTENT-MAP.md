@@ -110,6 +110,8 @@ Status vocabulary:
 - Exact result excerpts: “Shopify: Connected and active.” “Slack: Connected and active.” “Meta: Not connected.” “Google Ads: Not connected.” “No connection, profile, campaign, approval, or account setting was changed.”
 - Reconciliation evidence: the same workspace's visible provider UI showed **Reconnect needed** for Meta Ads and Google Ads, including last-sync and coverage details. Public guidance now preserves both observations and blocks connection changes until the intended account is confirmed.
 - Conversion metrics: the live settings route showed “Conversion metrics aren't available yet” and identified the unapplied `workspace_conversion_metrics` migration. Public guidance treats the surface as conditional without claiming a workspace-specific rollout mechanism.
+- Mintlify preview: `https://marketer-com-ashmit-mar-2142-marketer-docs.mintlify.site/`; representative pages and legacy redirects verified on 2026-08-07.
+- Access decision: full Mintlify authentication remains enabled pending explicit approval to make the documentation public.
 
 ## Release gates
 
@@ -117,7 +119,7 @@ Status vocabulary:
 - [x] GitHub app installed for automatic updates.
 - [x] All navigable pages pass Mintlify validation, links, and accessibility checks.
 - [x] Representative customer flows match the authenticated app.
-- [ ] Pull request preview is reviewed.
+- [x] Pull request preview is reviewed.
 - [ ] Production deployment and redirects are verified.
 - [x] Mintlify add-ons reviewed: thumbs feedback and automatic related topics enabled; broken-link CI set to Blocking; authenticated PR previews already enabled.
 - [x] Custom domain decision is recorded: retain `marketer-com.mintlify.site`; defer DNS until explicit approval.

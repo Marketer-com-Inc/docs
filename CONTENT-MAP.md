@@ -138,7 +138,9 @@ Status vocabulary:
 - Product-flow captures: the published set uses deterministic, network-free UI states inspected through authenticated production `/dev` routes on 2026-08-09. Authenticated production crops additionally cover Creatives, Briefs, Studio, Creative Assets, navigation, Quick actions, Chats and tasks, Products, Skills, and Workflows. Published crops omit admin controls, user identifiers, provider resource IDs, customer content, customer metrics, and customer-only details.
 - Deterministic screenshot sources: `/dev/home`, `/dev/apps`, `/dev/analytics`, `/dev/campaigns`, `/dev/result-block/chat-parity`, and `/dev/result-block/workbench-parity`. Every capture uses production components or the route's documented source fixture rather than a synthetic mockup.
 - Mintlify preview: `https://marketer-com-ashmit-mar-2142-marketer-docs.mintlify.site/`; representative pages and legacy redirects verified on 2026-08-07.
+- Focused-guide preview: `https://marketer-com-ashmit-mar-2142-deep-product-guides.mintlify.site/`; five representative focused guides and their current content verified before merge on 2026-08-09.
 - Production: merge commit `2202a37230a7cc36a0ffe1166cd745e91620d9ab` deployed successfully to `https://marketer-com.mintlify.site/`; home, representative guides, feedback, and legacy redirects verified on 2026-08-07.
+- Focused-guide production: PR `#4`, merge commit `9678632d15b8fefcac660588df189e42a011ee19`, and served version `dpl_2aZXKXcCsy1h7hFSCxdUkNT2EkoS` are live on `https://docs.marketer.com`. Home/composer, Google campaign build, Products, Conversion metrics, Google Ads auto-apply, and the 176,921-byte Workflow library PNG were verified twice after deployment on 2026-08-09.
 - Access decision: full Mintlify authentication was disabled with explicit approval on 2026-08-09; the default Mintlify domain returns public pages without a login redirect.
 - Custom domain: `docs.marketer.com` is registered in Mintlify, its two validation TXT records and DNS-only CNAME resolve publicly, and Mintlify serves a valid certificate and fresh documentation at the custom domain.
 
@@ -172,4 +174,4 @@ Status vocabulary:
 - [x] `docs.marketer.com` is registered in Mintlify with exact DNS instructions recorded.
 - [x] Cloudflare TXT and CNAME records are created and validated; `docs.marketer.com` serves a valid certificate and current content.
 - [x] The screenshot-driven product-flow release passed validation, strict links, accessibility, local visual review, PR review, merge, and production verification.
-- [ ] The focused feature-guide release passes source review, Mintlify validation, strict links, accessibility, PR review, merge, and production verification.
+- [x] The focused feature-guide release passes source review, Mintlify validation, strict links, accessibility, PR review, merge, and production verification.

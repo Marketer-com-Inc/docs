@@ -1,68 +1,131 @@
 ---
 title: "MCP connect"
-description: "Authorize compatible agents to use Marketer with explicit scopes and workspace grants."
+description: "Authorize compatible agents with OAuth, explicit scopes, workspace grants, role caps, and MCP-seat checks."
 ---
 
-MCP connect lets you use Marketer's marketing tools from a compatible agent client. The connection belongs to your account and reaches only the workspaces you grant.
+**MCP connect** is a personal, account-spanning setting. It lists the external agents you authorized and the workspaces each session may reach.
 
-## Before you connect
+It is not an API-key minting page. Current product setup uses browser OAuth, and each teammate authorizes their own connection.
 
-- Confirm which client you are authorizing.
-- Decide which workspaces it should reach.
-- Review whether each workspace has an available MCP seat.
-- Review the permissions requested by the client. Marketer caps them to the most restrictive effective role among the granted workspaces.
+## The four access boundaries
 
-Marketer represents MCP access with three scope tiers:
+An MCP request must pass all four:
 
-| Scope | Purpose |
-| --- | --- |
-| `read` | Retrieve workspace context and inspect data |
-| `propose` | Prepare an action or change for review |
-| `mutate` | Perform an allowed change, still subject to workspace policy and tool checks |
+1. **Your workspace membership** — you must still be able to reach the workspace.
+2. **MCP seat** — the member must have an active seat for that workspace.
+3. **Connection grant** — the OAuth session must include that workspace.
+4. **Scope and workspace policy** — the requested tool must fit the granted scope, effective role, provider access, guardrails, and approvals.
+
+Removing any boundary stops or narrows access without granting more authority elsewhere.
+
+## Scope tiers
+
+| Scope | Customer purpose | Role boundary |
+| --- | --- | --- |
+| `read` | Inspect workspace context and data | Available to a valid read-only connection |
+| `propose` | Prepare recommendations or changes for review | A Member or broader workspace role is required |
+| `mutate` | Perform an allowed change | Owner or Admin role is required for full mutation scope |
+
+Marketer caps a connection to the most restrictive effective role across all granted workspaces. If any selected workspace is Viewer-only, the connection remains read-only across that combined grant.
 
 <Warning>
-  A `mutate` grant does not replace judgment. Workspace roles, guardrails, approvals, and provider permissions still apply, but the grant should still be limited to clients you trust.
+  A `mutate` scope is not blanket permission. Provider access, guardrails, dry-run or confirmation requirements, approvals, and the tool's own checks continue to apply.
 </Warning>
 
-## Connect an agent
+## Connect to Claude
 
-<Steps>
-  <Step title="Open MCP connect">
-    Go to **Settings** → **MCP connect**.
-  </Step>
-  <Step title="Choose the client instructions">
-    Use the tab for Claude Code, Claude Desktop or Cowork, or claude.ai. Copy the command or MCP server URL shown in Marketer.
-  </Step>
-  <Step title="Authorize in the browser">
-    Complete the OAuth flow with your own Marketer account. Do not share an authorization link or session with a teammate.
-  </Step>
-  <Step title="Grant workspaces">
-    Select only the workspaces the connected agent should reach. A workspace without the required seat cannot be used through that connection.
-  </Step>
-  <Step title="Verify the session">
-    Confirm the client name, granted scopes, connected or last-used time, and workspace list under **Connected agents**.
-  </Step>
-</Steps>
+Open **Settings** → **MCP connect**. Under **Connect to Claude**, choose the visible setup tab.
 
-## Manage access
+### Claude Code
 
-You can edit a connection's workspace grants without reconnecting the client. Removing a workspace stops that OAuth session from using Marketer tools in that workspace.
+1. Copy the displayed `claude mcp add --transport http marketer …` command.
+2. Run it in your terminal.
+3. Complete the browser OAuth authorization.
+4. Review scopes and choose only the required workspaces.
 
-Select **Disconnect** to revoke the session entirely. Revoke any session you do not recognize or no longer use.
+### Claude Desktop or Cowork
 
-MCP seats are managed with team access. Account owners control seat changes that can affect billing. See [Members and roles](/workspace-admin/members-and-roles).
+1. In Claude Desktop, open **Settings → Integrations → Add**.
+2. Copy and paste the MCP server URL shown in Marketer.
+3. Complete OAuth.
 
-## Verify safely
+The same integration is used for Claude Cowork.
 
-Start with a read-only request that names one workspace and asks for a small, verifiable result. Confirm that the agent cannot access an ungranted workspace. Add proposal or mutation use cases only after the read boundary is correct.
+### claude.ai
 
-## Troubleshooting
+1. Open **claude.ai → Settings → Connectors → Add Custom Connector**.
+2. Paste the MCP URL shown in Marketer.
+3. Complete OAuth and workspace selection.
 
-- If authorization does not open, copy the current command or URL from Marketer again.
-- If a workspace is missing, confirm your membership and the connection's workspace grant.
-- If a workspace shows no available seat, ask the account owner to review MCP seat capacity and billing.
-- If a client behaves unexpectedly, disconnect the OAuth session, review its requested permissions and workspace grants, and authorize it again only if those boundaries are appropriate.
+Team admins can manage organization-wide connector availability in Claude, but each Marketer connection remains attributable to the authorizing identity and bounded by Marketer access.
+
+## Verify Connected agents
+
+Under **Connected agents**, each session shows:
+
+- client name;
+- granted scope names;
+- **Last used** or the connected time;
+- granted workspace chips; and
+- **Disconnect**.
+
+Select the workspace control to edit that session's reach. A workspace without an active MCP seat cannot become usable merely by appearing in your ordinary workspace list.
+
+### Safe first test
+
+1. Grant one test workspace.
+2. Start with `read` only.
+3. Ask for a small result with a named account and completed date range.
+4. Confirm an ungranted workspace is not reachable.
+5. Add proposal or mutation use only after scope and workspace boundaries are correct.
+
+## Change workspace grants
+
+Editing a connection's workspace list does not require reconnecting the client.
+
+- Adding a workspace requires your membership and seat there.
+- Removing a workspace stops that OAuth session from reaching it.
+- If your role becomes more restrictive, effective scopes are capped accordingly.
+- If a seat is removed, the connection becomes unusable for that workspace even if the old chip remains visible until the page refreshes.
+
+## Disconnect or rotate
+
+Select **Disconnect** to revoke one connected-agent session. Use it for an unrecognized, obsolete, or compromised client.
+
+Eligible account Owners and Admins also see **Account → MCP**, which summarizes sessions reaching that account. It can converge account connections to read-only or read-write subject to role caps.
+
+The account page can regenerate credentials for existing sessions. Regeneration invalidates the old tokens and shows new access and refresh tokens once.
+
+<Warning>
+  Copy regenerated credentials directly into the intended client. Do not place them in chat, Slack, documentation, or screenshots. A session that failed to rotate keeps its existing credentials and must be retried separately.
+</Warning>
+
+## Seats and billing
+
+MCP seats are managed in **Settings** → **Members**.
+
+- The account Owner's seat is implicit.
+- Teammate seats are per member and workspace.
+- Only the account Owner can make paid seat changes.
+- Account Admins can manage membership but not paid MCP seats.
+- A seat cannot be granted before workspace access.
+- Seat removal revokes that workspace's MCP entitlement; the confirmation explains applicable billing or credit.
+
+See [Members and roles](/workspace-admin/members-and-roles).
+
+## Recovery matrix
+
+| Symptom | Check |
+| --- | --- |
+| Browser authorization does not open | Copy the current command or URL from Marketer and retry |
+| Workspace is absent during authorization | Your membership and selected-workspace grant |
+| Workspace appears but tools cannot use it | MCP seat and the session's workspace grant |
+| Tool is missing | OAuth scopes, effective role cap, and required provider integration |
+| Write request stays read-only | Most restrictive role across granted workspaces |
+| Connection is unfamiliar | Select **Disconnect**, then review account sessions and membership |
+| Rotated client stops working | Replace both credentials shown in **New credentials** |
+| One rotation failed | Keep its current credentials and regenerate that session again |
 
 ## Next step
 
-Review [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before allowing an external agent to propose or perform spend-affecting work.
+Review [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy), then prove a one-workspace read-only session before widening scope or reach.

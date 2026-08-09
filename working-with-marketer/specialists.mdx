@@ -12,10 +12,10 @@ Use the workbench to answer three questions: who owns the current step, what did
 
 The agent control in the composer supports two paths:
 
-- Keep **Auto — Routes each request** selected when you want the Marketing Agent to choose a perspective for each turn.
+- Keep the automatic route selected when you want the Marketing Agent to choose a perspective for each turn. It appears as **Orchestrator** on Home; the selector's **Auto** row says **Routes each request**.
 - Select a specialist shown in the menu when you want to keep that specialist's perspective for the conversation.
 
-The available specialist names come from the current workspace. Selecting one changes the conversational perspective. A longer run still starts only when Marketer creates the task and, when shown, you select **Approve & Run**.
+The available specialist names come from the current workspace. Selecting one changes the conversational perspective. A longer run still starts only when Marketer creates the task and you select the run control on a displayed proposal.
 
 For multi-step work, describe the result rather than trying to assign every internal handoff yourself:
 
@@ -30,18 +30,13 @@ Prepare creative generation as a reviewable plan before running it.
 
 When Marketer proposes coordinated work, the proposal lists the steps it intends to run.
 
-<Frame caption="The plan exposes the work before specialists or a pipeline begin the longer run.">
-  <img
-    src="/assets/product-flows/task-proposal.png"
-    alt="Marketer conversation with a seven-step Creative Pipeline proposal and Dismiss, Edit, and Approve and Run controls"
-  />
-</Frame>
+Read the plan for evidence collection, production, ranking, and the final deliverable. Proposal controls vary:
 
-Read the plan for evidence collection, production, ranking, and the final deliverable. Select:
+- A named specialist can show **Cancel**, **Edit**, and **Accept & Run**.
+- Creative Pipeline can show **Cancel**, **Edit**, and **Approve & Run**.
+- Another task plan can show **Cancel**, **Edit brief**, and **Run it**.
 
-- **Dismiss** to stop the proposal.
-- **Edit** to change the goal, steps, inputs, output count, or review boundary.
-- **Approve & Run** to start the plan as shown.
+Use the edit branch to change the goal, steps, inputs, output count, or review boundary. Use the displayed run control only when the plan should start as shown.
 
 This approval starts the listed work. It does not grant blanket authority for later changes to connected accounts.
 
@@ -160,6 +155,9 @@ Then verify the combined result:
 ## Next step
 
 <CardGroup cols={2}>
+  <Card title="Answers, tasks, and proposals" icon="code-branch" href="/working-with-marketer/answers-tasks-and-proposals">
+    Review the exact proposal variant before a specialist run starts.
+  </Card>
   <Card title="Track the parent task" icon="list-check" href="/working-with-marketer/tasks-and-activity">
     Connect specialist state to the task's current step and terminal result.
   </Card>

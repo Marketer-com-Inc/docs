@@ -1,66 +1,128 @@
 ---
 title: "Members and roles"
-description: "Control account membership, workspace reach, roles, invitations, and MCP seats."
+description: "Manage account membership, workspace reach, invitations, roles, removal, and MCP seats."
 ---
 
-People belong to an account. Their access can cover every workspace or only selected workspaces.
+People belong to the account. Give them one role across every workspace or a role for each selected workspace.
 
-## Role model
+## Separate role from reach
 
-| Role | Typical access |
+| Reach mode | Available choices | Use it when |
+| --- | --- | --- |
+| **All workspaces** | **Admin**, **Member**, or **Viewer** | The person needs a consistent role across the account |
+| **Selected workspaces** | **No access**, **Owner**, **Admin**, **Member**, or **Viewer** per workspace | Access or responsibility differs by client workspace |
+
+The account Owner is established through ownership, not offered as a normal **All workspaces** invitation role.
+
+### Role behavior
+
+| Role | Customer-visible posture |
 | --- | --- |
-| **Owner** | Full control, including workspace settings and ownership-level billing or seat decisions |
-| **Admin** | Broad editing access and team management within the assigned account or workspace scope |
-| **Member** | Create and edit workspace content |
-| **Viewer** | Read-only access |
+| **Owner** | Full control of the assigned workspace; account Owner also owns account billing and paid MCP-seat decisions |
+| **Admin** | Full edit access within reach; an account Admin can also manage the account team, while a selected-workspace Admin cannot |
+| **Member** | Creates and edits content in the workspaces they can reach |
+| **Viewer** | Read-only; mutation controls are disabled and workspace **Plans & Billing** is hidden |
 
-The same label can be account-wide or attached to a specific workspace grant. Always review both the role and its reach.
+The all-workspaces descriptions are:
 
-<Note>
-  Billing visibility and controls vary by role, workspace billing model, and whether the workspace is covered by an account plan. Viewers do not see **Plans & Billing** in workspace settings.
-</Note>
+- **Admin** — Full access to every workspace, and can manage the team.
+- **Member** — Create and edit content in every workspace.
+- **Viewer** — Read-only across every workspace.
 
-## Invite a teammate
+## Invite teammates
 
-Only account Owners and Admins can invite teammates or change roles.
+Only account Owners and account Admins can invite people or change account membership and roles. A selected-workspace Admin does not gain account-team management from that workspace role alone.
 
 <Steps>
-  <Step title="Open Members">
-    Go to **Settings** → **Members**.
+  <Step title="Open the team surface">
+    Go to **Settings** → **Members**, or use **Users** in an eligible Account overview.
   </Step>
-  <Step title="Add one or more emails">
-    Enter the teammates you intend to invite. Marketer prevents duplicate, pending, self, and existing-member invitations.
+  <Step title="Start an invitation">
+    Select **Invite teammate** or **Invite your team** and enter one or more emails.
   </Step>
-  <Step title="Choose access mode">
-    Grant one role across **All workspaces**, or choose **Selected workspaces** and set a role for each workspace.
+  <Step title="Choose reach">
+    Select **All workspaces** or **Selected workspaces**. A selected-workspace invitation must include at least one workspace.
   </Step>
-  <Step title="Review MCP access separately">
-    If the teammate needs MCP, review seat availability and billing ownership. Workspace access and an MCP seat are related but separate grants.
+  <Step title="Assign roles">
+    For selected workspaces, set the intended role on each row and leave every other workspace at **No access**.
   </Step>
-  <Step title="Send and monitor">
-    Send the invite. It remains under **Pending invites** until accepted.
+  <Step title="Review and send">
+    Confirm emails, reach, and roles. Marketer blocks self-invites, duplicates, existing members, and already-pending invites.
   </Step>
 </Steps>
 
-## Manage existing members
+Invitations remain under **Pending invites** until accepted.
 
-For account-wide access, an Owner or Admin can change the member's all-workspace role. For selected access, expand the member and choose **No access**, Owner, Admin, Member, or Viewer for each workspace.
+### Pending invitation states
 
-Removing a teammate from the account immediately removes their workspace access. Review active work, ownership, and MCP sessions first.
+- Use **Resend** when the original invitation expired or was missed.
+- Use **Revoke** when the person should no longer be able to join.
+- Recheck reach and roles before resending; do not rely on an old invitation's intent.
 
-## MCP seats
+## Change an existing member
 
-MCP seats are assigned per member and workspace unless the effective plan provides unlimited seats. Account owners control seat changes that can affect billing. Giving someone workspace access does not automatically authorize their external agent connection.
+For all-workspace access, change the account-wide role. For selected access, expand the member and choose **No access**, **Owner**, **Admin**, **Member**, or **Viewer** for each workspace.
 
-## Access review checklist
+Use this sequence for a role change:
 
-- Every person uses an individual account.
-- Viewers are used for read-only review.
-- Selected-workspace access is preferred when someone does not need every workspace.
-- Former teammates are removed promptly.
-- Pending invites are canceled when no longer valid.
-- MCP seats and connected OAuth sessions match current responsibilities.
+1. Identify whether the problem is role or reach.
+2. Confirm the affected workspace rows.
+3. Apply the smallest change.
+4. Ask the member to reopen the workspace switcher.
+5. Verify that read, edit, and billing visibility match the intended role.
+
+Owners and administrators cannot manage the account Owner or their own account role like an ordinary member.
+
+## Remove a member
+
+Removing someone from the account immediately removes every workspace grant.
+
+Before removal, review:
+
+- active work and approval ownership;
+- Slack identity links;
+- MCP seats and connected agents;
+- pending deliverables; and
+- any provider identity that only that person can reauthorize.
+
+Removing workspace reach is narrower than removing the account member. Prefer **No access** for specific workspaces when the person still belongs elsewhere in the account.
+
+## MCP seats are a separate grant
+
+An MCP seat is assigned per member and workspace. Workspace membership does not automatically grant external-agent access.
+
+| Rule | Effect |
+| --- | --- |
+| Account Owner | Seat is implicit and cannot be revoked like a teammate seat |
+| Account Owner grants or removes paid seats | Seat changes are billing operations |
+| Account Admin | Can manage invites and roles but cannot make paid seat changes |
+| No workspace access | A seat cannot be granted first; establish workspace reach |
+| Seat removed | MCP access to that workspace is revoked; unused billed time can be credited on the next invoice |
+
+The confirmation shows the applicable amount or billing treatment. Review the amount displayed rather than relying on a remembered price.
+
+After a seat change, check the member row and [MCP connect](/workspace-admin/mcp-connect) sessions. A connection can remain listed while losing entitlement to a workspace.
+
+## Common access problems
+
+| Symptom | Check |
+| --- | --- |
+| Workspace is absent from the switcher | Selected-workspace grant is **No access** or missing |
+| Controls are disabled | Effective role is **Viewer** |
+| **Plans & Billing** is missing | Viewer role, or billing belongs to an account plan |
+| Person can edit the wrong workspace | Reach mode or per-workspace row is too broad |
+| MCP cannot use a visible workspace | MCP seat or session workspace grant is missing |
+| Invitation never arrived | **Pending invites**, email spelling, then **Resend** |
+
+## Quarterly access review
+
+- Confirm every active person still needs account membership.
+- Prefer **Selected workspaces** where account-wide reach is unnecessary.
+- Use **Viewer** for review-only collaborators.
+- Revoke stale pending invitations.
+- Match MCP seats and connected sessions to current responsibilities.
+- Remove former teammates promptly.
 
 ## Next step
 
-Review the active workspace's [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) so everyone understands what requires review and what can go live.
+Review [Workspace switching](/workspace-admin/workspace-switching), then align each workspace's [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) with the people who can act there.

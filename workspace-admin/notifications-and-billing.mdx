@@ -1,62 +1,137 @@
 ---
 title: "Notifications and billing"
-description: "Choose where alerts go, what reaches external channels, and how workspace usage and billing are managed."
+description: "Route workspace alerts and understand workspace, account-covered, custom, free, and failed-payment billing states."
 ---
 
-Notifications control delivery. Plans & Billing shows the active workspace's usage and billing context. Access to each surface depends on your role and how the account pays for the workspace.
+**Notifications** controls external delivery for the active workspace. **Plans & Billing** shows that workspace's usage and plan context unless an account plan owns its billing.
 
-## Configure notifications
+## Configure notification delivery
 
 Open **Settings** → **Notifications**.
 
-### Delivery channels
+### Slack
 
-- The in-app feed keeps workspace notifications regardless of external delivery.
-- Slack can post workspace alerts to one selected channel when [Slack](/integrations/slack) is connected.
-- Email delivery is independent of Slack and requires at least one recipient.
+The **Slack** section says: workspace alerts post to one channel; approvals DM the person they are for.
 
-Slack approval requests can be delivered to the person they belong to rather than the shared alerts channel.
+- Turn on **Post to Slack**.
+- Under **Channel**, pick, search, or create the destination. The bot joins automatically when the connection has the required permissions.
+- If Slack is not connected, use **Connect Slack**.
+- If channel listing reports a scope problem, reconnect Slack before choosing a new channel.
 
-### What notifies
+### Email
 
-Set a severity floor:
+**Email alerts** is independent of Slack. When it is on, add at least one **Recipient**. Recipients can be workspace members or external email addresses, within the limit displayed in the product.
 
-- **Everything**
-- **Warnings and critical**
-- **Critical only**
+The in-app feed always retains the notifications, even when Slack and email are off.
 
-Then enable the notification groups relevant to your team, such as performance, account health, approvals, agent activity, budget, or billing. Events below the chosen floor remain in the app instead of going to Slack or email.
+## Choose what leaves the app
 
-<Tip>
-  Start with warnings and critical events. Add lower-severity delivery only when someone owns the response and the channel remains useful.
-</Tip>
+Under **What notifies**, set **Notify for**:
 
-## Review plans and usage
+| Severity floor | External delivery |
+| --- | --- |
+| **Everything** | Information, warning, and critical events |
+| **Warnings and critical** | Warning and critical events |
+| **Critical only** | Critical events only |
 
-Open **Settings** → **Plans & Billing**. Depending on the workspace and role, the page can show:
+Anything below the floor stays in the app.
 
-- agent activity and token usage;
-- current plan and available plan controls;
-- payment method;
-- recent invoices; and
-- a payment-recovery action when an eligible self-billing workspace has an open invoice.
+Then choose event groups:
 
-Viewers do not see this workspace setting. Some actions require Owner or Admin access.
+| Group | Events |
+| --- | --- |
+| **Performance** | Spend spikes, ROAS drops, anomalies |
+| **Account health** | Token expiry, sync failures, disconnects |
+| **Approvals** | When the agent needs a decision from you |
+| **Agent activity** | Run completions, creative ready |
+| **Budget** | Budget changes and spend-cap warnings |
+| **Billing & team** | Billing issues, member changes |
+
+Select **Save**. If email is enabled with no recipient, or the recipient limit is exceeded, saving remains blocked until the routing is valid.
+
+## Test the routing model
+
+Use this sequence before relying on external alerts:
+
+1. Confirm the active workspace.
+2. Confirm Slack's selected channel and the email recipient list.
+3. Start with **Warnings and critical**.
+4. Enable the groups with a named response owner.
+5. Send the available Slack test.
+6. Verify the in-app copy remains available.
+
+## Open Plans & Billing
+
+Go to **Settings** → **Plans & Billing**. Viewers do not see this workspace setting.
+
+The page can include:
+
+- **Agent activity** summary;
+- current plan and token usage;
+- usage categories and **Usage log**;
+- **Current plan**;
+- **Change plan**;
+- **Payment method**;
+- **Invoices**; and
+- **Danger zone** for workspace deletion.
+
+## Read the plan state
+
+| Display | Meaning | Available path |
+| --- | --- | --- |
+| **Free plan** | Metered baseline with an active token cycle | Connect eligible accounts or choose a paid plan as offered |
+| Catalog plan | Standard workspace subscription | **Change plan or buy credits** when adjustable |
+| Custom plan | Off-catalog or managed plan | Contact support when the page says the plan is custom |
+| **Complimentary Plan** | Unlimited-token complimentary workspace | No self-serve plan controls |
+| **Organization Plan** | The workspace is covered by an account plan | Use **Account → Billing** for account-owned billing |
+| **Payment failed** | A self-billing workspace has a failed charge | Select **Fix payment** when offered |
+
+Upgrades apply immediately with proration and refill tokens. The page states that downgrades also apply immediately while current tokens remain through the billing cycle, with no mid-cycle credit. Review the live checkout or portal terms before confirming.
+
+## Manage payment and invoices
+
+For a self-billing workspace:
+
+- **Payment method** shows the card on file and offers **Update card**, or **Add card** if none exists.
+- **Invoices** lists recent Stripe charges with status, hosted invoice, and PDF when available.
+- **Manage billing in Stripe** handles cancellation, reactivation, payment updates, and invoice access for a billable plan.
+
+If **Payment failed** appears, use **Fix payment** and then return to Marketer to confirm the workspace status recovered.
 
 ## Account-covered workspaces
 
-When an account plan covers the workspace, payment method and invoices belong to the account rather than the individual workspace. Eligible multi-workspace Owners and Admins can use the account-level **Billing** area to review the combined view.
+When the page says the workspace is covered by your organization's account plan:
 
-If the workspace is managed by an account team or uses a custom plan, the self-service controls can differ from standard plans. Follow the state shown in Marketer instead of assuming every workspace can change plans directly.
+- plan lifecycle belongs to **Account → Billing**;
+- workspace payment method and invoice sections are hidden;
+- the account plan can fund several workspaces; and
+- account cancellation has a multi-workspace effect.
 
-## Billing safety
+Eligible account Owners and Admins can inspect Account Billing. Only the account Owner sees the account-plan lifecycle and per-workspace activation controls.
 
-- Confirm the active workspace before opening a billing action.
-- Check whether billing is workspace-level or account-level.
-- Review seat changes separately; MCP seats can affect billing.
-- Do not share payment screenshots containing personal or card details.
-- Record who owns a failed-payment response and confirm recovery in the product.
+If there is no account plan, **Account → Billing** shows **Workspace plans** with **Activate** or **Manage plan** for each workspace; those actions are Owner-only.
+
+## Delete a workspace
+
+The **Danger zone** describes permanent deletion. A workspace with a billable subscription must first be canceled or archived through the billing path shown.
+
+<Warning>
+  **Delete workspace** is irreversible. Confirm exports, provider dependencies, ownership, billing, active work, and the exact workspace name before continuing.
+</Warning>
+
+## Recovery matrix
+
+| Symptom | Check |
+| --- | --- |
+| Slack channel cannot load | Slack connection and current permissions |
+| Save is disabled with email on | Add at least one recipient and stay within the displayed limit |
+| External alert did not arrive | Delivery master switch, severity floor, event group, and channel/recipient |
+| **Plans & Billing** is missing | Effective role; Viewers do not see it |
+| Payment method and invoices are absent | Workspace may be account-covered |
+| **Change plan** is unavailable | Complimentary, account-covered, managed, or custom plan state |
+| Payment remains failed after portal action | Return to Marketer and refresh the same billing scope |
+| MCP seat cost is unexpected | Review the seat confirmation and account billing owner |
 
 ## Next step
 
-Review [Members and roles](/workspace-admin/members-and-roles) so billing and MCP seat permissions match the people responsible for them.
+Review [Members and roles](/workspace-admin/members-and-roles) so notification ownership, billing authority, and paid MCP-seat decisions belong to the right people.

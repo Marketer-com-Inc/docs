@@ -3,68 +3,83 @@ title: "Integrations"
 description: "Connect the advertising, commerce, analytics, and messaging systems that give Marketer its working context."
 ---
 
-Integrations bring source data into your Marketer workspace. Connect only the accounts and resources that belong to the workspace you are configuring.
+Integrations bring source data and provider actions into the **active workspace**. A connection in one workspace does not automatically appear in another.
 
 <Note>
-  Owners, Admins, and Members can manage connections. Viewers can inspect available connection state but cannot connect, reconnect, change selections, sync, or disconnect.
+  Owners, Admins, and Members can manage integrations. Viewers can inspect connection, selection, and freshness state but cannot connect, reconnect, change selections, sync, or disconnect.
 </Note>
 
-<Frame caption="The Integrations directory shows providers and the connection states you need to resolve before using their data.">
+<Frame caption="The Integrations directory shows each provider's current state and the next action needed before its data is ready.">
   <img src="/assets/product-flows/integrations-directory.png" alt="Marketer Integrations directory with advertising, commerce, analytics, and collaboration providers plus connected, reconnect-needed, and available states" />
 </Frame>
 
-## Available integrations
+## Choose the source you need
 
-| Integration | What it contributes | Status |
+| Integration | Workspace context it adds | Important boundary |
 | --- | --- | --- |
-| [Meta Ads](/integrations/meta-ads) | Facebook and Instagram campaigns, creatives, audiences, pixels, and catalogs | Available |
-| [Google Ads](/integrations/google-ads) | Selected accounts, campaigns, ad groups, ads, and performance | Available |
-| [Shopify](/integrations/shopify) | Products, collections, orders, and revenue from connected stores | Available |
-| [Google Analytics 4](/integrations/google-analytics-4) | Read-only sessions, channels, campaigns, and landing pages | Available |
-| [Slack](/integrations/slack) | Agent conversations, approval requests, progress, and workspace alerts | Available |
-| [Beta integrations](/integrations/beta) | Microsoft Ads (Beta), OpenAI Ads (Beta), and Triple Whale (Beta) | Beta |
+| [Meta Ads](/integrations/meta-ads) | Campaigns, creatives, audiences, pixels, catalogs, and selected Meta assets | Publishing needs a granted Facebook Page |
+| [Google Ads](/integrations/google-ads) | Selected leaf accounts, campaigns, ad groups, ads, and performance | Manager accounts expose children but are not reporting units |
+| [Shopify](/integrations/shopify) | Products, collections, orders, and revenue from one or more stores | Each store can be included in or excluded from the revenue rollup |
+| [Google Analytics 4](/integrations/google-analytics-4) | Read-only sessions, channels, campaigns, and landing pages | GA4 attribution is separate from ad-platform attribution |
+| [Slack](/integrations/slack) | Agent conversations, approvals, progress, and routed workspace alerts | Installation and alert routing are separate setup steps |
+| [Beta integrations](/integrations/beta) | Microsoft Ads (Beta), OpenAI Ads (Beta), and Triple Whale (Beta) | Beta behavior and coverage can evolve faster |
 
-## Before you connect
+## Read the connection state
 
-- Confirm that you are in the correct Marketer workspace.
-- Use a provider identity that can access the accounts, stores, properties, or Slack workspace you need.
-- Decide which individual resources should contribute data. You do not have to select everything the provider exposes.
-- Ask an Owner or Admin about workspace policy before granting access to a production account.
+The directory and provider page separate authorization, resource selection, and data sync. Resolve them in that order.
 
-Marketer shows the permissions and resources available through each provider flow. The provider remains the source of truth for the access your identity can grant.
+| State | What it means | Next action |
+| --- | --- | --- |
+| **Checking status** | Marketer is verifying the provider | Wait for the check to finish |
+| **Status unavailable** | The latest check failed; this is not proof of disconnection | Refresh before changing anything |
+| **Disconnected** | No active authorization or credential is available | Select **Connect** |
+| **Reconnect needed** | The provider rejected or revoked the saved authorization | Select **Reconnect** and complete provider consent |
+| **Finish setup**, **Choose accounts**, or **Choose properties** | Authorization succeeded, but required resources are not selected | Reopen setup and save a valid selection |
+| **Refresh access** | Authorization exists, but no selectable provider resources were resolved | Fix provider access, then refresh the available roster |
+| **Syncing** | Selected resources are importing | Wait; use coverage rather than the badge alone |
+| **Sync failed** | Authorization may still be healthy, but the import did not finish | Use **Retry sync** or **Resync** |
+| **Connected** | Authorization and required setup are present | Confirm selection, last sync, and coverage |
 
-## Connect a source
+<Warning>
+  **Connected** confirms authorization and setup. It does not mean every historical period has finished importing or that the provider considers today's metrics final.
+</Warning>
+
+## Connect and verify a source
 
 <Steps>
-  <Step title="Open Integrations">
-    In Marketer, select **Integrations** in the main navigation.
+  <Step title="Confirm the active workspace">
+    Check the workspace name in the top-left switcher. Provider resources should belong to this workspace.
   </Step>
-  <Step title="Choose a provider">
-    Open its row to see the current connection state, available actions, and setup requirements.
+  <Step title="Authorize the provider">
+    Open **Integrations**, choose the provider, and use the displayed connection action. Review the provider's consent screen or credential request.
   </Step>
-  <Step title="Authorize and select resources">
-    Complete the provider flow or enter the requested credential. Then choose the accounts, stores, properties, or channel settings that belong in this workspace.
+  <Step title="Select the reporting resources">
+    Choose only the accounts, stores, properties, or assets that should contribute here. Authorization alone is not a saved reporting selection.
   </Step>
-  <Step title="Confirm the first successful state">
-    Look for **Connected**, the selected resources, a completed sync or configured Slack channel, and any available data-coverage details.
+  <Step title="Wait for usable coverage">
+    Watch the provider's sync status, last-sync time, and coverage. Historical data can continue importing after recent data becomes usable.
+  </Step>
+  <Step title="Run a source comparison">
+    Ask one narrow, read-only question for a named resource and completed date range. Compare the result with the provider before expanding the workflow.
   </Step>
 </Steps>
 
-## Understand freshness
+## Reconnect, reselect, or resync?
 
-A connected badge confirms authorization. It does not guarantee that every source has finished importing or that every metric has the same reporting delay.
+- **Reconnect** repairs provider authorization. It should not be your first response to an ordinary sync failure.
+- **Manage accounts**, **Manage properties**, or the provider's asset dialog changes what enters the workspace.
+- **Refresh account access** or **Refresh property access** reloads the roster the current authorization can see.
+- **Resync** refreshes data only after authorization and selection are healthy.
+- **Disconnect** removes the provider from the workspace. Review reports, audiences, alerts, and workflows that depend on it first.
 
-Use the provider detail page to check sync progress, last sync, selected resources, and data coverage. Compare important decisions with the source platform when the latest period is still changing.
+If a state is ambiguous, follow [Troubleshoot integrations](/integrations/troubleshooting) rather than repeatedly reconnecting.
 
-## Recover or remove a connection
+## Currency and attribution
 
-- Use **Resync** when authorization is healthy but imported data needs to be refreshed.
-- Use **Reconnect** when a provider revoked access, required new permissions, or no longer exposes a selected resource.
-- Refresh the page when Marketer says the status could not be verified. Marketer preserves the last-known connection instead of treating a read error as a disconnect.
-- Use **Disconnect** only when the workspace should stop using that source. Review the confirmation because downstream reporting and workflows can lose context.
+Blended reporting uses the workspace reporting currency. A provider account can retain a different source currency, so confirm both before reconciling raw and blended values.
 
-For a diagnostic sequence, see [Troubleshoot integrations](/integrations/troubleshooting).
+Attribution also remains source-specific. Meta Ads, Google Ads, GA4, Shopify, and Triple Whale (Beta) can report different totals for valid methodological reasons. Name the source and date range in any decision record.
 
 ## Next step
 
-After the first sync completes, ask Marketer a narrow, read-only question about the connected source. Include the account and date range so you can verify the answer against the provider.
+Open the provider guide you need, complete one verified sync, then review [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before enabling spend-affecting work.

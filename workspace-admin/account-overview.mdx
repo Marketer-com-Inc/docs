@@ -1,0 +1,95 @@
+---
+title: "Account overview"
+description: "Use the gated multi-workspace hub for account-wide performance, billing, users, and MCP access."
+---
+
+**Account overview** is a cross-workspace hub for account Owners and Admins whose account has at least two active workspaces. Ineligible users are returned to the workspace dashboard and do not see the entry.
+
+<Note>
+  Account overview does not replace the active-workspace settings. It aggregates or administers the account's workspace set while provider connections, brand policy, and most operational settings remain workspace-scoped.
+</Note>
+
+## Open the hub
+
+Open the top-left workspace switcher and select **Account overview**. The account area has five tabs:
+
+| Tab | What it shows |
+| --- | --- |
+| **Overview** | Cross-workspace performance, needs-attention items, and searchable workspace roster |
+| **Analytics** | Account-wide KPIs, trends, spend by channel, top campaigns, and top creatives |
+| **Billing** | Account plan or per-workspace plan coverage, payment recovery, and plan actions |
+| **Users** | The same account membership, invitation, workspace-role, and MCP-seat model as **Members** |
+| **MCP** | Account connection status plus the connected-agent surface |
+
+## Overview tab
+
+Choose the reporting period, then review:
+
+- **Performance** for account-wide spend, ROAS, CPA, and CTR;
+- **Needs attention** and **Only needs attention** for workspaces with actionable state; and
+- **Workspaces**, including the workspace count and **Search workspaces…**.
+
+Account performance is blended in USD across the account workspace set. Use the workspace row and source platform before reconciling a native-currency value.
+
+If a refresh fails, the page can show **Unable to refresh overview** and continue showing cached data. Treat cached figures as stale until a successful refresh.
+
+## Analytics tab
+
+The account Analytics view aggregates every workspace in the eligible account scope. It includes:
+
+- performance KPIs and trend windows;
+- channel trend and insights;
+- **Spend by channel**;
+- **Top campaigns**; and
+- **Top creatives**.
+
+Use the account view to find where to investigate, then open the named workspace for provider-level currency, attribution, sync, and action context.
+
+## Billing tab
+
+Billing has two possible models:
+
+### Account plan
+
+An account-level subscription can fund covered workspaces. The tab shows plan status and coverage by workspace. The account Owner can use **Manage billing in Stripe** for plan lifecycle, payment method, or invoices.
+
+Canceling an account plan can affect every covered workspace. The control is deliberately Owner-only and handled in Stripe.
+
+### Workspace plans
+
+If no account plan exists, the tab shows **Workspace plans**. Each workspace can have **Own plan** or no active plan.
+
+- The account Owner sees **Activate** for an unfunded workspace.
+- **Manage plan** switches to that workspace's **Plans & Billing** page.
+- Account Admins can inspect the account hub but only the account Owner can activate or change workspace plans from this section.
+
+If an account charge fails, use the displayed payment-recovery action. Confirm recovery on the same Billing tab rather than assuming a portal update has synced.
+
+## Users tab
+
+**Users** reuses the account membership model documented in [Members and roles](/workspace-admin/members-and-roles). Changes here and in **Settings** → **Members** affect the same account people, pending invitations, selected-workspace grants, and MCP seats.
+
+## MCP tab
+
+The account MCP tab adds **Account connection** above the personal connected-agent surface. It shows:
+
+- **Connected** or **Not connected**;
+- connection count;
+- reachable workspaces;
+- effective read-only or read-write posture; and
+- last-used information.
+
+Account-level scope changes still cannot exceed the most restrictive role across reachable workspaces. Credential regeneration invalidates the old tokens and shows the replacement tokens once; copy them into the intended client immediately.
+
+## Scope and freshness checklist
+
+- Account name and eligible workspace count
+- Reporting period
+- USD blended posture versus provider-native currencies
+- Cached-data warning absent
+- Correct plan model: account-covered or self-billing workspaces
+- Correct person and workspace grants before a Users or MCP change
+
+## Next step
+
+Use Account overview to identify the workspace that needs attention, then switch into that workspace before changing integrations, guardrails, notifications, or provider actions.

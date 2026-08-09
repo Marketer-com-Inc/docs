@@ -1,54 +1,99 @@
 ---
 title: "Profile and authentication"
-description: "Manage your personal identity, sign-in methods, password reset, and active sessions."
+description: "Manage your personal name and photo, review sign-in identities, reset the password, and revoke every session."
 ---
 
-Profile and Authentication are personal settings. They follow your account across every workspace you can access.
+**Profile** and **Authentication** are personal settings. They follow your Marketer identity across every account and workspace you can reach.
 
-## Update your profile
+## Update Profile
 
-Open **Settings** → **Profile** to manage:
+Open **Settings** → **Profile**. Under **Your details**, manage:
 
-- **Profile photo** — upload, replace, or remove the image teammates see.
-- **Full name** — the name shown in shared workspaces.
-- **Email** — the current sign-in email, shown as read-only.
+| Field | Behavior |
+| --- | --- |
+| **Profile photo** | Upload, change, or remove the image teammates see |
+| **Full name** | Required display name shown on shared workspaces |
+| **Email** | Read-only sign-in email |
 
-Profile images accept the formats and size shown beside the upload control. A saved name or photo becomes visible to teammates after the page refreshes.
+Profile photos accept JPG, PNG, or WebP up to 5 MB. Select **Upload photo** or **Change photo**, then verify the preview. **Remove** returns the avatar to initials.
+
+The full name supports up to 120 characters. Select **Save** after editing it.
 
 <Note>
-  The Profile page does not currently change your account email. Follow the support or reauthentication process shown in the product if the email must change.
+  The Profile page says email change requires a reauthentication flow and is coming soon. It does not currently provide an email-edit control.
 </Note>
 
-## Review authentication
+## Review Authentication
 
-Open **Settings** → **Authentication** to review:
+Open **Settings** → **Authentication**.
 
-- the email on the account;
-- the most recent sign-in time;
-- linked identity providers and when they were last used;
-- the password-reset action; and
-- **Sign out everywhere**.
+### Account
 
-### Reset your password
+The **Account** section shows:
 
-Select **Send reset link**. Marketer sends the reset flow to the email on the account. Complete it from a device and browser you trust.
+- **Email**; and
+- **Last sign-in**.
 
-### Sign out every session
+Use the timestamp when investigating an unexpected session, but remember it is the account's latest recorded sign-in—not a list of every active device.
 
-Use **Sign out everywhere** when a device is lost, a session is no longer trusted, or you want to force a fresh sign-in across browsers and phones.
+### Identity providers
+
+**Identity providers** lists how the account can sign in and when each identity was last used. It can include password or social identity providers associated with the account.
+
+The page is currently a review surface. It does not expose ordinary link, unlink, or provider-replacement controls.
+
+## Send a password reset
+
+Under **Password**, select **Send reset link**.
+
+1. Confirm the account email in the **Account** section.
+2. Select **Send reset link**.
+3. Look for **Reset link sent. Check your inbox.**
+4. Open the message on a trusted device and set the new password.
+5. Return to Marketer and sign in again.
+
+Do not forward the reset link or include it in an escalation. If the account uses a linked identity provider, resetting a Marketer password does not secure the external identity-provider account.
+
+## Sign out everywhere
+
+Use **Sign out everywhere** to revoke every Marketer session for the account, including the current browser, phones, and other browsers.
 
 <Warning>
-  Global sign-out revokes every active session for your account, including the session you are using. Save work in progress first.
+  Global sign-out interrupts the current session. Save drafts and settings before selecting **Sign out everywhere**.
 </Warning>
 
-## Sign-in troubleshooting
+After global sign-out:
 
-1. Confirm that you are using the same email or linked identity shown on the Authentication page.
-2. Use the password-reset flow rather than repeatedly guessing a password.
-3. Complete verification in the same browser where you began sign-in when possible.
-4. If you can sign in but cannot reach a workspace, ask an account Owner or Admin to review your membership and workspace grant.
-5. If access changed unexpectedly, sign out everywhere and start a fresh session before escalating.
+1. Secure the email account and any listed identity provider.
+2. Reset the Marketer password if appropriate.
+3. Sign in through the intended provider.
+4. Review connected agents, workspace access, and provider connections for unexpected changes.
+
+The ordinary dashboard sign-out is narrower and signs out the current session. **Sign out everywhere** is the account-wide containment action.
+
+## Sign-in versus workspace access
+
+Authentication proves your personal identity. It does not grant a workspace.
+
+| Symptom | Likely area |
+| --- | --- |
+| Cannot sign in | Email, password, identity provider, verification, or reset flow |
+| Can sign in but workspace is absent | Account membership or selected-workspace grant |
+| Workspace appears but controls are disabled | Effective Viewer role |
+| MCP client cannot reach workspace | Session grant and MCP seat, in addition to membership |
+
+Ask an account Owner or Admin to review [Members and roles](/workspace-admin/members-and-roles) when authentication succeeds but workspace reach does not.
+
+## Recovery checklist
+
+- Same email or identity provider shown on Authentication
+- Password reset attempted instead of repeated password guesses
+- Verification completed in the browser where sign-in began when possible
+- Account email and provider account secured
+- **Sign out everywhere** used for an untrusted session
+- Workspace reach checked separately from authentication
+- Unrecognized MCP sessions disconnected
 
 ## Next step
 
-Review [Members and roles](/workspace-admin/members-and-roles) to understand what your account can do in the active workspace.
+Review [Security and troubleshooting](/workspace-admin/security-and-troubleshooting), then confirm your active workspace and effective role.

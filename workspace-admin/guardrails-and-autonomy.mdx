@@ -1,83 +1,143 @@
 ---
 title: "Guardrails and autonomy"
-description: "Set the limits Marketer reads before changes and choose whether accepted launches stop for review."
+description: "Set workspace performance, spend, scaling, audience, and launch-review policy before enabling automation."
 ---
 
-Guardrails define what is in policy. Autonomy defines how far accepted work proceeds without another review stop. Configure both before allowing spend-affecting actions.
+**Guardrails** define hard workspace policy. **Autonomy** defines how new work starts and whether an accepted launch pauses for review. Provider permissions and ad-account state still apply underneath both.
 
-## Guardrails
+<Warning>
+  Guardrails reduce risk; they do not validate the campaign, creative, destination, audience, tracking, or provider account. Keep a human review step until real outputs and recovery paths are proven.
+</Warning>
 
-Open **Settings** → **Guardrails** to configure workspace constraints.
+## Set performance targets
 
-### Performance targets
+Open **Settings** → **Guardrails**.
 
-- **Target ROAS** — the workspace's desired return reference.
-- **Break-even ROAS** — the point below which a pullback can be appropriate.
-- **Target CPA** — an optional acquisition-cost reference.
+| Field | How Marketer uses it |
+| --- | --- |
+| **Target ROAS** | Results above this target can qualify for scale-up under policy |
+| **Break-even ROAS** | Results below this threshold can trigger pull-back behavior |
+| **Target CPA** | Optional acquisition-cost target used where relevant |
 
-These values guide analysis and risk detection. They do not make every recommendation correct; review the source, date range, and attribution model.
+Targets are decision thresholds, not promises. Align their date range, conversion definition, and attribution source with how the team evaluates performance.
 
-### Spend caps
+Blank numeric fields use Marketer's system defaults. If a number is important to your operating policy, enter it explicitly rather than relying on an unseen fallback.
 
-You can set monthly and daily caps plus a minimum spend floor. Choose the cap currency first. Caps apply only to ad accounts billed in that currency; Marketer does not convert a cap across currencies for enforcement.
+## Set currency-bound spend caps
 
-### Scaling limits
+Choose the guardrail currency first, then set:
 
-- **Allow budget increases** is the master switch for scale-ups.
-- **Max budget increase (%)** is a hard ceiling for one increase.
-- **Approval threshold (%)** determines when an otherwise allowed increase must be reviewed.
+- **Monthly cap**;
+- **Daily cap**; and
+- **Minimum spend floor**.
 
-You can also protect **Untouchable campaigns** so Marketer will not modify the selected Meta campaigns.
+Caps are enforced only on ad accounts billed in the selected currency. Marketer does not convert a different provider currency to make it fit the cap.
 
-The page includes New Customer Acquisition settings for Meta. Those settings work with the audience definitions and exclusions configured for connected ad accounts.
+<Warning>
+  A USD cap does not govern an account billed in EUR, GBP, or another currency. Verify each connected ad account's native billing currency before relying on a cap.
+</Warning>
 
-## Autonomy
+The minimum spend floor expresses an operating lower bound; it does not override a provider rejection, a hard cap, a paused campaign, or unavailable funds.
+
+## Control scaling
+
+| Control | Effect |
+| --- | --- |
+| **Allow budget increases** | Master switch; when off, Marketer cannot make scale-up increases |
+| **Max budget increase (%)** | Hard ceiling for any one permitted scale-up |
+| **Approval threshold (%)** | Changes above this size require approval instead of applying under normal policy |
+
+Use all three together. For example, a maximum can bound the size of an allowed increase while the approval threshold sends a smaller high-risk band to a reviewer.
+
+## Protect campaigns
+
+Use **Untouchable campaigns** to select synced Meta campaigns the agent must never modify.
+
+- Select by the exact Meta campaign and account.
+- Revisit the list when campaigns are renamed, replaced, or archived.
+- Keep legal, evergreen, or externally managed campaigns protected.
+- Confirm a protected campaign remains selected after a provider reconnection or roster change.
+
+Untouchable status protects modification. It does not remove the campaign from read-only analysis.
+
+## Configure new-customer acquisition
+
+**New customer acquisition** is configured per Meta ad account. Choose the Custom Audiences that represent known customers under **Customer exclusions**.
+
+This setting uses provider audiences to prevent acquisition work from targeting existing customers. It is separate from:
+
+- **Existing customers** reporting roles;
+- **Engaged audience** reporting roles; and
+- ad-set-specific targeting choices.
+
+Build and verify audiences in [Custom audiences](/workspace-admin/custom-audiences), then confirm the exclusion on the exact Meta ad account.
+
+## Configure autonomy
 
 Open **Settings** → **Autonomy**.
 
 ### Default creation mode
 
-Choose how a new brief opens:
+| Mode | How a new brief opens |
+| --- | --- |
+| **Ask every time** | Presents the automatic-versus-manual choice |
+| **Auto order** | Opens the product-URL order flow |
+| **Manual brief** | Opens the write-it-yourself flow |
 
-- **Ask every time** shows the Auto-or-Manual choice.
-- **Auto order** opens the product-URL flow.
-- **Manual brief** opens the write-it-yourself flow.
-
-This is a default, not a lock. A teammate can switch mode on an individual brief.
+This is a workspace default, not a lock. A teammate can choose another mode on an individual brief.
 
 ### Autonomy level
 
-| Level | Launch behavior |
-| --- | --- |
-| **Review everything** | New launches land paused for review |
-| **Hands-off** | Accepted orders launch active and can start spending immediately |
+| Level | Launch behavior | Recommended use |
+| --- | --- | --- |
+| **Review everything** | Every accepted launch remains paused for review | Default while testing or when a launch owner must approve |
+| **Hands-off** | Accepted orders launch **ACTIVE** and can begin spending immediately | Narrow, proven managed-plan workflows only |
 
-Hands-off is available only on managed plans. Turning it on requires a confirmation, and guardrails and spend caps still apply.
+The advanced control can appear as **Launch accepted orders live (ACTIVE)**. Turning it on opens **Go hands-off?** or **Launch accepted orders live?** and states the spend consequence.
 
-<Warning>
-  **Hands-off** removes the paused review stop. Use it only after your team has verified real outputs, permissions, destinations, budgets, and recovery ownership. Keep **Review everything** when any of those are uncertain.
-</Warning>
+Hands-off is available only on managed plans. Guardrails and spend caps remain active, but the paused review stop is removed.
 
 ## Recommended rollout
 
 <Steps>
-  <Step title="Start read-only">
-    Validate analysis against connected sources and a completed date range.
+  <Step title="Validate read-only outputs">
+    Compare real analysis with connected provider data and completed coverage.
   </Step>
-  <Step title="Set hard limits">
-    Define currency, spend caps, protected campaigns, and the budget-increase master switch.
+  <Step title="Enter explicit limits">
+    Set currency, spend caps, scaling controls, customer exclusions, and untouchable campaigns.
   </Step>
-  <Step title="Require review">
-    Keep **Review everything** while the team tests proposals and paused launches.
+  <Step title="Keep Review everything">
+    Test proposals and accepted launches while they remain paused.
   </Step>
-  <Step title="Inspect real outcomes">
-    Confirm destinations, tracking, creative, audience, account, and budget before each launch.
+  <Step title="Inspect a real paused launch">
+    Verify provider account, destination, tracking, creative, audience, budget, naming, and approval ownership.
   </Step>
-  <Step title="Expand narrowly">
-    Increase autonomy only for a proven workflow with an owner, monitoring, and a rollback path.
+  <Step title="Expand one workflow">
+    Consider **Hands-off** only for a proven scope with monitoring and a named rollback owner.
   </Step>
 </Steps>
 
+## Change review checklist
+
+- Active workspace and effective role
+- Ad account and native currency
+- Target and break-even definitions
+- Daily and monthly caps
+- Increase master switch, maximum, and approval threshold
+- Untouchable campaign roster
+- Customer-exclusion audiences
+- Default brief mode
+- **Review everything** or **Hands-off** consequence
+- Notification owner for performance, budget, and approval events
+
+## Recovery
+
+- If a change is blocked, identify whether the blocker is role, provider permission, guardrail, approval, account state, or sync coverage.
+- If hands-off was enabled unintentionally, return to **Review everything** before starting more work.
+- If the wrong currency was configured, correct the guardrail and audit affected account coverage; do not assume conversion applied.
+- If an audience exclusion is missing, pause acquisition work until the correct Meta account and audience are selected.
+- If a protected campaign changed, contain provider-side activity and review whether it was protected at the time and in the correct workspace.
+
 ## Next step
 
-Review [Audience segments and custom audiences](/workspace-admin/audiences), then run a paused launch and inspect it before considering a broader autonomy level.
+Configure [Notifications and billing](/workspace-admin/notifications-and-billing) so warnings, approvals, and failed-payment events have a responsible recipient.

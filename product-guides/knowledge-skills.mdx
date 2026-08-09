@@ -1,0 +1,183 @@
+---
+title: "Skills"
+sidebarTitle: "Skills"
+description: "Review active procedures, promote learned candidates, import approved Skills, and test when each procedure should and should not run."
+---
+
+**Skills** are reusable working procedures for the Marketing Agent and specialists. A Skill defines when a method applies, which agents can use it, what steps to follow, and where human review or a stop condition belongs.
+
+Open [Skills](https://app.marketer.com/dashboard/knowledge-base/skills) and confirm the active workspace.
+
+<Frame caption="Skills explains that procedures are used when relevant and evaluated from outcomes, with the import control at the top of the surface.">
+  <img src="/assets/product-flows/knowledge-skills-controls.png" alt="Skills header explaining on-demand tactical chunks, outcome scoring, promotion, and reversible edits, with an Import SKILL.md button" />
+</Frame>
+
+## Read the Skills surface
+
+The page can organize procedures and learning into several zones:
+
+- **Brand foundation**
+- **Ready to promote**
+- **Proposed**
+- Active Skill library
+- **Archived**
+- **What the agents learned**
+
+These zones are not equivalent. A learned pattern or proposed candidate is not active workspace policy until it is reviewed and promoted or saved as an active Skill.
+
+## Review Brand foundation
+
+**Brand foundation** is always on. It supplies foundational brand procedure and context to agents.
+
+- Its identity and scope are fixed.
+- It cannot be removed like a normal editable Skill.
+- Correct the underlying Brand Profile or approved brand sources when its behavior is wrong.
+- Do not create a duplicate Skill merely to override a stale foundational fact.
+
+## Audit the active library
+
+The active table can show:
+
+- **Skill**
+- **Scope**
+- **Win rate**
+- **Used**
+- **Last used**
+- **Pinned**
+
+Open a Skill and review:
+
+- **Name**
+- **Scope**
+- **Status**
+- **Description**
+- **When to use**
+- Markdown **Body**
+
+### Interpret usage signals
+
+- **Outcomes pending** means the Skill has usage without enough resolved outcomes. It does not mean 0% success.
+- A low or underperforming signal is a review prompt, not an automatic delete command.
+- **Pinned** protects an important Skill from automatic archival behavior; it does not increase authority or force every agent to use it.
+- Rare usage can indicate a narrow, healthy trigger or an unclear trigger. Read the actual requests before deciding.
+
+## Write an executable Skill
+
+A useful Skill body contains:
+
+1. The exact situation in which it should run.
+2. Explicit situations in which it should not run.
+3. Required inputs and source authority.
+4. Ordered steps.
+5. Decision branches.
+6. Approval or permission boundaries.
+7. Stop and escalation conditions.
+8. A completion check based on visible customer outcomes.
+
+Use **Scope** to choose from the specialists offered by the editor or all agents. Do not name a specialist the UI does not offer, and do not use an all-agent scope for a provider-specific operating method without a reason.
+
+Select **Save** only after **When to use** and the body agree. Use **Delete** only after identifying the exact editable Skill; use archive or replacement when preserving its history matters.
+
+## Review Ready to promote
+
+**Ready to promote** contains candidates that need a human decision.
+
+<Steps>
+  <Step title="Read the evidence">
+    Open the candidate and inspect the outcomes or repeated pattern supporting it.
+  </Step>
+  <Step title="Check for overlap">
+    Compare its purpose and trigger with **Brand foundation**, active Skills, proposed items, and archived history.
+  </Step>
+  <Step title="Choose Edit when needed">
+    Tighten the name, scope, trigger, ordered steps, stop conditions, or final verification.
+  </Step>
+  <Step title="Choose Promote deliberately">
+    Promote only when the procedure is distinct, source-safe, and appropriate for repeated workspace use.
+  </Step>
+  <Step title="Choose Dismiss for an unsuitable candidate">
+    Dismiss removes it from the current review. A relevant pattern can be suggested again after later evidence.
+  </Step>
+</Steps>
+
+Review **Proposed**, **Archived**, and **What the agents learned** during the same governance pass so a promotion does not recreate an existing method.
+
+## Import approved Skills
+
+Select **Import SKILL.md**. Workspaces on the newer label can show **Import skills** for the same import flow. The dialog supports a file/drop route and pasted content.
+
+<Steps>
+  <Step title="Add the source">
+    Drop the approved Markdown file or paste its content, then select **Add to preview**.
+  </Step>
+  <Step title="Review the preview table">
+    Confirm **Source**, **Name**, **Scope**, and **Status** for every entry. Remove duplicates, overly broad scopes, and entries without usable triggers.
+  </Step>
+  <Step title="Read the full body">
+    Check for secrets, environment assumptions, unsupported account changes, missing human review, stale provider labels, and references that do not exist in Marketer.
+  </Step>
+  <Step title="Select Import">
+    Confirm the reviewed count. Imported Skills become active immediately, so the preview is the approval boundary—not a staging area for unread procedures.
+  </Step>
+  <Step title="Reopen each imported Skill">
+    Verify its name, scope, status, description, trigger, and body survived the import as intended.
+  </Step>
+</Steps>
+
+<Warning>
+  Imported or promoted Skills can influence future tasks across their scope immediately. Never activate a procedure whose authority, approval boundary, and stop conditions you have not read.
+</Warning>
+
+## Test both sides of the trigger
+
+For every new or materially changed Skill:
+
+1. Start a fresh task that clearly should use it.
+2. Ask the agent to name the procedure it followed and show the customer-visible steps.
+3. Confirm it uses the right sources, branches, approval, and completion check.
+4. Start a nearby request that should not use the Skill.
+5. Confirm the agent does not force the procedure into that request.
+6. Tighten **When to use**, exclusions, scope, or stop conditions if either test fails.
+
+A positive-only test cannot detect an overbroad trigger.
+
+## Completion check
+
+- Brand foundation is understood and not duplicated.
+- Every active Skill has a specific scope and trigger.
+- Body steps, branches, approvals, stop conditions, and final verification are explicit.
+- Usage, win rate, outcomes pending, underperformance, and pin state are interpreted correctly.
+- Promoted candidates are distinct and supported by evidence.
+- Imported Skills were fully read before **Import**.
+- One positive and one negative fresh-task test passed.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A Skill is not used">
+    Confirm **Status**, **Scope**, and **When to use** match the real request language. Test in a fresh task without relying on an older conversation's context.
+  </Accordion>
+  <Accordion title="A Skill triggers too broadly">
+    Add explicit exclusions and stop conditions to **When to use** and the body, narrow **Scope**, then rerun nearby negative-trigger requests.
+  </Accordion>
+  <Accordion title="Win rate is missing">
+    Check whether the Skill shows **Outcomes pending** or has too little resolved usage. Review individual outcomes rather than treating a missing percentage as failure.
+  </Accordion>
+  <Accordion title="A proposed Skill duplicates an active one">
+    Keep one authoritative procedure. Merge useful evidence or steps into it, then dismiss, archive, or delete the duplicate as appropriate.
+  </Accordion>
+  <Accordion title="An imported Skill behaves differently">
+    Reopen it and compare the imported name, scope, status, trigger, and body with the approved source. Correct unsupported assumptions, save, and rerun both trigger tests.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Manage Knowledge sources" icon="database" href="/product-guides/knowledge-sources">
+    Keep facts, brand material, and procedures in the correct route.
+  </Card>
+  <Card title="Verify in a real task" icon="messages-square" href="/working-with-marketer/chat-and-context">
+    Test the procedure with explicit context and visible completion criteria.
+  </Card>
+</CardGroup>

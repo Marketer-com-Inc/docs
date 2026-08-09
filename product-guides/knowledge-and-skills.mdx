@@ -1,221 +1,88 @@
 ---
 title: "Knowledge and Skills"
 sidebarTitle: "Knowledge and Skills"
-description: "Route sources into the right workspace context, inspect their grounding, and govern the reusable procedures agents follow."
+description: "Route approved sources into workspace context and govern the reusable procedures agents follow."
 ---
 
-**Knowledge** and **Skills** carry different kinds of context into future work:
+**Knowledge** and **Skills** solve different problems:
 
-- **Knowledge** holds source material, brand facts, reference context, and artifacts.
-- **Skills** holds reusable working procedures and the conditions under which agents should use them.
+- Knowledge holds approved source material, brand facts, reference context, and grounded artifacts.
+- Skills holds reusable working procedures and the conditions under which agents should use them.
 
-Open [Knowledge](https://app.marketer.com/dashboard/knowledge-base) to manage sources and inspect artifacts. Open [Skills](https://app.marketer.com/dashboard/knowledge-base/skills) to review the active procedure library, proposed additions, and imports.
+Open [Knowledge](https://app.marketer.com/dashboard/knowledge-base) or [Skills](https://app.marketer.com/dashboard/knowledge-base/skills) and confirm the active workspace.
 
-## Before you begin
+## Decide what you are adding
 
-- Confirm the active workspace; these sources and procedures can shape work across that workspace.
-- Identify the source owner, its effective date, and whether it is approved for shared use.
-- Remove secrets, personal data, or material the workspace should not retain.
-- Decide whether the material is brand identity, reference knowledge, or a working procedure before upload.
-- Resolve conflicting authorities. Adding both as undifferentiated sources makes future grounding less reliable.
-
-## Know what goes where
-
-| Material | Route it to | Examples |
+| Material | Route | Example |
 | --- | --- | --- |
-| Approved brand identity | **Brand kit material** | Voice, visual system, logo use, enduring positioning |
-| Facts and reference material | **Reference knowledge** | Research, product evidence, audience source material, strategy documents |
-| A reusable way of working | **Working procedure** | Launch QA, naming rules, research method, review checklist |
-| Mixed or unclear material | **Let the agent decide** | Use only when you are prepared to inspect the destination afterward |
+| Approved brand identity | **Brand kit material** | Voice, visual rules, enduring positioning |
+| Facts and reference evidence | **Reference knowledge** | Product proof, research, audience source material |
+| Reusable method | **Working procedure** | Launch QA, naming method, review checklist |
+| Mixed or unclear source | **Let the agent decide** | Use only when you will inspect the resulting route |
 
-Put volatile performance numbers in the surface that owns them, not in a Skill. Put a method for evaluating those numbers in a Skill.
+Put changing performance numbers in Analytics or their owning surface. Put a repeatable method for evaluating those numbers in a Skill.
 
-## Build Knowledge from a website
-
-Use the website route when the approved public site should seed brand and reference context.
+## Follow the context lifecycle
 
 <Steps>
-  <Step title="Enter the authoritative site">
-    In Sources, enter the approved domain in the website field. Use the canonical brand or storefront site, not a campaign-specific mirror or an unrelated retailer page.
+  <Step title="Establish authority">
+    Confirm source owner, effective date, approved use, and whether a newer source conflicts. Remove secrets and personal data the workspace should not retain.
   </Step>
-  <Step title="Start the build">
-    Select **Build from website**. The source moves into **Brand research running** while Marketer gathers and structures the available material.
+  <Step title="Build or upload">
+    Use **Build from website** for the canonical public site, or route approved files through Sources. Wait for a terminal state and verify the resulting Brand kit, Knowledge, or Skill badge.
   </Step>
-  <Step title="Follow progress">
-    Select **view progress** to inspect the active research task. Closing the panel does not make the source complete; return to Knowledge and wait for a terminal source state.
+  <Step title="Inspect grounding">
+    Review the **Standing index**, open **Recent artifacts**, and inspect the sources named by **Grounded in N**. Distinguish sourced fact from synthesis and recommendation.
   </Step>
-  <Step title="Review the result">
-    Inspect the new source and the standing or recent artifacts it produced. Confirm brand facts, product claims, audience conclusions, and dates against the site before relying on them.
+  <Step title="Govern procedures">
+    Review Brand foundation, active Skills, **Ready to promote**, proposed and archived items, and learning evidence. Read every imported procedure before activation.
   </Step>
-  <Step title="Test grounding">
-    Ask the Marketing Agent a question the site should answer. Require it to name the source it used, then compare the answer with the current page before treating the build as verified.
+  <Step title="Verify in a fresh task">
+    Test one fact or method in a new task, require the named source or procedure, then run a nearby negative test that should not trigger the Skill.
   </Step>
 </Steps>
 
-Website research reflects what was available when it ran. Rebuild or replace the source after a material site change rather than assuming future tasks read the live site on every request.
+## Go deeper
 
-## Upload and route files
+<CardGroup cols={2}>
+  <Card title="Knowledge sources" icon="database" href="/product-guides/knowledge-sources">
+    Build from a website, route files, change destinations, inspect grounding, and test retrieval.
+  </Card>
+  <Card title="Skills" icon="list-check" href="/product-guides/knowledge-skills">
+    Audit active procedures, promote candidates, import approved Skills, and test both sides of the trigger.
+  </Card>
+</CardGroup>
 
-Use upload for approved PDFs, Markdown, text, images, or font material.
+## Important boundaries
 
-<Steps>
-  <Step title="Choose the destination first">
-    Open **Route uploads as** and select **Brand kit material**, **Reference knowledge**, **Working procedure**, or **Let the agent decide**. This choice determines how future agents receive the file.
-  </Step>
-  <Step title="Add the files">
-    Drop files into **Drop files or click to upload**, or use the picker. Confirm the file name and remove duplicates before upload.
-  </Step>
-  <Step title="Watch the source state">
-    The row can move through upload and processing states before **Done**, or show **Failed**. Do not test a file while its row is still processing.
-  </Step>
-  <Step title="Retry a failed source">
-    Use **Retry** on the exact failed row. If it fails again, check file integrity and supported type before creating another copy.
-  </Step>
-  <Step title="Verify the route">
-    Under **In your knowledge base**, read the destination shown after the arrow, such as **Brand kit**, **Knowledge**, or **Skill**. Open or test the destination rather than relying on the original picker choice.
-  </Step>
-</Steps>
+- The **Standing index** is compact context, not the entire knowledge base.
+- A website build reflects the site when research ran; rebuild after material changes.
+- Moving a source out of Brand kit does not guarantee previously extracted brand details disappear.
+- Images and fonts behave as brand assets rather than ordinary factual documents.
+- **Brand foundation** is always on and is not deleted like an ordinary Skill.
+- Imported Skills become active after import, so the preview is an approval boundary.
+- Usage and win rate are review signals; **Outcomes pending** is not 0% performance.
 
-### Change a source destination
-
-Use the source row’s destination menu when a file was routed incorrectly.
-
-- Moving material into Brand kit can start new extraction work and can use credits; review the confirmation before proceeding.
-- Moving a file out of Brand kit changes how future updates are routed. Details already extracted into the brand context can remain, so inspect the Brand Profile instead of assuming the move erased prior output.
-- When moving a procedure into Skills, review the created Skill’s trigger and body before trusting it in recurring work.
-
-## Inspect standing context and artifacts
-
-Knowledge surfaces three different views of context:
-
-| Area | Use it to answer… | Review action |
-| --- | --- | --- |
-| **Standing index** | What compact context is available to agents across requests? | Confirm the most important current facts are represented and not contradicted. |
-| **Recent artifacts** | What research or analysis has the workspace produced recently? | Open the artifact and review its type, title, summary, date, and grounding. |
-| **Sources** | Which inputs created or support that context? | Check destination, processing state, ownership, date, and authority. |
-
-An artifact summary is not sufficient evidence for a decision. Open the detail and inspect the sources it is **Grounded in**. Preserve the distinction between a sourced finding, the agent’s synthesis, and a later recommendation.
-
-## Validate Knowledge in a real task
-
-After adding or moving an important source:
-
-<Frame caption="Task progress can show that Marketer searched and read saved workspace context. Use that as a retrieval signal, then verify the final claim against the named source.">
-  <img src="/assets/product-flows/task-progress.png" alt="Active Marketer task showing Saved brand memory in search context and Reading the saved brand memory as a completed step" />
-</Frame>
-
-1. Start a task with a question that has one verifiable answer in that source.
-2. Attach an exact product, brief, campaign, or creative with `@` when it is part of the question. For a one-off document, use the plus menu and select **Add files or photos**.
-3. Ask the agent to use saved workspace Knowledge and cite the fact, source title, and effective date. Require it to identify any conflict.
-4. Compare the answer with the uploaded file or current website.
-5. Correct the source, destination, or authority order if the answer is stale or ambiguous.
-6. Re-run the test in a new task so cached conversation context does not hide the correction.
-
-## Govern Skills
-
-The Skills page separates stable procedures from suggestions that still need a human decision.
-
-### Review the active library
-
-The active table can show **Skill**, **Scope**, **Win rate**, **Used**, **Last used**, and **Pinned**. Use these fields to find procedures that overlap, rarely run, or need clearer trigger language. Usage and win rate are signals for review, not automatic reasons to keep or delete a Skill.
-
-**Brand foundation** is always on and supplies the workspace’s foundational brand procedure to agents. Its identity and scope are locked; review the underlying brand context rather than trying to delete it like a normal Skill.
-
-Open an editable Skill to review:
-
-- **Name**
-- **Scope**
-- **Status**
-- **Description**
-- **When to use**
-- **Body** in Markdown
-
-Select **Save** only after the trigger and procedure agree. Use **Delete** only for an editable procedure you have positively identified; archive or replace a procedure when preserving its history matters.
-
-### Review agent suggestions
-
-**Ready to promote** contains human-gated candidates with supporting evidence.
-
-1. Open the candidate and read the evidence for the proposed procedure.
-2. Choose **Edit** to tighten its name, scope, trigger, steps, stop conditions, or verification.
-3. Choose **Promote** only when it is distinct from the active library and safe to reuse.
-4. Choose **Dismiss** to hide it from the current review session. A relevant suggestion may appear again later.
-
-Also inspect **Proposed**, **Archived**, and **What agents learned**. A learned pattern is input to governance, not workspace policy until you explicitly promote or create an active Skill.
-
-### Import a SKILL.md procedure
-
-Select **Import SKILL.md** when another approved procedure should become available in this workspace.
-
-<Steps>
-  <Step title="Add source material">
-    Drop the Markdown file into the import dialog or paste its content, then select **Add to preview**.
-  </Step>
-  <Step title="Review the preview table">
-    Confirm **Source**, **Name**, **Scope**, and **Status** for every proposed import. Remove an entry that is a duplicate, too broad, or missing a usable trigger.
-  </Step>
-  <Step title="Inspect the procedure">
-    Read the full body for secrets, environment-specific assumptions, unsupported account actions, missing approval gates, and references that do not exist in Marketer.
-  </Step>
-  <Step title="Import deliberately">
-    Select **Import** for the reviewed count. Imported Skills become active for the agent immediately, so do not use import as a staging area for unreviewed procedures.
-  </Step>
-  <Step title="Test both sides of the trigger">
-    Run one request that should use the Skill and one that should not. Confirm the agent follows the procedure only inside its intended scope.
-  </Step>
-</Steps>
-
-<Warning>
-  A Skill can influence future tasks across its scope as soon as it is active. Never import or promote a procedure whose authority, stop conditions, and human-review boundary you have not read.
-</Warning>
-
-## Completion checklist
+## Completion check
 
 - Every important source has an owner, date, authority, and intentional route.
-- Website and upload tasks reached a terminal state; failed rows were resolved or removed.
-- Brand kit, Knowledge, and Skill destinations match the material’s purpose.
-- Recent artifacts identify the sources they are grounded in.
-- A fresh task retrieved a test fact correctly and disclosed its source.
-- Active Skills contain a specific trigger, ordered steps, decision branches, stopping conditions, and a final check.
-- Proposed or imported Skills were reviewed for overlap, secrets, unsupported authority, and stale facts.
-- One positive and one negative trigger test confirmed the new or changed Skill’s scope.
+- Website and file work reached a terminal state.
+- Artifact claims can be traced to the named sources.
+- Active Skills have a specific trigger, scope, steps, branches, approvals, stop conditions, and final check.
+- Imported or promoted Skills were reviewed for overlap, secrets, unsupported authority, and stale assumptions.
+- Fresh positive and negative tests confirmed retrieval and Skill scope.
 
-## Troubleshooting
+## If context is wrong
 
-<AccordionGroup>
-  <Accordion title="Brand research stays in progress">
-    Open **view progress** and inspect the task for a source, crawl, or decision failure. Verify the domain is reachable and canonical. Do not start several identical website builds; resolve or stop the first task before retrying.
-  </Accordion>
-  <Accordion title="A file upload failed">
-    Use **Retry** on the failed row after confirming the file opens locally and uses a supported type. If the source is a scan or malformed export, create a readable approved version before uploading again.
-  </Accordion>
-  <Accordion title="A source went to the wrong destination">
-    Use the row’s destination menu and review the move confirmation. After moving, inspect both the new destination and any previously extracted brand details; routing changes do not guarantee prior extraction is erased.
-  </Accordion>
-  <Accordion title="The agent ignores an important fact">
-    Confirm the source is **Done**, routed to the intended destination, and not contradicted by a higher-authority source. Run a fresh task with the source named explicitly and ask the agent to cite its evidence.
-  </Accordion>
-  <Accordion title="The agent uses stale information">
-    Replace or rebuild the outdated source, record the new effective date, and resolve conflicts in the standing context. Re-run decision-grade work in a new task after the source change.
-  </Accordion>
-  <Accordion title="A Skill is not used when expected">
-    Open it and make **When to use** specific to the real request language. Confirm its **Status** and **Scope**, then test a matching request without relying on an older conversation’s context.
-  </Accordion>
-  <Accordion title="A Skill triggers too broadly">
-    Add explicit exclusions and stop conditions to **When to use** and the body. Test nearby requests that should not use it before keeping the Skill active.
-  </Accordion>
-  <Accordion title="A promoted Skill duplicates an active one">
-    Keep one authoritative procedure. Merge the useful evidence or steps into it, archive or delete the duplicate as appropriate, and rerun both trigger tests.
-  </Accordion>
-</AccordionGroup>
+Check source state, route, effective date, and conflicts before editing the prompt. Replace stale evidence, reroute incorrect material, and retest in a new task. When a Skill is ignored or overused, correct **When to use**, exclusions, scope, or status rather than duplicating the procedure.
 
 ## Next step
 
 <CardGroup cols={2}>
   <Card title="Use context in chat" icon="at" href="/working-with-marketer/chat-and-context">
-    Attach the exact source or record and verify how the agent uses it.
+    Attach the exact record and verify how the agent uses it.
   </Card>
   <Card title="Apply context to creative" icon="images" href="/product-guides/creatives">
-    Carry approved facts and repeatable review procedures into Briefs and Studio.
+    Carry approved evidence and methods into Briefs and Studio.
   </Card>
 </CardGroup>

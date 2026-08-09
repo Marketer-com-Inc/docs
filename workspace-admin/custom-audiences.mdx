@@ -1,0 +1,116 @@
+---
+title: "Custom audiences"
+description: "Inspect mirrored Meta audiences and create website, pixel, Page-engagement, advanced, or lookalike audiences."
+---
+
+**Custom audiences** lists the Meta Custom Audiences mirrored for each connected ad account and provides reviewed creation flows for new Custom Audiences and lookalikes.
+
+<Warning>
+  Audiences are owned by a specific Meta ad account. Confirm the account before creating, naming, or selecting a source audience.
+</Warning>
+
+## Read the audience inventory
+
+The page groups audiences by Meta ad account and can show:
+
+- audience name and ID;
+- source or type;
+- approximate size when Meta provides it;
+- provider processing or availability status; and
+- actions supported for the current role and account state.
+
+An unavailable approximate size does not prove the audience is empty. Meta may still be processing it or may not expose a size for that audience.
+
+## Create a Custom Audience
+
+Select **Create audience**, then choose a source:
+
+| Source | Required context |
+| --- | --- |
+| **All website visitors** | Pixel and retention window |
+| **Website visitors (URL contains)** | Pixel, URL fragment, and retention window |
+| **Pixel event (e.g. Purchase)** | Pixel, event, and retention window |
+| **Facebook Page engagers** | Granted Page and retention window |
+| **Advanced (raw JSON rule)** | A valid, reviewed Meta rule |
+
+<Steps>
+  <Step title="Choose the account and source">
+    Verify the target ad account, then select the source that matches the intended population.
+  </Step>
+  <Step title="Complete the source fields">
+    Enter **Name**, the required pixel, URL, event, Page, or rule, the retention window, and optional description.
+  </Step>
+  <Step title="Review">
+    Select **Review** and confirm the account, definition, and audience name that Meta will receive.
+  </Step>
+  <Step title="Create">
+    Select **Create** once the summary is correct. Wait for Meta processing before using approximate size as a validation signal.
+  </Step>
+</Steps>
+
+### Advanced rules
+
+**Advanced (raw JSON rule)** is for an operator who already has a valid Meta rule. A syntactically accepted rule can still target the wrong population; retain the reviewed source and intended logic with the change record.
+
+## Create a lookalike
+
+Select **Create Lookalike** from the intended source audience, then provide:
+
+- source audience;
+- country;
+- **Audience size** ratio;
+- name; and
+- optional description.
+
+Select **Review**, confirm every field, then **Create**. The lookalike becomes selectable after Meta finishes building it.
+
+The source audience, country, and ratio define the result. A familiar name does not validate those inputs.
+
+## Terms and account state
+
+Creation depends on:
+
+- an active Meta ad account;
+- provider authorization and the right asset grants;
+- accepted Custom Audience terms;
+- accepted website or pixel terms where applicable; and
+- available provider capacity.
+
+A closed ad account blocks creation. Reconnect or resync cannot reopen it; resolve the account state in Meta.
+
+## Reuse without confusing roles
+
+A Meta Custom Audience can appear in several workflows:
+
+- ad-set include or exclude targeting;
+- an **Existing customers** reporting role;
+- an Engaged-audience definition mirrored in Ads Manager;
+- **New customer acquisition** customer exclusions; or
+- the source for a lookalike.
+
+These references have different effects. Removing an audience from one role does not automatically remove every other reference.
+
+## Verify after creation
+
+1. Confirm the Meta ad account ID.
+2. Match the saved audience name and ID in Meta.
+3. Confirm source, retention, and rule.
+4. Wait for provider processing.
+5. Review approximate size only when available.
+6. Add the audience to the intended targeting, reporting, or exclusion role.
+7. Record the purpose so a later operator does not repurpose it incorrectly.
+
+## Recovery matrix
+
+| Symptom | Correct response |
+| --- | --- |
+| Pixel or Page is absent | Update the Meta asset grant for that ad account |
+| Provider rejects terms | Accept the linked Meta terms and retry |
+| Account is closed | Resolve or choose another active Meta ad account |
+| Approximate size is unavailable | Wait for Meta processing; validate rule and account |
+| Lookalike is not selectable | Wait for Meta to finish building it |
+| Audience cannot be archived elsewhere | Remove active ad-set, reporting-role, or exclusion references first |
+
+## Next step
+
+Assign the new audience to exactly one intended workflow first, verify its effect in Meta, and then document any reuse across reporting, exclusion, or lookalike creation.

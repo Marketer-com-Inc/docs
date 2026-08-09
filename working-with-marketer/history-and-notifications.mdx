@@ -6,7 +6,7 @@ description: "Reopen prior conversations, follow notification receipts to their 
 
 Marketer keeps conversation context, execution history, alerts, and unresolved decisions in separate records. Use each for the question it is designed to answer:
 
-- **Chats and tasks → Chats:** what your team asked, attached, and decided.
+- **Chats and tasks**, filtered to **Chats:** what your team asked, attached, and decided.
 - **Activity:** what work ran and what state it reached.
 - **Notifications:** what update, alert, or receipt Marketer sent.
 - **Awaiting action:** what still needs a human decision.
@@ -16,11 +16,11 @@ Marketer keeps conversation context, execution history, alerts, and unresolved d
 
 Home shows a short **Recents** list in the sidebar alongside current work and workspace sections.
 
-Select a recent row when you recognize the conversation and want to continue it. Open **Chats and tasks → Chats** when the needed thread is older, archived, or not obvious from its shortened title.
+Select a recent row when you recognize the conversation and want to continue it. Use **Open chats and tasks** in the Recents header, then select **Chats**, when the needed thread is older, archived, or not obvious from its shortened title.
 
 ## Reopen a conversation from chat history
 
-Open **Chats and tasks → Chats**. Each row can show:
+Open **Chats and tasks** from Recents or Quick actions, then select **Chats**. Each row can show:
 
 - The thread title
 - An **Archived** label when the thread is archived
@@ -36,7 +36,7 @@ Read the thread in this order:
 1. Find the first turn that defined the deliverable.
 2. Inspect the campaigns, briefs, creatives, products, or files attached to that turn.
 3. Identify later messages that changed the scope, dates, authority, or acceptance criteria.
-4. Open any task proposal and note whether it was dismissed, edited, or approved.
+4. Open any task proposal and note whether it was canceled, edited, or started.
 5. Open the final task result or output link.
 6. Confirm the current state in the product surface that owns the result.
 
@@ -46,7 +46,7 @@ Start a new conversation when the objective, connected account, authority bounda
 
 ## Read Notifications as receipts
 
-Open **Notifications** from Quick actions. The page groups items by notification type and shows a count for each group.
+Open **Notifications** from Quick actions. The page title is **Notifications** with the description **Agent receipts, alerts, and approvals across this workspace.** Items are grouped under **Performance**, **Account health**, **Approvals**, **Agent activity**, **Budget**, and **Billing & team** when those types are present.
 
 A notification row can contain:
 
@@ -62,6 +62,7 @@ Select a linked row to open its conversation, task, approval, workflow, or produ
 
 - Select **Mark visible as read** to mark the notifications currently loaded on the page as read.
 - Select **Load older** when more history is available.
+- Select **Retry** when the page says it could not load the feed.
 - Use unread state to track whether you have seen a receipt—not whether the underlying work is complete.
 
 Reading a notification does not approve a proposal, resolve a waiting task, or confirm a connected-account change.
@@ -92,7 +93,7 @@ Use the same sequence for an alert, completion receipt, or approval notice:
 
 | Question | Start in | Then verify in |
 | --- | --- | --- |
-| What did we ask and which context did we attach? | **Chats and tasks → Chats** | The reopened conversation |
+| What did we ask and which context did we attach? | **Chats and tasks**, then **Chats** | The reopened conversation |
 | Is the task still working, waiting, or finished? | **Activity** or the task card | The selected run detail |
 | Which specialist produced this output? | **Agents** | The specialist detail and output link |
 | Why did I receive this alert or receipt? | **Notifications** | The linked task, workflow, or product record |
@@ -117,7 +118,7 @@ Marking a notification read changes the feed receipt only. A pending approval re
 
 ### Archived versus deleted
 
-An archived conversation remains visible in **Chats and tasks → Chats** with an **Archived** label and can still be reviewed. Treat it as historical context; restate current facts before continuing old work.
+An archived conversation remains visible in **Chats and tasks** under **Chats** with an **Archived** label and can still be reviewed. Treat it as historical context; restate current facts before continuing old work.
 
 ## Complete a handoff from history
 
@@ -135,7 +136,7 @@ They can then inspect the original attachments, proposal, task steps, and output
 
 <AccordionGroup>
   <Accordion title="A recent conversation is missing">
-    Confirm the active workspace, then open **Chats and tasks → Chats** and look for an **Archived** row. A thread created in another workspace will not appear in the current workspace's history.
+    Confirm the active workspace, then open **Chats and tasks**, select **Chats**, and look for an **Archived** row. A thread created in another workspace will not appear in the current workspace's history.
   </Accordion>
   <Accordion title="A notification does not explain the outcome">
     Open its link, or use its title and time to locate the related run in **Activity**. Read the underlying task or product record before drawing a conclusion.
@@ -154,6 +155,12 @@ They can then inspect the original attachments, proposal, task steps, and output
 ## Next step
 
 <CardGroup cols={2}>
+  <Card title="Chats and tasks" icon="messages" href="/working-with-marketer/chats-and-tasks">
+    Open the hidden combined history route and choose the correct chat or task row.
+  </Card>
+  <Card title="Navigation and Quick actions" icon="compass" href="/working-with-marketer/navigation-and-quick-actions">
+    Reach Notifications, Activity, Awaiting action, and other workspace destinations.
+  </Card>
   <Card title="Inspect task history" icon="list-check" href="/working-with-marketer/tasks-and-activity">
     Read the run state, steps, outputs, and Activity record behind a receipt.
   </Card>

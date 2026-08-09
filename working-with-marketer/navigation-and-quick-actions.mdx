@@ -1,0 +1,130 @@
+---
+title: "Navigation and Quick actions"
+sidebarTitle: "Navigation and Quick actions"
+description: "Use Quick actions, the sidebar, Recents, and tool preferences to reach every workspace surface without losing context."
+---
+
+Marketer has two navigation layers. The sidebar keeps the workspace's everyday tools visible. **Quick actions** is the complete command surface for opening a recent conversation, asking Marketer, switching workspaces, or reaching a page that is not pinned in the sidebar.
+
+<Frame caption="The sidebar keeps Quick actions and fixed destinations above the configurable Tools section.">
+  <img
+    src="/assets/product-flows/navigation-sidebar-tools.png"
+    alt="Current Marketer sidebar showing Quick actions, Home, Analytics, Integrations, the Tools heading and customization control, and visible Campaigns, Creatives, Briefs, and Workflow rows"
+  />
+</Frame>
+
+## Open Quick actions
+
+Select **Quick actions** in the sidebar, or press `⌘` + `K` on macOS or `Ctrl` + `K` on Windows. The command palette opens with the prompt **Search chats, ask Marketer, or jump to a page…**.
+
+<Frame caption="Quick actions keeps search above five browse tabs; Switch appears when workspace switching is available.">
+  <img
+    src="/assets/product-flows/quick-actions-controls.png"
+    alt="Quick actions search with Recents, Ask, Go to, Switch, and Settings tabs"
+  />
+</Frame>
+
+The browse tabs are:
+
+- **Recents** for recent chats
+- **Ask** for suggested requests and specialist dispatches
+- **Go to** for product destinations
+- **Switch** when more than one workspace is available
+- **Settings** for appearance controls
+
+Start typing to search across the available groups instead of only the selected browse tab. Use the arrow keys to move through results and `Enter` to open the highlighted result.
+
+## Reach a product surface
+
+Search by the exact destination name. The available **Navigate** results include:
+
+| Destination | Use it for |
+| --- | --- |
+| **Products** | Open the product catalog and the product records used as request context. |
+| **Knowledge** | Review durable workspace context and source material. |
+| **Skills** | Review the reusable skills available to agents. |
+| **Activity** | Inspect current and historical execution records. |
+| **Chats and tasks** | Search prior conversations and recent agent work. |
+| **Notifications** | Read alerts, receipts, and approval updates. |
+| **Awaiting action** | Resolve decisions that still need a person. |
+| **Studio** | Open the creative production surface even though its fixed sidebar row is currently hidden. |
+
+Quick actions also includes the visible product destinations, such as **Home**, **Campaigns**, **Briefs**, **Creatives**, **Analytics**, **Workflows**, **Settings**, and **Integrations**. Availability can still depend on the workspace, plan, role, and connected features.
+
+<Note>
+  A destination missing from the sidebar is not necessarily unavailable. **Chats and tasks** and **Studio** are deliberately absent as fixed rows in the current sidebar but remain reachable through Quick actions and their supported product links.
+</Note>
+
+## Use Recents for a fast return
+
+The sidebar **Recents** group combines recent chats and tasks. Its filter offers **Recent**, **Chats**, and **Tasks**.
+
+- Select a chat row to reopen the conversation and its request history.
+- Select a task row to open the task's current execution detail.
+- Use **Open chats and tasks** in the Recents header for the full searchable history page.
+
+When titles are similar, open the row and match its workspace, time, attached context, specialist, and output before you answer a question, stop a task, or continue the thread.
+
+## Ask or dispatch from the palette
+
+The **Ask** tab contains **Ask Marketer** suggestions and a **Dispatch an agent** group. Selecting a suggestion starts a request with that prompt. Selecting a specialist prepares a new request addressed to that agent.
+
+Review the seeded text before sending. Opening or selecting a palette row does not approve a later run proposal, tool action, or connected-account change.
+
+## Switch workspaces deliberately
+
+When the palette shows **Switch**, choose the intended workspace before opening a record or starting a request. After the switch completes, confirm the workspace name and recheck the source account or record.
+
+Recent chats, campaigns, Knowledge, integrations, tasks, and pending decisions are workspace-scoped. A matching title in another workspace is a different record.
+
+## Customize the sidebar tools
+
+In the sidebar **Tools** section, select the slider control labeled **Customize sidebar tools**. The current **Tools** popover lets you show or hide these rows for the current user and workspace:
+
+- **Campaigns**
+- **Creatives**
+- **Briefs**
+- **Workflow**
+
+Select **Reset** to restore all customizable tools when at least one is hidden. Hiding a row changes sidebar prominence; it does not delete its records or remove supported access through Quick actions.
+
+**Studio** and **Products** are available through Quick actions but are not switches in the current Tools popover.
+
+Fixed surfaces such as **Home**, **Analytics**, and **Integrations** are not controlled by these tool switches.
+
+## Recover when a page is hard to find
+
+<AccordionGroup>
+  <Accordion title="The sidebar row is missing">
+    Open **Quick actions**, search the exact page name, and check **Customize sidebar tools** when the page is one of the configurable tools.
+  </Accordion>
+  <Accordion title="Quick actions shows No matches">
+    Clear the query, open **Go to**, and search the destination's current label. Confirm the active workspace and your access when the result still does not appear.
+  </Accordion>
+  <Accordion title="A recent conversation is missing">
+    Use **Open chats and tasks** from Recents, then select **Chats** and search its visible title. Search does not inspect the full message body.
+  </Accordion>
+  <Accordion title="A recent task is missing">
+    Open **Chats and tasks** for recent work or **Activity → Full history** for older runs. Match the run rather than starting a duplicate.
+  </Accordion>
+  <Accordion title="The page opened in the wrong workspace">
+    Switch to the intended workspace, then reopen the destination and record. Do not assume the prior page's object or permissions carried across.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Home and composer" icon="house" href="/working-with-marketer/home-and-composer">
+    Start a request with the correct workspace, context, agent, and boundary.
+  </Card>
+  <Card title="Chats and tasks" icon="messages" href="/working-with-marketer/chats-and-tasks">
+    Search prior conversations and recent agent work.
+  </Card>
+  <Card title="Tasks and activity" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Inspect workspace-wide execution and older run history.
+  </Card>
+  <Card title="History and notifications" icon="clock-rotate-left" href="/working-with-marketer/history-and-notifications">
+    Follow a receipt back to the request, run, decision, and current object.
+  </Card>
+</CardGroup>

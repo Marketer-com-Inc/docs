@@ -1,70 +1,115 @@
 ---
 title: "Meta Ads"
-description: "Connect selected Meta assets so Marketer can use campaign, creative, audience, pixel, and catalog context."
+description: "Connect selected Meta assets, verify reporting coverage, and recover authorization or sync problems safely."
 ---
 
-Connect Meta Ads when you want Marketer to analyze or work with Facebook and Instagram advertising in the current workspace.
+Meta Ads syncs campaigns, creatives, audiences, pixels, and catalogs from the assets you grant to the active workspace.
 
-## Prerequisites
+## Before you connect
 
-- A Marketer Owner, Admin, or Member role
-- A Meta identity with access to the business assets you intend to grant
-- A clear list of the ad accounts, Instagram accounts, Pages, business portfolio, pixels, and catalogs that belong to this workspace
-- A granted Facebook Page if you expect Marketer to publish ads
+- Use a Marketer Owner, Admin, or Member role. Viewers can inspect but not change the connection.
+- Sign in to a Meta identity that can grant the intended business assets.
+- Know which ad accounts, Instagram accounts, Pages, business portfolio, pixels, and catalog belong here.
+- Grant a Facebook Page if Marketer will publish ads. Reporting can be healthy without one, but publishing cannot.
 
 <Warning>
-  Complete the flow while the correct Marketer workspace and Meta identity are active. Grant only the assets this workspace should use.
+  Confirm both the active Marketer workspace and the Meta identity before authorizing. Grant only the assets this workspace should use.
 </Warning>
 
-<Frame caption="The provider header confirms that Meta Ads is authorized. Continue down the page to verify selected assets and sync coverage.">
+<Frame caption="A Connected badge confirms authorization; the rest of the page confirms which assets and date ranges are actually usable.">
   <img src="/assets/product-flows/integration-meta-connected.png" alt="Meta Ads integration header with Connected badge and Disconnect action" />
 </Frame>
 
-## Connect Meta Ads
+## Connect and select assets
 
 <Steps>
   <Step title="Open Meta Ads">
-    Go to **Integrations**, then open **Meta Ads**.
+    Go to **Integrations** → **Meta Ads**, then select **Connect**.
   </Step>
-  <Step title="Start the secure Meta flow">
-    Select **Connect**. Review the permissions Meta presents before continuing.
+  <Step title="Complete Meta's secure flow">
+    Review the access Meta presents and choose the resources Marketer may use.
   </Step>
-  <Step title="Choose assets">
-    Select the resources Marketer should use. You can reopen the same secure asset dialog later to finish setup or add a missing Page.
+  <Step title="Finish unresolved setup">
+    If Marketer shows **Finish setup**, reopen the same asset dialog and save a complete selection. The authorization exists; the resource selection does not.
   </Step>
-  <Step title="Confirm the connection">
-    Return to Marketer and confirm that the page shows **Connected**, a connected date, and the expected assets under **Connected assets**.
+  <Step title="Verify the asset roster">
+    Under **Assets granted**, confirm **Ad accounts**, **Instagram accounts**, **Pages**, **Business portfolio**, **Pixels**, and **Catalog**. A group with no grant shows **None granted**.
+  </Step>
+  <Step title="Confirm the identity">
+    Check **Facebook user** and **Connected** so another operator can identify which Meta grant is active.
   </Step>
 </Steps>
 
-## Confirm the first sync
+## Understand every visible state
 
-The detail page reports sync progress and, when available, the time range covered by imported data. A useful first check is:
+| State | Meaning | Correct response |
+| --- | --- | --- |
+| **Status unavailable** | Marketer could not verify Meta now and preserves the last-known connection | Refresh; do not replace or disconnect based on this state alone |
+| **Disconnected** | No usable Meta grant exists | Select **Connect** |
+| **Reconnect needed** | Meta rejected the saved authorization | Select **Reconnect** and reauthorize |
+| **Finish setup** | Authorization exists, but the asset selection is unresolved | Select **Finish setup** and choose assets |
+| **Connected** | Authorization and required selection are present | Verify assets and sync coverage |
+| **Backsyncing is paused** | Reporting is frozen at its last sync | Review the pause reason, then resume when appropriate |
 
-1. The selected ad account appears under connected assets.
-2. The sync reaches a completed state.
-3. Campaign, ad set, ad, creative, and insight counts begin to appear.
-4. A read-only performance request names the same account and date range you expect in Meta.
+If the page says **Meta status couldn't be verified**, the last-known connection remains untouched. Refresh before connecting, changing assets, or disconnecting.
 
-## Data and permission boundaries
+## Add the Page required for publishing
 
-Marketer uses only the assets returned by your Meta authorization and selection. The detail page can list ad accounts, Instagram accounts, Pages, business portfolios, pixels, and catalogs.
+A healthy reporting connection can still show **Add a Facebook Page**. Meta requires a granted Page before Marketer can publish ads.
 
-The actions available later depend on your Marketer role, Meta's granted access, workspace guardrails, and the state of the selected assets. Connecting Meta does not bypass approvals, spend caps, or autonomy settings.
+1. Select **Add a Facebook Page**.
+2. Reopen the Meta asset dialog.
+3. Grant the correct Page without changing unrelated selections.
+4. Return and confirm that **Pages** lists it.
 
-## Freshness and reporting
+This warning concerns publishing readiness, not the health of campaign reporting.
 
-Use the sync state and coverage view before treating a recent period as complete. Meta can continue revising recent reporting. Marketer also converts blended reporting to the workspace reporting currency when a selected ad account uses a different currency; the source account remains denominated in its own currency.
+## Follow the first sync
 
-## Reconnect, resync, or disconnect
+Meta can make recent data available before the full history finishes. You may see:
 
-- Choose **Finish setup** when authorization exists but asset selections did not resolve.
-- Choose **Add a Facebook Page** if the connection is healthy but publishing has no granted Page.
-- Choose **Reconnect** when the status says **Reconnect needed** or Meta access changed.
-- Use the resync control when access is healthy and you need a fresh import.
-- If status is unavailable, refresh before changing the connection. Marketer leaves the last-known connection untouched while the read is uncertain.
-- Disconnect only after confirming that reporting, audiences, and campaign work no longer need this connection.
+| Sync display | Interpretation |
+| --- | --- |
+| **Syncing** | An import is running |
+| **Data ready · syncing past performance** | Recent reporting is usable while history continues |
+| **All synced** | The requested history completed; check **Last synced** and coverage |
+| **Last sync didn't finish** | The import failed; use **Resync** or **Retry sync** |
+| **Not synced yet** | No completed import exists |
+
+Use **Resync** for a healthy connection that needs a new import. Use **Retry sync** when the page offers it after a failure. If a sync is in flight, the page can offer a cancel control.
+
+Before acting on a number, confirm the selected ad account, source currency, reporting date range, conversion source, last sync, and coverage.
+
+## Manage backsyncing
+
+**Backsyncing** controls whether Marketer keeps campaign, result, and spend reporting current from Meta. It does not pause or change activity inside Meta.
+
+- When on, reporting continues to update.
+- When off, Marketer freezes reporting at the last completed sync.
+- **Pause backsyncing** requires confirmation through **Pause Meta backsyncing?**
+- Resuming begins immediately. Marketer can refill recent gaps, but a long pause can leave older days incomplete.
+- A workspace without an active plan can show that backsyncing is paused until a subscription resumes; use **View plans** for the displayed recovery path.
+
+<Warning>
+  A paused backsync makes later Meta activity invisible in Marketer. Treat the last-sync time as part of every analysis until backsyncing and coverage are healthy again.
+</Warning>
+
+## Currency and action boundaries
+
+Source ad accounts remain denominated in their own currencies. Blended views convert them to the workspace reporting currency; always compare like with like.
+
+Connection does not grant unlimited action authority. Marketer role, Meta asset permissions, [Guardrails](/workspace-admin/guardrails-and-autonomy), autonomy, audience terms, and the state of the selected asset still apply.
+
+## Recovery decision tree
+
+1. **Status unavailable:** refresh and preserve the current grant.
+2. **Reconnect needed:** reconnect; a resync cannot repair rejected authorization.
+3. **Finish setup:** reopen the asset dialog; reconnecting is unnecessary.
+4. **Add a Facebook Page:** add only the missing Page.
+5. **Sync failed with healthy authorization:** retry or resync.
+6. **Wrong or missing asset:** reopen the asset selection and confirm the provider identity can see it.
+7. **Disconnect:** use only when the workspace should stop using Meta; confirm reporting, audiences, and campaign workflows no longer depend on it.
 
 ## Next step
 
-Ask Marketer to analyze one selected ad account over a fixed date range. Review the account name, period, spend, and conversion source before acting on the result. See [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before enabling changes that can affect spend.
+Run one read-only campaign analysis for a selected ad account and completed period. Confirm account, currency, conversion source, spend, and coverage in Meta before moving to an action workflow.

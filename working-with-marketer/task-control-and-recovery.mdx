@@ -1,0 +1,145 @@
+---
+title: "Task control and recovery"
+sidebarTitle: "Task control and recovery"
+description: "Reopen the exact run, resume waiting work, stop active work, recover from failure, and verify the final output."
+---
+
+Use the selected task or run as the execution record. Chat tells you what was requested; the task state, steps, and output tell you what is happening now and what actually finished.
+
+## Reopen the exact run
+
+You can reach the same work from several places:
+
+- Select a task under **Currently Running** on Home.
+- Select a task row in the sidebar **Recents** list.
+- Open **Chats and tasks**, choose **Tasks**, and select the task.
+- Open **Activity** and select its Agent work card.
+- Open the **Agents** sidebench in the originating conversation and select the specialist or nested run.
+- Follow a task link from **Notifications**.
+
+Before you act, match the task title, specialist, original conversation, attached context, and relative time. Selecting a task in **Chats and tasks** opens its Activity run detail; selecting a chat opens the complete conversation instead.
+
+## Read the lifecycle on the current surface
+
+Compact task rows use these native labels:
+
+| Label | Meaning | Action |
+| --- | --- | --- |
+| **Running** | The run is active | Let it continue or open the current step. |
+| **Waiting for you** | A question or approval suspended the run | Answer or decide the interaction attached to this run. |
+| **Done** | The run reached a successful terminal state | Open and verify the output. |
+| **Failed** | The run ended on an error | Inspect the error, last useful output, and prerequisite before retrying. |
+| **Canceled** | The run stopped before completion | Start a revised run if the output is still needed. |
+
+Activity can also present family-level states such as **Queued**, **Working**, **Waiting**, **Completed**, or **Partially completed** when it combines a parent with nested work. Read the selected child before deciding which part needs attention.
+
+The selected detail can show **Working for _time_**, **Worked for _time_**, **Failed after _time_**, **Canceled after _time_**, or **Waiting**. Elapsed time describes the run; it is not a deadline or completion estimate.
+
+## Resume waiting work
+
+<Steps>
+  <Step title="Open the waiting interaction">
+    Use the question or approval mounted inside the same run. If you started from a compact task row, open its detail first.
+  </Step>
+  <Step title="Resolve it once">
+    Submit the missing answer or use the displayed approval controls. Keep the response within the original objective.
+  </Step>
+  <Step title="Wait for the state transition">
+    The interface can show **Sending your answer…** or **Sending…**. Keep the run open until it returns to **Running** or **Working**.
+  </Step>
+  <Step title="Follow the next active step">
+    A resumed run can encounter another question or approval. Read the new interaction instead of assuming the first decision released every branch.
+  </Step>
+  <Step title="Review the terminal result">
+    Open the output only after the task is **Done**, **Completed**, **Failed**, **Partially completed**, or **Canceled**.
+  </Step>
+</Steps>
+
+If delivery fails and the interaction remains available, use its retry path. If Marketer says delivery may already be in progress and tells you not to retry, wait for the run state to reconcile in Activity.
+
+## Stop active or waiting work
+
+**Stop** is available in the selected run detail while the run is non-terminal. It can remain available while the run is waiting for input, which lets you end work you no longer want to resume.
+
+1. Confirm that the selected task is the one you intend to stop.
+2. Select **Stop**.
+3. Keep the detail open while the control shows **Stopping…**.
+4. Wait for **Canceled** or another terminal state.
+5. Review any output already produced before the stop.
+
+Stopping a chat response through **Stop generating** is different. It stops the current conversational turn. Use **Stop** in the task or Agents detail for a background run.
+
+If Marketer reports that the run did not acknowledge the stop and is still active, do not treat it as canceled. Keep the same run open and try again as the message instructs. If only part of the work stopped, inspect the remaining active child before you start replacement work.
+
+## Recover by terminal state
+
+### Failed
+
+1. Open the failed run instead of immediately resubmitting the prompt.
+2. Read the last successful step and the displayed error.
+3. Check the required connected account, workspace record, permission, file, or destination.
+4. Open **Outputs** and preserve any usable result.
+5. Correct the prerequisite, then start a revised run for the missing work.
+
+### Partially completed
+
+Activity can show **Partially completed** when a run family produced usable output but one branch did not finish. Open the parent and child rows, identify which output is supported, and request only the missing branch. Do not discard valid output or rerun finished generation by default.
+
+### Canceled
+
+A canceled run is terminal. It does not resume from a new chat message. Return to the originating conversation, revise the objective or constraint, and start a new proposal or task when the deliverable is still needed.
+
+### Done but incomplete
+
+A successful execution state means the run ended normally, not that the deliverable satisfies your request. Compare the actual result with the requested sections, sources, date window, and completion criteria. Ask for the missing output as a new, bounded request.
+
+### Still running after a quiet period
+
+Do not infer failure from a quiet conversation. Reopen the task through **Chats and tasks** or **Activity**, read its current status, and inspect the active specialist in **Agents**. Start a replacement only after the original run is terminal or you intentionally stop it.
+
+## Use Activity detail for recovery evidence
+
+The Activity run detail is the durable place to reopen a task when the conversation is not in view. It can include:
+
+- The current status and elapsed work
+- The run transcript or progress body
+- The active question or action approval
+- A **Stop** control while work is non-terminal
+- **Outputs** links for artifacts produced by the run
+- The specialist family and nested work in the Agents view
+
+Open an output from Activity, then verify it in the surface that owns the object. Activity proves that work was recorded; it is not the current campaign, brief, creative, workflow, or provider state.
+
+## Verify before closing the task
+
+Use the matching final check:
+
+| Task produced | Verify in |
+| --- | --- |
+| Analysis or recommendation | The cited source, account, exact dates, filters, and calculation |
+| Brief | **Briefs**, including its product, audience, offer, and review state |
+| Creative | The run output, then **Studio** or **Assets** |
+| Campaign draft or proposal | **Campaigns**, with provider account, objective, budget, targeting, creative, destination, and current state |
+| Workflow or report | **Workflow**, its configuration, latest run, destination, and output |
+| Connected-account change | The owning Marketer surface and, when needed, the provider |
+
+<Warning>
+  **Done**, an approval receipt, and a notification are three different records. None replaces verification of the current object.
+</Warning>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Chats and tasks" icon="messages" href="/working-with-marketer/chats-and-tasks">
+    Reopen a conversation or recent task from the combined history page.
+  </Card>
+  <Card title="Tasks and activity" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Understand task progress and workspace-wide Activity.
+  </Card>
+  <Card title="Questions and approvals" icon="circle-question" href="/working-with-marketer/questions-and-approvals">
+    Resolve the interaction that placed a run in Waiting.
+  </Card>
+  <Card title="Inspect specialists" icon="users" href="/working-with-marketer/specialists">
+    Trace the parent task into nested specialist work, sources, and outputs.
+  </Card>
+</CardGroup>

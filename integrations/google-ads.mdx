@@ -1,65 +1,99 @@
 ---
 title: "Google Ads"
-description: "Connect selected Google Ads accounts for campaign, ad group, ad, and performance reporting."
+description: "Connect selected Google Ads leaf accounts, verify coverage, and recover access or selection problems."
 ---
 
-Connect Google Ads to bring selected advertising accounts into Marketer's blended reporting and analysis.
+Google Ads syncs campaigns, ad groups, ads, and performance from the leaf accounts you select for the active workspace.
 
-## Prerequisites
+## Before you connect
 
-- A Marketer Owner, Admin, or Member role
-- A Google identity that can reach the required Google Ads accounts
-- The customer IDs of the leaf accounts you want to sync
-- Agreement on the workspace reporting currency and date range you will use for validation
+- Use a Marketer Owner, Admin, or Member role. Viewers see **View accounts** instead of account-management controls.
+- Sign in to a Google identity that can reach the required Google Ads accounts.
+- Know the customer IDs and currencies of the leaf accounts that belong here.
+- A manager account can expose child accounts, but it is not itself synced as a reporting unit.
 
-<Frame caption="The provider header confirms authorization and introduces account selection. Continue down the page to choose the leaf accounts for this workspace.">
+<Frame caption="Authorization is complete in this view, but the workspace is not ready until the correct leaf accounts are selected.">
   <img src="/assets/product-flows/integration-google-selection.png" alt="Google Ads integration header with Connected badge and Choose the accounts to sync heading" />
 </Frame>
 
-## Connect Google Ads
+## Connect and choose accounts
 
 <Steps>
-  <Step title="Open Google Ads">
-    Go to **Integrations**, then open **Google Ads**.
+  <Step title="Authorize Google Ads">
+    Go to **Integrations** → **Google Ads** and select **Connect Google Ads**.
   </Step>
-  <Step title="Authorize read access">
-    Select **Connect Google Ads** and complete Google's consent flow. Review the access Google displays.
+  <Step title="Complete Google consent">
+    Use the identity that can reach the intended manager or leaf accounts.
   </Step>
-  <Step title="Choose accounts">
-    Select the non-manager accounts that should enter this workspace's blended reporting. A manager account can expose its children, but Marketer syncs the leaf accounts you select.
+  <Step title="Choose leaf accounts">
+    Under **Choose the accounts to sync**, select each non-manager account that should enter this workspace's reporting.
   </Step>
-  <Step title="Confirm the connection">
-    Check for **Connected**, the Google identity, the number of selected accounts, and the connected date.
+  <Step title="Verify the selection">
+    Check **Google account**, **Accounts selected**, and **Connected**. Then review **Synced Google Ads accounts** for product, customer ID, and currency.
   </Step>
 </Steps>
 
-## Confirm the first sync
+## Read connection and selection states
 
-Wait for the sync state to complete, then review **Synced Google Ads accounts** and the data-coverage view. Each selected account should show its customer ID and currency.
+| State | Meaning | Next action |
+| --- | --- | --- |
+| **Status unavailable** | Marketer could not verify Google Ads and preserves the last-known state | Refresh before changing the connection |
+| **Disconnected** | No usable Google authorization exists | Select **Connect Google Ads** |
+| **Reconnect needed** | Google rejected the saved grant | Select **Reconnect Google Ads** |
+| **Choose accounts** | Authorization is healthy, but no valid leaf selection is saved | Choose and save accounts |
+| **Refresh access** | The grant exists, but no selectable accounts were resolved | Fix Google access, then select **Refresh account access** |
+| **Connected** | Authorization and at least one valid selection exist | Verify the roster and sync |
 
-As a first validation, ask which campaigns used the most spend over a completed date range. Compare the account, currency, and totals with Google Ads before using the answer for a decision.
+If the page says **Google Ads status couldn't be verified**, refresh it. The last-known connection remains in place while the check is uncertain.
 
-## Data and permission boundaries
+### Manage an existing selection
 
-Marketer imports campaigns, ad groups, ads, and performance from the leaf accounts you select. The connection page is explicit about read access; any additional product action remains subject to the action's own permissions, your workspace role, and workspace policy.
+Select **Manage accounts** to add or remove leaf accounts without reconnecting. A Viewer sees **View accounts** and cannot save changes. In **Manage synced accounts**, validate the **Product**, **ID**, and **Currency** for each selected row.
 
-Account selection is workspace-specific. A Viewer can inspect the selected accounts but cannot change the selection. Optional Google recommendation controls, when shown, are separate from the connection itself.
+Changing the roster changes what future blended reporting includes. Record the effective date when a material account is added or removed.
 
-## Freshness and reporting
+## Follow the sync
 
-Use sync state and coverage to judge whether a period is ready for analysis. Recent Google Ads metrics can change as conversions and attribution settle.
+| Sync display | Interpretation |
+| --- | --- |
+| **Syncing** | An import is running |
+| **Data ready · syncing past performance** | Recent data is available while history continues |
+| **All synced** | The requested history completed; inspect **Last synced** and coverage |
+| **Last sync didn't finish - Resync to retry** | The import failed after authorization and selection |
+| **Not synced yet** | No completed import exists |
 
-When a selected account uses a different currency, blended views convert reporting to the workspace reporting currency. Confirm the source currency before comparing raw Google Ads values with a blended Marketer view.
+Use **Resync** for a healthy connection that needs a new import and **Retry sync** when offered after failure. A running import can show a cancel action.
 
-## Reconnect, resync, or disconnect
+Google can continue adjusting recent conversions. Use a completed date range for the first comparison and confirm the account, currency, last-sync time, and coverage.
 
-- Choose **Manage accounts** to add or remove leaf accounts while authorization remains active.
-- Choose **Refresh account access** when authorization exists but no selectable accounts were saved.
-- Choose **Reconnect Google Ads** when Google invalidates the authorization.
-- If an account shows **Access lost**, restore access in Google Ads or remove that account from the selection. A normal resync cannot repair a provider-side denial.
-- If status is unavailable, refresh before changing the connection. Marketer preserves the last-known state while verification fails.
-- Disconnect only after checking which reports and workflows depend on the selected accounts.
+## Resolve **Access lost**
+
+An account can remain in **Synced Google Ads accounts** but show **Access lost** when the connected Google identity no longer reaches it.
+
+1. Restore access to the customer account in Google Ads, or select **Manage accounts** and remove it.
+2. Return to Marketer and refresh the connection.
+3. Confirm the badge clears; syncing resumes when provider access is restored.
+
+**Resync** cannot repair provider-side denial. Reconnect only if the Google authorization itself is rejected or a different identity must grant access.
+
+## Currency and action boundaries
+
+Each Google Ads account keeps its source currency. Blended Marketer views convert mismatched accounts into the workspace reporting currency.
+
+The connection page establishes reporting access. Any later change remains bounded by your role, the provider account, workspace policy, and the action's own approval requirements.
+
+Google's optional recommendation subscriptions are a separate control plane. Read [Auto-apply recommendations](/integrations/google-ads-auto-apply) before enabling any type that lets Google change an account automatically.
+
+## Recovery decision tree
+
+1. **Status unavailable:** refresh; do not replace a last-known grant.
+2. **Reconnect needed:** select **Reconnect Google Ads**.
+3. **Choose accounts:** save at least one leaf account.
+4. **Refresh access:** repair the Google roster, then use **Refresh account access**.
+5. **Access lost:** restore the specific account or remove it from selection.
+6. **Sync failure with healthy access:** retry or resync.
+7. **Disconnect:** use only when reports and workflows no longer require any selected Google Ads account.
 
 ## Next step
 
-Run one read-only campaign analysis for a single account and completed date range. Then review [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before moving from analysis to spend-affecting work.
+Run one read-only campaign analysis for a single customer ID and completed date range. Compare the result with Google Ads, then review [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy).

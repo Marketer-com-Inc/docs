@@ -1,63 +1,136 @@
 ---
-title: "Brand profile and autofills"
-description: "Give Marketer approved brand context and reusable launch defaults."
+title: "Branding and Autofills"
+description: "Build the workspace brand kit, review proposed facts, and set reusable campaign defaults."
 ---
 
-Branding gives Marketer the context it should use. Autofills reduce repeated setup when your team creates campaigns and ads.
+**Branding & Brand Profile** controls what the agent knows about the active workspace. **Autofills** controls the defaults used when new campaign work is created. Neither should be copied from another workspace without review.
 
-## Build the brand profile
+## Build the brand kit
 
 Open **Settings** → **Branding & Brand Profile**.
 
-The page includes:
+### Workspace
 
-- **Workspace name** and reporting currency;
-- brand-kit sources from a website or uploaded guidelines;
-- proposed brand facts for review;
-- an approved brand profile used by the agent; and
-- a competitor watchlist supplied by your team.
+The **Workspace** section controls:
 
-<Steps>
-  <Step title="Add reliable sources">
-    Point Marketer at your current website or upload approved brand guidelines. Prefer material your team already treats as authoritative.
-  </Step>
-  <Step title="Review proposed facts">
-    Approve, adjust, or deny each fact. Do not approve a statement only because it sounds plausible.
-  </Step>
-  <Step title="Check workspace identity">
-    Confirm the workspace name and reporting currency. Currency affects how blended reporting is presented.
-  </Step>
-  <Step title="Maintain competitors">
-    Add only competitors the team intentionally monitors. Remove stale entries when positioning changes.
-  </Step>
-</Steps>
+- workspace name; and
+- workspace reporting currency.
 
-Approved facts are the working brand context Marketer uses for writing and targeting. Keep source material current and revisit facts after a rebrand, market change, or major product launch.
+These are workspace settings, not brand facts. Reporting currency affects blended views; changing it does not change a provider account's native currency.
 
-## Configure autofills
+### Build your brand kit
 
-Open **Settings** → **Autofills**. Defaults are organized into four areas:
+Use **Build your brand kit** to provide source material:
 
-| Area | What it pre-fills |
-| --- | --- |
-| **Advantage+ enhancements** | Saved creative enhancement presets for new Meta ads |
-| **Naming presets** | Consistent campaign, ad set, and ad naming patterns |
-| **Copy** | Reusable ad-copy defaults |
-| **Website & UTM** | Destination and tracking defaults |
+1. Enter the brand website and select **Build from website**.
+2. Add relevant brand files through the file manager.
+3. While research runs, follow **Brand research running** and **view progress**.
+4. Review the proposed facts instead of assuming research output is approved.
 
-New campaign flows inherit the selected defaults. A teammate can still review and override them for an individual launch.
+Use the canonical public website and current brand guidelines. Remove obsolete source material so later proposals are grounded in the right identity.
 
-An optional Slack drift alert can notify the team when live Advantage+ settings move away from the saved expectation. Slack must be connected and able to list the chosen channel.
+## Review agent-proposed facts
 
-## Review checklist
+The page deliberately separates review state from approved state.
 
-- Brand facts are approved by someone who owns the messaging.
-- Reporting currency matches the workspace's intended reporting unit.
-- Naming presets are legible outside Marketer.
-- Default copy does not contain a temporary offer or expired claim.
-- Destination and UTM values are valid for the current site.
-- Creative defaults are reviewed in the launch flow before publishing.
+| Section | Meaning | Available decision |
+| --- | --- | --- |
+| **Suggested by the agent** | Proposed facts awaiting a person | Approve, adjust, or deny |
+| **Your brand kit** | Facts the agent uses now | Edit the current approved value |
+
+- **Approve** promotes the proposed fact into the active brand kit.
+- **Adjust** lets you correct it before approval.
+- **Deny** keeps an unsupported or unwanted claim out of the active kit.
+
+<Warning>
+  Only facts in **Your brand kit** should be treated as approved workspace truth. A suggestion, source upload, or research run is not approval by itself.
+</Warning>
+
+### Competitor watchlist
+
+Use **Competitor watchlist** for exact, team-supplied competitors. You can add, edit, and remove entries. Clearing the complete list requires confirmation.
+
+Review the list when positioning changes, a competitor rebrands, or a company was added only for a temporary campaign.
+
+## Keep brand context trustworthy
+
+- Prefer one specific, reviewable fact over a vague paragraph.
+- Distinguish verified claims from tone or positioning preferences.
+- Update sources when the website or guidelines change.
+- Remove stale claims rather than adding contradictory facts.
+- Ask the content owner to review high-impact edits.
+- Verify another workspace is active before editing a similarly named brand.
+
+## Configure Autofills
+
+Open **Settings** → **Autofills**. The page has four tabs:
+
+- **Advantage+ enhancements**
+- **Naming presets**
+- **Copy**
+- **Website & UTM**
+
+New campaign work inherits these defaults, but a teammate can override them for a specific launch before publishing.
+
+### Advantage+ enhancements
+
+Set the workspace defaults for Meta creative enhancements. New ads begin with these choices, and Power Editor uses them as suggestions.
+
+**Slack drift alerts** sends a Slack message when Meta turns an enhancement on independently. It needs a connected Slack workspace and channel; otherwise the page offers **Connect Slack**.
+
+Treat these as creative-delivery policy, not cosmetic form defaults. Review the final ad-level configuration before publishing.
+
+### Naming presets
+
+Naming presets generate names for campaigns, ad sets, ads, and creatives at launch.
+
+1. Select **New naming preset**.
+2. Enter **Preset name**.
+3. Build templates with **Variables** in `{{double braces}}`.
+4. Select **Create preset**.
+5. Edit with **Edit naming preset** and **Save changes**.
+6. Set the intended preset as the workspace default.
+
+Use names that remain useful in provider reporting after a launch. Test every level with realistic values so missing variables or repeated delimiters do not become the permanent provider name.
+
+### Copy
+
+**Default ad copy** can set:
+
+- **Primary text**
+- **Headline**
+- **Call to action**
+- **Description**
+
+A blank default leaves that field empty. Keep legal, offer, and market-specific copy in the individual brief when it should not apply to every new ad.
+
+### Website & UTM
+
+Set:
+
+- **Default destination URL**;
+- **UTM template**;
+- **Default naming preset**; and
+- the values confirmed by the live preview.
+
+Use an approved canonical destination, validate required UTM variables, and test the preview before selecting **Save defaults**.
+
+<Warning>
+  A wrong destination or UTM template can propagate to every new campaign. Verify domain, path, redirects, query delimiters, and naming variables before saving a workspace default.
+</Warning>
+
+## Verify inheritance before launch
+
+Create a paused test brief and inspect:
+
+1. brand facts used in the output;
+2. competitor references;
+3. creative enhancement defaults;
+4. generated names at every provider level;
+5. primary text, headline, CTA, and description;
+6. destination URL and UTM preview; and
+7. any launch-specific override.
 
 ## Next step
 
-Set [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy), then generate a brief and verify that the approved brand context and autofills appear as expected.
+After the brand kit and autofills pass a paused test, configure [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) before increasing launch autonomy.

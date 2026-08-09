@@ -1,0 +1,159 @@
+---
+title: "Knowledge sources"
+sidebarTitle: "Knowledge sources"
+description: "Build Knowledge from a website, route uploaded files, inspect grounding, and verify an important fact in a fresh task."
+---
+
+**Knowledge** is the workspace surface for approved source material and the artifacts grounded in it. Use it for brand facts, reference evidence, and source-backed research—not for reusable operating procedures, which belong in **Skills**.
+
+Open [Knowledge](https://app.marketer.com/dashboard/knowledge-base) and confirm the active workspace.
+
+## Understand the landing page
+
+| Area | What it answers | What to inspect |
+| --- | --- | --- |
+| **Standing index** | What compact context is available to agents on future requests? | Current facts, contradictions, source authority, and missing essentials |
+| **Recent artifacts** | What reports or analyses did the workspace produce recently? | Type, title, summary, date, detail, and **Grounded in N** sources |
+| **Sources** | Which inputs feed workspace context? | Route, owner, date, processing state, and authority |
+
+The landing page is intentionally a slice: **Recent artifacts** prioritizes a limited set, and the **Standing index** is compact context rather than the entire knowledge base. Open the artifact or source detail for a decision-grade review.
+
+## Choose the right route
+
+| Material | Select | Resulting purpose |
+| --- | --- | --- |
+| Approved brand identity | **Brand kit material** | Brand Profile and enduring brand context |
+| Factual or reference source | **Reference knowledge** | Evidence agents can retrieve and cite |
+| Repeatable method | **Working procedure** | A Skill to govern and test |
+| Truly mixed or unclear input | **Let the agent decide** | A proposed route you must inspect afterward |
+
+Resolve mixed files before upload when possible. A document that combines confidential notes, outdated claims, brand identity, and a procedure is difficult to govern as one source.
+
+## Build from a website
+
+Use website research when the approved public brand or storefront site should establish current workspace context.
+
+<Steps>
+  <Step title="Enter the authoritative site">
+    In **Sources**, provide the canonical domain. Avoid a campaign mirror, unrelated retailer, or regional site that does not own the facts you need.
+  </Step>
+  <Step title="Select Build from website">
+    Confirm the exact domain before starting. The source moves into **Brand research running** while Marketer gathers and structures available material.
+  </Step>
+  <Step title="Open view progress">
+    Follow the active task and its visible steps. Closing the task does not mark the source complete.
+  </Step>
+  <Step title="Inspect the new context">
+    Return after a terminal state and review the source, standing context, and recent artifacts. Check product claims, audience conclusions, dates, and brand details against the current site.
+  </Step>
+  <Step title="Test one sourced fact">
+    Start a fresh task, ask a question with one verifiable answer from the site, require the source and effective date, then compare the response with the live page.
+  </Step>
+</Steps>
+
+A website build reflects what was available during that run. Rebuild or replace it after a material site change; do not assume every later request performs a new live crawl.
+
+## Upload and route files
+
+The upload surface accepts approved PDFs, Markdown, text, images, and fonts, up to the **100 MB** limit displayed by the UI.
+
+<Steps>
+  <Step title="Set Route uploads as">
+    Choose **Let the agent decide**, **Brand kit material**, **Reference knowledge**, or **Working procedure** before adding files.
+  </Step>
+  <Step title="Add the exact files">
+    Use **Drop files or click to upload**. Confirm filenames, remove duplicates, and ensure every file opens and contains selectable, understandable content when text extraction is expected.
+  </Step>
+  <Step title="Read the source state">
+    A row can show upload or processing progress before **Done**, or finish as **Failed**. Do not test retrieval while it is still processing.
+  </Step>
+  <Step title="Verify the resulting route">
+    Under **In your knowledge base**, read the arrow destination such as **Brand kit**, **Knowledge**, or **Skill**. The resulting badge, not the original intent, confirms where the source landed.
+  </Step>
+  <Step title="Retry only the failed row">
+    Select **Retry** after checking file integrity and type. Avoid uploading another identical copy while the original can be recovered.
+  </Step>
+</Steps>
+
+Identical file bytes can be recognized and reused rather than reprocessed as a distinct source. Check existing rows before assuming a repeated upload created new context.
+
+Images and fonts are treated as brand assets rather than ordinary text documents. Verify their Brand Profile effect and rights separately from a factual retrieval test.
+
+## Change a source destination
+
+Use the row's route control when a source landed in the wrong place.
+
+- Moving a source into **Brand kit** can start metered re-reading; review the confirmation and displayed usage.
+- Moving a source out of **Brand kit** changes future routing, but details already extracted into the Brand Profile can remain.
+- Moving a procedure to **Skill** creates behavior that needs trigger, scope, body, and negative-trigger review.
+- Reopen both the source and destination after processing completes.
+
+Do not interpret rerouting as deletion. Inspect already-produced brand context and artifacts before deciding whether further cleanup is required.
+
+## Review artifact grounding
+
+Open a row in **Recent artifacts** and inspect its full detail.
+
+Confirm:
+
+- Artifact type, title, summary, and date
+- The evidence named by **Grounded in N**
+- Which claims come directly from a source
+- Which statements are synthesis or recommendation
+- Whether a newer or higher-authority source conflicts
+
+An artifact summary is orientation. The open artifact and its sources are the review surface.
+
+## Validate Knowledge in a fresh task
+
+<Frame caption="Task progress can show that Marketer searched and read saved workspace context; verify the final fact against the named source.">
+  <img src="/assets/product-flows/task-progress.png" alt="Marketer task progress showing saved brand memory in search context and a completed step reading saved brand memory" />
+</Frame>
+
+1. Start a new task so prior conversation context does not mask the test.
+2. Ask one specific question the source can answer.
+3. Select **+** → **Add context**, then attach the relevant product, brief, campaign, or creative when it is part of the question. Use `@` only when you want to mention an agent.
+4. Require the source title, cited fact, effective date, and any conflicting source.
+5. Compare the answer with the uploaded file or live website.
+6. Correct the source, route, or authority order and retest if the result is stale or ambiguous.
+
+## Completion check
+
+- Every source has an owner, date, authority, and intentional route.
+- Website and upload work reached a terminal state.
+- Failed rows were fixed or deliberately removed.
+- Brand kit, Knowledge, and Skill routes match the material's purpose.
+- Important artifacts identify their grounding.
+- A fresh task retrieved a known fact and named the correct source and date.
+- Conflicting or outdated authorities were resolved.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Brand research stays in progress">
+    Open **view progress**, inspect the failed or waiting step, and confirm the canonical domain is reachable. Resolve the existing task before starting another identical build.
+  </Accordion>
+  <Accordion title="A file fails">
+    Confirm it opens locally, fits the displayed size limit, and uses a supported type. Use **Retry** on the exact row after correcting a malformed or unreadable export.
+  </Accordion>
+  <Accordion title="The file went to the wrong destination">
+    Use the row's route control and review the move confirmation. After processing, inspect both the new destination and any previously extracted Brand Profile detail.
+  </Accordion>
+  <Accordion title="The agent ignores a source">
+    Confirm the row is **Done**, the route is correct, and a higher-authority source does not contradict it. Test in a fresh task with the source named explicitly.
+  </Accordion>
+  <Accordion title="An artifact is grounded in stale evidence">
+    Replace or rebuild the outdated source, resolve conflicts, and rerun the decision-grade task. Existing artifacts preserve their earlier context and should not be silently relabeled as current.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Govern Skills" icon="list-check" href="/product-guides/knowledge-skills">
+    Turn approved procedures into scoped, testable agent behavior.
+  </Card>
+  <Card title="Use context in chat" icon="at" href="/working-with-marketer/chat-and-context">
+    Attach the exact record and verify how the Marketing Agent uses it.
+  </Card>
+</CardGroup>

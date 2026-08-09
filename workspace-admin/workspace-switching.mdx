@@ -1,0 +1,87 @@
+---
+title: "Workspace switching"
+description: "Change the active workspace deliberately and verify that every provider, setting, and task stays in the intended scope."
+---
+
+The workspace switcher is the scope boundary for most of Marketer. It appears in the top-left and shows the active workspace name with the label **Workspace**.
+
+## What the switcher can show
+
+Depending on your account and role, the menu includes:
+
+- **Account overview** for an eligible account Owner or Admin with at least two active workspaces;
+- **Your workspaces** grouped by account;
+- the role associated with an account group;
+- a check beside the active workspace;
+- keyboard shortcuts `⌘1` through `⌘9` for listed workspaces;
+- **New workspace**;
+- **Workspace settings**; and
+- **Invite team members**.
+
+Only options available to your identity and role appear.
+
+## Switch safely
+
+<Steps>
+  <Step title="Finish or save current work">
+    A switch changes the workspace context for the next page and action. Save drafts or settings first.
+  </Step>
+  <Step title="Open the switcher">
+    Select the current workspace name in the top-left.
+  </Step>
+  <Step title="Choose the target workspace">
+    Use the account grouping, workspace name, and active check—not a similar brand name alone.
+  </Step>
+  <Step title="Verify the new context">
+    Confirm the trigger now shows the intended workspace, then verify the page's connected account or workspace name before changing anything.
+  </Step>
+</Steps>
+
+Marketer remembers the active workspace. Treat a return visit as potentially restoring the last workspace you used, not automatically the one you intended for the new task.
+
+## What changes with the active workspace
+
+| Area | Workspace-scoped context |
+| --- | --- |
+| Integrations | Provider authorizations, selected resources, syncs, and Slack routing |
+| Analytics | Connected accounts, currency, conversions, audiences, and date coverage |
+| Campaign work | Briefs, drafts, provider targets, approvals, and launches |
+| Branding | Approved brand facts, competitors, source material, and workspace identity |
+| Autofills | Creative enhancements, naming, copy, destinations, and UTM defaults |
+| Guardrails and autonomy | Spend caps, protected campaigns, approval thresholds, and launch behavior |
+| Notifications | Slack channel, email recipients, severity floor, and event groups |
+| Plans & Billing | Workspace plan and usage, unless an account plan covers it |
+
+Personal **Profile**, **Authentication**, and **MCP connect** do not become different records when the workspace changes. MCP connections still use explicit per-session workspace grants.
+
+## Create or administer from the menu
+
+- **New workspace** begins a separate workspace setup; it does not duplicate the active workspace's integrations or policy.
+- **Workspace settings** opens settings for the current workspace.
+- **Invite team members** opens the account-grain invitation flow, where you choose **All workspaces** or **Selected workspaces**.
+- **Account overview** moves to a cross-workspace rollup rather than making one workspace active for all account data.
+
+## If switching fails
+
+The error reads **Couldn't switch workspace. Please try again.**
+
+1. Leave the current page unchanged.
+2. Reopen the switcher and check which workspace still has the active check.
+3. Retry once.
+4. If the workspace disappeared, ask an account Owner or Admin to check your membership and selected-workspace grant.
+5. Do not assume a failed switch changed provider or billing scope.
+
+## Before a material action
+
+Use this four-part check:
+
+1. Workspace name in the switcher
+2. Provider account, store, or property on the page
+3. Source and workspace currency
+4. Intended workspace guardrails and reviewer
+
+This is especially important before connecting a provider, changing a revenue rollup, granting an MCP seat, modifying guardrails, launching, or opening billing.
+
+## Next step
+
+Review [Members and roles](/workspace-admin/members-and-roles) to understand why a workspace may appear in one person's switcher but not another's.

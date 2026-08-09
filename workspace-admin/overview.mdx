@@ -1,65 +1,81 @@
 ---
 title: "Workspace and admin"
-description: "Manage your personal account, workspace context, people, policies, notifications, and billing."
+description: "Understand which settings follow you, the active workspace, or a multi-workspace account."
 ---
 
-Settings in Marketer are divided by who or what they affect. Personal settings follow your account. Workspace settings shape the active workspace. Eligible multi-workspace owners and admins also see an account-level overview.
+Marketer has three administrative scopes. Confirm the scope before changing access, policy, routing, or billing.
+
+## Scope map
+
+| Scope | Follows | Customer-visible areas |
+| --- | --- | --- |
+| **Personal** | Your Marketer identity across workspaces | **Profile**, **Authentication**, **MCP connect**, **Refer & earn** |
+| **Workspace** | The active workspace in the switcher | Branding, Autofills, Members' workspace grants, Guardrails, Autonomy, audiences, conversion metrics, Notifications, Plans & Billing, integrations |
+| **Account** | A qualifying multi-workspace account | **Overview**, **Analytics**, **Billing**, **Users**, **MCP** |
+
+<Warning>
+  A page can look identical across workspaces while controlling different provider accounts, policies, audiences, or billing. Confirm the active workspace before every material change.
+</Warning>
 
 ## Settings map
 
 | Area | Use it for |
 | --- | --- |
-| **Profile** | Your name, profile photo, and account email |
-| **Authentication** | Sign-in identities, password reset, and global sign-out |
-| **MCP connect** | Connected agents, access scopes, and workspace grants |
-| **Branding & Brand Profile** | Workspace identity, brand facts, sources, and competitors |
-| **Autofills** | Defaults for campaign creation |
-| **Members** | Account membership, roles, workspace access, invites, and MCP seats |
-| **Guardrails** | Performance targets, spend limits, approval thresholds, and protected campaigns |
-| **Autonomy** | Default brief mode and whether accepted launches require a review stop |
-| **Audience segments** | Meta reporting segment definitions by ad account |
-| **Custom audiences** | Meta Custom Audience and lookalike management |
-| **Conversion metrics** | Workspace-selected conversion actions shown in Analytics when available |
-| **Notifications** | In-app, Slack, and email delivery preferences |
-| **Plans & Billing** | Agent activity, plan, usage, payment method, and invoices when applicable |
-
-## Personal, workspace, and account scope
-
-**Personal settings** belong to you. Profile, Authentication, and MCP connect are not tied to one selected workspace.
-
-**Workspace settings** apply to the active workspace. Confirm the workspace before changing brand context, defaults, members' workspace access, guardrails, autonomy, audiences, conversion metrics, notifications, or billing.
-
-**Account settings** appear only for eligible owners and admins of a multi-workspace account. That area provides **Overview**, **Analytics**, **Billing**, **Users**, and **MCP** across the account's workspaces.
+| **Profile** | Full name, profile photo, and read-only account email |
+| **Authentication** | Sign-in identities, password reset, and **Sign out everywhere** |
+| **MCP connect** | Personal connected agents, scopes, and workspace grants |
+| **Branding & Brand Profile** | Workspace identity, approved brand facts, sources, and competitors |
+| **Autofills** | Advantage+ defaults, naming presets, ad copy, destination, and UTM defaults |
+| **Members** | Account members, invitations, workspace reach, roles, and MCP seats |
+| **Guardrails** | Performance targets, currency-bound spend caps, scaling limits, and protected campaigns |
+| **Autonomy** | Default creation mode and the launch review stop |
+| **Audience segments** | Reusable Meta segment definitions and reporting roles |
+| **Custom audiences** | Mirrored Meta Custom Audiences and lookalikes |
+| **Conversion metrics** | Selected conversion actions shown in Analytics |
+| **Notifications** | Slack and email delivery, severity floor, and event groups |
+| **Plans & Billing** | Workspace plan, tokens, usage, payment method, invoices, and workspace deletion |
 
 ## Role basics
 
-- **Owner** has full control, including workspace settings.
-- **Admin** can edit and manage people for the workspace or account scope they have.
-- **Member** can create and edit workspace content.
-- **Viewer** is read-only.
+| Role | Workspace posture |
+| --- | --- |
+| **Owner** | Full workspace control |
+| **Admin** | Broad editing and workspace people management |
+| **Member** | Creates and edits workspace content and settings |
+| **Viewer** | Read-only; mutation controls are disabled and **Plans & Billing** is hidden |
 
-Exact visibility and billing controls also depend on whether access is account-wide or limited to selected workspaces. See [Members and roles](/workspace-admin/members-and-roles).
+Account-wide and selected-workspace grants can use the same labels. Always review both the role and its reach in [Members and roles](/workspace-admin/members-and-roles).
 
-## Safe setup order
+## Move between scopes
+
+- Use the top-left workspace switcher for active-workspace context. See [Workspace switching](/workspace-admin/workspace-switching).
+- Eligible account Owners and Admins with at least two active workspaces see **Account overview**. See [Account overview](/workspace-admin/account-overview).
+- **MCP connect** in personal settings is account-spanning, even though each connection reaches only the workspaces you grant.
+- Account **Users** reuses the same account-grain team model as workspace **Members**; it is not a second membership system.
+
+## Recommended setup order
 
 <Steps>
-  <Step title="Set identity and access">
-    Review your profile, authentication, team membership, and workspace roles.
+  <Step title="Confirm identity and scope">
+    Review Profile, Authentication, active workspace, and effective role.
+  </Step>
+  <Step title="Set membership">
+    Invite people with the narrowest all-workspace or selected-workspace reach they need.
   </Step>
   <Step title="Ground the workspace">
-    Add brand sources, review proposed brand facts, and configure reusable defaults.
+    Build the brand kit, review proposed facts, and configure campaign defaults.
   </Step>
-  <Step title="Set policy before automation">
-    Define guardrails and keep **Review everything** until the team has reviewed real outputs.
+  <Step title="Set policy">
+    Define guardrails and keep **Review everything** while testing real outputs.
   </Step>
-  <Step title="Configure delivery">
-    Choose notification channels, recipients, and severity thresholds.
+  <Step title="Connect and route">
+    Connect providers, verify coverage, and configure notification delivery.
   </Step>
-  <Step title="Review usage and ownership">
-    Confirm who owns billing, which workspaces are account-covered, and who can manage MCP seats.
+  <Step title="Review cost and external access">
+    Confirm workspace-versus-account billing and review MCP seats and sessions.
   </Step>
 </Steps>
 
 ## Next step
 
-Start with [Profile and authentication](/workspace-admin/profile-and-authentication), then review [Members and roles](/workspace-admin/members-and-roles) before changing workspace policy.
+Start with [Workspace switching](/workspace-admin/workspace-switching), then review [Members and roles](/workspace-admin/members-and-roles) before changing a workspace policy.

@@ -1,0 +1,164 @@
+---
+title: "Performance and custom views"
+sidebarTitle: "Performance and custom views"
+description: "Set a trustworthy Analytics frame, diagnose a change, and save a reusable view without mixing sources or comparison rules."
+---
+
+Use **Analytics → Performance** for a source-aware view of marketing and commerce results. The page combines a shared measurement frame with channel-specific cards and a **Your views** area for workspace views you define.
+
+Open [Analytics](https://app.marketer.com/dashboard/analytics?view=performance&channel=all), confirm the active workspace, and wait for every source needed by the question to finish syncing.
+
+## Choose the channel before the metric
+
+The channel control can include:
+
+- **All channels**
+- **Meta**
+- **Google Ads**
+- **Microsoft Ads (Beta)**
+- **Google Analytics**
+- **Shopify**
+- **OpenAI Ads (Beta)**
+
+Each channel exposes the cards and breakdowns its source can support. A card that exists on **Meta** is not guaranteed to exist on **Shopify** or **All channels**.
+
+<Note>
+  **Triple Whale (Beta)** is an attribution choice for eligible views, not an additional advertising channel. Selecting it changes the measurement frame. Record its attribution model with every result you share.
+</Note>
+
+## Build the measurement frame
+
+<Steps>
+  <Step title="Set complete dates">
+    Use a preset or **Custom range**, select both boundaries, and choose **Apply**. Analytics settles daily facts through the latest complete day in the workspace reporting timezone, so a current partial day is not a substitute for **Yesterday**.
+  </Step>
+  <Step title="Set the chart resolution">
+    Choose **Daily**, **Weekly**, **Monthly**, or **Yearly**. This changes how the trend is grouped, not the underlying date window.
+  </Step>
+  <Step title="Set the comparison">
+    Use **Comparison off**, **Previous period**, **Year over year**, or **Custom comparison**. For a custom comparison, complete both dates and confirm the two windows answer the intended question.
+  </Step>
+  <Step title="Confirm included accounts">
+    Open **Accounts** and inspect the resources represented by the view. Use **Manage** to repair or change a provider connection; do not assume a missing account is included in an all-channel total.
+  </Step>
+  <Step title="Confirm attribution and currency">
+    Use **Platform** unless the review intentionally requires a healthy **Triple Whale (Beta)** connection. Read the workspace display currency and any source-currency disclosure before comparing money.
+  </Step>
+  <Step title="Choose visible metrics">
+    Select **Manage metrics**, then use **Visible metrics** to keep the decision-driving cards in view. Hiding a card changes presentation only; it does not change the source data.
+  </Step>
+</Steps>
+
+## Diagnose a result without skipping grain
+
+Read the page in this order:
+
+1. Start with the business outcome shown for the channel, such as sales, orders, or purchases.
+2. Read spend beside the outcome.
+3. Use the selected comparison to establish direction and magnitude.
+4. Inspect the time series to find when the change began.
+5. Open the relevant breakdown—such as channel, campaign, search term, landing page, product, country, or device—when it is present.
+6. Continue in the surface that owns the object before recommending a change.
+
+| Breakdown points to… | Continue in… | Verify… |
+| --- | --- | --- |
+| Campaign or ad group | Campaigns | Provider, account, object level, status, budget, and children |
+| Delivered creative | Creatives | Comparable delivery, spend, format, and the exact creative identity |
+| Shopify product | Products | Source product, variant, availability, sales window, and destination |
+| Tracking or coverage | Integrations | Authorization, selected resource, source state, and covered dates |
+
+Do not infer cause from one correlated chart. Record the observed change, the leading explanation, and the next check as separate statements.
+
+## Create a custom view
+
+Custom views live in **Your views** beneath the standard Analytics cards. They are useful for a repeated question that needs a stable chart or table rather than a new export each time.
+
+<Steps>
+  <Step title="Open the builder">
+    Select **New view**. If you do not see **Your views**, confirm that you are on **Performance** and that the page has finished loading.
+  </Step>
+  <Step title="Name the decision">
+    Enter a specific **Title** such as “Meta prospecting CPA trend,” not a generic label such as “Weekly chart.”
+  </Step>
+  <Step title="Choose a block">
+    Select **KPI tile**, **Time series**, **Table**, **Donut**, or **Ranked bars**. Use a KPI for one current result, a time series for change over time, and a table or ranked view for composition.
+  </Step>
+  <Step title="Choose channel and measures">
+    Set **Channel**, then choose **Measure** or **Measures** from the compatible options. The builder disables combinations the selected block or source cannot support.
+  </Step>
+  <Step title="Choose the grain">
+    Use **Breakdown** and, when available, **Split by**. Add **Only include · [dimension]** when the view should cover a specific subset rather than the full channel.
+  </Step>
+  <Step title="Choose window and comparison">
+    Select a **Window** such as **Yesterday**, **Last 7 days**, **Last 30 days**, **This month**, or **Last month**. Choose **No comparison**, **Previous period**, **Previous week**, **Previous month**, or **Year over year** as appropriate.
+  </Step>
+  <Step title="Validate the preview">
+    Inspect **Preview** before saving. Confirm that the title, block, units, grain, filter, date rule, and comparison tell one coherent story.
+  </Step>
+</Steps>
+
+The builder offers only compatible combinations. When an option is disabled, read its requirement and change the block, channel, measure, or breakdown instead of recreating the view.
+
+## Interpret saved-view states
+
+| State | Meaning | Response |
+| --- | --- | --- |
+| Data is present | The source returned usable rows for the configured frame | Verify values against the standard card or owning surface |
+| Empty | The source returned no rows for that frame | Broaden the window or filter; do not relabel it as a failure |
+| Withheld | A required precondition is missing and no number is safe to show | Resolve the named connection, coverage, or configuration requirement |
+| Error | The read failed | Use **Retry** after checking the source; do not copy a stale value |
+| Truncated | Only the leading rows are shown | Treat the result as a ranked slice, not a complete export |
+
+Use a saved view's menu to edit or delete it. After deletion, wait for **View deleted** and confirm the card leaves **Your views** before creating a replacement with the same name.
+
+<Warning>
+  Custom-view channels are limited to the choices currently offered by the builder. The main Analytics channel control can expose a provider—such as **Microsoft Ads (Beta)**—before the custom-view builder supports it. Do not promise or simulate a saved provider view that the builder does not offer.
+</Warning>
+
+## Save the Analytics context as a report
+
+Select **Save as report** only after the current frame is correct. Marketer opens the Marketing Agent with the view, channel, dates, comparison, currency, and visible metrics as context.
+
+Review the seeded request, require a real-data preview, choose Slack and/or email delivery, and keep the report in draft until its schedule and recipients are correct. Continue with [Reports and alerts](/product-guides/workflows-reports-alerts-and-runs) to verify the configured run and each delivery leg.
+
+## Completion check
+
+- The active workspace and included provider accounts are correct.
+- The dates are complete and use the intended timezone.
+- Channel, attribution source and model, currency, resolution, and comparison are recorded.
+- Source coverage is usable or its limitation is attached to the finding.
+- Outcome and spend were read before ratios and breakdowns.
+- A custom view has a compatible block, measure, grain, filter, window, and comparison.
+- The saved card reproduces the intended preview after the builder closes.
+- The owning campaign, creative, product, or connection was checked before action.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The channel is disconnected">
+    Use **Accounts → Manage** or open Integrations, connect the intended resource, and let its requested date range sync. Return to the same Analytics frame after the source becomes usable.
+  </Accordion>
+  <Accordion title="A result does not match the provider">
+    Align the exact resource, dates, timezone, currency, attribution source, attribution model, conversion definition, and object grain. Capture both frames if the difference remains.
+  </Accordion>
+  <Accordion title="New view has no compatible measure">
+    Change **Block** or **Channel**, then choose from the measures the builder enables. A disabled combination indicates a real compatibility boundary, not a label to work around.
+  </Accordion>
+  <Accordion title="The saved view is empty">
+    Edit it and inspect the **Window**, channel, breakdown, and **Only include** filter. Confirm the source has activity at that grain before treating the view as broken.
+  </Accordion>
+  <Accordion title="The view is withheld or errors">
+    Read the card's state, repair the named precondition, and use **Retry**. Never substitute zero for a withheld value or continue sharing the last remembered result.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Compare creative performance" icon="images" href="/product-guides/analytics-creative-performance">
+    Move from a campaign finding to comparable delivered creative.
+  </Card>
+  <Card title="Inspect the campaign" icon="megaphone" href="/product-guides/campaigns-inspect-and-manage">
+    Verify the exact provider object before proposing a change.
+  </Card>
+</CardGroup>

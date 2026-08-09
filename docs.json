@@ -61,10 +61,16 @@
         "group": "Working with Marketer",
         "pages": [
           "working-with-marketer/overview",
+          "working-with-marketer/home-and-composer",
+          "working-with-marketer/navigation-and-quick-actions",
           "working-with-marketer/chat-and-context",
+          "working-with-marketer/answers-tasks-and-proposals",
+          "working-with-marketer/questions-and-approvals",
           "working-with-marketer/tasks-and-activity",
+          "working-with-marketer/task-control-and-recovery",
           "working-with-marketer/specialists",
           "working-with-marketer/awaiting-action",
+          "working-with-marketer/chats-and-tasks",
           "working-with-marketer/history-and-notifications"
         ]
       },
@@ -72,11 +78,24 @@
         "group": "Product Guides",
         "pages": [
           "product-guides/campaigns",
+          "product-guides/campaigns-inspect-and-manage",
+          "product-guides/campaigns-meta-build",
+          "product-guides/campaigns-google-build",
+          "product-guides/campaigns-drafts-and-launches",
           "product-guides/analytics",
+          "product-guides/analytics-performance-and-views",
+          "product-guides/analytics-creative-performance",
           "product-guides/creatives",
+          "product-guides/creatives-briefs",
+          "product-guides/creatives-studio",
+          "product-guides/creatives-assets",
           "product-guides/workflows",
+          "product-guides/workflows-reports-alerts-and-runs",
           "product-guides/knowledge-and-skills",
-          "product-guides/products"
+          "product-guides/knowledge-sources",
+          "product-guides/knowledge-skills",
+          "product-guides/products",
+          "product-guides/products-catalog-and-enhancement"
         ]
       },
       {
@@ -85,6 +104,7 @@
           "integrations/overview",
           "integrations/meta-ads",
           "integrations/google-ads",
+          "integrations/google-ads-auto-apply",
           "integrations/shopify",
           "integrations/google-analytics-4",
           "integrations/slack",
@@ -96,12 +116,16 @@
         "group": "Workspace and Admin",
         "pages": [
           "workspace-admin/overview",
+          "workspace-admin/workspace-switching",
+          "workspace-admin/account-overview",
           "workspace-admin/profile-and-authentication",
           "workspace-admin/mcp-connect",
           "workspace-admin/brand-and-autofills",
           "workspace-admin/members-and-roles",
           "workspace-admin/guardrails-and-autonomy",
           "workspace-admin/audiences",
+          "workspace-admin/custom-audiences",
+          "workspace-admin/conversion-metrics",
           "workspace-admin/notifications-and-billing",
           "workspace-admin/security-and-troubleshooting"
         ]

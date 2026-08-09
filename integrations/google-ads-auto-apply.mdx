@@ -1,0 +1,98 @@
+---
+title: "Google Ads auto-apply recommendations"
+description: "Review and control the recommendation types Google may apply automatically to each connected account."
+---
+
+The **Auto-apply recommendations** section appears for a connected Google Ads integration with selected accounts. It controls eligible Google recommendation subscriptions per account; it is not required for reporting sync.
+
+<Warning>
+  Turning on a recommendation type gives Google permission to make that class of change on its own. Treat this as an automation policy change, not a reporting preference.
+</Warning>
+
+## Read the account summary
+
+Each account shows one of these summaries:
+
+- **Nothing auto-applies**
+- **1 type auto-applying**
+- **N types auto-applying**
+
+The row also shows **Last checked** or **Never checked**. Select **Refresh** when the current Google state may have changed outside Marketer.
+
+Use **Show 15 controllable types** to inspect the recommendation types Marketer can control through Google. The label changes to **Hide the controllable types** when expanded.
+
+## The controllable types
+
+The current list covers these Google recommendation categories:
+
+- Enhanced CPC
+- Add keywords
+- Change keyword match types
+- Lower target ROAS
+- Switch to Maximize clicks
+- Optimize ad rotation
+- Raise target CPA
+- Add responsive search ads
+- Improve RSA ad strength
+- Opt in to Search partners
+- Set a target CPA
+- Set a target ROAS
+- Switch to Target CPA
+- Switch to Target ROAS
+- Use broad match keywords
+
+Review each type against your bidding, keyword, network, and creative policy. Similar-looking types can have different effects.
+
+## Turn a type on
+
+<Steps>
+  <Step title="Choose the exact account">
+    Expand **Auto-apply recommendations** for the customer ID you intend to change.
+  </Step>
+  <Step title="Read the recommendation type">
+    Confirm whether it changes bids, targets, networks, keywords, or creative.
+  </Step>
+  <Step title="Enable the type">
+    Marketer opens **Let Google change this account on its own?** Review the warning, then select **Turn on auto-apply** only if that policy is intended.
+  </Step>
+  <Step title="Refresh and verify">
+    Select **Refresh** and confirm the account summary and type reflect Google's read-back.
+  </Step>
+</Steps>
+
+Disabling a controllable type applies immediately and does not use the enablement confirmation dialog. Confirm the refreshed state after either direction.
+
+## Important coverage boundary
+
+Google can auto-apply recommendation types outside the 15 types exposed here. Therefore:
+
+<Warning>
+  **Nothing auto-applies** in this section means none of Marketer's controllable types are enabled. It is not proof that every possible Google auto-apply behavior is off.
+</Warning>
+
+Use Google Ads to review or change recommendation subscriptions outside this list.
+
+## Failure and uncertainty states
+
+| Symptom | What to do |
+| --- | --- |
+| The account was never checked | Select **Refresh** |
+| The read-back failed | Refresh again after confirming the Google Ads connection is healthy |
+| A type change shows Google's error | Read the provider reason, correct the account condition, and retry |
+| The account shows **Access lost** | Restore provider access; recommendation controls cannot repair it |
+| Recommendation state differs from Google Ads | Refresh Marketer, then use Google Ads as the source of truth for types outside the controllable list |
+
+Do not repeatedly toggle a type while status is uncertain. First establish a fresh provider read.
+
+## Review checklist
+
+- Correct customer ID and account currency
+- Intended recommendation type, not a similarly named type
+- Owner for monitoring Google-applied changes
+- Account bidding and keyword policy
+- Workspace guardrails and approval policy
+- Verification in Google Ads after the change
+
+## Next step
+
+Keep all types off until the team has reviewed their effects account by account. If you enable one, document the account, type, approver, verification time, and rollback owner.

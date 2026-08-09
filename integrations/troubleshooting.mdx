@@ -1,77 +1,138 @@
 ---
 title: "Troubleshoot integrations"
-description: "Diagnose connection, selection, sync, coverage, and permissions problems without losing the last-known state."
+description: "Diagnose authorization, resource selection, sync, freshness, and reporting-scope problems in the right order."
 ---
 
-Most integration issues fall into one of four layers: workspace access, provider authorization, selected resources, or sync state. Check them in that order.
+Most integration problems belong to one of four layers: authorization, resource selection, data sync, or interpretation. Start at the top; later layers cannot repair an earlier one.
 
-## Fast diagnostic sequence
+## First: preserve uncertain state
+
+<Warning>
+  **Status unavailable** means the latest status read failed. It is not proof that the provider disconnected. Refresh before connecting, replacing credentials, changing selections, or disconnecting.
+</Warning>
+
+Marketer keeps the safe last-known connection summary when a provider status read fails. Use the exact provider message and last successful time in an escalation.
+
+## The diagnostic order
 
 <Steps>
-  <Step title="Confirm the workspace and role">
-    Verify the workspace in the Marketer switcher. Owners, Admins, and Members can manage integrations; Viewers are read-only.
+  <Step title="Confirm workspace and role">
+    Check the active workspace in the switcher. Owners, Admins, and Members can manage integrations; Viewers are read-only.
   </Step>
-  <Step title="Read the connection status">
-    Open **Integrations**, then the provider. Distinguish **Disconnected**, **Finish setup**, **Reconnect needed**, **Status unavailable**, and **Connected**.
+  <Step title="Confirm authorization">
+    Resolve **Disconnected** or **Reconnect needed** before changing selections or retrying data.
   </Step>
-  <Step title="Check selected resources">
-    Confirm the expected Meta assets, Google Ads accounts, Shopify stores, GA4 properties, or Slack workspace and channel.
+  <Step title="Confirm provider resources">
+    Resolve **Finish setup**, **Choose accounts**, **Choose properties**, **Refresh access**, or a missing-store state.
   </Step>
-  <Step title="Check sync and coverage">
-    Review progress, last sync, failures, and the imported time range. Do not diagnose missing data from the connected badge alone.
+  <Step title="Confirm sync and coverage">
+    Once authorization and selection are healthy, inspect sync progress, last sync, and completed date range.
   </Step>
-  <Step title="Validate a completed period">
-    Compare one account, metric, currency, and date range with the source platform.
+  <Step title="Confirm interpretation">
+    Compare the same account, currency, attribution model, metric definition, and date range.
   </Step>
 </Steps>
 
-## Choose the right recovery action
+## State-to-action matrix
 
-| Situation | Best first action |
-| --- | --- |
-| Provider access is valid, but data is behind | Resync |
-| Authorization expired or the provider revoked it | Reconnect |
-| Authorization exists, but no account or property is selected | Finish setup or manage selections |
-| Google Ads shows **Access lost** for one account | Restore provider-side access or remove that account |
-| Meta has no Page for publishing | Reopen the asset dialog and grant a Page |
-| Slack has no alert channel | Finish Slack setup and choose a channel |
-| Status cannot be verified | Refresh before changing anything |
+| Symptom | Likely layer | Correct first action | What will not fix it |
+| --- | --- | --- | --- |
+| **Status unavailable** | Status read | Refresh and wait for a verified state | Disconnecting or creating a duplicate connection |
+| **Disconnected** | Authorization | Use the provider's connect action | Resync |
+| **Reconnect needed** | Authorization | Reauthorize or replace the rejected key | Resync |
+| **Finish setup** | Selection | Reopen the provider setup and save resources | Reconnecting a healthy grant |
+| **Choose accounts** / **Choose properties** | Selection | Save valid leaf accounts or GA4 properties | Waiting for sync |
+| **Refresh access** | Provider roster | Restore provider access, then refresh the roster | Repeated resync |
+| **Access lost** on one Google Ads account | Resource access | Restore that account or remove it from selection | Resyncing every account |
+| **Add a Facebook Page** | Meta publishing prerequisite | Add the missing Page in the asset dialog | Resyncing reporting |
+| One Shopify store needs reconnect | Store authorization | Reconnect that store only | Disconnecting healthy sibling stores |
+| **Sync failed** with healthy access | Data import | Use **Retry sync**, **Resync**, or **Sync** as shown | Reauthorizing without evidence |
+| Recent totals differ | Freshness or interpretation | Check coverage, currency, attribution, and provider processing | Assuming the connection is broken |
 
-<Note>
-  **Status unavailable** is not the same as **Disconnected**. Marketer preserves the last-known connection when a safe status read fails.
-</Note>
+## Provider-specific checks
 
-<Warning>
-  If an agent result says **Disconnected** while the provider detail page says **Reconnect needed**, preserve both observations and treat the provider page plus its last-sync details as the current user-visible state. Do not disconnect or reconnect until you have confirmed the intended provider account.
-</Warning>
+### Meta Ads
 
-## Data looks incomplete
+- Verify **Facebook user** and every group under **Assets granted**.
+- Use **Finish setup** for unresolved selections and **Add a Facebook Page** only for publishing readiness.
+- Check whether **Backsyncing is paused**. A frozen last-sync time can explain stale reporting while Meta continues running.
+- Confirm conversion source and account currency before reconciling totals.
 
-1. Confirm that the correct resource was selected.
-2. Check whether a sync is still running or failed.
-3. Inspect data coverage for the requested date range.
-4. Avoid an incomplete current day.
-5. Check the source platform's own processing delay.
-6. For blended reporting, confirm source currency and workspace reporting currency.
-7. For attribution data, name the source and attribution context instead of expecting different systems to match by default.
+### Google Ads
 
-## A control is read-only
+- Confirm selected leaf customer IDs under **Synced Google Ads accounts**.
+- If an account shows **Access lost**, restore provider access or remove it with **Manage accounts**.
+- Use **Refresh account access** when the current authorization resolves no selectable roster.
+- Recommendation auto-apply state is separate from reporting sync.
 
-Viewers cannot manage connections. Some workspace or billing controls also require Owner or Admin access. If the UI is intentionally read-only, ask a workspace Owner or Admin to review the change rather than sharing credentials.
+### Google Analytics
+
+- Search by property ID if names are ambiguous.
+- Use **Refresh property access** when the Google identity has a grant but no selectable properties appear.
+- Compare GA4 attribution with ad-platform attribution before classifying a total mismatch as a sync problem.
+
+### Shopify
+
+- Reconnect only the affected store.
+- Check **Include in revenue rollup** before investigating blended revenue, ROAS, or MER.
+- For older reporting, verify **Full order history**; without it, orders older than 60 days can be missing.
+- Check each store's source currency.
+
+### Slack
+
+- Installation and **Finish Slack setup** are different steps.
+- If channel listing reports missing permission, use **Reconnect Slack** to grant the current scope set.
+- If direct messages are not linked, use **Open Slack to finish** and run `/marketer whoami`.
+- Confirm **Post to Slack**, the selected **Channel**, severity floor, and event groups.
+
+### Beta integrations
+
+- Always retain the Beta label in a result.
+- For Microsoft Ads (Beta), select at least one account explicitly; **No accounts** is a provider-access problem.
+- For OpenAI Ads (Beta), replace only rejected account keys; healthy siblings can remain active.
+- For Triple Whale (Beta), confirm **Pixel Attribution** scope and keep the displayed filter context with comparisons.
+
+## Freshness is not one timestamp
+
+Use all of these signals together:
+
+- connection state;
+- selected resource roster;
+- sync stage;
+- last successful sync;
+- historical coverage;
+- provider processing or attribution delay; and
+- whether the current day is complete.
+
+**Data ready · syncing past performance** means recent reporting may be usable while older history is still filling. Define the usable date range instead of calling the whole source complete.
 
 ## Before disconnecting
 
-Disconnect only after checking dependent reports, product views, audiences, notifications, and workflows. Record the affected source and date before removal so your team can explain a later coverage gap.
+Review what will lose source context:
 
-## Escalation details
+- blended analytics and comparisons;
+- campaign and creative analysis;
+- Meta audiences, pixels, catalogs, or publishing readiness;
+- Shopify revenue rollups;
+- Slack alerts, approvals, and identity links; and
+- workflows or agent requests that depend on the provider.
 
-When you report a problem, include:
+Disconnect only when removal is intended, not as a generic refresh technique.
 
-- Marketer workspace name
-- provider and selected account, store, or property ID
-- exact status text
-- last successful sync and requested date range
-- whether **Reconnect** or **Resync** was attempted
-- a screenshot with credentials and customer data removed
+## Prepare a useful escalation
 
-Continue with [Workspace and admin troubleshooting](/workspace-admin/security-and-troubleshooting) when the issue involves roles, authentication, or account access rather than a provider connection.
+Include:
+
+- workspace name and your effective role;
+- provider and exact page state;
+- selected account, property, store, or asset identifier;
+- exact error text;
+- last successful sync and requested date range;
+- expected versus actual result; and
+- a sanitized screenshot.
+
+Never include OAuth codes, reset links, full API keys, passwords, or payment information.
+
+## Next step
+
+After recovery, rerun the smallest read-only comparison that originally failed. Confirm source, resource, currency, attribution context, and completed coverage before resuming automation.

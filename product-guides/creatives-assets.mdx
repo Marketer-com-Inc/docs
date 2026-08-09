@@ -1,0 +1,153 @@
+---
+title: "Creative Assets"
+sidebarTitle: "Creative Assets"
+description: "Sync, upload, filter, label, and inspect reusable creative while keeping library metadata separate from delivery performance."
+---
+
+**Creative Assets** is the workspace library for saved Studio concepts, uploads, and Meta-synced image, video, and carousel creative. Use it to identify and reuse material; use **Creatives** for performance comparisons.
+
+Open [Creative Assets](https://app.marketer.com/dashboard/creative-library).
+
+<Frame caption="Creative Assets combines format, status, labels, search, layout, and Meta sync controls around the reusable library.">
+  <img src="/assets/product-flows/creative-assets.png" alt="Creative Assets with format tabs, asset count, labels, upload, grid and table views, search, and Sync from Meta" />
+</Frame>
+
+## Understand the source boundary
+
+| Source | How it enters | What to verify |
+| --- | --- | --- |
+| Studio | **Save to creative library** from a reviewed concept | Exact version, format, product, and generation identity |
+| Meta | **Sync from Meta** | Connected account, linked ads, provider metadata, and sync freshness |
+| Manual file | **Upload** | Rights, product identity, format, copy, and intended use |
+
+**Sync from Meta** and manual **Upload** are shown only with an active Meta connection in the current flow. Repair the Meta connection if those actions are expected but absent.
+
+## Find the exact asset
+
+<Steps>
+  <Step title="Choose a format">
+    Use **All**, **Images**, **Video**, or **Carousel**.
+  </Step>
+  <Step title="Choose a status">
+    Use **All**, **Active**, **Paused**, or **Never launched**. This status comes from linked delivery; it is not a review approval state.
+  </Step>
+  <Step title="Set date and sort">
+    Choose the metric date window, then sort by **Newest**, **Spend**, or **ROAS**. The date scopes metrics, not which files exist in the library.
+  </Step>
+  <Step title="Use labels and conditional filters">
+    Open **All labels** and choose available values such as theme, visual hook, media format, or hook strength. Ratio and persona filters appear only when the workspace has values for them.
+  </Step>
+  <Step title="Search and change layout">
+    Search identifying text, then switch between grid and table view to verify the candidate.
+  </Step>
+  <Step title="Open the detail">
+    Confirm the file, format, metadata, copy, labels, source, and linked usage before reuse.
+  </Step>
+</Steps>
+
+If the selected date window has no revenue, a ROAS-oriented view can fall back to spend ordering and disclose that behavior. Preserve the disclosure; do not call the ordering a ROAS ranking.
+
+The grid can show a capped leading set rather than every matching result. Read the count or cap message before treating visible cards as a complete inventory.
+
+## Sync from Meta
+
+Select **Sync from Meta** when provider creative is missing or stale.
+
+1. Confirm the active workspace and Meta account.
+2. Start the sync once.
+3. Read the progress or notice instead of repeatedly restarting it.
+4. After completion, clear filters and search for the exact ad or creative identity.
+5. Open the detail and confirm linked-ad usage.
+
+A completed connection does not guarantee the requested account or date coverage has finished importing. Inspect the sync state before diagnosing a missing asset.
+
+## Upload a file
+
+Select **Upload** only after confirming the workspace and Meta connection.
+
+- Choose the approved file and verify its format.
+- Confirm product accuracy, claims, trademarks, people, music, and usage rights.
+- Use a name that distinguishes the asset from resized or revised versions.
+- Wait for the upload to finish.
+- Reopen the new asset from a clean filter state.
+
+Uploading stores the file; it does not launch it, attach it to a brief, or prove it meets provider requirements.
+
+## Apply labels deliberately
+
+Labels can describe creative attributes such as theme, hook, format, or workspace-specific categories.
+
+- Existing Meta-synced labels appear in the detail when supported.
+- **Label N unlabeled** can start analysis for assets without labels and can consume the credits shown by the UI.
+- Review the displayed count and usage before starting labeling.
+- Treat generated labels as searchable metadata, not approved strategic conclusions.
+- Correct misleading or overly broad labels before using them to select a campaign slate.
+
+## Inspect asset detail and usage
+
+The detail can include:
+
+- Full image, video, or carousel preview
+- Download
+- Format and template badges
+- Labels and source metadata
+- Associated ad copy
+- **Used by N ads**
+- Per-ad status controls
+- **Pause all** when eligible
+- A link to inspect the full usage roster
+
+Before pausing delivery, expand **Used by N ads**, confirm every linked ad and campaign, and understand whether the file is shared across active tests. **Pause all** affects delivery for the eligible linked ads; it does not simply hide the asset.
+
+Open [Creatives](/product-guides/analytics-creative-performance) to compare delivery under one date frame. The library detail is not a substitute for a like-for-like performance analysis.
+
+## Reuse the asset
+
+When adding an asset to a new brief or campaign:
+
+1. Verify the exact visual and format.
+2. Read existing copy and linked usage.
+3. Confirm the current product, offer, destination, and audience still match.
+4. Check that reuse does not invalidate exclusivity, rights, or a test design.
+5. Review the resulting Studio or campaign preview.
+
+## Completion check
+
+- The source is identified as Studio, Meta, or upload.
+- Format, visual, name, labels, copy, and usage match the intended asset.
+- Date-scoped metrics are not confused with library inventory.
+- A capped or fallback ordering disclosure is preserved.
+- Labeling usage was reviewed before credits were consumed.
+- Every linked ad was inspected before a per-ad or **Pause all** action.
+- Reuse preserved product, offer, destination, rights, and placement fit.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Sync from Meta or Upload is missing">
+    Confirm Meta is connected and healthy for this workspace and that your role supports the action. Repair the integration rather than assuming a hidden upload succeeded.
+  </Accordion>
+  <Accordion title="A known asset is missing">
+    Clear search, format, status, labels, ratio, persona, and date-related sorting assumptions. Run one Meta sync if the source is provider-owned, then search by the linked ad identity.
+  </Accordion>
+  <Accordion title="ROAS sorting looks wrong">
+    Read the fallback disclosure. If revenue is absent in the selected window, the list can order by spend instead. Choose a covered date range before making a ROAS claim.
+  </Accordion>
+  <Accordion title="An asset has no labels">
+    Confirm it is eligible for labeling. Review the count and displayed credit usage before selecting **Label N unlabeled**, then verify generated labels before relying on them.
+  </Accordion>
+  <Accordion title="Pause all would affect unexpected ads">
+    Cancel, inspect **Used by N ads**, and verify each campaign and status. Pause only the intended ads individually when the shared asset spans unrelated work.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Measure performance" icon="chart-line" href="/product-guides/analytics-creative-performance">
+    Compare the asset under controlled Meta delivery conditions.
+  </Card>
+  <Card title="Use it in a campaign" icon="megaphone" href="/product-guides/campaigns-meta-build">
+    Verify creative, copy, destination, and review before launch.
+  </Card>
+</CardGroup>

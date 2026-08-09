@@ -1,0 +1,99 @@
+---
+title: "Conversion metrics"
+description: "When the feature is available, choose, label, order, and headline the conversion actions the active workspace reports in Analytics."
+---
+
+**Conversion metrics** lets a workspace report the conversions that matter beyond the default purchases, add-to-carts, landing-page views, and initiated checkouts.
+
+Selections appear in Analytics beside spend and purchases. They do not create a provider conversion action or change provider attribution.
+
+<Warning>
+  The settings route can show **Conversion metrics aren't available yet** instead of configuration controls. If it does, the feature is unavailable in that workspace: do not interpret the page as an empty metric list, and do not use the steps below. Continue only when **Tracked conversions** is visible.
+</Warning>
+
+## When the configuration surface is available
+
+The remainder of this guide describes the available state. Before you add a metric:
+
+- Confirm the active workspace.
+- Connect and sync a Meta or Google advertising account.
+- Know the provider conversion or action-type spelling.
+- Check recent volume so you do not choose a plausible name with no data.
+- Decide which one metric, if any, should be the Analytics headline.
+
+## Add a tracked conversion
+
+<Steps>
+  <Step title="Open Conversion metrics">
+    Go to **Settings** → **Conversion metrics**.
+  </Step>
+  <Step title="Select Add metric">
+    Under **Tracked conversions**, select **Add metric**.
+  </Step>
+  <Step title="Choose a conversion">
+    Use **Choose a conversion** and **Search conversions**. Options can show recent 30-day volume, **No recent data**, **Already tracked**, or the metric that already represents the same conversion.
+  </Step>
+  <Step title="Set the display label">
+    Leave the label blank to follow the conversion's default name, or enter a workspace-specific display label.
+  </Step>
+  <Step title="Add and verify">
+    Select **Add metric**, then open Analytics and confirm the expected card and value.
+  </Step>
+</Steps>
+
+If no options are available, the page explains that conversions appear after a Meta or Google account is connected and synced.
+
+## Read the option signals
+
+| Signal | Meaning |
+| --- | --- |
+| Count in the last 30 days | The workspace recently recorded volume for this action type |
+| **No recent data** | The action is known but has no recent measured volume |
+| **Already tracked** | The exact option is already in the workspace list |
+| **Same conversion as “…”** | Another tracked metric already represents the same conversion family |
+| No count annotation | Recent inventory could not be read; do not treat the missing label as zero |
+
+Conversion vocabularies can contain several spellings for the same business event. Marketer prevents duplicate families where it can, but a person should still validate the chosen action type against provider reporting.
+
+## Manage the list
+
+Each metric row shows its display label and raw action type. A **Named conversion** badge distinguishes provider-named conversions from the standard action vocabulary.
+
+Available actions:
+
+- Move up or down to control Analytics order.
+- **Rename** to set a workspace display label.
+- **Make headline** to feature the metric.
+- **Clear headline** to remove that role.
+- **Remove** to stop showing it in the workspace's selected conversion cards.
+
+Only one metric should serve as the headline at a time. Removing a metric from this list does not delete the provider conversion itself.
+
+## Rename without freezing the wrong source name
+
+In **Rename metric**, leave the field blank to use the default name. A custom label remains a workspace override, so update it manually if the provider's underlying conversion name changes.
+
+Use a label that explains the business event while preserving the raw action type for reconciliation.
+
+## Verify in Analytics
+
+1. Use the same workspace, provider account scope, and date range.
+2. Confirm the metric card label and action type.
+3. Compare volume with the provider.
+4. Check whether several provider spellings represent one event.
+5. Confirm the headline and display order communicate the intended priority.
+
+## Recovery matrix
+
+| Symptom | Check |
+| --- | --- |
+| No conversions are available | Connected Meta or Google account and completed sync |
+| Expected option shows no recent data | Provider action type and 30-day activity |
+| Two metrics appear identical | Raw action types and same-conversion family |
+| Card is empty in Analytics | Workspace, date range, provider scope, and sync coverage |
+| Name is stale | Clear the override to follow the default, or rename it intentionally |
+| Settings say metrics are not available yet | Follow the page's availability message; do not interpret it as an empty configured list |
+
+## Next step
+
+When **Tracked conversions** is available, select only the conversions the team actively reviews, make one clear headline, and record the provider action type with any KPI definition. Otherwise, follow the page's availability message and continue using the standard Analytics conversions.

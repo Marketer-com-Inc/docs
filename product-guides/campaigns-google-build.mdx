@@ -1,0 +1,138 @@
+---
+title: "Build a Google Ads campaign"
+sidebarTitle: "Build a Google Ads campaign"
+description: "Choose a compatible objective and Google campaign type, complete its builder, and verify the intended live or paused provider result."
+---
+
+The Google Ads flow starts with the business objective, then offers only compatible campaign types. Each supported builder has its own inputs and review; do not transfer Meta hierarchy, attribution, or budget assumptions into it.
+
+Open [Campaigns](https://app.marketer.com/dashboard/campaigns), select **New campaign**, choose **Google Ads**, and confirm the page title is **New Google campaign**.
+
+## Resolve the account boundary first
+
+If no eligible account is connected, the page shows **Connect Google Ads first** and **Go to integrations**. Connect the intended customer account and let its resource state settle before returning.
+
+Do not use a different connected customer ID as a placeholder. Campaign currency, Merchant Center relationship, conversion actions, and existing configuration can differ by account.
+
+## Choose an objective and compatible type
+
+For a new build, Marketer asks for the objective before **Campaign type**. The type page filters its cards to what that objective supports.
+
+| Type | Use it for | Primary inputs to prepare |
+| --- | --- | --- |
+| **Search** | Text ads for high-intent search queries | Keywords, responsive search ad copy, landing page, bidding, and targeting |
+| **Display** | Responsive display ads across the Google Display Network | Image assets, copy, destination, audience, and bidding |
+| **Performance Max** | One campaign across Google inventory | Asset group, copy, images or video where required, audience signals, feed context, and value strategy |
+| **Shopping** | Product ads from a Merchant Center feed | Linked merchant/feed context, products, destination, country, and bidding |
+| **Demand Gen** | Visual and video-forward ads on YouTube, Discover, and Gmail | YouTube video when used, images, inline copy, destination, and audience |
+
+Not every type appears for every objective. If a hand-edited or old link requests an incompatible combination, Marketer returns to the type selection instead of opening an invalid builder.
+
+### Choose the Video branch correctly
+
+The **Video** card is guidance, not a Marketer campaign wizard. The page explains that Video campaigns cannot be created through the Google Ads API and offers:
+
+- **Use Demand Gen** for the API-supported YouTube video path in Marketer.
+- **Create in Google Ads** for a Video campaign managed directly in Google Ads.
+
+Choosing Google Ads as the external path means Marketer did not create that campaign. Wait for the provider sync before expecting it in Campaigns.
+
+## Complete the type-specific builder
+
+The exact steps depend on the selected type, but every build should establish:
+
+<Steps>
+  <Step title="Confirm the Google customer account">
+    Read the account name, customer ID, and currency. Stop if it is not the approved publishing account.
+  </Step>
+  <Step title="Name the campaign">
+    Use a name that records business purpose and distinguishes this campaign from adjacent tests.
+  </Step>
+  <Step title="Set location, language, and schedule">
+    Confirm where and when delivery is eligible. Do not infer geographic targeting from the storefront destination.
+  </Step>
+  <Step title="Set budget and bidding">
+    Enter the amount in account currency and choose only a bidding option offered by the selected type and objective. Confirm conversion or value tracking is ready for the strategy.
+  </Step>
+  <Step title="Complete the campaign's required structure">
+    Add keywords and responsive search ads for Search, feed context for Shopping, or the asset group and creative inputs required by Display, Performance Max, or Demand Gen.
+  </Step>
+  <Step title="Verify destinations and assets">
+    Open every final URL. Review product identity, offer, claims, image and video rights, copy limits, and the landing experience.
+  </Step>
+  <Step title="Save the draft when incomplete">
+    Use the available draft action instead of filling required fields with placeholders. A resumed draft returns to its stored campaign-type builder.
+  </Step>
+</Steps>
+
+## Review and create
+
+At the confirmation stage, read the account, objective, type, budget, bidding, targeting, schedule, child structure, assets, copy, destinations, and validation messages.
+
+Set **Publish live immediately** deliberately before review:
+
+- When it is on, the campaign is created **LIVE** and can start spending as soon as Google accepts it.
+- When it is off, the campaign is created **PAUSED** for a later activation decision.
+
+The control can inherit the workspace's auto-launch default until you change it. Read the disclosure and final action every time; do not infer the target status from an earlier launch.
+
+Select the displayed **Approve & Create (LIVE)** or **Approve & Create (PAUSED)** action only when:
+
+- Every visible blocker is resolved.
+- The displayed object count matches the plan.
+- The account and currency are correct.
+- The final URLs and creative are reviewed.
+- The displayed LIVE or PAUSED target is intentional.
+
+**Approve & Create (LIVE)** opens an additional spend confirmation before submission. **Approve & Create (PAUSED)** proceeds without activating delivery. Neither label replaces provider verification after creation.
+
+## Verify the result
+
+1. Open the launch progress from Campaigns.
+2. Wait for each expected object to reach a terminal result.
+3. Confirm the campaign appears in Campaigns under **Google Ads**.
+4. Open it and confirm type, hierarchy, budget, bidding, destination, and the intended active or paused status.
+5. Verify the same object in Google Ads.
+6. Resolve any provider warning before activation.
+
+## Completion check
+
+- The intended Google customer account and currency are selected.
+- Objective and campaign type are compatible.
+- A Video request used Demand Gen or was intentionally handed to Google Ads.
+- Location, language, budget, bidding, conversion readiness, and schedule are correct.
+- Required type-specific structure, creative, and destination are complete.
+- Review has no unresolved blocker.
+- All expected objects reached a terminal launch state.
+- The campaign exists in Google Ads with the exact LIVE or PAUSED status approved during review.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connect Google Ads first appears">
+    Select **Go to integrations**, connect the intended account, and let its setup complete. Return to **New Google campaign** only after the correct customer account is available.
+  </Accordion>
+  <Accordion title="The campaign type I expected is missing">
+    Return to **Objective** and review the selected business goal. Marketer shows only compatible campaign types; choose a different objective only when the business goal truly changes.
+  </Accordion>
+  <Accordion title="Video sends me to another choice">
+    This is expected. Choose **Use Demand Gen** for Marketer's supported YouTube path, or **Create in Google Ads** for a native Video campaign.
+  </Accordion>
+  <Accordion title="A resumed draft skips objective and type">
+    The stored draft already owns its campaign type and returns directly to that builder. Confirm the draft name and type before continuing; start a new campaign if the intended type changed.
+  </Accordion>
+  <Accordion title="Approve & Create is blocked">
+    Read the builder's validation. Check account, budget and bidding compatibility, location, schedule, conversion or feed prerequisites, child structure, creative assets, copy, and final URLs.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Track the launch" icon="rocket" href="/product-guides/campaigns-drafts-and-launches">
+    Follow each provider object and avoid duplicate retries.
+  </Card>
+  <Card title="Inspect Google delivery" icon="chart-line" href="/product-guides/campaigns-inspect-and-manage">
+    Restore a scoped view and verify the paused or active object.
+  </Card>
+</CardGroup>

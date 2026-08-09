@@ -1,65 +1,106 @@
 ---
 title: "Shopify"
-description: "Connect one or more Shopify stores for product, collection, order, and revenue context."
+description: "Connect one or more stores, control the revenue rollup, and grant advanced permissions deliberately."
 ---
 
-Connect Shopify when product and store outcomes should inform Marketer's reporting, briefs, and analysis.
+Shopify syncs products, collections, orders, and revenue from every connected store in the active workspace.
 
-## Prerequisites
+## Before you connect
 
-- A Marketer Owner, Admin, or Member role
-- Permission to install or authorize an app for the Shopify store
-- The store's custom domain or `.myshopify.com` URL
-- A decision about which stores belong in the workspace and which should contribute to the revenue rollup
+- Use a Marketer Owner, Admin, or Member role.
+- Be able to authorize the Marketer app for the store.
+- Have the custom domain or `.myshopify.com` URL.
+- Decide which stores should contribute to blended revenue, ROAS, and MER.
+- Start with the base read-only connection; grant advanced permissions only for a defined use case.
 
-## Connect a store
+## Connect the first store
 
 <Steps>
   <Step title="Open Shopify">
-    Go to **Integrations**, then open **Shopify**.
+    Go to **Integrations** → **Shopify**.
   </Step>
-  <Step title="Enter the store URL">
-    Paste either the custom storefront domain or the `.myshopify.com` URL. Marketer resolves it to the canonical Shopify store before authorization.
+  <Step title="Enter the store address">
+    Under **Connect a Shopify store**, enter **Shopify store URL**. The field accepts a custom domain or `.myshopify.com` address.
   </Step>
-  <Step title="Review Shopify's consent screen">
-    Approve only the permissions your use case requires. A reconnect can ask again for capabilities that the store previously granted.
+  <Step title="Authorize Shopify">
+    Select **Connect** and complete Shopify's install flow. Marketer resolves the canonical store before saving it.
   </Step>
-  <Step title="Confirm the store">
-    Return to Marketer and verify the store name, domain, currency, connection state, and whether it is included in the workspace revenue rollup.
+  <Step title="Verify the store row">
+    Confirm the store name or domain, **Store currency**, and **Connected** date under **Stores**.
   </Step>
 </Steps>
 
-## Confirm the first sync
+The base connection provides the minimum read-only access for products, orders, and inventory. Provider permissions still determine which history Shopify returns.
 
-The **Data sync** section shows the current state, imported product and collection counts, and available coverage. For multiple stores, Marketer also shows how many are connected and how many contribute to the revenue rollup.
+## Connect multiple stores
 
-A successful first check includes:
+The page shows **One store connected to this workspace** or **N stores connected · N included in revenue rollup**.
 
-- the correct store under **Stores**;
-- a completed sync;
-- products and collections appearing in Marketer; and
-- a read-only best-seller or revenue question that matches a completed Shopify period.
+Select **Add another store** to authorize a sibling storefront or Shopify Plus organization store. Each store has an independent connection, sync, currency, and revenue-rollup setting.
 
-## Data and permission boundaries
+### Control the blended revenue rollup
 
-Marketer can use products, collections, orders, and revenue made available by each connected store. Some data capabilities require additional Shopify permission. Granting one of those permissions can trigger a fresh historical import so the newly available data is complete.
+Use **Include in revenue rollup** per store.
 
-Each store has its own authorization, sync state, and rollup setting. Reconnecting one store does not change its siblings.
+- Included stores contribute to blended revenue, ROAS, and MER.
+- Excluding a store keeps its historical revenue available but removes it from the blended rollup.
+- Changing the toggle does not disconnect or erase the store.
 
-## Freshness and reporting
+Record the date of a rollup change so later comparisons do not mix different store scopes.
 
-Use the sync state and last-synced information before relying on recent orders or revenue. Operational events and reporting systems can settle at different times.
+## Follow catalog sync
 
-For a multi-store workspace, confirm both the store filter and revenue-rollup inclusion before comparing Marketer totals with a single Shopify admin.
+Under **Data sync**, check **Catalog status**, product and collection counts, last sync, and coverage.
 
-## Reconnect, resync, or disconnect
+| Sync state | Response |
+| --- | --- |
+| **Syncing** | Wait for catalog and order coverage to advance |
+| **All synced** | Verify counts, latest date, and connected stores |
+| Failed or incomplete | Use **Resync** after the store authorization is healthy |
+| In flight but wrong scope | Use the available cancel control, correct store settings, then restart |
 
-- Use **Resync** when a healthy store needs refreshed data.
-- Reconnect the specific store when its token is no longer valid or when you intentionally add a data capability.
-- Review failed or in-progress status before starting another sync. Cancel an in-flight sync only when you intend to stop that import.
-- If status is unavailable, refresh first. Marketer does not erase the last-known connection on a read error.
-- Disconnecting a store removes it as an active source for this workspace. Check product views, revenue reporting, and workflows first.
+A normal resync refreshes data. It does not repair a rejected store authorization.
+
+## Grant advanced permissions
+
+Each store can show **Advanced permissions** with an enabled-count summary or a read-only state. Select **Grant permission** for one capability or **Grant all** only after reviewing every effect.
+
+| Capability | What it enables | Important consequence |
+| --- | --- | --- |
+| **Full order history** | Imports every order | Without it, Shopify can withhold orders older than 60 days, leaving older revenue and trends incomplete |
+| **Customer analytics** | New-versus-returning customers, repeat purchase rate, and customer lifetime value | Accuracy also depends on **Full order history** |
+| **Push enhanced images to Shopify** | Writes enhanced images into the product gallery | This is a provider-side write permission |
+| **Theme editing** | Reads and updates the storefront theme | This is a provider-side storefront change permission |
+
+Advanced permissions are additive. Granting one does not remove existing access. A newly granted data permission can trigger a fresh historical import.
+
+<Warning>
+  **Push enhanced images to Shopify** and **Theme editing** cross the read-only boundary. Grant them only when the intended workflow, reviewer, and rollback path are clear.
+</Warning>
+
+## Read connection states
+
+| State | Meaning | Next action |
+| --- | --- | --- |
+| **Status unavailable** | The latest Shopify check failed; last-known connection details remain | Refresh before changing a store |
+| **Disconnected** | No store is connected | Enter a store URL and select **Connect** |
+| **Reconnect needed** | One or more store credentials are rejected | Reconnect the affected store |
+| **Connected** | At least one store authorization is healthy | Verify every store, rollup toggle, and sync |
+
+## Recover one store without disrupting others
+
+When a row needs authorization, select **Reconnect [store]**. Reconnecting affects only that store; healthy sibling stores remain connected and continue syncing.
+
+If one store has unexpected totals:
+
+1. Confirm its canonical domain and **Store currency**.
+2. Check **Include in revenue rollup**.
+3. Confirm **Full order history** if the date range extends beyond recent orders.
+4. Check sync coverage.
+5. Reconnect only if the store credential is rejected.
+
+Disconnecting one of several stores leaves the others active. Disconnecting the last store removes Shopify from the workspace.
 
 ## Next step
 
-Open **Products** and verify a few product names and variants. Then ask Marketer for a read-only summary of best-selling products over a completed period.
+Validate one completed day of orders and revenue for each store, then confirm the intended included-store count before using blended ROAS or MER.

@@ -1,0 +1,151 @@
+---
+title: "Questions and approvals"
+sidebarTitle: "Questions and approvals"
+description: "Answer a paused run, decide a tool action, review a run proposal, and resolve the right item in Awaiting action."
+---
+
+Marketer uses different controls for missing information, permission to start longer work, permission for one tool action, and a pending workspace change. These decisions can look similar, but they do not authorize the same thing.
+
+## Match the decision to its surface
+
+| Decision | Where it appears | What your response changes |
+| --- | --- | --- |
+| Clarifying question in chat | Above or inside the conversation composer | Supplies information for the current turn. |
+| Question inside a task | The selected run while it is **Waiting for you** | Resumes that same run with your answer. |
+| Proposal to start longer work | A **Run…** card in chat | Creates the proposed run only after you accept it. |
+| Approval for one action inside a run | An **Approve…** card attached to the run | Allows or declines that exact action, then resumes the run. |
+| Connected-account proposal | **Awaiting your action** | Records approval or rejection for the displayed object and change. |
+| Paused workflow run | **Awaiting your action** | Releases or stops that one paused workflow run. |
+
+Never substitute a normal chat reply for a displayed approval control. A sentence such as “looks good” does not record the decision attached to the approval card.
+
+## Answer a question in chat
+
+When Marketer offers options:
+
+1. Read the entire question and any description beside each option.
+2. Select one option. You can also use its displayed number shortcut when the question has focus.
+3. Select **Submit** to send the staged choice.
+4. Choose **Type it your own** and enter text when none of the listed options fits.
+5. Select **Dismiss** only when you want to leave the question unresolved.
+
+When the question has no options, the ordinary composer remains available. Answer there. The first following user reply becomes the recorded response in conversation history.
+
+Do not send the same answer twice. After you submit, wait for the question to become read-only or disappear and for the current turn to continue.
+
+## Resume a task that is waiting for input
+
+A task-level question appears when the selected run is **Waiting for you**. The question may appear in the conversation, the Agents detail, or the reload-safe Activity run detail.
+
+Use this sequence:
+
+<Steps>
+  <Step title="Confirm the run">
+    Match its task title, specialist, originating conversation, and current question. Similar task names are not enough.
+  </Step>
+  <Step title="Answer the exact gap">
+    Select an option or provide the requested text. Keep the answer within the existing objective and authority boundary.
+  </Step>
+  <Step title="Wait for delivery">
+    The interface can show **Sending your answer…**. Do not open a second task while this state is visible.
+  </Step>
+  <Step title="Confirm resumption">
+    The same run should leave **Waiting for you** and return to **Running** or **Working**. Reopen the run from Activity if you navigated away.
+  </Step>
+  <Step title="Verify the result">
+    A successful resume means the answer was accepted, not that the task completed. Follow it to a terminal result and review the output.
+  </Step>
+</Steps>
+
+If the card says **Couldn't deliver your answer. Try again.**, keep the same run open and retry from that card. If the interface says the answer may already be on its way and tells you not to retry, follow that instruction and use Activity to wait for the reconciled state.
+
+## Decide one action inside a run
+
+An action approval card is titled **Approve _action_** and can show the arguments or scope the action will use. It offers:
+
+- **Approve** to allow that exact action and continue the run.
+- **Decline** to prevent the action from running.
+- **Ask first** to decline the current action and place an `About _action_:` prompt in the composer so you can ask for an explanation or revision.
+
+After **Approve**, the card can show **Approved. The agent is continuing.** After **Decline**, it can show **Declined. The action did not run.** These receipts apply to the displayed action only.
+
+Use **Ask first** when the action arguments are incomplete, the impact is unclear, or you need a smaller scope. Asking first does not keep the old approval live; expect Marketer to return a revised answer or proposal.
+
+## Decide whether longer work may start
+
+A run proposal appears before the proposed task exists. The current proposal types use controls such as:
+
+- **Cancel**, **Edit**, and **Accept & Run** for a named specialist.
+- **Cancel**, **Edit**, and **Approve & Run** for Creative Pipeline.
+- **Cancel**, **Edit brief**, and **Run it** for another agent task plan.
+
+Review the proposed steps and output before selecting the primary action. Starting the run does not approve later tool actions or connected-account changes.
+
+If a historical proposal has no controls, do not try to revive it. Ask Marketer to prepare a new proposal from current workspace and provider state.
+
+## Resolve Awaiting-action items
+
+Open **Awaiting action** from Quick actions to reach the page titled **Awaiting your action**. It combines three customer-facing decision patterns.
+
+### Connected-account change
+
+The row can show the affected object, action, source, age, reason, spend impact, account identifier, and a current-value to proposed-value diff.
+
+1. Select **Approve** or **Reject** on the row.
+2. For approval, read **Approve this change?** and the displayed account or spend warning.
+3. Select **Approve** again to record the decision, or **Cancel** to close the confirmation without deciding.
+4. After approval, follow the proposing task and verify the resulting object. The receipt says the change can be applied; it does not prove application completed.
+
+### Paused workflow run
+
+The row can show the workflow, requested action, selected entities, how old the selection is, and whether other runs of the same workflow are also waiting.
+
+- Select **Review the automation** to inspect the trigger and steps without deciding.
+- Select **Approve** and confirm **Let this automation continue?** to release the displayed run.
+- Select **Reject** to stop the displayed run from continuing.
+
+When other runs are waiting, the decision applies only to the run shown. Resolve each remaining row separately.
+
+### Linked review item
+
+Some lower-feed rows are links rather than in-place controls. Open the row, inspect the complete creative review, conversation, task, workflow, or proposal, and decide it in the owning surface. Return to **Awaiting your action** and confirm the item no longer appears unresolved.
+
+## Recover from a decision problem
+
+<AccordionGroup>
+  <Accordion title="The question is missing the option I need">
+    Select **Type it your own** when available, or answer in the ordinary composer for a text-only question. State only the missing choice or constraint.
+  </Accordion>
+  <Accordion title="The approval scope is incomplete">
+    Do not approve. Select **Ask first**, **Edit**, **Review the automation**, or open the linked source so the object, current value, proposed value, and effect are explicit.
+  </Accordion>
+  <Accordion title="The decision controls are disabled">
+    Confirm that the response finished streaming, the proposal is the current one, the workspace is writable, your role permits the decision, and another member has not already decided it.
+  </Accordion>
+  <Accordion title="Approval succeeded but work is still waiting">
+    Reopen the same run and look for another question or action approval. One decision can release one step while a later step still needs input.
+  </Accordion>
+  <Accordion title="The pending row returned after I decided it">
+    Compare the run time and entity list. A recurring workflow can have several paused runs, each with its own decision.
+  </Accordion>
+  <Accordion title="I approved but cannot confirm the external change">
+    Approval and application are separate states. Follow the task or workflow, then inspect the owning Marketer product surface and the connected provider when needed. Do not submit a duplicate change while the first run is active.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Awaiting action" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Review account-change diffs, paused workflows, and linked pending items in depth.
+  </Card>
+  <Card title="Task control and recovery" icon="rotate" href="/working-with-marketer/task-control-and-recovery">
+    Confirm that the selected run resumed, stopped, failed, or completed.
+  </Card>
+  <Card title="Inspect specialists" icon="users" href="/working-with-marketer/specialists">
+    Locate the specialist and step that raised the question or approval.
+  </Card>
+  <Card title="Approvals and autonomy" icon="shield-check" href="/essential-guidelines/approvals-and-autonomy">
+    Set a review boundary for work that can affect a connected account.
+  </Card>
+</CardGroup>

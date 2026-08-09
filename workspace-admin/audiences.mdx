@@ -1,55 +1,114 @@
 ---
-title: "Audience segments and custom audiences"
-description: "Manage Meta reporting segments, Custom Audiences, lookalikes, and launch-time audience context."
+title: "Audience segments"
+description: "Create reusable Meta audience definitions and assign Existing or Engaged reporting roles per ad account."
 ---
 
-Marketer has two related Meta audience settings. **Audience segments** define reporting roles. **Custom audiences** manage reusable audience objects for targeting or exclusion.
+**Audience segments** is a Meta-only, per-ad-account library. It creates reusable segment definitions and controls how selected audiences contribute to the **Existing customers** and **Engaged audience** reporting roles.
 
-## Prerequisites
+For provider-level Custom Audience and lookalike creation, see [Custom audiences](/workspace-admin/custom-audiences).
 
-- A connected [Meta Ads](/integrations/meta-ads) account
-- A Marketer Owner, Admin, or Member role for changes
-- Meta Custom Audience terms accepted for each ad account where you want to list or create audiences
+## Before you begin
 
-## Audience segments
+- Connect and sync [Meta Ads](/integrations/meta-ads).
+- Confirm the exact Meta ad account at the top of the segment card.
+- Ensure the account has the required Custom Audience terms accepted in Meta.
+- Know whether the audience is for targeting, exclusion, or reporting classification.
+- Use a Marketer Owner, Admin, or Member role to create or change segments. Viewers inspect only.
 
-Open **Settings** → **Audience segments**.
+## Understand Meta's reporting roles
 
-Meta groups delivery into New, Engaged, and Existing categories using saved audience-segment definitions. Marketer shows those definitions by connected ad account and lets you maintain the reporting role assigned to each segment.
+Meta groups delivery into New, Engaged, and Existing audiences. Marketer manages two supporting role selections:
 
-Use audience segments when you want performance reporting to distinguish customer lifecycle groups. Launch-time customer exclusions remain part of New Customer Acquisition settings under **Guardrails**.
+| Reporting role | What Marketer saves | Provider boundary |
+| --- | --- | --- |
+| **Existing customers** | One or more mirrored Meta Custom Audiences | **Save roles** pushes this stack to Meta |
+| **Engaged audience** | A local selection for the intended engagement definition | Meta does not expose this role through the same API; mirror it in Ads Manager |
 
-## Custom audiences
+An Engaged selection shows **Needs Ads Manager setup**. Follow the checklist to open Meta's Advertising settings and choose the same audience under Engaged audience. The status reflects after the next backsync.
 
-Open **Settings** → **Custom audiences**.
+Customer exclusions for acquisition policy live in **Guardrails** → **New customer acquisition**. That selection is separate from reporting roles even when it uses the same Meta Custom Audience.
 
-For each connected Meta ad account, you can review the mirrored audience list and, when provider requirements are satisfied, create:
+## Create a segment
 
-- a rule-based Custom Audience; or
-- a lookalike from an existing source audience, country, and ratio.
+<Steps>
+  <Step title="Choose the Meta ad account">
+    Work within the account card that owns the pixel, Page, and Custom Audience.
+  </Step>
+  <Step title="Select New segment">
+    Enter a specific name and optional description.
+  </Step>
+  <Step title="Choose the source">
+    Select **Website**, **Facebook Page engagement**, or the existing raw **Custom rule (JSON)** option when editing a segment that uses it.
+  </Step>
+  <Step title="Define the rule">
+    For Website, choose all visitors, a pixel event, or URL contains and select the correct pixel. For Page engagement, choose the intended Page.
+  </Step>
+  <Step title="Set retention">
+    Choose a 90-, 180-, or 730-day preset, or a supported custom window.
+  </Step>
+  <Step title="Review and create">
+    Confirm account, source, rule, and window. Marketer creates a matching Meta Custom Audience.
+  </Step>
+</Steps>
 
-Audience size can be approximate or unavailable. Treat the status shown by Meta and Marketer as an estimate, not a guaranteed reachable count.
+Meta limits the number of Custom Audiences per ad account. The page blocks creation when the provider cap is reached.
 
-<Warning>
-  Audience creation affects a provider account. Confirm the ad account, source, country, rules, and intended use before you approve creation.
-</Warning>
+## Segment source behavior
 
-## Freshness and provider boundaries
+### Website
 
-Audience lists and sizes are mirrored from connected Meta accounts. After creating or changing an audience, allow the provider and Marketer to refresh before assuming it is selectable everywhere.
+Website segments can include:
 
-If Meta reports that Custom Audience terms are not accepted, use the provider link shown in Marketer. If the ad account is closed or access is missing, restore provider access before retrying.
+- all website visitors;
+- visitors whose URL contains a value; or
+- visitors who triggered a selected pixel event.
 
-## Review checklist
+Confirm the pixel belongs to the active ad account and the URL rule is specific enough to avoid unintended traffic.
 
-- Correct workspace and Meta ad account
-- Clear audience name and owner
-- Documented inclusion or exclusion intent
-- Correct source audience for a lookalike
-- Appropriate country and ratio
-- Provider terms accepted
-- No unsupported assumption based on approximate size
+### Facebook Page engagement
+
+Choose the granted Page associated with the ad account. If the Page is missing, return to Meta Ads and use **Add a Facebook Page** or update the asset selection.
+
+### Custom rule (JSON)
+
+This represents an existing raw Meta rule. Preserve it unless a qualified operator can validate the provider syntax and intended population.
+
+## Rename, edit, or archive
+
+- Renaming a segment also renames the live Meta Custom Audience.
+- Editing the rule changes the audience definition associated with the segment.
+- **Archive** keeps the definition available for historical interpretation but hides it from the active library.
+- Archiving does not delete the live Meta audience.
+
+Marketer blocks archive while the segment is referenced by an ad set, reporting role, or customer exclusion. Remove the dependency intentionally before archiving.
+
+## Terms and provider processing
+
+Meta can require general Custom Audience terms and separate website or pixel terms. If the acceptance state is unknown, Marketer can attempt the provider operation; a rejection directs you to the relevant Meta acceptance flow.
+
+Audience size is approximate and may be unavailable while Meta builds or refreshes the population. Processing delay is not the same as an empty rule.
+
+## Verify a segment safely
+
+1. Confirm the ad account ID and pixel or Page.
+2. Confirm source rule and retention window.
+3. Check the matching Meta Custom Audience.
+4. Wait for provider processing.
+5. Assign the intended reporting or exclusion role.
+6. For **Engaged audience**, complete the Ads Manager step.
+7. Confirm the next backsync before interpreting New, Engaged, or Existing reporting.
+
+## Common recovery paths
+
+| Symptom | Check |
+| --- | --- |
+| No ad account card | Meta connection and selected ad-account roster |
+| Pixel or Page missing | Meta asset grant for the exact account |
+| Terms rejection | Accept the required Meta terms, then retry |
+| **Needs Ads Manager setup** | Mirror the Engaged selection in Meta Advertising settings |
+| Archive blocked | Ad-set, reporting-role, or customer-exclusion references |
+| Size unavailable | Provider processing and approximate-size availability |
 
 ## Next step
 
-Return to [Guardrails and autonomy](/workspace-admin/guardrails-and-autonomy) to confirm New Customer Acquisition exclusions and approval policy before using an audience in a launch.
+Review [Custom audiences](/workspace-admin/custom-audiences), then connect the approved customer audiences to **Guardrails** → **New customer acquisition** without confusing exclusions with reporting roles.

@@ -1,0 +1,136 @@
+---
+title: "Chats and tasks"
+sidebarTitle: "Chats and tasks"
+description: "Find a prior conversation or recent task, understand each row, and reopen the correct source record."
+---
+
+**Chats and tasks** is the combined history for conversation threads and recent agent work. It helps you answer two different questions from one list: “Which conversation established the context?” and “Which task owns the execution state?”
+
+<Frame caption="Chats and tasks separates all work, conversations, and recent tasks while keeping title search and New chat available.">
+  <img src="/assets/product-flows/chats-and-tasks-controls.png" alt="Chats and tasks header with New chat, All, Chats, Tasks, and Search chats and tasks controls" />
+</Frame>
+
+## Open Chats and tasks
+
+The page is intentionally not a permanent sidebar destination. Reach it in any of these ways:
+
+- In the sidebar **Recents** group, use the arrow action whose label is **Open chats and tasks**.
+- Open the command palette and search for **Chats and tasks**.
+- Open [Chats and tasks](https://app.marketer.com/dashboard/chat/all) directly.
+
+The **Recents** filter itself offers **Recent**, **Chats**, and **Tasks**. Use it for a quick return; use **Open chats and tasks** for the searchable full page.
+
+<Note>
+  The fixed sidebar row is hidden in the current navigation. The page remains supported and reachable through Recents, the command palette, and its URL.
+</Note>
+
+## Use the page controls
+
+The header shows **Chats and tasks** and a **New chat** action. The list offers:
+
+- **All** for conversations and tasks together
+- **Chats** for conversation threads only
+- **Tasks** for recent agent work only
+- **Search chats and tasks…** for a title search
+
+Search matches the visible chat or task title. It does not search message bodies, attachments, outputs, or task transcripts. Rows are ordered by their latest update, so a recently changed task can move above an older conversation.
+
+Select **New chat** when the new request should not inherit a prior thread's context.
+
+## Read a chat row
+
+A chat row can show:
+
+- The conversation title
+- **Archived** when the thread is archived
+- **Started by _email_** when the starter is known
+- The relative time of its latest update
+
+Select the row to open the complete conversation. Use the thread to recover:
+
+1. The original request and attachments
+2. Later scope or authority changes
+3. Questions and submitted answers
+4. Proposals and recorded choices
+5. Attached tasks and final outputs
+
+Continue the thread when the next request relies on those records and decisions. Start a new chat when the objective, source-of-truth record, provider account, or authority boundary has materially changed.
+
+## Read a task row
+
+A task row can show:
+
+- The specialist or task identity
+- The task title
+- The run kind
+- The current status
+- The relative time of its latest lifecycle change
+
+The compact status can be **Running**, **Waiting for you**, **Done**, **Failed**, or **Canceled**. Select the row to open its reload-safe Activity run detail, not the surrounding conversation.
+
+The **Tasks** view covers recent agent work from the last 7 days. For older work, use **Activity** and its **Full history** filters.
+
+## Choose chat or task deliberately
+
+| You need to know… | Open |
+| --- | --- |
+| What did we ask? | The chat |
+| Which campaign, product, brief, creative, or file was attached? | The chat |
+| What clarification or proposal decision did we give? | The chat |
+| Is work still running or waiting? | The task |
+| Which step or specialist owns progress? | The task, then **Agents** |
+| What output did the run produce? | The task's **Outputs**, then the owning product surface |
+| Did a connected object actually change? | The task or approval receipt, then the owning surface and provider |
+
+One conversation can contain several tasks. One task row represents one selected run. Match titles, timestamps, and attachments rather than assuming the newest row belongs to the request you remember.
+
+## Hand off work to another member
+
+Send the conversation when the reviewer needs the request and decision history. Send the task detail when they need execution status or output.
+
+In the latest chat message, summarize:
+
+1. The current objective
+2. The attached records and date window
+3. The accepted result or proposal
+4. The linked task and its status
+5. The next decision and verification surface
+
+The recipient can then move from the request to the task and final object without reconstructing the flow from screenshots.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A row is missing from Recents">
+    Open the full **Chats and tasks** page. Recents is a compact merged list and may not include the older item you need.
+  </Accordion>
+  <Accordion title="Search returns no match">
+    Search the displayed title rather than message text. Switch between **All**, **Chats**, and **Tasks**, or use Activity for older task history.
+  </Accordion>
+  <Accordion title="A task is older than seven days">
+    Open **Activity** and use **Full history**, its search, date range, source, and agent filters.
+  </Accordion>
+  <Accordion title="A chat is archived">
+    Open the row to review it. Treat old scope and time-sensitive facts as historical, and restate the current boundary before continuing.
+  </Accordion>
+  <Accordion title="The task title is ambiguous">
+    Open the task detail and compare its specialist, created or updated time, originating conversation, and output. Do not answer or stop a run until those match.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="History and notifications" icon="clock-rotate-left" href="/working-with-marketer/history-and-notifications">
+    Reconstruct the complete request, receipt, and current-object chain.
+  </Card>
+  <Card title="Task control and recovery" icon="rotate" href="/working-with-marketer/task-control-and-recovery">
+    Resume, stop, recover, and verify the selected task.
+  </Card>
+  <Card title="Tasks and activity" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Use Activity to inspect current and historical execution records.
+  </Card>
+  <Card title="Open a new chat" icon="plus" href="https://app.marketer.com/dashboard">
+    Start clean when old context should not shape the request.
+  </Card>
+</CardGroup>

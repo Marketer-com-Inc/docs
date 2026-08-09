@@ -1,71 +1,106 @@
 ---
 title: "Slack"
-description: "Install Marketer in Slack for agent conversations, approvals, progress, and workspace alerts."
+description: "Install Marketer, finish workspace routing, link direct messages, and recover missing permissions."
 ---
 
-The Slack integration lets your team work with Marketer from an approved Slack workspace and route notifications to a chosen channel.
+Slack lets a Marketer workspace receive alerts, handle approvals, and work with the agent from Slack. Installation, notification routing, and personal direct-message linking are separate parts of setup.
 
-## Prerequisites
+## Before you connect
 
-- A Marketer Owner, Admin, or Member role
-- Permission to install apps in the Slack workspace, or help from a Slack administrator
-- A destination channel for workspace alerts
-- The correct Marketer workspace selected before installation
+- Use a Marketer Owner, Admin, or Member role.
+- Be able to approve or request installation of the Marketer Slack app.
+- Know which Slack workspace corresponds to the active Marketer workspace.
+- Choose one shared channel for reports, spend alerts, and approvals.
+- Decide whether email delivery should run independently of Slack.
 
-<Note>
-  A Slack workspace maps to the Marketer workspace used during installation. To use another Marketer workspace, start the installation from that workspace.
-</Note>
-
-## Connect Slack
+## Install and finish setup
 
 <Steps>
-  <Step title="Open Slack">
-    Go to **Integrations**, then open **Slack**.
-  </Step>
   <Step title="Install Marketer">
-    Select **Add to Slack** and review the permissions Slack presents. Complete the authorization in the Slack workspace you intend to use.
+    Go to **Integrations** → **Slack** and select **Add to Slack**. If access changed, use **Reconnect Slack** instead.
   </Step>
-  <Step title="Finish setup">
-    Choose the alerts channel, tune notification groups, and link your account if you want direct-message routing.
+  <Step title="Approve Slack access">
+    Review the current Slack permissions. A reconnect can be required to add support for group DMs, private channels, file uploads, or reactions.
   </Step>
-  <Step title="Confirm the connection">
-    Verify the Slack workspace name, connected status, saved channel, and your desired notification settings. Send a test from the setup surface when available.
+  <Step title="Choose the alerts channel">
+    In **Finish Slack setup**, select **Alerts channel**. Reports, spend alerts, and approvals post here.
+  </Step>
+  <Step title="Set delivery preferences">
+    Configure **Post to Slack**, **Email alerts**, **Notify for**, and the event groups. Select **Save preferences** or **Save routing** as shown.
+  </Step>
+  <Step title="Link your account">
+    Finish the personal link so Marketer can deliver direct messages and attribute Slack requests to your Marketer identity.
   </Step>
 </Steps>
 
-## Use the bot
+The detail page identifies **Workspace**, **Bot user**, and **Connected**. Verify all three before testing messages.
 
-In a direct message, you can send Marketer a request. In channels or group conversations, mention `@Marketer` when you want a response. Long-running work can post progress and approval requests back to Slack.
+## Read the connection state
 
-The integration also supports these commands in the current product:
+| State | Meaning | Next action |
+| --- | --- | --- |
+| **Status unavailable** | The latest Slack check failed and the last-known installation remains | Refresh before changing it |
+| **Disconnected** | The app is not installed for this Marketer workspace | Select **Add to Slack** |
+| **Reconnect needed** | Slack rejected the token or the installation lacks current permissions | Select **Reconnect Slack** |
+| **Finish setup** | Installation exists, but required routing is incomplete | Choose the alerts channel and save preferences |
+| **Connected** | Installation and required workspace setup are present | Send a test and verify the personal link |
 
-- `/marketer status`
-- `/marketer stop <run-id>`
-- `/marketer whoami`
-- `/marketer <prompt>`
+## Configure notification routing
 
-Keep requests explicit about the workspace, account, date range, and whether you want analysis, a proposal, or an action.
+Slack uses the same workspace notification policy as **Settings** → **Notifications**.
 
-## Data and permission boundaries
+| Control | Effect |
+| --- | --- |
+| **Post to Slack** | Master switch for Slack delivery |
+| **Channel** | Shared destination; the bot can join the chosen channel automatically |
+| **Email alerts** | Independent master switch for email; requires at least one recipient |
+| **Everything** | Sends information, warnings, and critical events externally |
+| **Warnings and critical** | Keeps lower-severity events in the app |
+| **Critical only** | Externally delivers only critical events |
 
-Slack delivery follows the Marketer workspace connection, your user link, selected alert channel, notification preferences, and your Marketer permissions. Connecting Slack does not expand what you can do in Marketer.
+Event groups use these exact meanings:
 
-Updated Slack features can require an updated permission grant. Marketer will show **Reconnect needed** when the saved installation does not include the current permission set. Review the Slack consent screen rather than assuming access.
+- **Performance** — Spend spikes, ROAS drops, anomalies.
+- **Account health** — Token expiry, sync failures, disconnects.
+- **Approvals** — When the agent needs a decision from you.
+- **Agent activity** — Run completions, creative ready.
+- **Budget** — Budget changes and spend-cap warnings.
+- **Billing & team** — Billing issues, member changes.
 
-## Freshness and records
+The in-app feed keeps notifications regardless of external delivery. Approval DMs can go to the person they belong to rather than the shared alerts channel.
 
-Slack is a delivery and interaction surface. The underlying advertising, commerce, and analytics freshness still depends on those connected sources.
+## Work with the agent in Slack
 
-Use Marketer's in-app feed and task history as the primary place to review workspace activity. A missing Slack message does not prove the underlying task or alert did not exist.
+- In a direct message, Marketer answers each message.
+- In a channel, mention **@Marketer** when you need a response. It can continue useful account or task context in a thread.
+- Longer work can post progress and approval requests.
+- Reactions communicate state: 👀 working, ✅ answered, and ⚠️ failed.
 
-## Reconnect or disconnect
+Available slash commands:
 
-- Reconnect when Marketer requests the current Slack permissions or channel listing fails because the installation is outdated.
-- Revisit **Finish setup** if no alerts channel is routed.
-- Confirm that **Post to Slack**, the chosen channel, severity floor, and notification groups match your intent.
-- If Slack settings cannot be verified, refresh. Marketer keeps the connection and saved preferences untouched while the read fails.
-- Disconnecting makes Marketer leave the Slack workspace, stops alerts, clears channel routing, and removes user links. You can reinstall later.
+| Command | Purpose |
+| --- | --- |
+| `/marketer status` | Check current Marketer status |
+| `/marketer stop <run-id>` | Stop the specified run |
+| `/marketer whoami` | Check which Marketer identity is linked |
+| `/marketer <prompt>` | Send a request to Marketer |
+
+## Add channels safely
+
+The bot can join additional channels for conversation. Keep the configured alerts channel as the protected routing destination for shared notifications, and mention the bot in other channels when you need it.
+
+If channel listing fails after an older installation, use **Reconnect Slack** to grant the current permissions. Do not disconnect first unless you intend to replace the entire installation.
+
+## Recover account linking
+
+If the Slack email and Marketer email do not match, use **Open Slack to finish** and direct-message the bot to complete the link. Then run `/marketer whoami` and confirm the expected identity.
+
+An installation maps to the active Marketer workspace. To connect the same Slack organization to another Marketer workspace, switch workspaces first and install or configure Slack there separately.
+
+## Disconnect impact
+
+Disconnecting removes the Slack app for this workspace, stops routed alerts, and clears workspace routing and personal links. Review active approvals, alert ownership, and replacement delivery before confirming.
 
 ## Next step
 
-Send a read-only request in a direct message and confirm the same thread or task is visible in Marketer. Then configure workspace delivery in [Notifications and billing](/workspace-admin/notifications-and-billing).
+Send a harmless test, run `/marketer whoami`, and verify one notification in the configured channel before relying on Slack for approvals or critical alerts.

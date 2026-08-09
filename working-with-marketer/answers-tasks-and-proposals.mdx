@@ -1,0 +1,158 @@
+---
+title: "Answers, tasks, and proposals"
+sidebarTitle: "Answers and tasks"
+description: "Distinguish a direct answer from a question, run proposal, or longer task and take the correct next action."
+---
+
+A message in chat can finish the request, ask for missing information, propose longer work, or attach a task that continues beyond the current response. Identify the branch before you review, approve, retry, or start anything else.
+
+## Identify the response branch
+
+| What appears | What it means | Your next move |
+| --- | --- | --- |
+| An assistant message, with no run proposal or task block | Marketer returned a direct answer in the conversation | Verify the answer and continue in the same thread if the evidence boundary stays the same. |
+| A question with options or a request for text | Work is waiting for information from you | Answer the missing point once; then confirm the original task resumes. |
+| A **Run…** proposal with decision controls | Marketer has described longer work but has not started that proposed run | Cancel it, edit the request, or use the displayed run control. |
+| A task or agent block with live status and steps | The longer run exists | Follow the current step, answer any pause, and wait for a terminal result. |
+| A result block with completed steps and outputs | The run ended with a deliverable or record | Review the actual output and verify it in the surface that owns it. |
+
+An acknowledgment such as “I’ll analyze this” is not the final result when a task block is still **Running** or **Waiting for you**.
+
+## Review a direct answer
+
+A direct answer stays in the conversation. It may include source disclosures or tool results, but it does not create a separate task row unless a longer run is also attached.
+
+Before you use it:
+
+1. Match the answer to the attached record and requested workspace.
+2. Confirm the provider account, dates, timezone, currency, attribution view, and filters behind decision-driving figures.
+3. Separate measured facts from interpretation and generated recommendations.
+4. Open any linked product record or report instead of treating the prose as the current object state.
+5. Continue in the same conversation only while the source and authority boundary remain valid.
+
+If the answer is generic, do not repeat the same prompt unchanged. Attach the exact record and name the calculation, source, window, and required output.
+
+## Answer a clarification
+
+Marketer can ask a question before it finishes the current turn or while a longer run is paused.
+
+- When choices are shown, select one and then select **Submit**.
+- Choose **Type it your own** when the listed options do not express the answer.
+- When no options are shown, reply in the ordinary composer.
+- Select **Dismiss** only when you do not want to answer that question now.
+
+Keep the answer narrow. A response such as “Use the US prospecting campaign in the attached Meta account” resolves identity; it should not also introduce a new objective, provider, and launch request.
+
+For a question inside an existing run, wait for the run state to move from **Waiting for you** back to **Running** or **Working**. Do not create a duplicate run while the answer is being delivered.
+
+## Review a proposal to start longer work
+
+Proposal controls depend on what Marketer is preparing.
+
+| Proposal | Stop branch | Revision branch | Start branch |
+| --- | --- | --- | --- |
+| A named specialist run | **Cancel** | **Edit** | **Accept & Run** |
+| Creative Pipeline | **Cancel** | **Edit** | **Approve & Run** |
+| Another agent task plan | **Cancel** | **Edit brief** | **Run it** |
+
+The exact title and start label appear on the proposal you are reviewing. Use that card as the source of truth instead of assuming every proposal has the same controls.
+
+### Cancel the proposal
+
+Choose **Cancel** when the displayed work should not start. Canceling a proposal is different from stopping a run: a proposal has not created the proposed background run yet.
+
+### Edit the proposal
+
+Choose **Edit** or **Edit brief** when the outcome is useful but its instructions, inputs, output count, steps, or review boundary are wrong. Marketer returns the proposal text to the composer so you can revise it. The old proposal does not continue.
+
+### Start the proposal
+
+Choose **Accept & Run**, **Approve & Run**, or **Run it** only after you verify:
+
+- The requested outcome and attached records
+- The workspace evidence the run will use
+- Every production or generation step
+- The expected output and where it will appear
+- The authority boundary for later connected-account changes
+
+Starting the proposed run does not grant blanket permission for an action the result may later recommend. A run can pause again on a specific question or approval.
+
+<Warning>
+  A proposal preserved in older conversation history may no longer be actionable. If its controls are absent, prepare a new proposal from current workspace and provider state instead of trying to dispatch old work.
+</Warning>
+
+## Follow the task after it starts
+
+<Frame caption="A running turn exposes searched sources, completed work, the current step, and what remains.">
+  <img
+    src="/assets/product-flows/task-progress.png"
+    alt="Marketer task in progress with searched source chips, a completed step, a current step, and remaining work"
+  />
+</Frame>
+
+The task view can show:
+
+- A live **Working for…** timer
+- **Searched** source chips
+- Completed, current, and pending steps
+- A task title and step count
+- A specialist or nested run in **Agents**
+- **Stop** while the selected run is non-terminal
+
+The timer describes elapsed work, not an estimated completion time. A searched source chip shows that the source was consulted; it does not by itself prove that the final conclusion is supported.
+
+## Review the terminal result
+
+<Frame caption="The completed task separates the finished result, checked steps, and optional next requests.">
+  <img
+    src="/assets/product-flows/task-result.png"
+    alt="Completed Marketer task with a final result, three completed steps, and suggested follow-up requests"
+  />
+</Frame>
+
+At the end of the run:
+
+1. Read the final lifecycle state.
+2. Compare the checked steps with the plan you accepted.
+3. Open **Outputs** or the linked artifact.
+4. Verify the deliverable against the original request.
+5. Confirm any created brief, creative, campaign draft, workflow, or report in its owning surface.
+
+Suggested follow-up chips are separate requests. They are not evidence that Marketer already wrote copy, generated another creative, changed a campaign, or launched anything.
+
+## Recover from the wrong branch
+
+<AccordionGroup>
+  <Accordion title="I expected a direct answer but received a proposal">
+    Choose **Edit** or **Edit brief** and make the boundary explicit: request analysis only, name the final answer, and remove production or generation steps.
+  </Accordion>
+  <Accordion title="I expected a task but received a short answer">
+    State the missing deliverable, steps, evidence, and completion criteria. Ask Marketer to prepare the longer work as a reviewable proposal when you want to inspect it before it starts.
+  </Accordion>
+  <Accordion title="The proposal is broader than my request">
+    Edit the proposal. Split unrelated research, creative, campaign, and workflow outputs into separately reviewable runs.
+  </Accordion>
+  <Accordion title="The task is waiting">
+    Open the selected run and determine whether it needs a question answered or an approval decided. Use the interaction attached to that same run.
+  </Accordion>
+  <Accordion title="The task ended without the expected artifact">
+    Open the final output and Activity detail. Check for failed or partial branches, then retry only the missing part after resolving the cause.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<CardGroup cols={2}>
+  <Card title="Questions and approvals" icon="circle-question" href="/working-with-marketer/questions-and-approvals">
+    Resolve in-chat questions, tool decisions, and Awaiting-action items.
+  </Card>
+  <Card title="Task control and recovery" icon="rotate" href="/working-with-marketer/task-control-and-recovery">
+    Resume, stop, recover, and verify the selected run.
+  </Card>
+  <Card title="Inspect specialists" icon="users" href="/working-with-marketer/specialists">
+    Trace the task into its agents, nested work, sources, and outputs.
+  </Card>
+  <Card title="Review results" icon="circle-check" href="/essential-guidelines/review-results">
+    Apply a source, time, scope, calculation, and action-state check.
+  </Card>
+</CardGroup>

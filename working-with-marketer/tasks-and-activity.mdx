@@ -14,6 +14,7 @@ You can reach a task from several starting points:
 
 - Select its card in the conversation that started it.
 - Select its row under **Currently Running** on **Home**.
+- Open **Chats and tasks**, select **Tasks**, and choose the task row.
 - Open **Activity** from Quick actions to find active or historical work.
 - Open **Agents** from the right edge of a conversation, then select the run.
 - Follow a task or run link from **Notifications**.
@@ -46,7 +47,7 @@ For a longer task, its result block can also show the current step count and a p
     Match the task to the originating conversation and intended workspace. If two runs have similar titles, use the created time and attached context to distinguish them.
   </Step>
   <Step title="Read the current lifecycle state">
-    Use the displayed state—**Queued**, **Working**, **Waiting**, **Completed**, **Partially completed**, **Failed**, or **Canceled**—as the task's current truth.
+    Use the state on the selected run as its current truth. Compact run rows use **Running**, **Waiting for you**, **Done**, **Failed**, or **Canceled**. Activity can show broader family states such as **Queued**, **Working**, **Waiting**, **Completed**, or **Partially completed**.
   </Step>
   <Step title="Open the current step">
     Identify the latest active or unresolved step. If an agent owns it, select that agent in the workbench to inspect its goal, progress, and available sources.
@@ -64,9 +65,9 @@ For a longer task, its result block can also show the current step count and a p
 | State | What changed visibly | What you should do |
 | --- | --- | --- |
 | **Queued** | The run exists, but no work step is active yet | Keep the original run; check prerequisites if it remains queued unexpectedly. |
-| **Working** | A step or specialist is active and progress can update | Open the active step when you need detail; otherwise let the run continue. |
-| **Waiting** | Progress stops on a question, approval, or missing prerequisite | Supply the requested input or open **Awaiting action**. |
-| **Completed** | Planned work reached its end and a result may be available | Open the result; verify completeness, evidence, and the owning product state. |
+| **Running** or **Working** | A step or specialist is active and progress can update | Open the active step when you need detail; otherwise let the run continue. |
+| **Waiting for you** or **Waiting** | Progress stops on a question, approval, or missing prerequisite | Supply the requested input or open **Awaiting action**. |
+| **Done** or **Completed** | Planned work reached its end and a result may be available | Open the result; verify completeness, evidence, and the owning product state. |
 | **Partially completed** | Some output is available alongside unfinished work | Use only the supported portion and inspect the incomplete branch before retrying. |
 | **Failed** | The run ended on an error | Read the last successful step, error, connection state, and any preserved output. |
 | **Canceled** | Work stopped before the planned end | Decide whether to restart from the original request or revise the scope first. |
@@ -120,13 +121,14 @@ For the output itself, verify:
 
 Open **Activity** when you do not know which conversation owns the work or when you need history across the workspace.
 
-The page separates three views:
+The page separates current execution from broader history:
 
-- **Agents** lists recent agent work and lets you open a selected run.
-- **Recent** shows workspace activity from the last 24 hours.
-- **Full history** supports broader history, filters, dates, search, and paging.
+- **Agent work (_n_) · last 7 days** contains task and run records.
+- **Currently active (_n_)** groups work that has not reached a terminal state.
+- **Recent (_n_) · last 24h** shows recent workspace events.
+- **Full history (_n_)** supports source, agent, and date filters; **Search activity…**; grouping **By time**, **By agent**, or **By category**; and paging.
 
-Select a run to open its detail. Native agent detail can expose the live run body and an **Outputs** section. Other activity entries show the recorded event or pipeline detail. Use the open-detail control from the Agents panel when you want a reload-safe full-page record.
+Select a run to open its detail. Native agent detail can expose the live run body, its current question or approval, **Stop** while the run is non-terminal, and an **Outputs** section. Other expanded Activity entries can show an **Error**, the **Trigger**, fields that **Changed** as Before → After, a **Linked** record, and the originating **Chat**. Use the open-detail control from the Agents panel when you want a reload-safe full-page record.
 
 ### Activity is an audit trail, not the final object
 
@@ -156,6 +158,12 @@ Starting again while the first run is queued, working, or resuming can create ov
 ## Next step
 
 <CardGroup cols={2}>
+  <Card title="Control and recover a task" icon="rotate" href="/working-with-marketer/task-control-and-recovery">
+    Resume waiting work, stop an active run, recover a failure, and verify the output.
+  </Card>
+  <Card title="Chats and tasks" icon="messages" href="/working-with-marketer/chats-and-tasks">
+    Reopen the correct conversation or recent task from the combined history.
+  </Card>
   <Card title="Inspect the Agents panel" icon="users" href="/working-with-marketer/specialists">
     Move from the task summary to the specialist, output, and source behind a step.
   </Card>

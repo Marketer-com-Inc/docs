@@ -1,0 +1,199 @@
+---
+title: "Catalog, product detail, and image enhancement"
+sidebarTitle: "Catalog and enhancement"
+description: "Verify the Shopify catalog, read product and sales detail, seed Studio or Campaigns, and review enhanced images before a Shopify push."
+---
+
+**Products** is Marketer's Shopify-backed catalog. Shopify remains the source of truth for product identity, variants, status, price, inventory, and storefront content; Marketer adds synchronized sales context and product-aware handoffs.
+
+Open [Products](https://app.marketer.com/dashboard/products) and confirm the active workspace and connected store.
+
+<Frame caption="The catalog toolbar switches between Products and Collections, table and card layouts, sort order, source resync, and exact product search.">
+  <img src="/assets/product-flows/products-catalog-controls.png" alt="Products catalog controls with Products and Collections tabs, table and card layout buttons, Featured sort, Resync, product search, Add product, and table headers for Product, Status, Units, Revenue, and Price" />
+</Frame>
+
+## Understand the independent data layers
+
+| Layer | What can appear | Decision boundary |
+| --- | --- | --- |
+| Catalog | Product identity, image, vendor, tags, handle, status, variants, and price range | Can be usable before sales data |
+| Collections | Collection roster and product membership | Can arrive after initial product rows |
+| Sales metrics | Units, revenue, KPIs, and trends from available Shopify orders | Wait for covered order data before ranking |
+
+A placeholder or missing metric is not automatically zero. Do not use **Best sellers** or **Revenue** sorting as decision-grade evidence while sales metrics are loading or degraded.
+
+Product money uses the Shopify source currency. Preserve any disclosure when the workspace display currency differs.
+
+## Sync the catalog
+
+Use the Products surface and Integrations together:
+
+- **Resync** when Shopify changed and the current connection is otherwise healthy.
+- **Retry sync** when Products names a failed source read.
+- Wait for the status to settle before searching again.
+- Open the exact source product in Shopify if a field still differs.
+
+<Note>
+  **Add product** explains that manual product entry is not currently available. Create or correct the product in Shopify, then sync it into Marketer.
+</Note>
+
+## Find the exact product
+
+<Steps>
+  <Step title="Choose Products or Collections">
+    Use **Products** for the full catalog. Use **Collections** when membership is part of the question, then open a collection to inspect its product set.
+  </Step>
+  <Step title="Search identifying fields">
+    Use **Search products by name, vendor, or tag…**. Prefer an exact title, vendor, tag, handle, or source check when similar regional or variant records exist.
+  </Step>
+  <Step title="Choose table or card view">
+    Use table view for selection and field comparison. Use card view when image identity distinguishes similar titles.
+  </Step>
+  <Step title="Choose a valid sort">
+    Select **Featured**, **Best sellers**, **Revenue**, **Price: high to low**, **Price: low to high**, or **Name A–Z**. Use a metric sort only after sales coverage is usable.
+  </Step>
+  <Step title="Open the product detail">
+    Confirm the breadcrumb reads **Products** followed by the intended title. Do not proceed from a thumbnail or name alone.
+  </Step>
+</Steps>
+
+## Inspect product detail
+
+<Steps>
+  <Step title="Verify catalog identity">
+    Review the gallery, title, status, vendor, product type, description, price range, and variants.
+  </Step>
+  <Step title="Open View in Shopify">
+    Confirm the source record, current offer, availability, product URL, and live storefront behavior.
+  </Step>
+  <Step title="Set the sales window">
+    Choose a date range within the store's available order history. The product URL preserves the selected boundaries so the view can be revisited.
+  </Step>
+  <Step title="Read totals and trend together">
+    Compare the visible KPIs, prior-period context, and product trend under the same source currency and order-date coverage.
+  </Step>
+  <Step title="Inspect variants">
+    Confirm the intended variant exists and matches Shopify. Product-level sales do not prove which variant, campaign, or creative caused the result.
+  </Step>
+</Steps>
+
+If the window has no available orders, distinguish a true zero from a date outside synchronized history. Use Analytics for a cross-channel or attribution-aware explanation.
+
+## Hand selected products to Campaigns
+
+From the list, select one or more products and choose **Build campaign**.
+
+1. Confirm the campaign chooser opens.
+2. For one product, verify its title and storefront URL seeded the flow.
+3. For several products, inspect the actual scope. The seed can summarize the selection around the first product rather than representing each one equally.
+4. Choose only a connected Meta or Google Ads builder that supports the intended campaign.
+5. Reverify product, destination, objective, audience, budget, conversion, creative, and schedule.
+6. Keep the campaign as a draft until review and approval are complete.
+
+If Marketer cannot derive a storefront URL, enter and open the destination manually before building the rest of the campaign.
+
+## Hand selected products to Studio
+
+Select **Create ads** from product detail or the multi-select bar.
+
+- Select only products that belong in one creative session.
+- When the selection exceeds Studio's product-attachment limit, read how many were attached and add the remaining intended products from the composer.
+- Confirm every product attachment before writing the direction.
+- Add audience, angle, offer, proof, format, and exclusions; the catalog record does not supply creative strategy.
+- Review generated product shape, branding, price, offer, copy, and destination before saving.
+
+Continue with [Studio](/product-guides/creatives-studio) for generation and refinement.
+
+## Enhance a product image
+
+Select **Enhance images** on a product with a gallery image. The action is unavailable when no usable source image exists.
+
+<Steps>
+  <Step title="Choose the source image">
+    Confirm the selected gallery image. The primary image can be preselected, but another gallery image may be the correct starting point.
+  </Step>
+  <Step title="Choose a mode">
+    Select **Enhance**, **Background**, **Isolate**, **Relight**, or **Upscale**. Read the mode description before writing additional detail.
+  </Step>
+  <Step title="Complete Details">
+    Describe the requested scene, lighting, cutout, correction, or scale. Do not ask the edit to invent a feature the source product does not have.
+  </Step>
+  <Step title="Review usage">
+    Read the displayed output count and token cost, then choose **Generate previews**. The current flow creates two previews and saves their generation to Studio while it runs.
+  </Step>
+  <Step title="Inspect each preview">
+    Wait for each tile to finish. Compare product shape, materials, logo, color, included items, scale, shadows, background, and artifacts with the source.
+  </Step>
+  <Step title="Choose Open in Studio or Push to Shopify">
+    Use **Open in Studio** for further work. Use **Push to Shopify** only for a fully reviewed preview intended for the source product.
+  </Step>
+</Steps>
+
+### Understand Shopify push permission
+
+**Push to Shopify** requires **Integrations → Shopify → Advanced permissions → Push enhanced images to Shopify**.
+
+Enabling that permission allows reviewed generated images to be added to the live source product. It does not approve a specific image. Confirm the product, preview, rights, and storefront effect again at the push.
+
+After a successful request, Shopify can continue processing the image briefly. Verify both the product administration and live storefront before using it in customer-facing work.
+
+## Use the list action bar accurately
+
+| Action | Current behavior |
+| --- | --- |
+| **Build campaign** | Seeds the selected product context into campaign creation |
+| **Create ads** | Seeds selected products into Studio, subject to attachment limits |
+| **Open in Shopify** | Opens source product administration |
+| **Edit** | Bulk editing is shown as coming soon; edit in Shopify |
+| **Add label** | Product labels are shown as coming soon |
+| **Archive** | Marketer-side archive is shown as coming soon; manage Shopify status |
+| **Clear selection** | Clears selection without changing products |
+
+Do not design an operating process around an action explicitly marked coming soon.
+
+## Completion check
+
+- The active workspace and Shopify store are correct.
+- Sync completed after the latest source change.
+- Identity, handle, status, vendor, variants, price, availability, and destination match Shopify.
+- Sales conclusions include window, source currency, and coverage state.
+- Campaigns or Studio shows the intended product context before work continues.
+- Every enhanced preview was compared with the source product.
+- A Shopify push used the intended permission and landed on the correct product and storefront.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The catalog is empty">
+    Confirm Shopify is connected to this workspace. Wait for initial setup or use **Retry sync** on a failed connection; do not create replacement product records in Marketer.
+  </Accordion>
+  <Accordion title="A product or collection is missing">
+    Clear search, choose the correct **Products** or **Collections** view, and verify the source in Shopify. Select **Resync**, wait for completion, then search by an exact field.
+  </Accordion>
+  <Accordion title="Revenue or Best sellers is incomplete">
+    Wait for the sales-metrics layer and confirm the window contains covered Shopify orders. Use a non-metric sort until coverage is usable.
+  </Accordion>
+  <Accordion title="Product context did not reach Studio or Campaigns">
+    Repeat the handoff once from the exact selected record, then inspect the destination's product attachments or seed before continuing. Add a missing URL or overflow product manually.
+  </Accordion>
+  <Accordion title="Enhance images is disabled">
+    Add a usable gallery image in Shopify, complete a sync, and reopen product detail.
+  </Accordion>
+  <Accordion title="An enhancement failed">
+    Open the persisted generation in Studio, inspect the source and instruction, and retry only the failed intent after confirming token availability.
+  </Accordion>
+  <Accordion title="Push to Shopify asks for access">
+    If the push is intended, enable **Push enhanced images to Shopify** under Shopify **Advanced permissions**, then retry the same reviewed preview. Otherwise keep it in Studio.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Create product-led creative" icon="images" href="/product-guides/creatives-studio">
+    Confirm product context and generate a reviewed concept set.
+  </Card>
+  <Card title="Build the campaign" icon="megaphone" href="/product-guides/campaigns">
+    Choose the provider and carry the seed through review and launch.
+  </Card>
+</CardGroup>

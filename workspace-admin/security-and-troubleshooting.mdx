@@ -1,71 +1,126 @@
 ---
 title: "Security and troubleshooting"
-description: "Use least privilege, protect provider access, and diagnose workspace or account access problems."
+description: "Apply least privilege and diagnose identity, workspace, provider, MCP, policy, notification, and billing access in order."
 ---
 
-Secure operation in Marketer starts with individual identities, limited workspace reach, explicit provider grants, and review before material actions.
+Secure Marketer operation depends on individual identities, narrow workspace reach, explicit provider grants, deliberate automation policy, and verified recovery ownership.
 
 ## Security baseline
 
-- Give each teammate an individual account.
-- Use Viewer for read-only review.
-- Prefer selected-workspace access when a person does not need every workspace.
-- Connect providers with the minimum resources required for the workspace.
-- Keep API keys and OAuth credentials out of chat, Slack, tickets, and screenshots.
-- Review guardrails before enabling proposal or mutation workflows.
-- Keep **Review everything** until the team has verified real outcomes.
-- Remove former teammates, stale invites, unused MCP seats, and unrecognized OAuth sessions.
+- Give every teammate an individual Marketer identity.
+- Use **Selected workspaces** when account-wide reach is unnecessary.
+- Use **Viewer** for read-only review.
+- Connect only the provider resources that belong to the active workspace.
+- Keep passwords, OAuth codes, reset links, API keys, and MCP credentials out of chat, Slack, tickets, recordings, and screenshots.
+- Keep **Review everything** until real paused launches are verified.
+- Route warning and critical notifications to someone who owns the response.
+- Remove former teammates, stale invites, unused MCP seats, and unrecognized connected agents promptly.
 
-## If an account may be compromised
+## Diagnose access by layer
+
+Check these layers in order:
+
+1. **Personal authentication** — can the person sign in through a listed identity?
+2. **Account membership** — does the person still belong to the account?
+3. **Workspace reach** — is the workspace under **All workspaces** or explicitly selected?
+4. **Workspace role** — Owner, Admin, Member, or Viewer?
+5. **Provider authorization** — is the connected identity or key healthy?
+6. **Provider resource selection** — is the exact account, store, property, Page, pixel, or catalog selected?
+7. **Policy** — do guardrails, approvals, autonomy, and billing state allow the action?
+8. **External session** — for MCP or Slack, is the personal link, seat, scope, or workspace grant valid?
+
+Skipping a layer often produces the wrong recovery—for example, resyncing cannot repair lost Google account access.
+
+## Access symptom matrix
+
+| Symptom | First check | Recovery owner |
+| --- | --- | --- |
+| Cannot sign in | Authentication email, provider, or password reset | The user |
+| Signed in but workspace absent | Account membership and selected-workspace grant | Account Owner or Admin |
+| Workspace switch fails | Current active check and membership | User, then account Owner/Admin |
+| Page visible but controls disabled | Effective role; Viewer is read-only | Account Owner or Admin |
+| **Plans & Billing** missing | Viewer role or account-owned billing | Account Owner |
+| Account overview missing | Account Owner/Admin role and at least two active workspaces | Account Owner/Admin |
+| Integration shows **Status unavailable** | Refresh the status read | Workspace operator |
+| Integration shows **Reconnect needed** | Provider authorization or key | Provider administrator |
+| MCP cannot reach a workspace | Membership, seat, session grant, and scope | Account Owner plus user |
+| Slack DMs do not map to the user | **Open Slack to finish** and `/marketer whoami` | User |
+| Action is blocked despite edit role | Provider access, guardrail, approval, account state | Workspace Owner/Admin |
+
+## Contain a possibly compromised account
 
 <Steps>
+  <Step title="Save evidence without secrets">
+    Record timestamps, page names, exact messages, and sanitized screenshots.
+  </Step>
   <Step title="Sign out every session">
     Go to **Settings** → **Authentication** and select **Sign out everywhere**.
   </Step>
-  <Step title="Reset access">
-    Send a password-reset link and secure the email account or identity provider used to sign in.
+  <Step title="Secure sign-in">
+    Secure the email and listed identity providers, then use **Send reset link** where appropriate.
   </Step>
-  <Step title="Review membership">
-    Ask an Owner or Admin to inspect account membership, workspace grants, pending invites, and role changes.
+  <Step title="Review account access">
+    Ask the account Owner or Admin to inspect members, roles, selected-workspace grants, and pending invites.
   </Step>
-  <Step title="Revoke external sessions">
-    Disconnect unknown MCP agents and review provider-side OAuth installations or API keys.
+  <Step title="Revoke external access">
+    Disconnect unknown MCP agents, review MCP seats, and rotate rejected or exposed provider credentials in the provider and Marketer.
   </Step>
-  <Step title="Inspect material activity">
-    Review tasks, approvals, notifications, and provider activity for actions that need containment or reversal.
+  <Step title="Contain material activity">
+    Return autonomy to **Review everything**, pause affected workflows through their supported controls, and inspect approvals and provider activity.
   </Step>
 </Steps>
 
-## Workspace access problems
+## Protect credentials by type
 
-| Symptom | Check |
-| --- | --- |
-| You can sign in but cannot see a workspace | Account membership and selected-workspace grant |
-| A page is visible but controls are disabled | Effective workspace role; Viewers are read-only |
-| **Plans & Billing** is missing | Viewer role or account-level billing ownership |
-| Account overview is missing | Multi-workspace eligibility and Owner or Admin account role |
-| MCP cannot reach a workspace | OAuth session grant, workspace membership, and MCP seat |
-| Integration controls are read-only | Owner, Admin, or Member workspace access |
+| Credential | Where it belongs | Recovery if exposed |
+| --- | --- | --- |
+| Marketer password or reset link | Marketer authentication flow only | Reset password and sign out everywhere |
+| Provider OAuth grant | Provider consent and Marketer integration page | Revoke provider-side access, then reconnect deliberately |
+| OpenAI Ads (Beta) API key | OpenAI Ads (Beta) **API key** field only | Revoke/replace the affected account key |
+| Triple Whale (Beta) API key | Triple Whale (Beta) **API key** field only | Replace with a key that has **Pixel Attribution** |
+| MCP regenerated tokens | Intended MCP client only | Regenerate again and replace the client credentials |
 
-## Safe error handling
+## Handle uncertain reads safely
 
-When a page says a status could not be verified, refresh before making a replacement connection. Marketer keeps last-known connection data or settings when a safe read fails; a temporary read error should not be interpreted as proof that access was removed.
+When a page reports unavailable status or a refresh failure:
 
-For provider-specific recovery, use [Troubleshoot integrations](/integrations/troubleshooting).
+- preserve the last-known connection or cached data;
+- refresh once before mutating state;
+- mark cached figures as stale;
+- capture the exact error;
+- avoid disconnecting or creating duplicates; and
+- escalate with scope and timestamp.
+
+For provider detail, follow [Troubleshoot integrations](/integrations/troubleshooting).
 
 ## Prepare an escalation
 
-Include only what another operator needs to reproduce the issue:
+Include only what another operator needs:
 
-- workspace and account name;
-- your role and whether access is account-wide or selected;
-- page and exact error text;
+- account and workspace name;
+- your effective role and access mode;
+- page and exact visible error;
+- provider resource ID when relevant;
 - expected and actual behavior;
-- last known successful action and time; and
-- a sanitized screenshot.
+- last successful action or sync time;
+- reporting date range, currency, and attribution source; and
+- sanitized screenshot.
 
-Never include passwords, reset links, OAuth codes, API keys, full card data, or customer-level personal data.
+Never include passwords, reset links, OAuth codes, API keys, MCP tokens, full card details, or customer-level personal data.
+
+## Recurring review
+
+Review quarterly and after every team change:
+
+- members, roles, and pending invites;
+- workspace switcher reach;
+- provider identities and selected resources;
+- MCP seats and connected sessions;
+- Slack routing and notification recipients;
+- guardrails, autonomy, audiences, and protected campaigns;
+- account-versus-workspace billing ownership; and
+- recovery owners and contact paths.
 
 ## Next step
 
-Schedule a recurring access review for members, provider connections, MCP agents, guardrails, autonomy, and notification recipients.
+Run one access review using the checklist above, record the findings without secrets, and resolve the highest-privilege stale access first.

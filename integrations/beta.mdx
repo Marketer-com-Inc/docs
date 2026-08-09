@@ -1,56 +1,110 @@
 ---
 title: "Beta integrations"
-description: "Understand the narrower, evolving support for Microsoft Ads (Beta), OpenAI Ads (Beta), and Triple Whale (Beta)."
+description: "Configure and validate Microsoft Ads (Beta), OpenAI Ads (Beta), and Triple Whale (Beta)."
 ---
 
-Beta integrations are available in the Integrations directory, but their setup and reporting surfaces can change faster than core integrations.
+Microsoft Ads (Beta), OpenAI Ads (Beta), and Triple Whale (Beta) are available in the Integrations directory. Their setup and reporting surfaces can evolve faster than core integrations.
 
 <Warning>
-  Validate Beta data against the source before using it for a material decision. Do not build a critical workflow that depends on an undocumented Beta behavior.
+  Validate Beta data against the provider before a material decision. Always name the Beta source, account, currency, attribution context, and completed date range.
 </Warning>
 
 ## Microsoft Ads (Beta)
 
-Microsoft Ads **(Beta)** contributes read-only campaign spend and performance to blended reporting.
+Microsoft Ads (Beta) contributes read-only Microsoft Advertising spend and performance from explicitly selected accounts.
 
-**Prerequisites:** A Marketer Owner, Admin, or Member role and a provider identity that can access the required Microsoft Advertising accounts.
+### Connect Microsoft Ads (Beta)
 
-**Connect:** Open **Integrations** → **Microsoft Ads** (Beta), choose the offered Microsoft or Google connection path, authorize access, and select the accounts Marketer should sync. Microsoft Ads **(Beta)** is a Beta integration.
+1. Open **Integrations** → **Microsoft Ads (Beta)**.
+2. Choose **Connect with Microsoft** or **Connect with Google**, depending on the identity that reaches Microsoft Advertising.
+3. Complete provider authorization.
+4. In **Choose the accounts to sync**, select up to 25 accounts.
+5. Select **Sync selected accounts**. Even a single accessible account must be selected explicitly.
+6. Verify **Authorized by**, **Accounts selected**, and **Connected**.
 
-**Success signal:** The page shows **Connected**, the expected account roster, and a completed metric sync.
+### Microsoft Ads (Beta) states
 
-**Boundaries and freshness:** This Beta connection is for read-only reporting. Use its sync state and coverage before comparing it with another channel.
+| State | Meaning | Recovery |
+| --- | --- | --- |
+| **Status unavailable** | The connection could not be checked | Refresh and preserve the last-known state |
+| **Disconnected** | No authorization exists | Start one of the two connection paths |
+| **Reconnect needed** | The provider rejected the grant | Reconnect through the identity that owns access |
+| **Choose accounts** | Authorization exists, but no selection is saved | Select at least one account |
+| **No accounts** | The identity cannot access any selectable Microsoft Advertising account | Grant provider-side account access, then reconnect |
+| **Finish setup** | Authorization completed but required selection did not | Reopen the picker and save accounts |
+| **Connected** | Authorization and selection are valid | Confirm roster, currency, and sync |
 
-**Recovery:** Reconnect for provider-side authorization failures. Resync for a healthy authorization that needs refreshed metrics. Disconnect when Microsoft Ads **(Beta)** should leave blended reporting.
+Sync can show **Syncing**, **Syncing history**, **All synced**, **Last sync didn't finish - Resync to retry**, or **Not synced yet**. Use **Resync** or **Retry sync** only after authorization and selection are healthy.
+
+Microsoft Ads (Beta) is read-only. Selection is workspace-specific, and only the selected accounts enter reporting.
 
 ## OpenAI Ads (Beta)
 
-OpenAI Ads **(Beta)** contributes ChatGPT Ads account metadata, campaigns, and performance through an API key.
+OpenAI Ads (Beta) uses API keys to connect one or more OpenAI Ads (Beta) accounts. Each account can use a separate key.
 
-**Prerequisites:** A Marketer Owner, Admin, or Member role and an OpenAI Ads **(Beta)** API key that can reach the intended advertiser account.
+### Connect OpenAI Ads (Beta)
 
-**Connect:** Open **Integrations** → **OpenAI Ads** (Beta) and paste the key in the connection form. OpenAI Ads **(Beta)** is a Beta integration. Use only this secret field; do not place the key in chat, Slack, or documentation.
+1. Open **Integrations** → **OpenAI Ads (Beta)**.
+2. In OpenAI Ads (Beta), go to `ads.openai.com` → **Settings** → **API Keys** → **Generate new key**.
+3. Paste the value into **API key** and select **Connect**.
+4. If the source and workspace currencies differ, review **Review currency mismatch** and select **Connect anyway** only when conversion into the workspace currency is intended.
+5. Verify **Connected accounts**, **Primary ad account** or **Ad account**, **Account ID**, **Currency**, **Timezone**, masked **API key**, and **Connected**.
 
-**Success signal:** The page shows **Connected**, the expected account ID, currency or timezone when available, a masked key suffix, and completed sync coverage.
+<Warning>
+  Paste an OpenAI Ads (Beta) key only into the integration's **API key** field. Never place it in chat, Slack, documentation, or a support screenshot.
+</Warning>
 
-**Boundaries and freshness:** Marketer encrypts the key before storage. The data available depends on the account the key resolves to. Recent performance can remain incomplete until the provider and sync both finish processing.
+### Multiple-account and replacement states
 
-**Recovery:** Replace the key when the status says the credential is invalid. Marketer keeps the last-known account roster until a replacement succeeds. Disconnect when the workspace should no longer retain or use the connection.
+The page can show:
+
+- **Connected · N accounts** when every saved account is healthy.
+- **Connected · N active · N need a key** when healthy and rejected credentials coexist.
+- **Replace API key** or **Replace API keys** for affected accounts.
+- **API key rejected · reconnect required** when OpenAI Ads (Beta) rejects a saved key.
+
+Replacing one key preserves the last-known account roster until validation succeeds. Healthy sibling accounts continue syncing. On a reconnect currency warning, use **Reconnect anyway** only after confirming the intended reporting currency.
+
+Use **Resync** after healthy keys and account identities are confirmed. Disconnect only the account or connection that should stop contributing.
 
 ## Triple Whale (Beta)
 
-Triple Whale **(Beta)** adds pixel-based attribution for Meta and Google while keeping platform-reported performance as a separate view.
+Triple Whale (Beta) adds pixel-attribution reporting while keeping platform-reported Meta and Google performance separate.
 
-**Prerequisites:** A Marketer Owner, Admin, or Member role, the store context, and a Triple Whale **(Beta)** API key with the Pixel Attribution access requested by the connection form.
+### Connect Triple Whale (Beta)
 
-**Connect:** Open **Integrations** → **Triple Whale** (Beta), enter the key and store context, and record the attribution window, accounting mode, and subscription filter that explain the imported numbers. Triple Whale **(Beta)** is a Beta integration.
+1. Create or select a Triple Whale (Beta) API key with **Pixel Attribution** scope.
+2. Open **Integrations** → **Triple Whale (Beta)**.
+3. Enter **API key** and, when needed, **Shop domain (optional)**. Marketer can prefill the domain from Shopify context.
+4. Record the optional **Filter context**: **Attribution window**, **Accounting mode**, and **Subscription filter**.
+5. Connect and verify **Shop domain**, **Account**, **Currency**, masked **API key**, **Attribution model**, filter context, and **Connected**.
 
-**Success signal:** The page shows **Connected**, the expected shop or account, masked key suffix, attribution model, and completed sync coverage.
+The filter context documents how to interpret imported numbers; it does not change them. Use **Save filter context** after editing it.
 
-**Boundaries and freshness:** Triple Whale **(Beta)** numbers retain their own attribution context. Do not present them as interchangeable with platform-reported Meta or Google totals. Use the recorded filter context when interpreting a result.
+### Triple Whale (Beta) states and recovery
 
-**Recovery:** Reconnect with an updated key when the provider rejects the saved key or required access is missing. Resync after the authorization is healthy. Disconnect when the workspace should stop importing Triple Whale **(Beta)** attribution.
+| State | Meaning | Recovery |
+| --- | --- | --- |
+| **Status unavailable** | The current check failed | Refresh before replacing the key |
+| **Disconnected** | No saved key exists | Connect with a scoped key |
+| **Reconnect needed** | The key was rejected or lacks **Pixel Attribution** | Grant the scope, then reconnect with the updated key |
+| **Connected** | Key and account context are valid | Verify filter context and sync coverage |
+
+Sync can show **Syncing**, **Data ready · syncing past windows**, **All synced**, **Last sync didn't finish - Sync to retry**, or **Not synced yet**. Use **Sync** after the key is healthy.
+
+Do not treat Triple Whale (Beta) attribution as interchangeable with Meta Ads or Google Ads totals. Keep the recorded filter context with any comparison.
+
+## Beta verification checklist
+
+- Beta label included in the result
+- Correct workspace and provider account
+- Authorization or key health confirmed
+- Selected roster confirmed
+- Source and workspace currencies recorded
+- Attribution or filter context recorded
+- Last sync and completed coverage recorded
+- Provider comparison completed
 
 ## Next step
 
-Run one source-specific, read-only comparison. Name the Beta source, account, attribution context, currency, and completed date range. Save the interpretation with the result so another reviewer can reproduce it.
+Run one narrow, read-only source comparison. Save the account, date range, currency, Beta label, and interpretation so another reviewer can reproduce it.

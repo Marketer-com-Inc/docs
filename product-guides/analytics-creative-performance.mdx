@@ -1,0 +1,155 @@
+---
+title: "Creative performance"
+sidebarTitle: "Creative performance"
+description: "Compare Meta-delivered creative, inspect breakdowns and placements, and carry a defensible learning into the next brief."
+---
+
+**Creatives** is Marketer's creative-performance surface. Use it to compare delivered Meta creative under one explicit date and filter frame—not to browse every saved design in the workspace.
+
+Open [Creatives](https://app.marketer.com/dashboard/creatives).
+
+<Frame caption="Creative performance keeps every scoping control visible before you compare assets.">
+  <img src="/assets/product-flows/creatives-performance.png" alt="Creative Performance with status, format, ratio, campaign, ad set, date, sort, metric, split-by-ad, search, and layout controls" />
+</Frame>
+
+## Know the data boundary
+
+- The current performance rows come from synced Meta creative delivery.
+- Studio-only concepts and manual uploads have no delivery metrics until they are used in a synced Meta ad.
+- **Creative Assets** owns saved and synced files; **Creatives** owns the performance comparison.
+- Date controls scope the metrics. They do not prove when the underlying file was created.
+
+If Meta is disconnected, the surface can show **Creative data isn't synced yet**. During first import it can show **Setting up your creatives…**; a failed or incomplete import can show **Creative sync needs attention**.
+
+## Establish a comparable set
+
+Work from broad scope to narrow scope:
+
+<Steps>
+  <Step title="Set the complete date window">
+    Choose the same complete dates used in the campaign diagnosis. Keep the window fixed while comparing rows.
+  </Step>
+  <Step title="Set delivery status">
+    Choose **All status**, **Active**, or **Paused**. Status describes the linked delivery object, not whether the asset file remains in the library.
+  </Step>
+  <Step title="Set the creative format">
+    Choose **All formats**, **Image**, **Video**, or **Carousel**. Compare formats together only when the decision genuinely spans them.
+  </Step>
+  <Step title="Set ratio and ownership">
+    Use **All ratios** or the available aspect ratio. Narrow to **All campaigns** or one campaign and **All ad sets** or one ad set when the audience, objective, or placement must be held constant.
+  </Step>
+  <Step title="Constrain delivery volume">
+    Use the **Spend range** and **Days live range** controls to avoid calling a low-delivery outlier a winner. Keep minimum evidence requirements consistent across candidates.
+  </Step>
+  <Step title="Choose the result metric and order">
+    Select the metric pill that answers the question, then set **Sort**. A ranking is only meaningful under the current filters and window.
+  </Step>
+  <Step title="Find and identify the row">
+    Use **Search creative name…** and switch between grid and table view. Similar thumbnails or names do not prove two rows are the same creative.
+  </Step>
+</Steps>
+
+## Decide when to use Split by ad
+
+By default, Marketer can group delivery around the creative. Turn on **Split by ad** when you need one row per ad using that creative.
+
+Use the grouped view when asking, “How did this creative perform overall?” Use **Split by ad** when asking, “Did the same creative behave differently in separate ads?”
+
+<Warning>
+  Switching to ad-level rows changes the grain. Do not compare a grouped creative row with an ad-level row as if they were peers, and do not add both together.
+</Warning>
+
+Campaign and ad-set filters apply to the corresponding delivery relationships. If a creative has run in several campaigns, narrowing one parent can materially change its result.
+
+## Read the comparison
+
+For every candidate:
+
+1. Confirm its spend and days live are sufficient for the decision.
+2. Read the outcome metric and its efficiency measure together.
+3. Compare candidates under compatible campaign objective, audience, placement, format, and delivery volume.
+4. Look for consistency, not one extreme row.
+5. Open the detail before carrying the learning forward.
+
+An image with high ROAS on very little spend is a lead for investigation. It is not automatically a reusable rule.
+
+## Inspect creative detail
+
+Open a row to inspect the selected creative without losing the comparison frame.
+
+The detail can include:
+
+- A time-series chart for the selected metric
+- Performance totals for the current date window
+- **Age**, **Gender**, **Country**, **Platform**, and **Audience** breakdown tabs when data is available
+- **Where live** placement and delivery context
+- Identifying labels and metadata
+- Dynamic-creative or delivery-diagnostic detail when the linked ad supports it
+
+Use the breakdown tabs to test a specific explanation. For example, if one creative appears stronger, check whether that difference is concentrated in one country, platform, or audience rather than general across delivery.
+
+### Confirm the asset identity
+
+Before reuse, verify:
+
+- Visual and format
+- Creative name and linked ad identity
+- Campaign and ad set under which it served
+- Whether a resized or dynamic variant is represented
+- Current status and where it remains live
+
+Continue to [Creative Assets](/product-guides/creatives-assets) when you need the reusable file, copy, usage roster, or per-ad status controls.
+
+## Turn evidence into a new direction
+
+Carry a creative learning into [Briefs](/product-guides/creatives-briefs) as a hypothesis with evidence:
+
+```text
+In Meta prospecting, 2026-07-01 through 2026-07-14, square product-in-use
+images with a proof-led hook produced the strongest qualified result among
+ads above our minimum spend. Test whether the proof-led hook or the product-in-use
+composition explains the change; keep the audience, offer, and destination fixed.
+```
+
+This preserves the conditions under which the result appeared. Avoid converting a single creative result into a permanent Brand Profile fact or Skill until it repeats under comparable conditions.
+
+## Completion check
+
+- Meta is connected and its creative sync covers the selected dates.
+- The date, status, format, ratio, campaign, ad set, spend, and days-live filters are recorded.
+- Every comparison uses the same row grain.
+- Candidates have compatible delivery conditions and sufficient evidence.
+- The detail view confirms the creative identity and where it served.
+- Breakdowns were used to test, not merely decorate, the explanation.
+- The resulting brief states the observed fact, hypothesis, controlled variables, and next test separately.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Setting up your creatives does not finish">
+    Open Meta in Integrations and inspect authorization, selected ad account, and sync coverage. Return after the import completes; do not treat placeholders as zero delivery.
+  </Accordion>
+  <Accordion title="Creative sync needs attention">
+    Repair the named Meta connection or sync issue, then retry the affected source. Keep the original date frame so the refreshed result can be compared directly.
+  </Accordion>
+  <Accordion title="A known creative is missing">
+    Reset status, format, ratio, campaign, ad set, spend, days-live, search, and date filters. Confirm the creative actually delivered from the connected Meta account in that window.
+  </Accordion>
+  <Accordion title="Grouped and ad-level numbers differ">
+    Check **Split by ad**. The grouped row can represent delivery across several ads; the split view shows each ad separately. Choose one grain for the question.
+  </Accordion>
+  <Accordion title="The detail shows an unexpected audience result">
+    Confirm the date window and parent campaign/ad set, then inspect the relevant **Audience**, **Country**, **Platform**, **Age**, or **Gender** tab. A concentrated segment can explain the aggregate without applying to every viewer.
+  </Accordion>
+</AccordionGroup>
+
+## Continue
+
+<CardGroup cols={2}>
+  <Card title="Find the reusable asset" icon="images" href="/product-guides/creatives-assets">
+    Inspect the file, copy, labels, usage, and linked ad states.
+  </Card>
+  <Card title="Write the next brief" icon="book-open" href="/product-guides/creatives-briefs">
+    Turn a supported learning into controlled production direction.
+  </Card>
+</CardGroup>

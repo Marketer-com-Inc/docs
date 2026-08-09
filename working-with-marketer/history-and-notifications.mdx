@@ -1,111 +1,169 @@
 ---
 title: "History and notifications"
 sidebarTitle: "History and notifications"
-description: "Find prior workspace conversations, review agent receipts and alerts, and return to unresolved decisions."
+description: "Reopen prior conversations, follow notification receipts to their source, and reconstruct what happened across a workspace."
 ---
 
-Marketer keeps different kinds of operational records separate. **Chat history** preserves workspace conversations. **Notifications** collects agent receipts, alerts, and approval-related updates. **Awaiting action** holds decisions that are still unresolved.
+Marketer keeps conversation context, execution history, alerts, and unresolved decisions in separate records. Use each for the question it is designed to answer:
 
-Choosing the right record helps you distinguish past context, current status, and work that still needs a person.
+- **Chats and tasks → Chats:** what your team asked, attached, and decided.
+- **Activity:** what work ran and what state it reached.
+- **Notifications:** what update, alert, or receipt Marketer sent.
+- **Awaiting action:** what still needs a human decision.
+- Product surfaces: what exists now.
 
-## Chat history
+## Use Recents for a quick return
 
-**Chat history** lists conversations in the current workspace. A thread shows its title, most recent activity, and, when available, who started it. Archived threads are marked in the list.
+Home shows a short **Recents** list in the sidebar alongside current work and workspace sections.
 
-Use it to:
+Select a recent row when you recognize the conversation and want to continue it. Open **Chats and tasks → Chats** when the needed thread is older, archived, or not obvious from its shortened title.
 
-- Reopen a conversation and continue from its established context.
-- Review the request, attachments, and decisions behind a result.
-- Hand work between workspace members without rebuilding the full prompt.
-- Start a new thread when an old context no longer fits the objective.
+## Reopen a conversation from chat history
 
-<Note>
-  Threads belong to the workspace context. Before adding sensitive information, make sure it is appropriate for the people who can access that workspace.
-</Note>
+Open **Chats and tasks → Chats**. Each row can show:
 
-### Continue or start over
+- The thread title
+- An **Archived** label when the thread is archived
+- Who started it, when that information is available
+- The time of its most recent activity
 
-Continue an existing thread when the new work depends on its attachments, definitions, or prior decision. Start a new thread when:
+Select the row to reopen the complete conversation.
 
-- The objective changes materially.
-- You need a different authority boundary.
-- The prior thread contains conflicting date ranges or account scopes.
-- You want a clean handoff or reusable record for a separate project.
+### Reconstruct the decision
 
-When continuing a long thread, restate the current decision, measurement window, and constraints. Do not assume an older campaign state or product fact is still current.
+Read the thread in this order:
 
-## Notifications
+1. Find the first turn that defined the deliverable.
+2. Inspect the campaigns, briefs, creatives, products, or files attached to that turn.
+3. Identify later messages that changed the scope, dates, authority, or acceptance criteria.
+4. Open any task proposal and note whether it was dismissed, edited, or approved.
+5. Open the final task result or output link.
+6. Confirm the current state in the product surface that owns the result.
 
-**Notifications** is the workspace center for agent receipts, alerts, and approval-related updates. Use it to understand what Marketer reported and to follow a link back to the relevant work.
+Continue the same thread only when the new request depends on those established records and decisions. Restate any time-sensitive scope before continuing.
 
-The feed can help you find:
+Start a new conversation when the objective, connected account, authority boundary, or source-of-truth record has changed enough that old context could mislead the result.
 
-- A receipt that a task or workflow produced an update.
-- A performance or operational alert.
-- A notice related to a proposal or approval.
-- A link back to the record, conversation, or task that provides context.
+## Read Notifications as receipts
 
-You can mark notifications as read after you have reviewed them. Reading a notification does not approve an action, resolve a task, or confirm a provider-side change.
+Open **Notifications** from Quick actions. The page groups items by notification type and shows a count for each group.
 
-## Pick the right record
+A notification row can contain:
 
-| Question | Open |
-| --- | --- |
-| “What did we ask and decide?” | **Chat history** |
-| “What work is running or finished?” | **Activity** or the task detail |
-| “What update or alert did Marketer send?” | **Notifications** |
-| “What still needs a human decision?” | **Awaiting action** |
-| “What is the current campaign, creative, or workflow state?” | The owning product surface |
+- A severity indicator
+- A title and short body
+- The time it was created
+- An unread marker
+- A link to the source record when the notification has a destination
 
-## Review an operational update
+Select a linked row to open its conversation, task, approval, workflow, or product record. A row without a link is a static receipt; use its title and time to find the related record in **Activity** or the owning product surface.
+
+### Manage the feed
+
+- Select **Mark visible as read** to mark the notifications currently loaded on the page as read.
+- Select **Load older** when more history is available.
+- Use unread state to track whether you have seen a receipt—not whether the underlying work is complete.
+
+Reading a notification does not approve a proposal, resolve a waiting task, or confirm a connected-account change.
+
+## Follow an update to its source
+
+Use the same sequence for an alert, completion receipt, or approval notice:
 
 <Steps>
-  <Step title="Open the source record">
-    Follow the notification or history item to its conversation, task, or product record. A notification summary is not a replacement for the underlying detail.
+  <Step title="Read the notification type and time">
+    Determine whether the row describes an alert, agent receipt, approval event, or budget-related update. Compare its time with the decision window you care about.
   </Step>
-  <Step title="Confirm recency">
-    Compare the update time with the data freshness and current provider state. Older notifications can remain useful history without describing the current situation.
+  <Step title="Open the linked record">
+    Follow the row when it is clickable. If it is not, search **Activity** by the relevant name or return to the product surface named in the notification.
   </Step>
-  <Step title="Separate receipt from decision">
-    Determine whether the item reports completed work, recommends a next step, or requests approval. Only the last case belongs in **Awaiting action**.
+  <Step title="Inspect the full state">
+    Read the task steps, result, proposal diff, workflow run, or product record. Do not make a decision from the notification body alone.
   </Step>
-  <Step title="Close the loop">
-    Review the result, make any required decision, and verify the resulting state in the product surface that owns it.
+  <Step title="Resolve the next action">
+    Answer a waiting question in chat, decide a proposal in **Awaiting action**, or open the output in its owning surface.
+  </Step>
+  <Step title="Verify the current object">
+    Confirm the present campaign, creative, brief, workflow, or provider state. A historical receipt remains valid history even after the object changes again.
   </Step>
 </Steps>
 
-## Notification habits
+## Choose the correct record
 
-- Keep high-signal alerts and approval updates visible.
-- Review notification preferences when the feed is too noisy or misses important categories.
-- Do not use unread state as a project-management status.
-- Use the workflow run history for delivery and execution questions.
-- Use chat titles and clear final summaries to make future search easier.
+| Question | Start in | Then verify in |
+| --- | --- | --- |
+| What did we ask and which context did we attach? | **Chats and tasks → Chats** | The reopened conversation |
+| Is the task still working, waiting, or finished? | **Activity** or the task card | The selected run detail |
+| Which specialist produced this output? | **Agents** | The specialist detail and output link |
+| Why did I receive this alert or receipt? | **Notifications** | The linked task, workflow, or product record |
+| What still needs my decision? | **Awaiting action** | The proposal or paused-run detail |
+| Did a campaign value actually change? | The task or approval receipt | **Campaigns** and, when needed, the provider |
+| Where is the generated creative? | The completed run | **Studio** or **Assets** |
+| Did a recurring workflow execute? | The notification or **Activity** | **Workflow** run history and its output |
+
+## Distinguish similar-looking events
+
+### Response ready versus task completed
+
+A direct chat response can be ready while a longer task is still running. Open the task card and use its lifecycle state as the execution record.
+
+### Task completed versus action applied
+
+A task can complete by producing an analysis, artifact, or proposal. Confirm a live change separately in **Awaiting action**, the owning product surface, and the provider when appropriate.
+
+### Notification read versus decision resolved
+
+Marking a notification read changes the feed receipt only. A pending approval remains in **Awaiting action** until an authorized person decides it.
+
+### Archived versus deleted
+
+An archived conversation remains visible in **Chats and tasks → Chats** with an **Archived** label and can still be reviewed. Treat it as historical context; restate current facts before continuing old work.
+
+## Complete a handoff from history
+
+When another workspace member needs to continue prior work, send them to one thread or task rather than a collection of screenshots. In the latest message, summarize:
+
+1. The current objective.
+2. The source records and dates in scope.
+3. What Marketer completed.
+4. What remains waiting or unverified.
+5. The next decision and its acceptance criteria.
+
+They can then inspect the original attachments, proposal, task steps, and output without rebuilding the context from memory.
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="A recent thread is missing">
-    Confirm the active workspace and check whether the thread is archived. If another workspace member created it, make sure you are looking in the same workspace context.
+  <Accordion title="A recent conversation is missing">
+    Confirm the active workspace, then open **Chats and tasks → Chats** and look for an **Archived** row. A thread created in another workspace will not appear in the current workspace's history.
   </Accordion>
-  <Accordion title="A notification does not explain what happened">
-    Open the linked task, conversation, or product record. Look for the detailed result, source, and current state before drawing a conclusion from the summary text.
+  <Accordion title="A notification does not explain the outcome">
+    Open its link, or use its title and time to locate the related run in **Activity**. Read the underlying task or product record before drawing a conclusion.
   </Accordion>
-  <Accordion title="A notification is read but the decision is still pending">
-    Read state and approval state are separate. Open **Awaiting action** and resolve the proposal through its available controls.
+  <Accordion title="The notification is read but the approval remains">
+    Read state and decision state are separate. Open **Awaiting action** and use the approval controls on the pending item.
   </Accordion>
-  <Accordion title="The feed is too noisy">
-    Review workspace notification settings and recurring workflows. Keep the channels and categories that correspond to decisions your team will actually make.
+  <Accordion title="An old result no longer matches the product">
+    Compare the result completion time with current source freshness and later activity. Preserve it as history, then rerun the analysis with an explicit current period when needed.
+  </Accordion>
+  <Accordion title="The feed has too many low-value receipts">
+    Review workspace notification settings and recurring workflows. Keep the notifications tied to decisions your team will review, and use Activity for broad execution history.
   </Accordion>
 </AccordionGroup>
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Review unresolved decisions" icon="inbox" href="/working-with-marketer/awaiting-action">
-    Understand what requires approval and how to verify the result.
+  <Card title="Inspect task history" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Read the run state, steps, outputs, and Activity record behind a receipt.
+  </Card>
+  <Card title="Resolve pending work" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Move from an approval notice to the exact recorded decision.
+  </Card>
+  <Card title="Rebuild the request context" icon="messages" href="/working-with-marketer/chat-and-context">
+    Continue the thread with the same records, window, and authority boundary.
   </Card>
   <Card title="Monitor recurring work" icon="repeat" href="/product-guides/workflows">
-    Use workflow configuration and run history as the operational source of truth.
+    Use workflow configuration and run history as the execution source of truth.
   </Card>
 </CardGroup>

@@ -1,68 +1,125 @@
 ---
 title: "Run your first task"
 sidebarTitle: "First task"
-description: "Ask Marketer a focused performance question without changing live campaigns."
+description: "Build a grounded launch plan, follow its visible work, and verify the result without changing a live account."
 ---
 
-Start with a question that has a verifiable answer. A narrow, read-only request helps you learn how Marketer selects data and explains its work.
+Your first task should produce one useful artifact without changing an external account. This flow creates a launch plan from approved workspace context, follows the work while it runs, and verifies the completed plan before any execution is proposed.
 
-## Use this first task
+## Define the finish line
 
-Your goal is to identify the largest performance change in a connected ads account across two completed periods.
+The task is complete when Marketer returns:
+
+- One evidence-led positioning direction
+- A focused campaign sequence
+- A launch checklist
+- The workspace sources and connected account context it used
+- Clear assumptions or missing evidence
+- Confirmation that no campaign, creative, budget, or provider setting changed
+
+Before you start, confirm that you are in the intended workspace, the relevant ads provider is connected, and **Knowledge** contains approved brand or product evidence. Keep the first run at plan level.
+
+## Submit the request
+
+<Frame caption="Start on Home, where performance context and the request composer share one working surface.">
+  <img src="/assets/product-flows/home-overview.png" alt="Marketer Home canvas with performance overview, request composer, current work, daily summaries, plans, and reports" />
+</Frame>
 
 <Steps>
   <Step title="Open Home">
-    Go to [Home](https://app.marketer.com/dashboard) in the workspace that owns the connected account.
+    Go to [Home](https://app.marketer.com/dashboard) and confirm the active workspace before you submit anything.
   </Step>
-  <Step title="Add context only if it narrows the task">
-    To focus on one campaign, enter `@` in the composer and select that campaign. Leave context unattached when you want an account-level answer.
+  <Step title="Attach exact context when needed">
+    Enter `@` and select the exact product, brief, campaign, or creative when it is part of the request. Saved Knowledge is available as workspace context; use the plus menu and select **Add files or photos** for a one-off document.
   </Step>
   <Step title="Send a bounded request">
-    Paste this request and replace the bracketed source if needed:
+    Paste the request below and replace the bracketed details.
 
     ```text
-    Using only [Meta Ads or Google Ads], compare the last 7 complete days
-    with the previous 7 complete days. Show spend, purchases, CPA, and ROAS,
-    then identify the largest material change. Name the account, source,
-    timezone, and exact dates. Separate measured facts from your interpretation.
-    Do not create, edit, pause, or launch anything.
+    Build a launch plan for [product or offer] around our strongest proven
+    differentiator. Use approved workspace Knowledge and only the connected
+    [Meta Ads or Google Ads] context for [provider account]. Return one
+    positioning direction, a focused campaign sequence, and a launch checklist.
+    Name the evidence you used, separate facts from assumptions, and flag missing
+    context. Keep everything as analysis and a plan. Do not create, edit, publish,
+    pause, or launch anything.
     ```
   </Step>
-  <Step title="Let the result finish">
-    Marketer may read more than one set of metrics to answer the question. Keep the task open until the result, source context, and any limitation are visible.
-  </Step>
-  <Step title="Ask one verification follow-up">
-    Use this follow-up when the answer is complete:
-
-    ```text
-    Recheck the largest change. Show the numerator and denominator behind
-    the percentage change, and tell me whether either period is incomplete.
-    ```
+  <Step title="Answer only required clarification">
+    If Marketer asks for the product, audience, offer, account, or evidence boundary, answer that gap without widening the task into production work.
   </Step>
 </Steps>
 
-## What Marketer should return
+## Follow the active work
 
-A usable result includes:
+Longer work exposes its current step and supporting activity.
 
-- The source and account scope
-- Exact, non-overlapping date ranges
-- Values for each requested metric, or a clear reason a metric is unavailable
-- The calculation behind the reported change
-- A distinction between observed data and interpretation
-- No campaign mutation
+<Frame caption="An active launch-plan task shows completed work, the current step, and the evidence being searched.">
+  <img src="/assets/product-flows/task-progress.png" alt="Marketer launch-plan task in progress with searched sources, one completed step, one active step, and remaining work" />
+</Frame>
 
-If the answer mixes sources, omits dates, or uses a partial period, narrow the request and run it again.
+While the task is active:
 
-<Tip>
-  Ask one analytical question per task until the evidence is clear. You can turn the result into a brief, report, or campaign plan in a separate follow-up.
-</Tip>
+1. Confirm the original request still says **plan** and **no changes**.
+2. Read the latest meaningful step rather than treating an interim sentence as the result.
+3. Resolve a named connection, permission, or context gap before retrying.
+4. Keep the existing task open or return through its task link instead of submitting a duplicate.
+5. Wait for a completed result before carrying the plan into another surface.
 
-## If the task cannot run
+## Review the completed plan
 
-- A missing connection: open **Integrations** and connect or reconnect the named source.
-- The wrong account: return to the integration and update the account selection.
-- No recent rows: use a date range covered by the source, then investigate the sync gap.
-- An unclear result: restate the source, scope, dates, metrics, and read-only constraint.
+<Frame caption="The completed task returns a launch-plan receipt, its finished steps, and optional follow-up directions.">
+  <img src="/assets/product-flows/task-result.png" alt="Completed Marketer launch-plan task with positioning guidance, three finished steps, and optional follow-up actions" />
+</Frame>
 
-Continue to [review your result](/get-started/review-result).
+Treat the plan as reviewable only when you can answer these questions:
+
+| Check | What to verify |
+| --- | --- |
+| Scope | The intended product, audience, offer, workspace, and provider account |
+| Evidence | The approved Knowledge or connected source behind the differentiator |
+| Positioning | One clear promise supported by a customer outcome or product proof |
+| Sequence | The proposed campaign stages, channels, or messages form a coherent path |
+| Checklist | Owners, inputs, tracking, creative, destination, budget boundary, and review steps are explicit |
+| Limitations | Assumptions, missing evidence, stale context, and unresolved decisions are named |
+| Action state | The output is a plan; no connected-account or workspace change is reported as complete |
+
+Suggested follow-up buttons are new requests you may choose. They do not mean copy, creative, or a campaign already exists.
+
+## Recognize the execution branch
+
+If you ask Marketer to continue from planning into multi-step production work, it can present a proposal before that work begins.
+
+<Frame caption="A separate Creative Pipeline proposal exposes the execution steps and waits for your decision.">
+  <img src="/assets/product-flows/task-proposal.png" alt="Marketer Creative Pipeline proposal with seven planned steps and Dismiss, Edit, and Approve and Run controls" />
+</Frame>
+
+- Choose **Dismiss** when the displayed work should not continue.
+- Choose **Edit** when the outcome, inputs, steps, or authority boundary are wrong.
+- Choose **Approve & Run** only when you intentionally want the displayed work to run under the applicable workspace policy.
+
+For this first task, do not approve the proposal. Keep the launch plan as the reviewed output. A proposal is not proof that its steps ran or that an external account changed.
+
+## Verify the central claim
+
+Send this follow-up in the same conversation:
+
+```text
+Audit this launch plan before I use it. For the central differentiator, name
+the exact supporting source and distinguish quoted or measured facts from your
+interpretation. List every assumption and missing input. Confirm the product,
+audience, offer, workspace, provider account context, and that no campaign,
+creative, budget, or provider setting changed.
+```
+
+Then follow the matching branch:
+
+| Result state | Continue with |
+| --- | --- |
+| Evidence and scope reconcile | [Review your result](/get-started/review-result), then carry the accepted plan into one downstream flow. |
+| The differentiator is unsupported | Correct or add the authoritative Knowledge source, then run a new task. |
+| The product, account, or audience is wrong | Attach the exact record and regenerate the plan. |
+| Important inputs are missing | Keep the plan provisional and supply only the missing evidence. |
+| The result creates work instead of planning it | Keep the proposal unresolved, edit it back to plan level, or dismiss it. |
+
+Do not move into creative production or campaign setup until the plan’s evidence, scope, and action state are clear.

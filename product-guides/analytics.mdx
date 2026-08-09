@@ -1,141 +1,247 @@
 ---
 title: "Analytics"
 sidebarTitle: "Analytics"
-description: "Use Performance, Creative performance, Reports, and Live view with clear source, date, attribution, currency, and freshness context."
+description: "Move from a defined measurement frame to a reviewed finding, creative diagnosis, live snapshot, or recurring report."
 ---
 
-**Analytics** helps you understand marketing results across the data sources connected to your workspace. It keeps four related surfaces together: **Performance**, **Creative performance**, **Reports**, and **Live view**.
+**Analytics** turns connected marketing and commerce data into a reviewable measurement surface. The workflow is not “open a chart and read a number.” You first establish the source, dates, comparison, attribution, currency, and freshness; then you move from the overview to the dimension that can explain the change.
 
-The number on a card or chart is only meaningful with its measurement context. Before you compare, explain, or act, confirm the source, date range, attribution view, currency, reporting timezone, and freshness state.
+Open [Analytics](https://app.marketer.com/dashboard/analytics?view=performance&channel=all) and confirm the active workspace.
 
-## Choose an Analytics surface
+## Before you begin
 
-<CardGroup cols={2}>
-  <Card title="Performance" icon="chart-line">
-    Review outcomes, spend, efficiency, and trends for the selected channels and window.
-  </Card>
-  <Card title="Creative performance" icon="images">
-    Compare creative results while preserving the same date and measurement context.
-  </Card>
-  <Card title="Reports" icon="file-chart-column">
-    Open the reporting area in Workflows to configure and monitor supported recurring reports.
-  </Card>
-  <Card title="Live view" icon="activity">
-    Use the current interactive view for the selected channel and measurement settings, with connection and freshness context visible.
-  </Card>
-</CardGroup>
+- Connect the source that owns the question: Meta Ads, Google Ads, Google Analytics, Shopify, or OpenAI Ads **(Beta)**.
+- Let the relevant source finish its initial import for the date range you need.
+- Know the business outcome and comparison you are testing.
+- Confirm the workspace reporting timezone and display currency.
+- Use a healthy Triple Whale **(Beta)** connection only when you intentionally need its eligible attribution view.
 
-## Establish the measurement contract
+<Frame caption="Performance connects headline outcomes to the sales trend and supporting breakdowns for the selected measurement frame.">
+  <img src="/assets/product-flows/analytics-overview.png" alt="Analytics Performance with cards for total sales, ad spend, MER, and orders above a 30-day total-sales trend and supporting breakdowns" />
+</Frame>
 
-Use this checklist before reading the result:
+## Choose the surface that owns the next question
 
-| Context | Question to answer |
-| --- | --- |
-| Workspace and account | Which brand and connected account does this view represent? |
-| Channel | Is the view blended or scoped to one provider? |
-| Date range | Are the dates complete, and what comparison period is active? |
-| Reporting timezone | Where do day boundaries fall? |
-| Currency | Which display currency applies, and are source amounts converted? |
-| Attribution source | Is the view using platform attribution or an eligible connected attribution source? |
-| Attribution model | Which model is applied when model controls are available? |
-| Freshness | Have all contributing sources completed the relevant sync? |
+| Surface | Enter when… | Leave with… |
+| --- | --- | --- |
+| **Performance** | You need outcomes, spend, efficiency, trends, and channel or commerce breakdowns | A measured change and the dimension most likely to explain it |
+| **Reports** | The same review should recur | A draft or live report with a schedule, destination, preview, and run history |
+| **Creatives** | The question is about delivered creative | An asset-level comparison under one fixed date and source frame |
+| **Live view** | You need the current cross-source snapshot | A timestamped view with source availability and freshness shown |
 
-<Warning>
-  Do not copy a metric into a decision without its measurement contract. A change in attribution source, timezone, or data freshness can move the number even when customer behavior did not change.
-</Warning>
+Select **Analytics** to open **Performance**. **Reports** appears beneath Analytics in the main navigation. **Creatives** is a separate performance surface, and **Live view** opens from the Analytics header.
 
-## Choose workspace conversion metrics
+## Establish the measurement frame
 
-When the feature is available, open **Settings → Conversion metrics** to choose the non-purchase conversions reported beside spend and purchases in Analytics. The picker offers standard conversion actions and uses selected Meta Ads, Google Ads, and OpenAI Ads **(Beta)** account data to add workspace-specific options and recent-volume context. Examples include leads, sign-ups, bookings, or a named custom conversion.
+The controls at the top are part of the result. Record them with every decision-driving number.
 
-You can add a metric, give it a workspace display name, reorder the list, and mark one as the headline metric. The picker shows recent volume when it is available so you can distinguish similar provider action names. Do not add two labels for the same underlying conversion or add together cards that represent different definitions.
-
-<Note>
-  Conversion metrics may not be available yet. If Settings shows that state, the Analytics cards are not available in that workspace. When enabled, the cards use platform attribution and are not shown while Triple Whale **(Beta)** attribution is selected. A missing conversion value is not automatically zero.
-</Note>
-
-## Analyze a performance change
+<Frame caption="The date picker combines complete presets with an exact custom range before analysis begins.">
+  <img src="/assets/product-flows/analytics-date-controls.png" alt="Analytics date picker with Yesterday through Last 12 months presets, a custom range option, a two-month calendar, the selected range, Cancel, and Apply" />
+</Frame>
 
 <Steps>
-  <Step title="Select the business window">
-    Choose a period long enough to support the decision and prefer complete days for period comparisons. Use the same duration for the comparison unless you have a reason not to.
+  <Step title="Choose a complete date window">
+    Open the date control and choose **Yesterday**, **Last 7 days**, **Last 30 days**, a longer preset, or **Custom range**. The calendar stops at the latest complete day in the workspace reporting timezone. For a custom range, select both boundaries and choose **Apply**.
   </Step>
-  <Step title="Set source and channel">
-    Choose the channel view and attribution source that match the question. If you switch attribution views, treat the result as a new measurement frame rather than a continuation of the old chart.
+  <Step title="Choose the chart resolution">
+    Select **Daily**, **Weekly**, **Monthly**, or **Yearly**. Use a resolution that has enough observations for the window; a yearly resolution does not make a short window more informative.
   </Step>
-  <Step title="Start with outcomes">
-    Read spend and the primary business result first. Then use efficiency, volume, and trend metrics to locate where the change occurred.
+  <Step title="Choose a comparison">
+    Keep **Comparison off** for an absolute read, or choose **Previous period**, **Year over year**, or **Custom comparison**. For a custom comparison, enter complete start and end dates before using the result.
   </Step>
-  <Step title="Move to the responsible dimension">
-    Use Creative performance for asset-level evidence. Use Campaigns for the exact advertising object. Use Products when the question depends on Shopify catalog or sales context.
+  <Step title="Choose the channel">
+    Use **All channels** for the blended overview or choose one connected source. A disconnected channel routes you toward its integration instead of supplying fallback data.
   </Step>
-  <Step title="Record the explanation">
-    State observed changes separately from hypotheses. Name the context fields above and identify any source that is still syncing or incomplete.
+  <Step title="Confirm accounts and currency">
+    Open **Accounts** to check which provider resources are represented. Read the currency label; changing workspace display currency happens in Branding settings, while source-currency disclosures remain part of the cards.
+  </Step>
+  <Step title="Choose attribution when available">
+    For eligible Meta or Google views, use **Platform** unless the question specifically requires a healthy Triple Whale **(Beta)** view. When Triple Whale **(Beta)** is selected, also record its attribution model. Treat the switch as a new measurement frame.
   </Step>
 </Steps>
 
-## Common outcomes
+<Warning>
+  Never compare two figures that differ in source, account, date boundary, timezone, currency, attribution source, attribution model, or entity grain without naming that difference.
+</Warning>
 
-### Weekly performance review
+## Analyze a performance change
 
-Use a stable date and attribution convention every week. Compare the current period with the previous equivalent period, identify the largest contributors, and carry only supported next steps into Campaigns or Creatives.
+### 1. Start with the business result
 
-### Creative diagnosis
+Read the outcome and spend before secondary ratios. Depending on the selected channel, the first row can include cards such as total sales, ad spend, MER, orders, purchases, CPA, or ROAS. Use **Manage metrics** to show only the cards relevant to this review.
 
-Open **Creative performance** and compare assets under the same window and channel context. Consider delivery volume before declaring a winner or loser. Then open the asset in Creatives when you need to inspect or reuse it.
+### 2. Read the trend, then the composition
 
-### Recurring report
+Use this order:
 
-Open **Reports** to move into Workflows. Configure an available report, destination, schedule, and preview where the workflow supports them. Review run history after activation rather than assuming delivery from the configuration alone.
+1. Confirm whether the primary result changed versus the selected comparison.
+2. Check whether spend moved in the same direction.
+3. Inspect the time series for when the change started.
+4. Move to the contributing breakdown: channel, campaign, search term, landing page, product, country, device, or another card shown for that source.
+5. Separate the observed contributor from the reason it may have changed.
 
-### Current monitoring
+Do not infer causality from a correlated chart. A campaign can coincide with a sales change without being its cause.
 
-Use **Live view** when you want the current interactive analytics state. Keep the connection and freshness indicators in view, especially during a sync or immediately after changing the selected source or window.
+### 3. Move to the owning object
 
-## Ask for an explanation
+| Finding | Continue in | What to verify there |
+| --- | --- | --- |
+| One campaign drives the change | Campaigns | Exact provider object, status, budget, and child structure |
+| A creative appears responsible | **Creatives**, then **Creative Assets** | Delivery volume, asset identity, usage, and comparable conditions |
+| A product leads or falls | Products | Shopify product, variants, price, inventory, and product sales window |
+| A destination or tracking path is suspect | Integrations | Connected resource, authorization, sync coverage, and provider state |
+| The explanation needs cross-surface evidence | Marketing Agent | Attached object, exact measurement frame, facts versus hypotheses |
 
-Attach the relevant campaign, creative, or product and give the Marketing Agent the full measurement contract:
+### 4. Record the finding
 
-> Explain the change in performance for the attached campaign. Use the last 14 complete days versus the prior 14, platform attribution, and the workspace reporting currency. Cite the largest metric contributors, separate facts from hypotheses, and recommend one follow-up analysis. Do not change the account.
+A reusable finding includes:
 
-This makes the answer reproducible. A prompt such as “Why is ROAS down?” leaves the account, dates, source, and comparison undefined.
+- Workspace and provider account
+- Current and comparison date ranges
+- Reporting timezone and currency
+- Channel and attribution source/model
+- Primary result, spend, and the largest contributing breakdown
+- Freshness or partial-coverage disclosure
+- Observed fact, hypothesis, and next verification step as separate statements
 
-## Review data quality
+## Handle syncing and partial coverage
 
-- Check connection status before treating an empty chart as zero activity.
-- Treat a syncing source as incomplete for the affected window.
-- Compare like currencies and document any conversion context.
-- Account for different provider attribution rules when comparing platform reports.
-- Avoid summing metrics that use incompatible attribution or entity grain.
-- Re-run a decision-grade analysis when freshness changes materially.
+Analytics can render the page structure while one or more providers are still importing the requested range.
+
+<Frame caption="During an import, Analytics names each contributing source and keeps affected cards in a syncing state until usable coverage arrives.">
+  <img src="/assets/product-flows/analytics-syncing.png" alt="Analytics Data is syncing panel for Meta Ads, Google Ads, Google Analytics, and Shopify above syncing placeholders in the metric cards" />
+</Frame>
+
+When this state appears:
+
+1. Read which providers are named in **Data is syncing**.
+2. Keep the selected date window unchanged while coverage completes.
+3. Do not translate a placeholder, blank, or missing value into zero.
+4. Use unaffected source cards only if their own freshness and coverage are clear.
+5. Re-run the review after the sync state clears; record that later generation as the decision-grade result.
+
+If a card says freshness is unavailable or coverage is partial, the value can still be useful for orientation, but the disclosure must travel with it.
+
+## Compare creative performance in Creatives
+
+Open [Creatives](https://app.marketer.com/dashboard/creatives) when the campaign-level finding points to the asset.
+
+<Steps>
+  <Step title="Carry over the date window">
+    Use the same complete dates as the campaign or channel diagnosis. The Creatives performance view is backed by Meta delivery rows, so confirm Meta is connected and covers the requested window.
+  </Step>
+  <Step title="Compare like with like">
+    Compare assets that served under compatible objectives, audiences, placements, and delivery volumes. A high result on minimal spend is not automatically a winner.
+  </Step>
+  <Step title="Open the creative detail">
+    Inspect the selected creative’s performance, breakdowns, where it is live, and identifying metadata. Confirm that similarly named or resized assets are not being conflated.
+  </Step>
+  <Step title="Continue in Creative Assets or Briefs">
+    Open the asset when you need its creative detail or reuse context. Carry the supported learning into a new or existing brief; do not convert one result into a permanent brand rule without repeated evidence.
+  </Step>
+</Steps>
+
+## Ask the Marketing Agent from the current view
+
+Give the agent the same measurement frame that is visible in Analytics and attach the responsible campaign, creative, or product when possible.
+
+```text
+Using the attached campaign, explain the change from 2026-07-01 through
+2026-07-14 versus 2026-06-17 through 2026-06-30. Use the Meta provider
+account shown in Analytics, the workspace reporting timezone and currency,
+and Platform attribution. Cite the largest contributors, separate facts from
+hypotheses, and recommend one follow-up analysis. Do not change the account.
+```
+
+Review the answer against the cards. If the agent uses a different window, account, or attribution source, correct the scope before using the explanation.
+
+## Turn the view into a recurring report
+
+Select **Save as report** after the current view is correct. Marketer opens the Marketing Agent with the current Analytics context, including the view, channel, dates, comparison, currency, and enabled metrics.
+
+<Steps>
+  <Step title="Review the seeded request">
+    Confirm that the prompt names the current dashboard context and asks for a draft and real-data preview before activation.
+  </Step>
+  <Step title="Choose cadence and delivery">
+    Set the available schedule and reporting timezone. Choose Slack, email, or both when those destinations are available and configured.
+  </Step>
+  <Step title="Review the preview">
+    Compare its metrics and date logic with Analytics. A preview should preserve the measurement frame rather than silently substitute another source.
+  </Step>
+  <Step title="Activate deliberately">
+    Keep the report as a draft until the schedule and recipients are correct. When it becomes **Live**, open it under **Reports** and inspect the next-run state.
+  </Step>
+  <Step title="Verify a delivered run">
+    Open run history after the first scheduled or manual run. Distinguish a successful data run from successful Slack or email delivery.
+  </Step>
+</Steps>
+
+## Use Live view
+
+Open **Live view** from the Analytics header when you need a current snapshot rather than a complete-day performance review. The view can combine current traffic, commerce, and recent daily context where those sources are connected.
+
+<Frame caption="Live view combines a current visitor map, traffic and commerce metrics, country context, and an Ask Marketer action.">
+  <img src="/assets/product-flows/live-view.png" alt="Analytics Live view with visitor map, current traffic and commerce metrics, country breakdown, and Ask Marketer action" />
+</Frame>
+
+- Read the snapshot timestamp before sharing it.
+- Treat a retained or degraded source as stale even when its last usable value remains visible.
+- Use the available retry when a source read fails.
+- Choose **Ask Marketer** with the current snapshot context when you need an explanation.
+- Return to **Performance** for complete-day comparisons and attribution-sensitive decisions.
+
+## Choose workspace conversion metrics
+
+When available, open **Settings → Conversion metrics** to choose non-purchase conversions displayed beside spend and purchases. You can select available provider conversion actions, give them workspace display names, reorder them, and choose a headline metric.
+
+<Note>
+  Some workspaces show “Conversion metrics aren’t available yet.” In that state, do not document or infer cards that are not present. When available, these cards use platform attribution and are not shown with Triple Whale **(Beta)** attribution selected.
+</Note>
+
+Avoid adding duplicate labels for the same provider action or combining conversions with different definitions.
+
+## Completion checklist
+
+- The workspace and connected accounts are correct.
+- Current and comparison windows use complete, intended dates.
+- Timezone, currency, channel, resolution, attribution source, and attribution model are recorded.
+- Every decision-driving source has usable coverage or an explicit limitation.
+- The primary result and spend are reviewed before ratios and breakdowns.
+- The responsible campaign, creative, product, or destination was verified in its owning surface.
+- Facts, hypotheses, and recommended next steps are separated.
+- A recurring report, if created, produced and delivered at least one verified run.
 
 ## Troubleshooting
 
 <AccordionGroup>
   <Accordion title="Analytics is empty">
-    Confirm that at least one relevant data source is connected, the selected channel matches it, the date range contains activity, and the initial sync has completed. An unavailable read should not be interpreted as a true zero.
+    Confirm the selected channel is connected, the account is included, the date range contains activity, and the initial import completed. Try a complete recent preset before assuming the source has no data.
   </Accordion>
-  <Accordion title="A metric does not match the ad platform">
-    Align the exact account, dates, timezone, currency, attribution source, attribution model, and provider reporting rules. If the contexts match and the difference remains, record both values and the last sync time before escalating.
+  <Accordion title="A metric does not match the provider">
+    Align the exact account, dates, timezone, currency, attribution source, attribution model, and provider reporting rule. Capture both values and the last usable freshness state if the mismatch remains.
   </Accordion>
-  <Accordion title="The comparison looks unusually strong or weak">
-    Check for unequal period length, partial days, promotions, one-time spend changes, and a changed attribution view. Use complete equivalent periods for the first diagnostic pass.
+  <Accordion title="The comparison is unexpectedly strong or weak">
+    Check for unequal windows, partial days, a custom comparison that is incomplete, promotions, one-time spend, changed attribution, or changed currency. Begin again with equivalent complete periods.
   </Accordion>
   <Accordion title="Creative and campaign totals differ">
-    Confirm that both views use the same filters and grain. A creative can appear across multiple objects, while a campaign total aggregates at a different level.
+    Confirm that both views use the same dates and source. A creative can serve across multiple objects, while Campaigns aggregates at campaign, ad-set, or ad grain.
+  </Accordion>
+  <Accordion title="A source remains in Data is syncing">
+    Open the provider in Integrations and inspect authorization, selected resources, and sync coverage. Retry the source there when available; do not repeatedly change the Analytics window to force completion.
   </Accordion>
   <Accordion title="A report did not arrive">
-    Open **Reports**, then inspect the workflow configuration and run history. Verify the destination connection, schedule, status, and any pending approval or error.
+    Open **Reports**, inspect its status and run history, and verify the schedule timezone, Slack channel or email recipients, destination connection, run result, and delivery result separately.
   </Accordion>
 </AccordionGroup>
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Inspect campaign state" icon="megaphone" href="/product-guides/campaigns">
-    Move from a performance finding to the exact provider object.
+  <Card title="Inspect the campaign" icon="megaphone" href="/product-guides/campaigns">
+    Move from a measured change to the exact provider object.
   </Card>
-  <Card title="Compare creative work" icon="images" href="/product-guides/creatives">
-    Turn asset-level evidence into a brief, generation, or library workflow.
+  <Card title="Configure recurring reporting" icon="repeat" href="/product-guides/workflows">
+    Turn a reviewed measurement frame into a monitored report.
   </Card>
 </CardGroup>

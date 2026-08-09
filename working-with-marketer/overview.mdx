@@ -1,112 +1,62 @@
 ---
 title: "Working with Marketer"
 sidebarTitle: "Overview"
-description: "Understand how chat, product surfaces, tasks, specialists, approvals, and history work together in Marketer."
+description: "Follow a request from grounded context through agent work, review, approval, and a verified result."
 ---
 
-Marketer gives you one place to investigate performance, create marketing work, and review changes. You can start with the Marketing Agent or open a product surface when you want to inspect the underlying records directly.
+Marketer turns a marketing outcome into work you can direct and review. Start on **Home**, give the Marketing Agent the context and boundaries it needs, then follow the request to a result or a decision.
 
-The interface is organized around a simple operating loop: give Marketer the right context, let the work run, review the result, and decide whether any proposed action should proceed.
+<Frame caption="The Home canvas combines performance context, the request composer, active work, and recurring outputs.">
+  <img
+    src="/assets/product-flows/home-overview.png"
+    alt="Marketer Home canvas with overview metrics, request composer, currently running work, Daily Pulse, plans, and reports"
+  />
+</Frame>
 
-<CardGroup cols={2}>
-  <Card title="Chat and context" icon="messages" href="/working-with-marketer/chat-and-context">
-    Ask a question, request an outcome, and attach the campaigns, briefs, creatives, or products that matter.
-  </Card>
-  <Card title="Tasks and activity" icon="list-check" href="/working-with-marketer/tasks-and-activity">
-    Follow work that continues beyond one response and inspect its progress and result.
-  </Card>
-  <Card title="Specialists" icon="users" href="/working-with-marketer/specialists">
-    Let the Marketing Agent coordinate focused research, campaign, and creative work.
-  </Card>
-  <Card title="Awaiting action" icon="inbox" href="/working-with-marketer/awaiting-action">
-    Review proposals and approvals that need a human decision.
-  </Card>
-</CardGroup>
+## Orient yourself
 
-## The working loop
+Confirm the active workspace before you attach records or approve work. Use the main surfaces for distinct questions:
+
+- **Home** starts a request and shows current workspace context.
+- **Chats and tasks** reopens prior conversations and longer work.
+- **Activity** and the **Agents** panel show progress, outputs, and sources.
+- **Awaiting action** in Quick actions holds decisions that still need review.
+- Product surfaces such as **Analytics**, **Campaigns**, **Creatives**, and **Workflow** show the current state of the resulting work.
+
+## Use request → work → review
 
 <Steps>
-  <Step title="Start with a clear outcome">
-    Tell Marketer what you want to decide or produce. Include the workspace scope, channel, date range, success measure, and any constraint that would change the answer.
+  <Step title="Request a clear outcome">
+    Name the deliverable, evidence, scope, and authority boundary. Use `@` for an exact product, brief, campaign, or creative, and use **Add files or photos** for a one-off document.
   </Step>
-  <Step title="Ground the request">
-    Attach a relevant record in chat or open the product surface that owns it. Connected account data, workspace knowledge, and your explicit context should agree before you rely on the result.
-  </Step>
-  <Step title="Follow the work">
-    A quick analysis may finish in the conversation. Longer work can appear as a task with its own progress. Treat the task status, not elapsed time, as the indication of whether the work is finished.
+  <Step title="Follow the visible work">
+    A request can return a direct answer, continue as a task, ask for input, or present a proposal. Read the current state and open the task or **Agents** panel when you need its steps, sources, or outputs. Review **Dismiss**, **Edit**, and **Approve & Run** before allowing proposed work to begin.
   </Step>
   <Step title="Review the result">
-    Check the source, date window, attribution view, currency, and assumptions behind any recommendation. For generated creative, also review brand accuracy, product facts, and policy-sensitive claims.
-  </Step>
-  <Step title="Make the decision">
-    Read-only work can end with an answer or artifact. A change to a connected account may require a separate approval. Review the exact provider, object, scope, and effect before you approve it.
+    Open the actual deliverable and compare it with the request. Verify decision-driving sources, accounts, dates, attribution, currency, and freshness. Treat suggested follow-ups as new requests. If a separate connected-account change needs approval, decide it in **Awaiting action**, then confirm the result in the product surface that owns it.
   </Step>
 </Steps>
 
-## Choose the right surface
+<Warning>
+  A completed task or approved proposal is not proof that a connected account changed. Verify the current state in the owning product surface and, when needed, the provider.
+</Warning>
 
-| You want to… | Start in… | Why |
-| --- | --- | --- |
-| Ask a cross-channel question | **Home** and the Marketing Agent | The conversation can combine context and coordinate the next step. |
-| Inspect or manage advertising objects | **Campaigns** | You can work from the actual campaign, ad set, or ad records available for a connected provider. |
-| Analyze results | **Analytics** | Performance, Creative performance, Reports, and Live view keep the measurement context visible. |
-| Plan or make creative | **Creatives** | Briefs, Studio, and Assets cover planning, generation, and the asset library. |
-| Configure recurring work | **Workflows** | You can review supported options, required connections, configuration, and run history. |
-| Review brand context or procedures | **Knowledge** and **Skills** | Knowledge holds source material and learned context; Skills hold reusable ways of working. |
-| Work from a Shopify catalog | **Products** | The catalog provides product identity, merchandising context, and entry points into campaigns or creative. |
-| Decide on a proposed action | **Awaiting action** | Pending decisions are collected in one workspace inbox. |
-
-<Note>
-  The controls and actions you see depend on your connected providers, workspace role, plan, and approval settings. If a control is absent, confirm those conditions before assuming the capability is unavailable everywhere.
-</Note>
-
-## Common outcomes
-
-You can use the same loop for many kinds of work:
-
-- Explain why a performance metric changed and identify the strongest evidence.
-- Compare campaigns or creatives over a defined period.
-- Turn a product and audience goal into a creative brief.
-- Produce creative options, then review and organize the resulting assets.
-- Prepare a campaign draft and inspect it before launch.
-- Configure a supported report, alert, or recurring workflow.
-- Save stable brand facts in Knowledge and recurring procedures in Skills.
-
-## Review before you act
-
-Use a higher review bar when a result could change spend, delivery, targeting, or a public-facing asset.
-
-1. Confirm the workspace and connected account.
-2. Confirm the date window and measurement source.
-3. Separate observed facts from interpretation.
-4. Check the proposed object and the size of the change.
-5. Verify who must approve and what happens after approval.
-6. Return to the relevant surface after the action to confirm the resulting state.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="The answer is too general">
-    Add a specific record, channel, date range, and decision to the request. In chat, use the context picker to attach a campaign, brief, creative, or product instead of relying on a name alone.
-  </Accordion>
-  <Accordion title="The numbers do not match another view">
-    Compare the provider, account, date boundary, reporting timezone, currency, attribution source, and freshness state. Two correct views can differ when those inputs differ.
-  </Accordion>
-  <Accordion title="Work appears to have stopped">
-    Open the task or activity detail and look for a request for input, a failed prerequisite, or an incomplete connection. If a decision is required, check **Awaiting action**.
-  </Accordion>
-  <Accordion title="An action is not available">
-    Confirm that the relevant provider is connected and healthy, your role allows the action, and the workspace approval settings permit it. Available actions are provider-specific.
-  </Accordion>
-</AccordionGroup>
-
-## Continue learning
+## Continue with the detailed flows
 
 <CardGroup cols={2}>
-  <Card title="Write a grounded request" icon="at" href="/working-with-marketer/chat-and-context">
-    Learn how to give the Marketing Agent enough context to produce a reviewable result.
+  <Card title="Build a grounded request" icon="messages" href="/working-with-marketer/chat-and-context">
+    Attach exact workspace records and define the output and authority boundary.
   </Card>
-  <Card title="Explore product guides" icon="grid-2" href="/product-guides/analytics">
-    Start with Analytics, then move to the surface that owns the next action.
+  <Card title="Follow task progress" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Read task states, open agent detail, and inspect the finished result.
+  </Card>
+  <Card title="Inspect specialist work" icon="users" href="/working-with-marketer/specialists">
+    Navigate the Agents workbench from overview to one specialist's outputs and sources.
+  </Card>
+  <Card title="Make a pending decision" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Review the proposed change, choose a decision, and verify what happened next.
+  </Card>
+  <Card title="Reopen earlier work" icon="clock-rotate-left" href="/working-with-marketer/history-and-notifications">
+    Follow conversations and notification receipts back to their source.
   </Card>
 </CardGroup>

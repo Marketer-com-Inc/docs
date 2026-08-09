@@ -1,89 +1,138 @@
 ---
 title: "Quickstart"
 sidebarTitle: "Quickstart"
-description: "Create a workspace, connect a data source, and get a grounded, read-only performance result."
+description: "Enter the right workspace, connect one source, build a grounded launch plan, and verify the result."
 ---
 
-This quickstart ends with a read-only performance comparison. It does not create, edit, or launch a campaign.
+This quickstart takes you through one complete flow: enter the correct workspace, connect one ads source, build a launch plan from approved evidence, and verify the result. The flow stops at planning; it does not create, edit, publish, pause, or launch anything.
 
 ## Before you begin
 
 You need:
 
 - Access to [Marketer](https://app.marketer.com)
-- Permission to connect at least one Meta Ads or Google Ads account
-- Enough history in that account to compare two completed periods
+- Permission to connect one Meta Ads or Google Ads account
+- An approved product, offer, or positioning source for the workspace
 
-Shopify or GA4 can add commerce or site context, but neither is required for this first result.
+If you received a workspace invitation, sign in with the invited email address. Join that workspace instead of creating a second workspace for the same company.
+
+## 1. Enter the workspace
 
 <Steps>
-  <Step title="Create your account">
-    Sign in with Google or enter your work email and complete email verification.
-
-    If you received a workspace invitation, use the invited email address and join that workspace instead of creating a duplicate.
+  <Step title="Sign in">
+    Use Google sign-in or enter your work email and complete email verification. The email path also asks you to finish your personal profile.
   </Step>
-  <Step title="Create your workspace">
-    Enter the company name and website. Add a logo if you have one, then confirm the country and reporting currency.
-
-    These settings give reports a consistent business context. You can update workspace settings later.
+  <Step title="Join or create the workspace">
+    Accept the invited workspace when one is available. Otherwise, enter the company name and website, then confirm the country and reporting currency. A logo is optional.
   </Step>
-  <Step title="Connect one ads account">
-    In the onboarding **Sync in data** step, connect **Meta Ads** or **Google Ads**. If you skip this step, connect later from **Integrations**.
-
-    Complete the provider authorization and select the account or accounts Marketer should use. A connected account may continue syncing after you enter the workspace.
+  <Step title="Complete the setup prompts">
+    Choose the role and use cases that match how you plan to work. Invite teammates or connect Slack if you are ready, or skip those choices and continue.
   </Step>
-  <Step title="Finish workspace setup">
-    Choose the role and use cases that best match how you plan to work. You can invite teammates or connect Slack, or skip those choices for now.
-
-    There is no plan-selection step in this setup flow.
-  </Step>
-  <Step title="Ask your first question">
-    Open **Home** and paste this request into **Ask anything or @ to add context**:
-
-    ```text
-    For the last 7 complete days, compare spend, purchases, CPA, and ROAS
-    with the previous 7 complete days. Use only my connected ads-platform
-    data. Name the source and both date ranges, flag any incomplete data,
-    and do not change any campaigns.
-    ```
-  </Step>
-  <Step title="Check the evidence">
-    Confirm that the result names:
-
-    - The connected source it used
-    - Both date ranges
-    - The account or campaign scope
-    - Any missing, partial, or stale data
-    - The basis for its conclusion
-
-    If one of these is missing, ask a follow-up before you rely on the result.
+  <Step title="Confirm the active workspace">
+    When Home opens, check the workspace name. Switch before continuing if it does not own the data and Knowledge you intend to use.
   </Step>
 </Steps>
 
-## A successful first result
+<Note>
+  Onboarding does not include plan selection. Workspace billing, when applicable and available to your role, lives in **Settings → Plans & Billing**.
+</Note>
 
-You are done when Marketer returns a comparison grounded in your connected data and makes its scope clear. The conclusion may be that the data is incomplete. That is still a useful result because it tells you what to fix before making a decision.
+## 2. Connect one source
 
-<Tip>
-  Use complete days for your first comparison. Today is usually a partial period and can distort a change in spend or efficiency.
-</Tip>
+You can connect an account during the onboarding **Sync in data** step or later from **Integrations**.
 
-## If no data appears
+<Frame caption="The Integrations directory shows which providers are available and which connection needs attention.">
+  <img src="/assets/product-flows/integrations-directory.png" alt="Marketer Integrations directory showing available providers and connected, reconnect-needed, and unconnected states" />
+</Frame>
 
-1. Open **Integrations** and confirm that the account is connected.
-2. Check whether the integration shows a sync, reconnect, or account-selection step.
-3. Confirm that the selected provider account contains data for both periods.
-4. Ask the same question with one source and one account named explicitly.
+<Steps>
+  <Step title="Open Integrations">
+    Select **Integrations** in the main navigation and open **Meta Ads** or **Google Ads**.
+  </Step>
+  <Step title="Authorize the provider">
+    Continue through the provider flow with an identity that can access the intended account. Review the provider permissions before granting access.
+  </Step>
+  <Step title="Select the account">
+    Choose only the account or accounts that belong to this Marketer workspace. Similar account names are not enough; confirm the provider identity and account selection.
+  </Step>
+  <Step title="Check the first successful state">
+    Look for **Connected**, then inspect the selected resources and the sync or data-coverage state shown on the provider detail page.
+  </Step>
+</Steps>
 
-If the connection still cannot provide data, see [Workspace and data](/get-started/workspace-and-data) before continuing.
+If the provider shows **Finish setup**, complete account selection. If it shows **Reconnect needed**, repair authorization before relying on its context. A connected badge alone does not prove the requested resources or dates are available.
 
-## Continue from here
+## 3. Submit the first request
 
-<CardGroup cols={2}>
-  <Card title="Make a stronger request" icon="message-square" href="/essential-guidelines/effective-requests">
-    Add the outcome, source, scope, window, and constraints Marketer needs.
-  </Card>
-  <Card title="Review the result" icon="check-circle" href="/get-started/review-result">
-    Validate the source, freshness, calculations, and next action.
-  </Card>
-</CardGroup>
+Return to **Home**. The composer sits beneath the workspace overview.
+
+<Frame caption="Use the Home canvas to review current context and start a bounded task.">
+  <img src="/assets/product-flows/home-overview.png" alt="Marketer Home canvas with performance overview, request composer, current work, daily summaries, plans, and reports" />
+</Frame>
+
+Paste this request into **Ask anything or @ to add context**:
+
+```text
+Build a launch plan for [product or offer] around our strongest proven
+differentiator. Use approved workspace Knowledge and only the connected
+[Meta Ads or Google Ads] context for [provider account]. Return one positioning
+direction, a focused campaign sequence, and a launch checklist. Name the
+evidence you used, separate facts from assumptions, and flag missing context.
+Keep everything as analysis and a plan. Do not create, edit, publish, pause,
+or launch anything.
+```
+
+Enter `@` and attach the exact product, brief, campaign, or creative when its identity matters. Saved Knowledge is available as workspace context; for a one-off document, use the plus menu and select **Add files or photos**.
+
+## 4. Follow the visible state
+
+After you submit, Marketer can take one of these paths:
+
+| What appears | What it means | What you do |
+| --- | --- | --- |
+| A response in the conversation | The request can be answered directly | Let the answer finish, then review its evidence. |
+| A task with visible steps | The request needs longer or coordinated work | Keep the task open or return through its task link; watch for input requests. |
+| A clarification question | A required product, audience, source, account, or output is ambiguous | Answer the missing point without widening the task. |
+| A proposal with decision controls | Marketer is asking permission to run displayed production work | For this plan-only quickstart, choose **Edit** or **Dismiss** rather than approving execution. |
+| A connection or data error | The source is unavailable or does not cover the request | Return to **Integrations**, resolve the named prerequisite, and retry once. |
+
+Do not start a second copy while the first task is active. A quiet conversation can still have work running behind its task detail.
+
+## 5. Confirm the result
+
+<Frame caption="A completed launch-plan task shows the finished work and optional next directions.">
+  <img src="/assets/product-flows/task-result.png" alt="Completed Marketer launch-plan task with positioning guidance, three finished steps, and optional follow-up actions" />
+</Frame>
+
+A successful first result includes or explicitly marks as missing:
+
+- The intended product, offer, audience, workspace, and provider account context
+- The exact evidence behind the central differentiator
+- One focused positioning direction
+- A campaign sequence that carries the same evidence-led promise
+- A launch checklist with owners, inputs, tracking, creative, destination, budget boundary, and review steps
+- Assumptions and unresolved inputs
+- Confirmation that no campaign, creative, budget, or provider setting changed
+
+Ask this follow-up if the evidence or action state is unclear:
+
+```text
+Audit this launch plan before I use it. Name the exact source behind the central
+differentiator, separate facts from interpretation, list every assumption and
+missing input, and confirm the product, audience, offer, workspace, and provider
+account context. State exactly what has and has not changed.
+```
+
+## If the result does not complete
+
+| Problem | Next action |
+| --- | --- |
+| The source or product is missing | Confirm the approved source is saved in Knowledge, attach the exact product when relevant, and retry. |
+| The wrong account is used | Correct the selected provider account or name the intended account explicitly in a new request. |
+| The differentiator is unsupported | Add or correct the authoritative source before generating another plan. |
+| The task asks to create assets or campaigns | Keep the proposal unresolved, edit the request back to plan level, or dismiss it. |
+| The result is only a generic recommendation | Ask for the positioning direction, campaign sequence, launch checklist, supporting evidence, and limitations as separate sections. |
+
+You are finished when the plan is reviewable and you can identify its evidence, scope, limitations, and action state without guessing.
+
+Next, learn how to [set up workspace data in depth](/get-started/workspace-and-data), [follow the task deliberately](/get-started/first-task), or [review the result](/get-started/review-result).

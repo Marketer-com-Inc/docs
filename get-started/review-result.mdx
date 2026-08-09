@@ -1,59 +1,128 @@
 ---
 title: "Review your result"
 sidebarTitle: "Review a result"
-description: "Check the evidence, calculations, and action boundary before using a Marketer result."
+description: "Inspect a completed task, verify its evidence, and separate suggested follow-ups from approved or completed actions."
 ---
 
-A polished answer can still be incomplete. Review the result against the request and the connected source before you use it to make a decision.
+A completed task is ready for review, not automatically ready for a decision. Reopen the result, match it to the original request, verify the decision-driving evidence, and identify the exact action state before you continue.
 
-## Use a five-part check
+## Open the completed state
 
-### 1. Source
+Use the result link in the conversation or reopen the task from the workspace's conversation and task history. Confirm the task belongs to the intended workspace and request.
 
-Confirm which system supplied each figure. Meta Ads, Google Ads, Shopify, GA4, and Triple Whale **(Beta)** can describe different parts of the customer journey. Their numbers are not interchangeable.
+<Frame caption="The completed state combines the final answer, finished task steps, and optional follow-up directions.">
+  <img src="/assets/product-flows/task-result.png" alt="Completed Marketer task with a written result, a three-step completion card, and suggested follow-up actions" />
+</Frame>
 
-### 2. Time
+Read the screen in this order:
 
-Check the exact start and end dates, timezone, and whether either period is partial. A comparison should use equivalent windows.
+1. **Original request.** Confirm the outcome and authority boundary at the top of the conversation.
+2. **Final answer.** Check that it answers the requested question rather than a nearby one.
+3. **Task receipt.** Expand or inspect the completed steps when you need to understand what work ran.
+4. **Produced artifact.** Open the report, brief, creative, campaign draft, or workflow in the product surface that owns it.
+5. **Suggested follow-ups.** Treat these as new requests you can choose, not as work already completed.
 
-### 3. Scope
+If the task still shows an active or waiting step, it has not reached this state. Return to [Tasks and activity](/working-with-marketer/tasks-and-activity) and resolve the pending input or prerequisite.
 
-Verify the workspace, provider account, campaign level, and filters. An account-level total cannot support a campaign-level conclusion unless the result also reads that campaign scope.
+## Run the evidence check
 
-### 4. Calculation
+Review depth should match the consequence of the result. Use all five checks for any result that can influence budget, targeting, creative, reporting, or launch decisions.
 
-Recompute the decision-driving number. For a percentage change, ask for the previous value, current value, and formula. For a ratio such as ROAS or CPA, confirm the numerator and denominator came from the intended source.
+### 1. Match the request
 
-### 5. Action
+Compare the result with the requested outcome, source, scope, time window, output, and action boundary.
 
-Separate the analysis from the next step. A recommendation is not proof that an action ran. If the result proposes a change, confirm whether it is a draft, an item in **Awaiting action**, a paused launch, or a completed write.
+- An account-level request should not silently become a campaign-only answer.
+- A read-only request should not be reported as a completed provider change.
+- A requested artifact should exist in the surface that owns it, not only as a recommendation in chat.
 
-<Note>
-  Missing data is not zero. If a source is disconnected, syncing, or incomplete for a date, treat the affected metric as unknown until you can verify it.
-</Note>
+### 2. Verify source and freshness
+
+Identify which connected system supplied every decision-driving figure. Meta Ads, Google Ads, Shopify, GA4, and Triple Whale **(Beta)** can describe different parts of the customer journey; their numbers are not interchangeable.
+
+Check the provider account, selected resource, latest available coverage, and any missing or partial dates. When the result and provider state disagree, open **Integrations** before relying on the number.
+
+### 3. Verify time and scope
+
+Confirm:
+
+- Exact start and end dates
+- Timezone used to define each day
+- Complete versus partial periods
+- Workspace and provider account
+- Account, campaign, ad set or ad group, ad, product, or other entity level
+- Filters, attribution source, attribution model, and currency when relevant
+
+Equivalent-looking labels do not prove equivalent scope. Attach or open the exact workspace record when names are similar.
+
+### 4. Recalculate the main claim
+
+Ask for the inputs behind the conclusion. For a percentage change, verify the previous value, current value, and formula. For CPA or ROAS, confirm the numerator and denominator use the intended source and reporting definition.
+
+Missing data is not zero. If a source is disconnected, still syncing, or incomplete for a date, treat the affected metric as unknown.
+
+### 5. Identify the action state
+
+Determine what exists now:
+
+| State | What it proves | What it does not prove |
+| --- | --- | --- |
+| Analysis or recommendation | Marketer produced a view of the evidence | A campaign or setting changed |
+| Draft or artifact | Marketer created work for review | The work was published or launched |
+| Proposal | A specific plan is waiting for a decision | The proposed steps have run |
+| Approved task | An authorized run may proceed under workspace policy | The external provider already reflects the intended result |
+| Completed write | Marketer reports that an action finished | The owning product surface and provider state are correct until you verify them |
+
+## Review the proposal branch
+
+When the result leads to work that needs permission, inspect the proposal rather than approving from the summary alone.
+
+<Frame caption="The proposal is the decision boundary between a suggested direction and an authorized run.">
+  <img src="/assets/product-flows/task-proposal.png" alt="Marketer proposal showing the intended multi-step work and controls to dismiss, edit, or approve and run it" />
+</Frame>
+
+Before **Approve & Run**, confirm:
+
+- The intended workspace and connected provider
+- Every object or destination the task can affect
+- The evidence and date range that justify the work
+- Budget, targeting, creative, or publishing consequences
+- Guardrails and autonomy settings that apply
+- Whether the result should remain a draft, become paused work, or go live
+- Who is authorized to approve
+
+Use **Edit** to correct missing or excessive scope. Use **Dismiss** when the plan should not continue. If you leave the conversation, unresolved decisions can be available in **Awaiting action**.
 
 ## Ask for an evidence pass
 
-Use this follow-up when the result will inform a material decision:
+Use this in the same conversation before a material decision:
 
 ```text
-Audit your answer before I use it. List the source, account scope, exact dates,
-timezone, and freshness for every decision-driving figure. Recalculate the main
-comparison, identify missing data, and separate facts, inferences, and proposed
-actions. Do not make any changes.
+Audit this answer before I use it. List the source, provider account, exact
+dates, timezone, freshness, scope, filters, attribution definition, and
+currency for every decision-driving figure. Recalculate the main comparison,
+identify missing data, separate facts from inferences, and state exactly what
+has and has not been changed. Do not make any new changes.
 ```
 
-## Resolve disagreements
+## Resolve mismatches
 
-When the result differs from another dashboard, compare the definitions before choosing a winner:
+| What you find | What to do next |
+| --- | --- |
+| The answer omits source, dates, or scope | Ask the evidence pass above; do not infer the missing field. |
+| A requested metric is unavailable | Confirm the source supports it and the requested dates are covered; treat the value as unknown. |
+| Another dashboard shows a different value | Align conversion definition, click versus order date, timezone, attribution model, currency, and filters. |
+| The task finished but no artifact exists | Open the owning product area and confirm its filters. If the result only recommended an artifact, request creation explicitly. |
+| A proposal is based on stale evidence | Leave it unresolved or dismiss it, refresh the analysis, and request a new proposal. |
+| The interface reports a completed write | Verify the resulting state in **Campaigns**, **Creatives**, **Workflow**, or the relevant connected provider. |
 
-- Platform-reported versus store- or attribution-reported conversions
-- Click date versus order date
-- Complete days versus a partial current day
-- Workspace timezone versus provider timezone
-- Selected attribution model
-- Currency and any conversion rule
+## Close the review loop
 
-If the definitions align and the values still differ, save both date ranges and source labels, then use the relevant integration troubleshooting guide.
+A reviewed result has four outcomes recorded in the conversation or downstream work:
 
-For a reusable review method, see [Review results](/essential-guidelines/review-results).
+1. The fact or artifact you accept
+2. The evidence window and source that support it
+3. Any limitation or open question
+4. The next action and whether it is only a suggestion, a draft, pending approval, or verified complete
+
+Continue to [Next steps](/get-started/next-steps) when you can state all four without guessing. For the reusable review method, see [Review results](/essential-guidelines/review-results).

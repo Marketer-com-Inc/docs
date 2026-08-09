@@ -1,120 +1,191 @@
 ---
 title: "Workflows"
 sidebarTitle: "Workflows"
-description: "Configure supported recurring work, review prerequisites and approvals, and use run history to confirm execution."
+description: "Configure a report, alert, guarded action, research routine, or agent-led workflow and verify every run and delivery."
 ---
 
-**Workflows** is where you configure and monitor supported recurring work. It brings available workflow options, natural-language setup, active configurations, and run history into one surface.
+**Workflows** is the operating surface for supported work that should run again. It combines a natural-language builder, a template library, and **Your workflows**, where you monitor status, run history, and delivery.
 
-Use Workflows when the outcome should happen on a schedule, in response to a supported event, or through a repeatable process. Use chat for a one-time request that does not need a durable configuration.
+Open [Workflows](https://app.marketer.com/dashboard/workflows) and confirm the active workspace. Use chat for a one-time request; use Workflows when the schedule, trigger, recipients, and run record should persist.
 
-## What a workflow contains
+## Before you begin
 
-A usable workflow has more than a title. Confirm each part before activation:
+- Connect every provider the workflow needs and let its required data sync.
+- Connect Slack before selecting Slack delivery; email delivery can be configured independently when available.
+- Confirm the workspace reporting timezone and the account or channel scope.
+- Know the recipients and the person responsible for responding to an alert or approval.
+- Review any displayed credit or usage requirement before activating research or other metered work.
+- Use a role that can configure the intended workflow. Viewers should not expect editing controls.
 
-| Part | What to define |
-| --- | --- |
-| Outcome | The report, alert, research, or action the workflow should produce |
-| Trigger | The supported schedule or event that starts it |
-| Scope | Workspace, provider, account, and data the workflow may use |
-| Destination | Where the output should appear when delivery is supported |
-| Authority | Whether the workflow reads, drafts, proposes, or can perform an approved action |
-| Guardrails | Limits, exclusions, and conditions that stop the workflow |
-| Review | Who verifies setup and who handles any approval |
-| History | Where you confirm runs, outputs, and errors |
+## Choose an entry route
 
-The available library and setup fields are the source of truth for what your workspace can configure. Requirements can differ by workflow type and connected provider.
+| Entry | Use it when… | What happens next |
+| --- | --- | --- |
+| Natural-language builder | You can describe the recurring outcome but do not know the template | The Marketing Agent proposes or builds a supported configuration for review |
+| Library card | A report, alert, action, research routine, or agent already matches the need | A configuration modal opens or the request is seeded into chat |
+| **Your workflows** | The workflow already exists | Its detail, run history, and row actions become available |
 
-## Configure a workflow
+During onboarding, Marketer can recommend workflows based on the connected stack. Those recommendations are an optional starting point; the saved configuration and later run history in Workflows remain the source of truth.
+
+## Configure a recurring report
+
+Choose a report card from the library, or choose **Custom report** when a preset does not match the question.
 
 <Steps>
-  <Step title="Choose an available outcome">
-    Start from a workflow shown in the library or describe a supported recurring outcome to the Marketing Agent. Avoid assuming a workflow exists because you can perform a similar one-time task in chat.
+  <Step title="Open the report configuration">
+    Select the report card and review the report name and current status. A preset is a starting configuration, not proof that its scope matches your business question.
   </Step>
-  <Step title="Check prerequisites">
-    Confirm the data source, provider connection, destination, role, and plan required by the setup. Resolve connection or permission issues before activation.
+  <Step title="Set the schedule">
+    On **Schedule**, choose the available cadence and delivery time. Confirm the reporting timezone and the date logic the report will use on each run.
   </Step>
-  <Step title="Define scope and cadence">
-    Set the intended account, metrics or event, reporting window, schedule, and destination. Use the workspace reporting timezone when the schedule or day boundary matters.
+  <Step title="Configure Slack">
+    On **Slack**, enable delivery only when the workspace connection is healthy, then choose the intended channel. Review the live-data preview; do not send a test to a broader channel merely to confirm formatting.
   </Step>
-  <Step title="Set authority and guardrails">
-    Make clear whether the workflow only reports, creates a proposal, or can perform an available action after approval. Apply the narrowest authority that still achieves the outcome.
+  <Step title="Configure email">
+    On **Email**, enable delivery and enter the intended recipients. Review the preview and confirm the list does not include unintended or stale addresses.
   </Step>
-  <Step title="Review before activation">
-    Inspect the available preview or configuration summary. Confirm the destinations and any recurring cost or usage information shown in the product.
+  <Step title="Review actual data">
+    Compare the preview’s metrics, source, account scope, date logic, attribution, and currency with Analytics. Fix the configuration before delivery if the preview answers a different question.
   </Step>
-  <Step title="Verify the first run">
-    Open the workflow register and run history. Confirm that the first run used the intended trigger, data, destination, and approval behavior.
+  <Step title="Save or activate">
+    Use **Save changes** after each material edit. Keep the **Live** switch off while the report is still a draft; turn it on only after schedule, data, and recipients are correct.
+  </Step>
+  <Step title="Verify a run">
+    Use **Open report** or open the row under **Your workflows**. Run it manually when **Run now** is available, then inspect the run and each delivery result separately.
   </Step>
 </Steps>
 
-## Reports, alerts, and actions
+A report can run successfully while one destination fails. Treat **delivered**, **partial**, and **failed** as different outcomes and resolve destination failures before calling the report operational.
 
-### Reports
+## Configure an alert
 
-Reports turn a defined measurement view into recurring delivery. Keep the provider, metrics, attribution source, date logic, timezone, and destination explicit. When a preview is available, compare it with Analytics before activation.
+The alert library can include conditions such as **Advantage+ drift**, **Spend spike**, **ROAS drop**, and **CTR collapse**. Use **More alerts…** to inspect additional supported options.
 
-### Alerts
+<Steps>
+  <Step title="Choose the signal">
+    Open the alert that matches the risk. Read the metric, window, comparison, threshold, provider, and object scope shown by its configuration.
+  </Step>
+  <Step title="Define the response owner">
+    Decide who should receive the notification and what they are expected to investigate. An alert detects a condition; it does not establish its cause.
+  </Step>
+  <Step title="Choose destinations">
+    Configure **Slack**, **Email**, or both. Review the exact preview on each enabled station tab so the recipient can identify the account, object, metric, and condition.
+  </Step>
+  <Step title="Save and make it Live">
+    Select **Save changes**, then confirm the status becomes **Live** only after the signal and destinations are correct. Keep it **Off** while the threshold or recipients are still under review.
+  </Step>
+  <Step title="Verify the next event">
+    Open run history after the condition is evaluated. Confirm whether no alert was warranted, an alert was produced, and each enabled destination received it.
+  </Step>
+</Steps>
 
-Alerts notify you when a supported event or condition is detected. Define who should receive the alert and what they are expected to do. An alert is evidence to investigate, not automatic proof of a root cause.
+Do not create overlapping alerts for the same metric, object scope, and threshold unless each one has a distinct owner and purpose.
 
-### Actions
+## Configure a guarded action
 
-Some workflow types can prepare or perform a supported account action. These are narrower than general chat instructions and can be provider-specific. Review the exact condition, object level, action, limit, and approval behavior before activation.
+The library can expose a **Metric guard** for supported pause actions. It is intentionally narrow: you approve the protected list before anything pauses, and it does not automatically resume objects or change budgets.
+
+1. Open **Metric guard** and read the supported provider and object level.
+2. Define the exact metric, threshold, evaluation window, and eligible objects.
+3. Review the proposed protected list. Remove any object the guard should not be able to pause.
+4. Confirm the approval behavior and maximum effect.
+5. Activate only after the list and guardrail are correct.
+6. After a trigger, inspect the run record and verify the resulting state in Campaigns and the provider account.
 
 <Warning>
-  Do not activate a recurring action until you understand both its trigger and its maximum effect. “Only when performance drops” is not a complete guardrail without a defined metric, window, threshold, scope, and approval rule.
+  A threshold is not a complete safety rule by itself. Confirm the provider, account, object level, date window, comparison, eligible list, action, and approval boundary before activating a recurring action.
 </Warning>
 
-## Monitor configured work
+## Start agent-led or research workflows
 
-The workflow register and run history tell you whether a configuration is active and what happened on each run. Use them to answer:
+Some cards seed a request into the Marketing Agent instead of opening a fixed configuration modal. This is appropriate when the recurring outcome needs research or coordination across specialists.
 
-- Is the workflow configured and enabled?
-- When did it most recently run?
-- Did it produce the expected output?
-- Did delivery to the destination succeed?
-- Did it pause for a decision or encounter an error?
-- Does the configuration still match the current business need?
+For example, **Continuous brand research** can require credits and a confirmation before activation. Read the displayed scope, cadence, sources, and usage information rather than assuming it behaves like a no-cost alert.
 
-Configuration is not proof of execution. Verify the first run and review history after changing a trigger, destination, provider, or guardrail.
+When the agent returns a proposal:
 
-## Safe operating practices
+1. Read the title, ordered steps, sources, target account, cadence, destinations, and any action authority.
+2. Choose **Edit** when the plan is too broad or missing a guardrail.
+3. Choose **Dismiss** when the workflow should not be created.
+4. Choose **Approve & Run** only when the proposal matches the recurring outcome and its prerequisites are ready.
+5. Follow progress in the task, then open the saved workflow to confirm its persistent configuration and status.
 
-- Start with a read-only report or alert when you are still learning the signal.
-- Use a narrow provider and object scope for recurring actions.
-- Avoid overlapping workflows that can react to the same condition.
-- Define who owns alerts and approvals before enabling delivery.
-- Review workflows after material campaign, connection, timezone, or business-goal changes.
-- Disable or revise workflows whose evidence source is stale or disconnected.
+<Frame caption="An agent-led workflow pauses at a concrete proposal so you can dismiss it, edit its steps, or approve the run.">
+  <img src="/assets/product-flows/task-proposal.png" alt="Marketing Agent proposal for a seven-step Creative Pipeline with Dismiss, Edit, and Approve and Run controls" />
+</Frame>
+
+Approval authorizes the displayed plan, not unspecified future changes. If the agent later creates a separate account-change proposal, review that decision in **Awaiting action**.
+
+## Operate Your workflows
+
+The register separates workflow configuration from execution. Read the type-specific status before taking action.
+
+| Type | Statuses you can see | Interpretation |
+| --- | --- | --- |
+| Report or automation | **Live**, **Draft**, **Paused** | Whether its persistent configuration can run on its trigger |
+| Agent | **Running**, **Needs you**, **Queued**, **Idle** | What the agent is doing now |
+
+Available row actions can include:
+
+- **Run now** to start a manual execution without changing the schedule.
+- **Activate** to make a draft workflow live.
+- **Resume** to make a paused workflow live.
+- **Pause** to stop future triggers while retaining the workflow.
+- **Edit in chat** to change an agent-led configuration with context.
+- **Delete** to stop and remove the configuration. The run history remains available for audit even though future work stops immediately.
+
+Open the workflow detail after every first run and material edit. For a report, distinguish data generation from Slack and email delivery. For an action, verify the provider object’s actual state. For an agent, resolve **Needs you** in the task or **Awaiting action**, then return to confirm the next state.
+
+## Decide whether the workflow is complete
+
+A workflow is operational only when:
+
+- The provider, account, object, metric, window, timezone, and destination scope are correct.
+- The preview uses recognizable live data from the intended source.
+- The configuration is **Live** only when intended.
+- The first scheduled or manual run reaches a terminal result.
+- Every expected Slack or email delivery has a recorded outcome.
+- Any proposal or approval was reviewed against the exact effect.
+- The result was verified in the owning surface when the workflow changes an external account.
+
+Configuration alone is not proof of execution.
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="A library option cannot be configured">
-    Open its prerequisite guidance and verify the required provider or destination connection. Also check your role and workspace plan. Availability can differ by workflow type.
+  <Accordion title="A library card will not configure">
+    Open the card’s prerequisite guidance and verify its provider, data coverage, destination connection, workspace plan, and your role. A similar one-time chat capability does not guarantee a persistent workflow is available.
+  </Accordion>
+  <Accordion title="A report preview has the wrong numbers">
+    Align its provider account, date logic, timezone, currency, attribution, and metrics with Analytics. Save only after the preview answers the intended question; do not expect a later scheduled run to repair a wrong frame.
+  </Accordion>
+  <Accordion title="Slack is disconnected">
+    Repair the Slack connection or disable Slack delivery. Email can remain enabled when available, but confirm the report no longer expects a Slack channel before activation.
   </Accordion>
   <Accordion title="A workflow did not run">
-    Confirm that it is active, its trigger occurred in the intended timezone, and its required connections are healthy. Review run history for a blocked prerequisite, pending approval, or error.
+    Confirm its status is **Live**, the trigger occurred in the configured timezone, and required sources are healthy. Open run history for a blocked prerequisite, a queued run, **Needs you**, or an error.
   </Accordion>
-  <Accordion title="A report or alert did not arrive">
-    Check the configured destination, recipient or channel, and the run result. Separate a successful run from successful delivery; the history should show where the failure occurred.
+  <Accordion title="The run succeeded but nothing arrived">
+    Inspect destination results separately from the run result. Verify Slack channel access, email recipients, and destination connection, then use **Run now** after correcting delivery.
   </Accordion>
-  <Accordion title="A workflow is waiting for approval">
-    Open **Awaiting action**, review the proposal and its evidence, and make the decision through the available controls. Confirm the resulting run state afterward.
+  <Accordion title="A workflow needs a decision">
+    Open the linked task and **Awaiting action**. Review the exact proposal, evidence, target, old state, new state, and risk flags. After deciding, return to the workflow detail and confirm execution resumed or stopped as intended.
   </Accordion>
-  <Accordion title="A workflow produced duplicate or conflicting work">
-    Inspect active configurations for overlapping scope and triggers. Pause the extra workflow, then keep one clear owner for the recurring outcome before the next trigger.
+  <Accordion title="A guarded action changed an unexpected object">
+    Pause the workflow, capture its run record and protected list, and verify the provider state. Do not reactivate it until the provider, level, eligibility rule, and approval boundary identify only the intended objects.
+  </Accordion>
+  <Accordion title="Two workflows produce duplicate work">
+    Compare active configurations for overlapping triggers, scopes, and destinations. Pause the duplicate, keep one owner, and verify the next trigger produces one run and one intended set of deliveries.
   </Accordion>
 </AccordionGroup>
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Review run activity" icon="list-check" href="/working-with-marketer/tasks-and-activity">
-    Distinguish configuration, execution, result, and approval state.
+  <Card title="Build the measurement frame" icon="chart-line" href="/product-guides/analytics">
+    Define the data view before you turn it into recurring reporting.
   </Card>
   <Card title="Handle a pending decision" icon="inbox" href="/working-with-marketer/awaiting-action">
-    Review any workflow step that needs human authorization.
+    Review the exact scope and effect of a workflow proposal.
   </Card>
 </CardGroup>

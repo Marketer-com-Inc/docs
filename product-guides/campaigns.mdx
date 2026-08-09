@@ -1,132 +1,212 @@
 ---
 title: "Campaigns"
 sidebarTitle: "Campaigns"
-description: "Inspect connected campaign records, compare delivery, prepare new work, and review provider-specific actions safely."
+description: "Trace a campaign from scoped performance review through draft construction, validation, approval, and launch verification."
 ---
 
-**Campaigns** is the operating surface for advertising records from supported connected providers. Use it to inspect delivery, move between the levels available for a provider, find drafts and launches, and start campaign work from the current account state.
+**Campaigns** is where you inspect synced advertising objects and prepare supported Meta or Google Ads work. It separates three states that should never be confused: an existing provider object, an editable Marketer draft, and a launch that is publishing or already live.
 
-Use Analytics when the main question is “what changed and why?” Use Campaigns when you need to identify the exact object behind the result or review an available action.
+Open [Campaigns](https://app.marketer.com/dashboard/campaigns) and confirm the active workspace before you read metrics or create anything.
 
-## When to use Campaigns
+## Before you begin
 
-- Inspect the current status and structure of connected advertising objects.
-- Compare campaigns over a defined date window.
-- Search or filter to find the exact object you need.
-- Review a draft or launch in progress.
-- Start a new campaign flow for a supported provider.
-- Prepare or review an available row or bulk action.
+You need:
 
-<Note>
-  Campaign structure and controls vary by provider. A Meta campaign, ad set, and ad hierarchy does not map one-to-one to every Google Ads campaign type. Use the level names and actions displayed for the selected provider.
-</Note>
+- A connected Meta Ads or Google Ads account for the workspace.
+- A completed initial sync if you need to inspect existing objects.
+- A workspace role that allows the intended create or change action.
+- The product or destination, objective, audience, budget boundary, and creative direction for new work.
+- An approver when workspace guardrails require a decision before an account change.
 
-## Read the surface
+<Frame caption="Campaigns keeps scope controls, object levels, lifecycle work, and the data table in one operating surface.">
+  <img src="/assets/product-flows/campaigns-overview.png" alt="Campaigns overview with date, objective, channel, and boosted filters; Campaigns, Ad sets, Ads, and Rules tabs; Drafts and Launch ads actions; and a scoped campaign table" />
+</Frame>
 
-Campaigns combines several kinds of context:
+## Read the page before you act
 
-| Area | What it tells you | What to check |
+Work from the top of the page downward:
+
+| Control | What it changes | Check before continuing |
 | --- | --- | --- |
-| Date range | The reporting window for displayed metrics | Complete days, comparison intent, and timezone |
-| Channel or provider | Which connected account data is in scope | Correct provider and account |
-| Level | Which type of advertising object the rows represent | Campaign, ad set, ad, or provider-specific equivalent |
-| Status and filters | Which records are currently visible | Active filters, search, and hidden rows |
-| Drafts and launches | Work that is not the same as an established live record | Current lifecycle and next required step |
-| Attribution control | The measurement view used where an eligible connection exists | Platform view versus the selected attribution source |
+| Date | The window used by displayed metrics | Prefer complete days and note the workspace reporting timezone. |
+| Objective | Which campaign objectives remain in the table | Clear it when the campaign you expect is missing. |
+| Channel | Meta, Google Ads, or the available combined scope | Confirm the provider and connected account behind the row. |
+| **Campaigns**, **Ad sets**, **Ads** | The advertising-object level | Do not compare rows from different levels as if they were peers. |
+| **Status** | Active, paused, or another available state | A status filter can hide the object you need. |
+| Search | Names at the selected level | Use the full provider name when similar objects exist. |
+| Saved view | A reusable bundle of campaign filters | A shared view can change the scope for everyone who uses it. |
+| **Drafts**, **Launch ads**, **Rules** | Work that is not simply a live table row | Open the lifecycle surface that matches the work state. |
 
-The values in a row describe the selected window and measurement context. They do not by themselves establish causality or prove that a recommended action is safe.
+The table can show budget, spend, results, revenue, ROAS, and trend context for the selected window. Treat those figures as observations, not explanations. Move to Analytics when you need a cross-channel or attribution-aware diagnosis.
 
-## Investigate a campaign
+## Investigate an existing campaign
 
 <Steps>
-  <Step title="Set the scope">
-    Choose the intended provider, date range, and level. Clear unrelated filters and confirm the active account before comparing rows.
+  <Step title="Restore a known scope">
+    Open the saved-view menu and choose **All view** when you do not trust the current filters. Then set the date, objective, channel, and status required by the question.
   </Step>
-  <Step title="Find the object">
-    Search by name or use the available filters. Open the record detail when you need to distinguish similar names or inspect lower-level structure.
+  <Step title="Choose the object level">
+    Start on **Campaigns** for campaign-level rows. Move to **Ad sets** for audience, budget, and optimization context, or **Ads** for the delivered creative. The selected tab becomes the grain of every visible row.
   </Step>
-  <Step title="Compare the right metrics">
-    Start with the business outcome and spend, then use supporting delivery and efficiency metrics. Compare the same object, attribution view, currency, and duration across periods.
+  <Step title="Find and identify the object">
+    Search for the provider name, open the row, and confirm its parent-child relationship. Similar names are not sufficient evidence; verify the provider badge and the object level.
   </Step>
-  <Step title="Form a diagnosis">
-    Separate what changed from why it may have changed. Use Analytics or the Marketing Agent when you need a broader channel, creative, or product explanation.
+  <Step title="Read the result in context">
+    Compare spend and the primary result first, then efficiency and trend. Keep the date, currency, attribution view, and status filters unchanged while comparing rows.
   </Step>
-  <Step title="Prepare the next step">
-    Choose analysis, a draft, or an available provider-specific action. If the action can change a connected account, review its proposal and approval state before it proceeds.
+  <Step title="Choose the next surface">
+    Open Analytics for a broader explanation, Creative performance for asset evidence, or the row’s available control for a scoped change. If a control can mutate the provider account, record the current state before proceeding.
+  </Step>
+  <Step title="Verify the outcome">
+    After a change finishes, return to the same provider, level, object, and date scope. Confirm the new state in Campaigns and, for a decision-grade check, in the provider account.
   </Step>
 </Steps>
 
-## Common outcomes
+## Save a reusable campaign view
 
-### Triage delivery
+Use a saved view for a recurring review such as Meta prospecting, paused campaigns, or a Google brand-search portfolio.
 
-Filter to the affected provider and level, then identify where spend, results, or status changed. Open the object before acting so you can verify its identity and relationship to other levels.
+<Frame caption="Saved views restore a named filter bundle; All view is the clean reset point.">
+  <img src="/assets/product-flows/campaigns-saved-view.png" alt="Campaign views menu showing All view, a selected Meta prospecting view, shared team views, and the Add view action" />
+</Frame>
 
-### Compare periods
-
-Use equal-duration periods where possible. Account for partial days, promotions, budget changes, and attribution differences. A campaign can appear to improve when the reporting window or attribution source changed instead.
-
-### Prepare a campaign
-
-Start the campaign creation flow and provide the goal, provider, product or offer, audience, creative, budget, and schedule the flow requests. Treat a draft as work in progress. Review the assembled structure before launch.
-
-### Work in bulk
-
-When bulk controls are available, select only the records that should share the same action. Recheck the count, provider, level, and proposed effect. Similar names and active filters can make a selection broader than expected.
-
-## Review an account change
-
-Campaign actions are provider- and approval-specific. The interface may let you prepare changes such as status or budget updates for some objects, while another provider or campaign type exposes different controls.
-
-Before any change:
-
-1. Confirm the connected provider and account.
-2. Confirm the exact level and selected objects.
-3. Record the current state and the intended new state.
-4. Review the evidence window and attribution source.
-5. Compare the change with workspace guardrails.
-6. Review the available approval step.
-7. After processing, verify the result in Campaigns and, when needed, in the connected provider.
+1. Set the level, date preset, objective, channel, status, and search state you want to preserve.
+2. Open the view menu. If the trigger reads **Custom filters**, the current scope does not match a saved view.
+3. Choose **Add view**, give the view a specific name, and choose whether it should be shared when that option is available.
+4. Reopen the view and confirm every visible filter changed to the intended value.
+5. Use **All view** to restore the default Campaigns scope before starting an unrelated investigation.
 
 <Warning>
-  Do not infer that an action is supported because a similar control exists for another provider. Use only the controls presented for the selected objects and review their confirmation state.
+  A saved view stores scope, not a conclusion. Its rows and metrics continue to change as provider data syncs and the selected date window advances.
 </Warning>
 
-## Ask the Marketing Agent from campaign context
+## Build a new campaign
 
-Attach a campaign in chat when you want an explanation or a cross-surface outcome. A strong request might be:
+### 1. Choose the provider path
 
-> Using the attached campaign, compare the last 7 complete days with the prior 7. Show the main changes in spend, results, and efficiency. Identify whether the evidence points to delivery, audience, or creative, and prepare one low-risk proposal. Do not apply it.
+Select **New campaign**. The chooser exposes the builders currently supported by the workspace.
 
-The attachment identifies the campaign. Your prompt still needs to define the date, measurement, and authority boundaries.
+<Frame caption="The first decision is the provider: Meta for Facebook and Instagram, or Google Ads for its supported campaign types.">
+  <img src="/assets/product-flows/campaigns-channel-chooser.png" alt="Create new campaign dialog with Meta and Google Ads channel cards and an Advantage Plus Catalog campaign link" />
+</Frame>
+
+- Choose **Meta** for a Facebook or Instagram campaign.
+- Choose **Google Ads** for the Search, Shopping, or Performance Max paths shown by the builder.
+- Choose the catalog link only when you intend to build the displayed Advantage+ Catalog path from product-catalog context.
+
+If the intended provider or account is unavailable, stop and repair it in Integrations. Do not build against a different connected account as a substitute.
+
+### 2. Establish the Meta campaign
+
+For Meta, **Set up the campaign** establishes the shared campaign-level facts before ad-set and ad work.
+
+<Frame caption="Meta setup captures the campaign identity, budget model, objective, publishing account, page, and destination before detailed construction.">
+  <img src="/assets/product-flows/campaigns-meta-setup.png" alt="Meta campaign setup showing campaign name, campaign budget and ad set budget choices, Sales objective, exclude existing customers, ad account, Facebook page, destination URL, Save as draft, and Create and build" />
+</Frame>
+
+<Steps>
+  <Step title="Confirm the generated name">
+    Review **Campaign name** against the workspace naming convention. Use **Regenerate** or edit it before it becomes hard to distinguish from related tests.
+  </Step>
+  <Step title="Choose the budget owner">
+    Select **Campaign budget (CBO)** when Meta should distribute one shared budget, or **Ad set budget (ABO)** when each ad set needs its own amount. With ABO, the next step owns the budget values.
+  </Step>
+  <Step title="Choose the objective and acquisition boundary">
+    Select **Campaign objective**. Review **Exclude existing customers** when it appears; do not leave it enabled or disabled without confirming whether acquisition or retention is intended.
+  </Step>
+  <Step title="Choose where the campaign publishes">
+    Under **Publish to**, confirm the exact ad account and Facebook page. Add the default destination URL and open it to verify the product, offer, and live page.
+  </Step>
+  <Step title="Review attribution and budget fields">
+    For eligible Meta objectives, review the attribution settings shown by the form. For CBO, enter the daily budget in the selected ad account’s currency; for ABO, continue knowing each ad set will require its own budget.
+  </Step>
+  <Step title="Choose a lifecycle">
+    Select **Save as draft** to stop with an editable campaign record. Select **Create and build** to open the builder and continue with ad sets, audiences, conversion settings, and creative.
+  </Step>
+</Steps>
+
+The Google Ads path asks for fields appropriate to its selected campaign type. Follow the builder’s visible requirements; do not transfer Meta’s hierarchy, attribution windows, or budget assumptions into Google Ads.
+
+### 3. Complete the tree
+
+In the builder:
+
+1. Confirm the campaign summary and status is **Draft**.
+2. Add or open each ad set or Google ad group required by the plan.
+3. Review audience or targeting, geography, optimization, conversion, schedule, and the budget owner shown for that object.
+4. Add the intended ads and verify creative, copy, destination, and format for every item.
+5. Open **Review**. Resolve every validation blocker; a ready summary is the publish gate, not a reason to skip human review.
+6. Use **Back to edit** when the summary, ad-set count, ad count, or destination is wrong.
+7. On publish, review the displayed target state and any confirmation dialog. A confirmed launch opens launch progress; it does not instantly prove every provider object succeeded.
+
+## Resume drafts and launches
+
+Select **Drafts** from Campaigns when work was saved, interrupted, or is already publishing.
+
+<Frame caption="The Drafts drawer separates editable drafts from work already publishing and provides the correct next action for each state.">
+  <img src="/assets/product-flows/campaigns-drafts.png" alt="Campaigns Drafts drawer showing Meta and Google drafts with Review actions and a publishing campaign with View progress" />
+</Frame>
+
+| Draft state | Next action | What success looks like |
+| --- | --- | --- |
+| Draft / editing | **Review** | The provider-specific builder opens with the saved campaign. |
+| Publishing | **View progress** | The launch ledger shows current per-object progress. |
+| Rename or duplicate available | Use the row menu, then re-open the resulting draft | The drawer shows the intended name and a distinct draft record. |
+| Delete | Confirm only after identifying the exact draft | The draft leaves the in-progress list; this does not delete an unrelated live provider campaign. |
+
+Use **Launch ads** to open the launch roster. Read the launch result before retrying. A partial or failed launch needs object-level review; submitting a second launch can create duplicates.
+
+## Decision points
+
+| If you see… | It means… | Do this |
+| --- | --- | --- |
+| **Setting up…** or a sync panel | The provider’s first data import is incomplete | Wait for the named source; do not treat an empty table as zero campaigns. |
+| No rows after narrowing filters | The view may be filter-empty | Choose **All view**, clear search, and broaden status/date before escalating. |
+| **Save as draft** enabled | The minimum first-stage setup is valid | Save when review inputs are still missing; do not publish to keep momentum. |
+| Review blockers | The campaign tree is incomplete or invalid | Open the named object and fix the blocker before publish. |
+| A confirmation request | The action can affect a connected account | Verify object, old state, new state, budget, schedule, and risk flags before confirming. |
+| **Awaiting action** | A human decision is required | Review the proposal there and return to Campaigns after the decision. |
+
+## Completion checklist
+
+- The workspace, provider, and provider account are correct.
+- The campaign, ad-set or ad-group, and ad hierarchy matches the plan.
+- Names, objective, audience, conversion, creative, destination, budget, currency, and schedule are correct.
+- Review shows no unresolved validation blocker.
+- Any required approval was made against the exact proposal.
+- Launch progress reached a terminal result for every expected object.
+- Campaigns and the provider show the expected post-launch state.
 
 ## Troubleshooting
 
 <AccordionGroup>
   <Accordion title="No campaigns appear">
-    Confirm that a supported ad provider is connected, the initial sync has completed, and the selected date or filters should include data. A connected account can temporarily show a setup or syncing state before records are available.
+    Confirm the provider connection, selected account, first-sync state, date, channel, objective, status, saved view, and search. If the source is still importing, wait for the Campaigns sync state rather than interpreting the table as empty.
   </Accordion>
-  <Accordion title="A campaign is missing">
-    Check the provider, account, level, status filter, search term, and date range. If the connection is healthy but the object remains missing, compare its current provider status with the latest sync state.
+  <Accordion title="A known campaign is missing">
+    Choose **All view**, move to the correct object level, clear search, and include its current provider status. Then compare the provider object with the latest Marketer sync state.
   </Accordion>
-  <Accordion title="Metrics differ from Analytics">
-    Align the date window, attribution source, currency, account selection, and object level. Analytics may combine or contextualize sources differently from a provider-level row.
+  <Accordion title="Metrics do not match Analytics">
+    Align date window, account, currency, attribution source, and object level. Campaigns is an object table; Analytics may show a different channel or attribution frame.
   </Accordion>
-  <Accordion title="An action is disabled or absent">
-    Check provider support, selected object type, workspace role, connection health, and approval settings. Some actions are intentionally unavailable for particular providers or campaign types.
+  <Accordion title="Create and build is disabled">
+    Complete the visible required fields. For Meta, confirm the campaign name, objective, budget model and amount where required, ad account, Facebook page, and destination URL.
   </Accordion>
-  <Accordion title="A submitted action is not reflected yet">
-    Check **Awaiting action**, task activity, and the current provider state. Do not submit a duplicate while the original request is awaiting approval or provider processing.
+  <Accordion title="Publish is blocked">
+    Read every blocker on Review. Check ad-set or ad-group configuration, conversion destination, budget, schedule, creative completeness, and connected-account health. Do not bypass a blocker by recreating the campaign.
+  </Accordion>
+  <Accordion title="A submitted launch is not reflected yet">
+    Open **Drafts** or **Launch ads** and use **View progress**. Also check task activity and **Awaiting action**. Retry only after the original launch reaches a terminal failure and you understand which objects were created.
   </Accordion>
 </AccordionGroup>
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Analyze performance" icon="chart-line" href="/product-guides/analytics">
-    Build a source-aware explanation before choosing an account action.
+  <Card title="Explain performance" icon="chart-line" href="/product-guides/analytics">
+    Build a source-aware explanation before changing a campaign.
   </Card>
-  <Card title="Review approvals" icon="inbox" href="/working-with-marketer/awaiting-action">
-    Verify the exact scope and effect of a proposed campaign change.
+  <Card title="Review a pending decision" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Verify the scope and effect of a proposed account change.
   </Card>
 </CardGroup>

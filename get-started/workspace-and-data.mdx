@@ -1,78 +1,130 @@
 ---
 title: "Set up your workspace and data"
 sidebarTitle: "Workspace and data"
-description: "Configure a Marketer workspace and connect the sources that ground its results."
+description: "Build a workspace with the correct members, connected sources, selected resources, and business context."
 ---
 
-A workspace keeps one company's data, brand context, members, controls, and work together. Select the correct workspace before you ask a question or approve an action.
+A workspace is the boundary around one company's data, context, people, controls, and work. Set that boundary correctly before you ask Marketer to analyze performance or prepare an external action.
 
-## Complete onboarding
+## Complete the workspace flow
 
-New workspace setup follows this sequence:
+New workspace setup moves through five decisions. Each one changes what becomes available after Home opens.
 
 <Steps>
-  <Step title="Sign in">
-    Use Google sign-in or verify your email address. The email path also asks you to complete your personal profile.
+  <Step title="Sign in with the intended identity">
+    Use Google sign-in or verify your work email. If an invitation is waiting, use the invited address so Marketer can place you in the existing account and workspace.
+
+    **Next state:** you either join an invited workspace or enter the create-workspace flow.
   </Step>
-  <Step title="Describe the workspace">
-    Add the company name, website, optional logo, country, and reporting currency.
+  <Step title="Describe the company">
+    Add the company name, website, optional logo, country, and reporting currency. Confirm these values for the company this workspace represents.
+
+    **Next state:** Marketer opens the data-sync step with the workspace identity saved.
   </Step>
-  <Step title="Sync data or skip for now">
-    Connect Meta Ads, Google Ads, Shopify, or Triple Whale **(Beta)** from onboarding. You can skip data sync and connect sources later from **Integrations**.
+  <Step title="Connect a source or skip deliberately">
+    The onboarding **Sync in data** step can connect Meta Ads, Google Ads, Shopify, or Triple Whale **(Beta)**. Authorize a provider and select the resources that belong to the workspace, or skip and connect later from **Integrations**.
+
+    **Next state:** a connected source begins its first sync, or the workspace continues without provider data.
   </Step>
-  <Step title="Choose your role and use cases">
-    Tell Marketer how you expect to use the workspace. This personalizes setup; it does not replace the workspace permission assigned to your membership.
+  <Step title="Choose your working profile">
+    Select the role and use cases that describe how you expect to use Marketer. This shapes setup; it does not replace the Owner, Admin, Member, or Viewer permission assigned to your membership.
+
+    **Next state:** Marketer can tailor the remaining setup prompts without changing your workspace authority.
   </Step>
-  <Step title="Bring in your team">
-    Invite teammates, connect Slack, or skip both choices. Marketer then opens the workspace with a welcome step.
+  <Step title="Bring in the team or continue alone">
+    Invite teammates, connect Slack, or skip both choices. Confirm the correct people and destination workspace before sending an invitation or authorizing Slack.
+
+    **Next state:** Marketer opens the workspace welcome state and Home.
   </Step>
 </Steps>
 
 <Note>
-  Onboarding does not ask you to select a plan. If billing applies to your workspace, manage it later from **Settings → Plans & Billing** when your role permits access.
+  Onboarding does not ask you to select a plan. If billing applies and your role permits access, manage it later from **Settings → Plans & Billing**.
 </Note>
 
-## Choose the sources you need
+## Select the correct workspace
 
-Connect a source because it answers a specific kind of question:
+On Home, read the workspace name in the upper-left corner before using the composer. Switch workspaces when the visible company is not the one that owns the source or work you need.
 
-| Source | Best for | Important boundary |
+Changing the workspace changes the accessible connected accounts and workspace records. It does not move a conversation, campaign, brief, creative, product, or integration from one workspace into another.
+
+## Connect data after onboarding
+
+Owners, Admins, and Members can manage integrations. Viewers can inspect the visible connection state but cannot connect, reconnect, change selections, sync, or disconnect.
+
+<Frame caption="Open Integrations to choose a provider and see which sources still need setup.">
+  <img src="/assets/product-flows/integrations-directory.png" alt="Marketer Integrations directory listing advertising, commerce, analytics, and collaboration providers with connection status" />
+</Frame>
+
+<Steps>
+  <Step title="Open Integrations">
+    Select **Integrations** in the main navigation. Confirm the workspace again before you grant provider access.
+  </Step>
+  <Step title="Choose the source">
+    Open the provider that owns the facts you need. Use Meta Ads or Google Ads for platform campaign performance, Shopify for store and order data, Google Analytics 4 for site reporting, or another supported provider for its documented purpose.
+  </Step>
+  <Step title="Authorize access">
+    Continue through the provider flow or enter the credential the connection form requests. Never paste provider credentials into chat.
+  </Step>
+  <Step title="Select resources">
+    Choose the ad accounts, stores, properties, or channel settings that belong in this workspace. Do not select every available resource by default.
+  </Step>
+  <Step title="Verify connection and coverage">
+    Check the visible status, selected resources, and sync or coverage information. Run a small read-only request for a completed period before asking for broad analysis.
+  </Step>
+</Steps>
+
+<Frame caption="The provider header confirms that Meta Ads is authorized. Continue down the page to verify selected assets and sync coverage.">
+  <img src="/assets/product-flows/integration-meta-connected.png" alt="Meta Ads integration header with Connected badge and Disconnect action" />
+</Frame>
+
+## Read the connection state
+
+Use the state shown on the provider detail rather than assuming authorization succeeded.
+
+| State | Meaning | Next action |
 | --- | --- | --- |
-| Meta Ads | Meta campaign structure and platform-reported delivery and conversion metrics | Results reflect the selected Meta account and completed sync coverage. |
-| Google Ads | Google campaign structure and platform-reported performance | You may need to choose specific accounts after authorization. |
-| Shopify | Products, orders, and store performance | Store figures and ad-platform figures can use different attribution rules. |
-| Google Analytics 4 | Site sessions, engagement, and visitor reporting | Select a reachable GA4 property and check the reporting period. |
-| Slack | Team notifications and supported collaboration flows | Connecting Slack does not make every approval available in Slack. |
-| Triple Whale **(Beta)** | An additional attribution view for Meta and Google campaigns | Always name the attribution model when you use its figures. |
+| **Connected** | Provider authorization is present | Confirm selected resources and completed sync coverage. |
+| **Finish setup** | Authorization exists but required resource selection is incomplete | Select the intended accounts, stores, or properties and save. |
+| **Reconnect needed** | The saved authorization cannot currently provide the required access | Reauthorize with the intended provider identity, then recheck selections. |
+| **Status unavailable** | Marketer could not verify the live provider state | Refresh and retry the status check; do not assume the connection was removed. |
+| **Disconnected** | The workspace has no active connection for that provider | Connect it only if the workspace should use that source. |
 
-See [Integrations](/integrations/overview) for provider-specific setup and troubleshooting.
+Use **Resync** when authorization and resource selection are correct but imported data needs a refresh. Use **Disconnect** only when the workspace should stop using the source; reporting and workflows can lose their data context.
 
-## Know when a source is ready
+## Choose sources by question
 
-A successful authorization is the start of the connection, not proof that every date is available. Before using a source:
+| Source | Use it for | Boundary to check |
+| --- | --- | --- |
+| Meta Ads | Meta campaign structure, delivery, and platform-reported conversion metrics | Selected Meta account and imported date coverage |
+| Google Ads | Google campaign structure and platform-reported performance | Selected Google Ads account after authorization |
+| Shopify | Products, orders, and store performance | Store reporting can use different attribution than an ad platform |
+| Google Analytics 4 | Site sessions, engagement, channels, campaigns, and landing pages | Selected property, reporting window, and read-only availability |
+| Slack | Supported conversations, progress, approvals, and workspace alerts | Connecting Slack does not make every approval available there |
+| Triple Whale **(Beta)** | An additional attribution view for Meta and Google campaigns | Attribution window, model, accounting mode, and data coverage |
 
-- Confirm the expected account or property is selected.
-- Check the connection and sync status.
-- Note the latest successful sync when the product shows it.
-- Ask for a small, recent range before requesting a broad analysis.
-- Treat missing dates as unknown, not as zero.
+Microsoft Ads **(Beta)** and OpenAI Ads **(Beta)** are also available. Follow [Beta integrations](/integrations/beta) for their current setup and boundaries.
 
-## Add business context
+## Add context at the right level
 
-Connected metrics explain what happened. Workspace context helps Marketer interpret why it matters.
+Connected sources answer what happened. Workspace context explains the business those facts belong to.
 
-Add durable information such as positioning, customer definitions, product facts, and operating rules to **Knowledge**. Use **Branding & Brand Profile**, **Autofills**, **Guardrails**, and **Autonomy** for the workspace defaults those settings own.
+- Put durable company, customer, product, positioning, and operating facts in **Knowledge**.
+- Use **Branding & Brand Profile**, **Autofills**, **Guardrails**, and **Autonomy** for the defaults those settings own.
+- Enter `@` in the Home composer to attach a campaign, brief, creative, or product to one request.
+- Keep temporary hypotheses, date windows, and one-off constraints in the request instead of turning them into workspace-wide facts.
 
-For a one-off request, attach a campaign, brief, creative, or product in the composer with `@`. The attachment narrows the current request without changing the underlying source data.
+An attachment identifies a specific workspace record; it does not change the data imported from the provider.
 
-## Keep workspace settings consistent
+## Confirm the workspace is ready
 
-Country, currency, timezone, and account scope affect how you interpret a result. If two systems disagree, confirm that they use the same:
+Before your first analysis, verify all six conditions:
 
-- Date boundaries and timezone
-- Currency and any conversion policy
-- Account or property
-- Attribution source and model
-- Metric definition
+- The upper-left workspace name is correct.
+- Your workspace role matches the work you need to do.
+- The required provider says **Connected**.
+- The intended provider resources are selected.
+- The relevant completed dates are covered by a successful sync.
+- Country, reporting currency, timezone, attribution source, and metric definitions are understood for the comparison.
 
-Next, [run your first task](/get-started/first-task) with one source and one clear decision in scope.
+If any condition fails, use [integration troubleshooting](/integrations/troubleshooting). Otherwise, [run your first task](/get-started/first-task) with one source and one decision in scope.

@@ -1,46 +1,94 @@
 ---
 title: "Introduction to Marketer"
 sidebarTitle: "Introduction"
-description: "Learn how Marketer brings your marketing data, work, and approvals into one workspace."
+description: "Learn how a request moves from workspace context to a reviewed result or controlled action in Marketer."
 ---
 
-Marketer is a workspace for understanding performance, creating marketing work, and moving approved work forward. It combines connected business data with an agent you can brief in plain language.
+Marketer gives your team one place to ask questions, follow marketing work, review evidence, and decide what moves forward. Start on **Home**, give the Marketing Agent a clear outcome, and follow the work until you reach a result or a decision.
 
-You can begin with a question, inspect the evidence behind the answer, and decide what happens next. You stay in control of changes through workspace roles, guardrails, autonomy settings, and approval steps.
+## Start on Home
 
-## The core loop
+Open [Marketer](https://app.marketer.com/dashboard) and confirm the workspace name in the upper-left corner before you submit anything. The active workspace determines which connected accounts, Knowledge, campaigns, briefs, creatives, products, and controls the agent can use.
 
-1. **Ground the workspace.** Connect the accounts that contain your performance, commerce, or site data. Add brand and product context where it will improve the result.
-2. **Ask for an outcome.** Describe the decision, analysis, brief, or workflow you need. Include the source, date range, and constraints that matter.
-3. **Review the result.** Check the source, freshness, scope, assumptions, and proposed next step.
-4. **Act with control.** Keep the work as a draft, approve a pending action, or let the workspace follow its configured autonomy policy.
+<Frame caption="The Home canvas combines performance context, the request composer, active work, and recent summaries.">
+  <img src="/assets/product-flows/home-overview.png" alt="Marketer Home canvas with performance overview, request composer, current work, daily summaries, plans, and reports" />
+</Frame>
 
-## What you can do
+Use Home in this order:
 
-| Area | Use it to |
-| --- | --- |
-| **Home** | Ask Marketer questions and add campaign, brief, creative, or product context. |
-| **Campaigns** | Review campaign structure and performance, then prepare or launch campaign work. |
-| **Analytics** | Explore performance, creative performance, reports, and Live view. |
-| **Creatives** | Work with briefs, Studio, and creative assets. |
-| **Workflow** | Set up repeatable reports, alerts, and other recurring work. |
-| **Workspace** | Manage chat history, notifications, Knowledge, Skills, pending actions, and settings. |
+1. **Confirm the workspace.** Switch workspaces if the visible name is not the company you intend to work with.
+2. **Check the available context.** The overview and recent work help you see whether you are starting from the expected business state.
+3. **Write the outcome.** Use **Ask anything or @ to add context** to describe the question, artifact, or decision you need.
+4. **Attach the exact record when scope matters.** Enter `@` and select a campaign, brief, creative, or product instead of relying on a similar name.
+5. **Follow the work.** A request can answer in chat, continue as a task, ask for clarification, or stop on a proposal that needs your decision.
 
-Marketer supports Meta Ads, Google Ads, Shopify, Google Analytics 4 (GA4), and Slack as core integrations. Triple Whale is available as a Beta integration. The data available in any result depends on what your workspace has connected and successfully synced.
+## The product flow
 
-<Note>
-  Marketer does not treat a recommendation as permission to make a change. The behavior of a write action depends on your role, guardrails, autonomy settings, and any approval step shown in the product.
-</Note>
+Every useful request moves through the same five layers, even when the work itself differs.
 
-## Start with a trustworthy result
+| Layer | What you provide or inspect | What should be clear before you continue |
+| --- | --- | --- |
+| **Workspace** | The company, members, connected accounts, Knowledge, and settings in scope | You are in the intended workspace and the required source is connected. |
+| **Request** | Outcome, source, scope, date range, constraints, and action boundary | Marketer can tell what to produce and what it must not change. |
+| **Work** | A direct response, task steps, specialist work, or a proposal | You can see whether work is running, waiting for input, or ready for review. |
+| **Result** | The answer, report, brief, creative, workflow, or campaign work produced | The result matches the request and identifies the evidence that supports it. |
+| **Decision** | Continue, revise, dismiss, approve, or verify in the owning surface | A recommendation is separate from permission to change an external account. |
 
-Your first task should be read-only. Ask Marketer to compare performance over two complete periods, name the data source, and report any gaps. This gives you a useful result while you learn how the workspace represents sources and freshness.
+### Answer flow
+
+Use this for analysis and other read-only work:
+
+1. Ask a bounded question on **Home**.
+2. Let Marketer read the connected source and workspace context.
+3. Open the completed result.
+4. Verify its source, dates, scope, calculation, and limitations.
+5. Ask a follow-up or continue in the relevant product area.
+
+### Action flow
+
+Work that can create or change something has an additional decision boundary. Marketer can show a proposed sequence before it runs.
+
+<Frame caption="A proposal exposes the planned steps and gives you a decision before the run starts.">
+  <img src="/assets/product-flows/task-proposal.png" alt="Marketer task proposal showing a seven-step creative pipeline with Dismiss, Edit, and Approve and Run controls" />
+</Frame>
+
+At this state:
+
+- Choose **Dismiss** when the proposed work should not continue.
+- Choose **Edit** when the goal or steps need correction.
+- Choose **Approve & Run** only after the scope, source, output, and downstream effect are correct.
+
+The available controls depend on the task, your role, connected provider, guardrails, and workspace autonomy settings. A proposal is not evidence that anything has already changed.
+
+## Know where work belongs
+
+| You want to… | Start or continue in… | What you verify there |
+| --- | --- | --- |
+| Ask a question or brief the agent | **Home** | Request, attachments, and response |
+| Reopen a conversation or longer task | **Chats and tasks**, or the task link shown in the conversation | Current step, input request, and final result |
+| Inspect campaign structure or prepare campaign work | **Campaigns** | Provider account, campaign object, state, and metrics |
+| Explore performance | **Analytics** | Date window, source, filters, and metric definitions |
+| Create or review creative work | **Briefs**, **Creatives**, and **Studio** | Brand context, output, and intended use |
+| Make recurring work repeatable | **Workflow** | Trigger, inputs, destination, and review boundary |
+| Connect data | **Integrations** | Authorization, selected resources, sync, and coverage |
+| Resolve a pending decision | **Awaiting action** | Exact proposal, evidence, guardrail, and approver |
+
+Names and available controls can vary with your workspace role, plan, connected accounts, and product state. Use the surface shown in your workspace as the source of truth.
+
+## Your first complete loop
+
+For the safest first session:
+
+1. [Set up your workspace and data](/get-started/workspace-and-data).
+2. [Build a plan-only launch task](/get-started/first-task) from approved evidence and one connected ads account.
+3. [Review the result](/get-started/review-result) before you use it.
+4. Move into campaign, creative, analytics, or workflow work only after the first source is trustworthy.
 
 <CardGroup cols={2}>
-  <Card title="Run the quickstart" icon="rocket" href="/get-started/quickstart">
-    Create a workspace, connect a source, and produce your first grounded result.
+  <Card title="Complete the quickstart" icon="rocket" href="/get-started/quickstart">
+    Follow the shortest path from sign-in to a verified result.
   </Card>
-  <Card title="Learn the guidelines" icon="compass" href="/essential-guidelines/context-and-grounding">
-    Give Marketer better context and review its work with confidence.
+  <Card title="Learn the request model" icon="message-square" href="/essential-guidelines/effective-requests">
+    Give the agent the outcome, evidence boundary, and authority it needs.
   </Card>
 </CardGroup>

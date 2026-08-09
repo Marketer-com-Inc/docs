@@ -1,109 +1,175 @@
 ---
 title: "Specialists"
 sidebarTitle: "Specialists"
-description: "Understand how the Marketing Agent coordinates focused expertise for research, campaign, creative, and other marketing work."
+description: "Route a request, open the Agents workbench, and inspect each specialist's state, tasks, outputs, and sources."
 ---
 
-The Marketing Agent is your main conversational entry point. It can answer directly, work from your workspace context, or coordinate a specialist when the request benefits from focused expertise or a longer process.
+The Marketing Agent coordinates the conversation. Specialists contribute focused work such as research, campaign planning, creative direction, or creative generation. The **Agents** workbench makes that coordination visible without forcing you to reconstruct it from chat messages.
 
-You do not need to translate a marketing goal into an internal workflow. Describe the outcome, evidence, and boundaries you need. Marketer can then choose an appropriate way to handle the work and show you its progress.
+Use the workbench to answer three questions: who owns the current step, what did that specialist produce, and what still blocks the overall result?
 
-## When specialist work helps
+## Choose how the request is routed
 
-Focused work is useful when the request needs more than a quick answer, such as:
+The agent control in the composer supports two paths:
 
-- Building or refreshing brand research from approved sources.
-- Investigating campaign performance and preparing a proposed next step.
-- Researching audience language or creative angles.
-- Turning a brief into a set of creative directions or assets.
-- Running a structured account review.
-- Gathering evidence from a live web source when connected data is not enough.
+- Keep **Auto — Routes each request** selected when you want the Marketing Agent to choose a perspective for each turn.
+- Select a specialist shown in the menu when you want to keep that specialist's perspective for the conversation.
 
-The specialists available to you can vary by workspace and product state. Treat the names and capabilities shown in your interface as the current source of truth.
+The available specialist names come from the current workspace. Selecting one changes the conversational perspective. A longer run still starts only when Marketer creates the task and, when shown, you select **Approve & Run**.
 
-## Start with the Marketing Agent
+For multi-step work, describe the result rather than trying to assign every internal handoff yourself:
 
-<Steps>
-  <Step title="Describe the outcome">
-    State the decision or deliverable you need. Include the intended audience, channel, time frame, and success measure.
-  </Step>
-  <Step title="Provide the evidence boundary">
-    Attach relevant workspace records and name any approved external sources. Say which facts must come from connected data and where inference is acceptable.
-  </Step>
-  <Step title="Set authority and review rules">
-    Specify whether the work is read-only, may produce a draft, or may prepare a proposed action. Do not combine “investigate” and “apply changes” without an explicit review point.
-  </Step>
-  <Step title="Follow the task">
-    If Marketer starts longer specialist work, use the task detail to follow its progress. Respond when it requests input or a decision.
-  </Step>
-  <Step title="Review the combined result">
-    The Marketing Agent can bring specialist findings back into the conversation. Check that the final answer resolves conflicts, cites the evidence, and stays within the original boundary.
-  </Step>
-</Steps>
+```text
+Build a launch plan around the attached product and our strongest approved
+differentiator. Ground the positioning in current Brand Profile and customer
+evidence, develop the campaign sequence, and return a launch checklist.
+Prepare creative generation as a reviewable plan before running it.
+```
 
-## Specialist perspective and specialist task
+## Review the run before it starts
 
-Marketer can apply focused expertise in two ways:
+When Marketer proposes coordinated work, the proposal lists the steps it intends to run.
 
-| Mode | Best for | What you receive |
+<Frame caption="The plan exposes the work before specialists or a pipeline begin the longer run.">
+  <img
+    src="/assets/product-flows/task-proposal.png"
+    alt="Marketer conversation with a seven-step Creative Pipeline proposal and Dismiss, Edit, and Approve and Run controls"
+  />
+</Frame>
+
+Read the plan for evidence collection, production, ranking, and the final deliverable. Select:
+
+- **Dismiss** to stop the proposal.
+- **Edit** to change the goal, steps, inputs, output count, or review boundary.
+- **Approve & Run** to start the plan as shown.
+
+This approval starts the listed work. It does not grant blanket authority for later changes to connected accounts.
+
+## Open the Agents workbench
+
+After work starts, select the **Open Agents** control on the right edge of the conversation. The compact sidebench shows active and recent agent work. Select **More** to open the full overview.
+
+<Frame caption="The full Agents overview separates current work from completed work and keeps each row tied to its run state.">
+  <img
+    src="/assets/product-flows/workbench-overview.png"
+    alt="Marketer Agents workbench with Active and Done sections listing campaign, research, and creative specialists with status, description, and update time"
+  />
+</Frame>
+
+Read the overview from top to bottom:
+
+| What you see | What it means | What to do |
 | --- | --- | --- |
-| Focused conversation | A quick opinion, critique, or explanation in one domain | A direct response in the current thread |
-| Longer task | Research, production, or analysis with multiple steps | Progress, a result or artifact, and any required review point |
+| **Active** | Work that is queued, working, or waiting | Select the row to inspect its current state and task. |
+| **Done** | Completed, partial, failed, or canceled work | Open the row to review the result, preserved output, or failure. |
+| Specialist name | The focused identity responsible for the run | Compare it with the task you expected that specialist to own. |
+| Description | The run goal or latest useful summary | Use it to distinguish similar specialist runs. |
+| Relative time or status | Recency and lifecycle context | Confirm you opened the current run rather than an older one. |
 
-If you need a durable deliverable, say so. For example, ask for “a brief with three ranked angles and a review checklist,” not just “think like a creative strategist.”
+An orchestrated family can contain a coordinating run, sibling specialists, and nested specialist work. The overview groups related runs so you can trace the family without assuming every row is independent.
 
-## Keep coordinated work grounded
+## Inspect one specialist
 
-Specialization does not replace evidence. Use the same review standards you would apply to a direct response:
+Select a row in the overview. The header changes to a breadcrumb beginning with **Agents**, followed by the selected specialist. The detail body shows the current or final run content.
 
-- Confirm that workspace facts come from the correct Knowledge sources or connected accounts.
-- Confirm that performance findings use the intended dates, provider, attribution view, currency, and freshness state.
-- Require external research to identify what was observed and where.
-- Review generated copy and creative for unsupported claims or invented product details.
-- Treat campaign changes as proposals until the applicable approval and provider state confirm otherwise.
+For a coordinated plan, the sidebench can expose:
+
+- **Tasks:** the plan steps and whether each is pending, active, done, or blocked.
+- **Outputs:** artifacts or result links produced by the run family.
+- **Sources:** the linked evidence made available for inspection.
+
+Use the back control to return to the overview. Use the open-detail icon when you want the full Activity detail page for that run.
+
+## Follow a specialist into nested work
+
+A specialist can open a nested pipeline or result. Select the specialist row, then select the nested work from its detail instead of stopping at the parent status.
+
+<Frame caption="The breadcrumb preserves the path from Agents to Campaign manager to the nested Creative Pipeline.">
+  <img
+    src="/assets/product-flows/workbench-creative-detail.png"
+    alt="Marketer workbench showing Agents, Campaign manager, and Creative Pipeline breadcrumbs, a running-time label, Stop control, three completed pipeline steps, and a result summary"
+  />
+</Frame>
+
+Use this review path:
+
+1. Confirm every breadcrumb level matches the intended agent family and nested run.
+2. Compare the top-level run state with the nested step states; completed nested steps do not necessarily mean the parent has stopped working.
+3. Read the result summary and open any linked output, not only the step checks.
+4. Check product identity, claims, brand direction, format, and review criteria.
+5. Follow any **Outputs** link to **Studio** or **Assets** and confirm the item exists there.
+6. Return to the conversation when you want to revise the brief or request a new direction.
+
+The specialist result explains what its branch produced. The conversation remains the place where the Marketing Agent combines branches into the requested final answer.
+
+### Stop work that is no longer needed
+
+When **Stop** is visible in a running specialist or pipeline detail, select it only when the objective should no longer continue. Marketer requests cancellation for that run and its child work, and the control changes to **Stopping…** while the request settles.
+
+Stay on the same detail until the run shows **Canceled**. Do not start replacement work while it is still stopping, because active child work may not have reached its terminal state yet. If **Stop** is absent, the run may already be terminal or your workspace role may not allow changes.
+
+## Handle each specialist state
+
+### Working
+
+Open the row to see the active goal or step. A specialist can remain active while a sibling is already done. Wait for the combined result unless the active row requests input.
+
+### Waiting
+
+Read the detail to identify what is missing. If it needs a fact or constraint, answer in the originating conversation. If it needs a recorded decision, open **Awaiting action**.
+
+### Completed
+
+Open the output and sources. A completed research branch may provide evidence; a completed creative branch may provide an artifact. Neither is automatically the entire requested result.
+
+### Partially completed
+
+Determine which branch produced usable work and which branch did not. Preserve supported output and ask the Marketing Agent to reconcile the missing part.
+
+### Failed
+
+Open the failed row before retrying. Check the last successful step, error, required connection, and whether sibling outputs are still usable. Retry the failed branch only when the cause is resolved.
+
+### Canceled
+
+Treat the run as stopped. Start a revised run from the conversation if the deliverable is still needed; do not assume a canceled branch will resume.
+
+## Reconcile multiple specialist results
+
+When specialists return different recommendations, bring them back to one decision frame in the conversation:
+
+```text
+Reconcile the campaign and creative recommendations against the same launch
+objective, audience, date context, and approved product claims. Identify the
+evidence for each disagreement, preserve uncertainty, and return one ranked
+plan with explicit review criteria. Do not launch anything.
+```
+
+Then verify the combined result:
+
+- Every conclusion maps to an output or source you can inspect.
+- Conflicting measurement frames are made explicit.
+- Generated claims match approved product and brand context.
+- A recommendation is not presented as an applied change.
+- The final result answers the original deliverable, not only one specialist's branch.
 
 <Warning>
-  A confident specialist voice is not proof. When a claim affects spend, customer-facing content, or strategy, require the underlying evidence and verify it in the surface that owns the data.
+  Specialist identity and completion state do not prove a claim. Inspect the source or output behind material recommendations, especially those affecting spend or customer-facing creative.
 </Warning>
-
-## Example requests
-
-### Performance investigation
-
-> Investigate the attached campaign for the last 14 complete days. Use a performance marketing perspective, separate data from hypotheses, and return a ranked diagnosis with one low-risk test. Do not change the account.
-
-### Creative direction
-
-> Use the attached product and current brand Knowledge to develop three distinct creative directions. For each, include the audience insight, hook, visual concept, proof requirement, and reason it is different. Produce a brief only.
-
-### Account review
-
-> Review the connected workspace for setup, delivery, and knowledge gaps. Cite the evidence for each finding, rank fixes by impact and effort, and keep the review read-only.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="The wrong expertise is being applied">
-    Restate the outcome and the domain that should own the decision. Attach the relevant record and explain what is out of scope. Starting a new thread can help when the current conversation has accumulated unrelated context.
-  </Accordion>
-  <Accordion title="Specialists returned conflicting recommendations">
-    Ask the Marketing Agent to reconcile them against one success metric, the same date and attribution context, and your current guardrails. Preserve material uncertainty instead of forcing a false consensus.
-  </Accordion>
-  <Accordion title="The task needs more information">
-    Supply the missing source or constraint through the task or conversation. If the required integration is unavailable, narrow the claim to what the current evidence supports.
-  </Accordion>
-  <Accordion title="The result is too broad">
-    Request a defined artifact, maximum number of recommendations, ranking method, and explicit next decision. A narrower deliverable is easier to review and reuse.
-  </Accordion>
-</AccordionGroup>
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Follow specialist work" icon="list-check" href="/working-with-marketer/tasks-and-activity">
-    Inspect progress and review the task result before moving to action.
+  <Card title="Track the parent task" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Connect specialist state to the task's current step and terminal result.
   </Card>
-  <Card title="Review a pending decision" icon="inbox" href="/working-with-marketer/awaiting-action">
-    Apply a consistent approval checklist to proposed changes.
+  <Card title="Review pending decisions" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Resolve an approval that pauses a specialist or coordinated run.
+  </Card>
+  <Card title="Review creative output" icon="image" href="/product-guides/creatives">
+    Continue from the run output into Briefs, Studio, and Assets.
+  </Card>
+  <Card title="Reopen the conversation" icon="messages" href="/working-with-marketer/history-and-notifications">
+    Return to the original request, attachments, and decisions.
   </Card>
 </CardGroup>

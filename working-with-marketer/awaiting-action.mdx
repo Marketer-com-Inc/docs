@@ -1,106 +1,190 @@
 ---
 title: "Awaiting action"
 sidebarTitle: "Awaiting action"
-description: "Review pending approvals and proposals that require a human decision before work can continue."
+description: "Review a proposed run, connected-account change, or paused workflow and verify the result after your decision."
 ---
 
-**Awaiting action** is the workspace inbox for decisions that still need a person. It brings pending approvals and proposals together so you can review them without finding the original conversation first.
+**Awaiting action** is the workspace inbox for work that cannot continue without a human decision. It brings together recorded approvals, paused workflow decisions, and links back to proposals that need review.
 
-Items appear here because Marketer needs an explicit decision, not because a change has already happened.
+An item here describes a pending decision. It is not evidence that the proposed change already happened.
 
-## What belongs here
+## Know which decision you are making
 
-Depending on your workspace configuration, the inbox can include:
+Marketer exposes two distinct review points.
 
-- A proposed change to a connected account.
-- An approval required by a workflow step.
-- A proposal that needs acceptance or rejection.
-- A decision that blocks a longer-running task.
+| Review point | Where it appears | What the decision does |
+| --- | --- | --- |
+| Proposed agent or pipeline run | Inside the conversation | Decides whether the listed plan may start. |
+| Proposed connected-account or workflow action | **Awaiting action** in Quick actions | Records whether the specific change or paused run may continue. |
 
-The available controls depend on the proposal, connected provider, workspace role, and approval settings. Use the options shown on the item rather than assuming every proposal supports the same decisions.
+The controls and consequences are different. Review the complete item before selecting a button.
 
-## Review a proposal
+## Review a proposed run in chat
+
+Longer agent work can begin with a step-by-step proposal.
+
+<Frame caption="A task proposal shows its planned work before the longer run starts.">
+  <img
+    src="/assets/product-flows/task-proposal.png"
+    alt="Marketer conversation showing a seven-step Creative Pipeline proposal with Dismiss, Edit, and Approve and Run controls"
+  />
+</Frame>
+
+### Read the proposal
+
+1. Match the proposal title to the outcome you requested.
+2. Expand **Steps** and read the full sequence.
+3. Confirm the plan gathers the intended workspace context and evidence.
+4. Check the production or action steps against your authority boundary.
+5. Confirm the final step returns the artifact or result you need.
+
+Then select:
+
+- **Dismiss** when the run should not happen.
+- **Edit** when the objective is right but the plan needs a different scope, input, step, or output.
+- **Approve & Run** when the plan is correct and you want the listed work to start.
+
+After **Approve & Run**, the proposal changes into task progress. Follow the task until it is completed, waiting, partial, failed, or canceled. This decision approves the listed run—not every action its result might later recommend.
+
+## Open the Awaiting action inbox
+
+Open **Awaiting action** from Quick actions. The page title is **Awaiting your action** and the description identifies it as pending approvals and proposals that need a human decision.
+
+The page can show decidable approval rows above a feed of other pending items. Start with rows that have **Approve** and **Reject** controls, then use linked feed items to open their full source context.
+
+## Decide an agent-proposed change
+
+A connected-account proposal row can show:
+
+- The affected entity or object name
+- The action or tool that proposed the change
+- Who or what submitted it, plus its age
+- A spend-impact badge when that impact is known
+- The reason for the proposal
+- One or more fields shown as current value → proposed value
+- The relevant ad-account identifier when available
 
 <Steps>
-  <Step title="Confirm the workspace and source">
-    Make sure the item belongs to the intended workspace and connected provider. Similar campaign or asset names are not enough to establish scope.
+  <Step title="Confirm the object">
+    Match the entity name, provider account, and object level to the record you intended to change. Similar names are not enough.
   </Step>
-  <Step title="Read the exact proposed change">
-    Identify the object, current state, proposed state, and size of the change. For campaign work, review the level involved and any effect on spend or delivery.
+  <Step title="Read the diff">
+    Review every current value and proposed value. If the item says it did not record a change summary, open the source tool or conversation and do not approve from the incomplete row.
   </Step>
-  <Step title="Check the evidence">
-    Open the supporting result or conversation. Confirm the date range, metrics, attribution source, currency, and freshness that justify the proposal.
+  <Step title="Check impact and evidence">
+    Confirm the size and direction of the change, the reason, the supporting measurement window, and the workspace guardrail that permits it.
   </Step>
-  <Step title="Check the guardrail">
-    Compare the proposal with your workspace guardrails, autonomy settings, and the authority of the person making the decision.
+  <Step title="Choose Approve or Reject">
+    Select **Approve** only when the recorded object and diff are correct. Select **Reject** when the scope is wrong, stale, unsafe, or unsupported.
   </Step>
-  <Step title="Decide and verify">
-    Use the available decision control. If the item proceeds, return to the owning product surface and confirm the resulting state after the provider has processed it.
+  <Step title="Read the confirmation">
+    Approval opens **Approve this change?** Read the account and spend warning, then select **Approve** again to record the decision or **Cancel** to return without deciding.
   </Step>
 </Steps>
 
-## Approval checklist
+An approval gives the proposing agent permission to apply that specific change. The change is not complete until Marketer runs it; verify the result in the owning product surface and, when needed, the connected account.
 
-For a change that can affect spend, targeting, delivery, or a public asset, verify all of the following:
+## Decide a paused workflow run
 
-- **Provider:** The intended connected account is selected.
-- **Object:** The campaign, ad set, ad, workflow, or asset is unambiguous.
-- **Effect:** You understand what will change and what will remain unchanged.
-- **Magnitude:** The budget, status, audience, or delivery impact is acceptable.
-- **Evidence:** The recommendation is supported by the intended measurement context.
-- **Guardrail:** The change fits current workspace rules and business constraints.
-- **Recovery plan:** You know what you will monitor and what would cause you to revisit the decision.
+A workflow approval row identifies a specific scheduled or triggered run that paused. It can show:
+
+- The requested decision and workflow name
+- A **Paused** badge
+- The action and number of items that will change
+- A list of affected entities, followed by an additional count when the list is longer
+- When that entity set was picked
+- Whether other runs of the same workflow are also waiting
+- **Approve**, **Reject**, and **Review the automation** controls
+
+### Review the scope
+
+Select **Review the automation** when you need to inspect the trigger, steps, or guardrails that created the decision. Return to the pending row and compare the configuration with the scope shown there.
+
+If the row says the workflow did not record what it will change, review the automation before approving. Missing scope is not evidence of a zero-impact change.
+
+### Choose the branch
+
+- **Approve** opens **Let this automation continue?** The dialog restates what the current run will do. Confirming releases that run to continue immediately.
+- **Reject** stops the current paused run from continuing.
+- **Review the automation** leaves the decision pending while you inspect its configuration.
+
+When several runs of the same workflow are waiting, the decision applies only to the run shown. The remaining runs stay paused. After you decide, the interface can show a **Decision sent** receipt while other runs remain unresolved; their own approval rows appear as the workflow progresses.
 
 <Warning>
-  Do not approve an item only because its title sounds familiar. Open the supporting detail and verify the exact object and effect, especially when multiple connected accounts use similar names.
+  A recurring workflow can have more than one paused run, each with its own selected entities. Do not assume one approval resolves every pending run for that workflow.
 </Warning>
 
-## After a decision
+## Follow a linked pending item
 
-The inbox is a decision surface, not the final source of truth for every product state.
+Some items in the lower feed open the conversation, creative review, workflow, or task that owns the decision rather than exposing buttons directly in the inbox.
 
-| Decision relates to… | Verify in… |
-| --- | --- |
-| Campaign structure, status, or delivery | **Campaigns** and the connected provider state |
-| Creative brief or generated asset | **Creatives** |
-| Recurring report, alert, or action | **Workflows** and its run history |
-| A longer analysis or research task | The task result and **Activity** |
-| A reusable procedure | **Skills** |
+1. Open the linked row.
+2. Read the full request, result, and current status.
+3. Make the decision in the owning surface.
+4. Return to **Awaiting action** and confirm the item is no longer unresolved.
 
-If a proposal is rejected, return to its conversation or task when you want to revise the scope. A rejection should not be treated as an instruction to create a second, slightly different action automatically.
+Use the notification's summary for wayfinding only. The linked record supplies the scope you need for the decision.
 
-## Keep the inbox manageable
+## Verify what happened after the decision
 
-- Review pending decisions in a regular operating cadence.
-- Resolve the highest-risk or time-sensitive items first.
-- Reject stale proposals when their evidence window no longer supports the action.
-- Avoid approving multiple overlapping changes before you can observe their combined effect.
-- Use Notifications for receipts and alerts; keep **Awaiting action** focused on unresolved decisions.
+Do not stop at the success message. Follow the chain for the item you decided:
 
-## Troubleshooting
+| Decision | Immediate state to verify | Final state to verify |
+| --- | --- | --- |
+| **Approve & Run** on a task proposal | The card becomes queued or working | The task result and any output link |
+| Approve an agent-proposed account change | The proposal records the approval and leaves the pending list | The updated object in **Campaigns** and, when needed, the provider |
+| Reject an agent-proposed change | The proposal can no longer proceed | No unintended object change occurred |
+| Approve a workflow run | The selected run resumes | The run history shows its output or resulting action |
+| Reject a workflow run | The selected run stops | The run history records that it did not continue |
+| Decide one of several workflow runs | A decision receipt can replace that row | Other paused runs remain available for separate decisions |
+
+If an approved change is still processing, keep the original decision and task open. Do not submit a duplicate proposal.
+
+## Use a material-change review
+
+Before approving work that can affect spend, targeting, delivery, or customer-facing material, verify:
+
+1. **Workspace and provider:** the intended workspace and connected account.
+2. **Object:** the exact campaign, ad set, ad, workflow, or creative.
+3. **Current and proposed state:** every visible field in the diff or run scope.
+4. **Magnitude:** the budget, status, audience, count, or delivery impact.
+5. **Evidence:** source, date window, attribution context, and freshness.
+6. **Guardrail:** the applicable business constraint and approval authority.
+7. **Result check:** where you will confirm the provider or product state afterward.
+
+## If the decision cannot be completed
 
 <AccordionGroup>
-  <Accordion title="A proposal has too little context">
-    Open its linked conversation or task and request the source, measurement frame, current state, and expected effect. Do not approve until the decision is independently understandable.
+  <Accordion title="The row lacks a usable change summary">
+    Open the proposing conversation or tool. Request the exact object, current value, proposed value, and effect. Reject or leave the item pending until it is independently understandable.
   </Accordion>
-  <Accordion title="The approval control is unavailable">
-    Confirm your workspace role, the proposal state, and the health of the relevant connection. The item may also have been resolved by another authorized workspace member.
+  <Accordion title="Approve or Reject is unavailable">
+    Confirm the workspace, your role, the proposal state, and the connected account. Another authorized member may already have decided it.
   </Accordion>
-  <Accordion title="An approved change is not visible yet">
-    Check the item state, task activity, and the owning surface. Provider processing and data refresh can take time. Avoid submitting a duplicate while the original action is still being resolved.
+  <Accordion title="The proposal is stale">
+    Reject it or leave it unresolved, refresh the underlying analysis, and create a new proposal from current provider state.
   </Accordion>
-  <Accordion title="The proposal is based on stale data">
-    Decline or leave it unresolved, refresh the underlying analysis after the source is current, and request a new proposal. Do not apply an old recommendation to a materially different account state.
+  <Accordion title="Approval succeeded but the object has not changed">
+    Approval and application are separate. Check the task or workflow state, then verify provider processing before considering a retry.
+  </Accordion>
+  <Accordion title="A workflow approval returns after a decision">
+    Check whether it is a different run of the same automation. Compare the requested time and selected entities; each paused run requires its own decision.
   </Accordion>
 </AccordionGroup>
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Inspect task evidence" icon="list-check" href="/working-with-marketer/tasks-and-activity">
-    Trace the work that produced a proposal and review its final result.
+  <Card title="Follow resumed work" icon="list-check" href="/working-with-marketer/tasks-and-activity">
+    Confirm that a task or workflow moved out of Waiting and produced its result.
   </Card>
-  <Card title="Use Campaigns safely" icon="megaphone" href="/product-guides/campaigns">
-    Learn how to inspect campaign state and review provider-specific actions.
+  <Card title="Verify campaign state" icon="megaphone" href="/product-guides/campaigns">
+    Inspect the exact advertising object after an approved change processes.
+  </Card>
+  <Card title="Review workflow history" icon="repeat" href="/product-guides/workflows">
+    Confirm what a released or rejected workflow run did next.
+  </Card>
+  <Card title="Trace the original request" icon="clock-rotate-left" href="/working-with-marketer/history-and-notifications">
+    Return to the conversation or notification that supplied the decision context.
   </Card>
 </CardGroup>

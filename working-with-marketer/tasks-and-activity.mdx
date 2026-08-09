@@ -1,96 +1,171 @@
 ---
 title: "Tasks and activity"
 sidebarTitle: "Tasks and activity"
-description: "Follow longer-running work, inspect progress and results, and distinguish a completed task from a proposed action."
+description: "Follow a task from approval through live steps, input requests, outputs, and the final owning-product state."
 ---
 
-Some requests finish in one chat response. Others need research, analysis, creative production, or multiple coordinated steps. Marketer represents that longer work as a task or run that you can follow outside the immediate response.
+A task tracks work that continues beyond one response. Its detail tells you what is happening now, which step or specialist owns the work, what output was produced, and whether a human decision is still required.
 
-Use task and activity views to answer three questions: Is the work still running? Does it need input? What result did it actually produce?
+Do not use elapsed time or a quiet chat as the status. Use the state and latest step shown on the task.
 
-## Understand task progress
+## Open the same task from anywhere
 
-The interface shows the current lifecycle of the work. Depending on the task, you may see that it is waiting, active, paused for input, finished, or unable to finish. The exact labels can vary by work type.
+You can reach a task from several starting points:
 
-<Note>
-  A finished task and an applied account change are not the same thing. A task can finish by producing an analysis, artifact, or proposal that still needs your review or approval.
-</Note>
+- Select its card in the conversation that started it.
+- Select its row under **Currently Running** on **Home**.
+- Open **Activity** from Quick actions to find active or historical work.
+- Open **Agents** from the right edge of a conversation, then select the run.
+- Follow a task or run link from **Notifications**.
 
-## Follow a task
+These entry points should lead back to the same work. Confirm the task title, workspace, originating conversation, and created time before acting on it.
+
+## Read live progress
+
+<Frame caption="A running request exposes its searched sources and current step instead of making you infer progress from silence.">
+  <img
+    src="/assets/product-flows/task-progress.png"
+    alt="Marketer conversation showing Working for 18 seconds, searched source chips, a completed step, a current step, and a pending step"
+  />
+</Frame>
+
+The in-conversation activity disclosure has three levels of information:
+
+| Level | What it answers | How to use it |
+| --- | --- | --- |
+| **Working for…** | Is the current turn still active? | Treat it as elapsed activity, not an estimated completion time. |
+| **Searched** | Which visible sources have been consulted? | Open or compare them with the evidence boundary in your request. |
+| Step timeline | What is complete, current, or still pending? | A green check is complete, the dark marker is current, and muted markers are pending. |
+
+For a longer task, its result block can also show the current step count and a progress control. For coordinated work, open **Agents** to see the specialist or pipeline behind each step.
+
+## Follow a running task
 
 <Steps>
-  <Step title="Open the task detail">
-    Use the task link from the conversation, the activity area, or the relevant workflow. Confirm that the task belongs to the intended workspace and request.
+  <Step title="Confirm the task identity">
+    Match the task to the originating conversation and intended workspace. If two runs have similar titles, use the created time and attached context to distinguish them.
   </Step>
-  <Step title="Read the current step">
-    Look for the latest meaningful step and any request for input. A quiet conversation does not necessarily mean the task has stopped.
+  <Step title="Read the current lifecycle state">
+    Use the displayed state—**Queued**, **Working**, **Waiting**, **Completed**, **Partially completed**, **Failed**, or **Canceled**—as the task's current truth.
   </Step>
-  <Step title="Review the result">
-    When the task finishes, open the result or artifact itself. Check that it covers the original scope and that its sources and assumptions are visible.
+  <Step title="Open the current step">
+    Identify the latest active or unresolved step. If an agent owns it, select that agent in the workbench to inspect its goal, progress, and available sources.
   </Step>
-  <Step title="Resolve the next decision">
-    If the result contains a proposed change, review it in chat or **Awaiting action**. If it produced a brief, creative, report, or knowledge artifact, continue in the surface that owns that output.
+  <Step title="Resolve a pause once">
+    When the task is **Waiting**, answer the requested question or decide the linked approval. Return to the same run after the decision; do not start a replacement task while it is resuming.
+  </Step>
+  <Step title="Open the output">
+    At a terminal state, open the result or artifact itself. Compare it with the original request and follow any output link to the product surface that owns it.
   </Step>
 </Steps>
 
-## Progress, result, and approval
+## Respond to each lifecycle state
 
-| Layer | What it tells you | What to verify |
+| State | What changed visibly | What you should do |
 | --- | --- | --- |
-| Progress | What the task is doing now | Current step, dependency, and whether input is required |
-| Result | What the task produced | Completeness, evidence, scope, and quality |
-| Approval | Whether a proposed action may proceed | Provider, object, exact change, guardrail, and approver |
-| Resulting state | What exists after an approved action | The updated record in Campaigns, Creatives, Workflows, or another owning surface |
+| **Queued** | The run exists, but no work step is active yet | Keep the original run; check prerequisites if it remains queued unexpectedly. |
+| **Working** | A step or specialist is active and progress can update | Open the active step when you need detail; otherwise let the run continue. |
+| **Waiting** | Progress stops on a question, approval, or missing prerequisite | Supply the requested input or open **Awaiting action**. |
+| **Completed** | Planned work reached its end and a result may be available | Open the result; verify completeness, evidence, and the owning product state. |
+| **Partially completed** | Some output is available alongside unfinished work | Use only the supported portion and inspect the incomplete branch before retrying. |
+| **Failed** | The run ended on an error | Read the last successful step, error, connection state, and any preserved output. |
+| **Canceled** | Work stopped before the planned end | Decide whether to restart from the original request or revise the scope first. |
 
-Do not treat a progress message as a final deliverable. Likewise, do not treat an approved proposal as proof that the connected provider reflects the expected state until you verify it in the owning surface.
+### Waiting on a question
 
-## Use Activity as an audit trail
+Return to the originating conversation and answer with the missing fact or constraint. Keep the reply narrow so it resolves the pause without changing the task's objective.
 
-Activity brings together recent and historical work in the workspace. It can help you:
+### Waiting on a decision
 
-- Find active work without returning to the original thread.
-- Review recent steps and finished results.
-- Filter or search historical workspace activity.
-- Open the detail for a specific run.
-- Compare what the agent reported with the record that owns the result.
+Open **Awaiting action** and review the exact proposal. An approval can release the current run or allow a recorded change; a rejection can stop that branch. Return to the task afterward and confirm its new state.
 
-Activity is most useful for operational traceability. **Chat history** is better when you need the conversation and its decisions. **Notifications** is better when you need a receipt or alert. **Awaiting action** is better when a decision is still pending.
+### Failed or partially completed
+
+Do not immediately resubmit the entire request. First determine:
+
+1. Which step last completed successfully.
+2. Whether an output was preserved.
+3. Whether the failure came from a disconnected source, missing permission, invalid destination, or the task itself.
+4. Whether retrying would create duplicate creative, workflow, or campaign work.
+
+Retry only after the cause is resolved. If usable output exists, continue from that output instead of repeating finished work.
 
 ## Review a completed task
 
-Use the following checklist before you accept the outcome:
+<Frame caption="Completion is visible at the task and step level; the result still needs a content review.">
+  <img
+    src="/assets/product-flows/task-result.png"
+    alt="Completed Marketer launch campaign plan showing three checked steps, the finished result summary, and suggested next actions"
+  />
+</Frame>
 
-- The task answered the original request rather than a nearby question.
-- The result identifies the relevant source, date, and workspace context.
-- Any partial data, missing connection, or failed step is visible.
-- Any generated asset is reviewed for brand, product, and policy accuracy.
-- Any recommended account change is still a proposal unless the interface confirms otherwise.
-- The owning product surface reflects the expected artifact or state.
+The completed example shows three distinct layers:
 
-## Troubleshooting
+1. The response explains the outcome in the conversation.
+2. The result block shows `3/3 steps` and marks each step complete.
+3. Suggested follow-ups offer separate next requests, such as writing copy or adapting the launch.
 
-<AccordionGroup>
-  <Accordion title="The task is waiting for input">
-    Open the detail and answer the requested question or make the pending decision. Check **Awaiting action** if the task is paused on an approval rather than a conversational question.
-  </Accordion>
-  <Accordion title="The task failed">
-    Read the last completed step and error message. Check the required integration, permission, destination, and input. Retry only after the underlying cause is resolved so you do not create duplicate work.
-  </Accordion>
-  <Accordion title="The task finished but no artifact is visible">
-    Return to the result link or the owning surface and confirm the workspace and filters. If the task only produced a recommendation, ask for the intended artifact explicitly rather than assuming one was created.
-  </Accordion>
-  <Accordion title="The displayed result seems stale">
-    Compare its completion time with the data freshness shown in the relevant product surface. Re-run the analysis when the source has completed a newer sync or when the decision window has changed.
-  </Accordion>
-</AccordionGroup>
+Review those layers in order. A suggested follow-up is not work that already happened.
+
+For the output itself, verify:
+
+- It answers the original objective and preserves the stated boundary.
+- Required records, products, or connected sources are the intended ones.
+- Decision-driving figures identify their dates and measurement context.
+- Missing data, failed steps, and assumptions are visible.
+- Generated creative or copy matches approved product facts and review criteria.
+- Any recommended account change is still a proposal unless a separate result confirms otherwise.
+
+## Use Activity for the workspace-wide record
+
+Open **Activity** when you do not know which conversation owns the work or when you need history across the workspace.
+
+The page separates three views:
+
+- **Agents** lists recent agent work and lets you open a selected run.
+- **Recent** shows workspace activity from the last 24 hours.
+- **Full history** supports broader history, filters, dates, search, and paging.
+
+Select a run to open its detail. Native agent detail can expose the live run body and an **Outputs** section. Other activity entries show the recorded event or pipeline detail. Use the open-detail control from the Agents panel when you want a reload-safe full-page record.
+
+### Activity is an audit trail, not the final object
+
+Activity can prove that Marketer recorded a run or event. It does not replace the current campaign, creative, brief, workflow, or provider state.
+
+| Activity says… | Verify next in… |
+| --- | --- |
+| A campaign proposal completed | **Awaiting action**, then **Campaigns** after any approval |
+| A creative run completed | The run output, then **Studio** or **Assets** |
+| A brief was created | **Briefs** |
+| A recurring run executed | **Workflow** and its run history |
+| A report was produced | The linked report output and its source settings |
+| A connected-account change ran | The owning Marketer surface and, when needed, the provider |
+
+## Avoid duplicate work
+
+Before starting a second task with the same objective:
+
+1. Check **Currently Running** on Home.
+2. Search **Activity** for the task title or agent.
+3. Check **Awaiting action** for a paused approval.
+4. Open the original conversation for a waiting question.
+5. Confirm that the first run reached a terminal state.
+
+Starting again while the first run is queued, working, or resuming can create overlapping analysis or duplicate artifacts.
 
 ## Next step
 
 <CardGroup cols={2}>
-  <Card title="Understand specialists" icon="users" href="/working-with-marketer/specialists">
-    Learn when the Marketing Agent coordinates focused work and how to review it.
+  <Card title="Inspect the Agents panel" icon="users" href="/working-with-marketer/specialists">
+    Move from the task summary to the specialist, output, and source behind a step.
   </Card>
-  <Card title="Review history and notifications" icon="bell" href="/working-with-marketer/history-and-notifications">
-    Choose the right record for past conversations, receipts, alerts, and decisions.
+  <Card title="Resolve a waiting decision" icon="inbox" href="/working-with-marketer/awaiting-action">
+    Review the recorded scope before approving or rejecting.
+  </Card>
+  <Card title="Review notifications and history" icon="bell" href="/working-with-marketer/history-and-notifications">
+    Follow receipts back to the conversation, task, or product record that explains them.
+  </Card>
+  <Card title="Verify the final result" icon="circle-check" href="/essential-guidelines/review-results">
+    Apply a source, time, scope, calculation, and action check.
   </Card>
 </CardGroup>
